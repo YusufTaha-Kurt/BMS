@@ -36,6 +36,7 @@ Teklif PDF'iyle karşılaştırma sonrası yapılanlar:
 - **Pasaport ve karbon:** Seçili batarya için salt-okunur Dijital Batarya Pasaportu kartı (sentetik kimlik/model, kaynağı ayrılmış sağlık kayıtları, öncelik değişimlerinden olay kaydı, erişim seviyeleri) ve operasyonel karbon (şarj enerjisi / %90 verim × 0,45 kg/kWh demo faktörü; resmî ETKB-EVÇED değeri pilotta).
 - **Kapalı döngü:** Teknik inceleme önerisi alan bataryada "Bulgu doğrulandı / Yanlış alarm" düğmeleri; sayaç üst çubukta. Yalnız tarayıcıda saklanır, Sıfırla temizler.
 - **Sunum rehberi:** 12 adımlık yerleşik yönlendirme kartı (söylenecek cümle + ekranda gösterilecek yer; adım paneli kendisi kurar).
+- **Canlı yayın:** https://binbin-battery-intelligence.vercel.app (Vercel projesi `binbin-battery-intelligence`, kaynak dosyalardan derlenir: `npm run data && vite build`). İlk yayın Git bağlantısı olmadan yapıldı; GitHub deposu açılınca projeye bağlanacak.
 - **Kontroller:** 9/9 veri testi (yeni senaryo, açılış günü ve doğal arıza beklentileriyle genişletildi), typecheck, lint, build. Başsız Chrome ile 12 rehber adımı, senaryo seçimi, geri bildirim, sıfırlama ve 390 px görünümü tıklatıldı; konsol hatası yok, yatay taşma yok.
 
 ## Doğrulananlar
