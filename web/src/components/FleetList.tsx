@@ -1,0 +1,161 @@
+import { ChevronLeft, ChevronRight, Search, SearchX } from 'lucide-react'
+import { PRIORITY_LABEL } from '../../shared/rules.ts'
+import type { FleetRow, Priority } from '../../shared/types.ts'
+import type { JsonState } from '../lib/loadJson.ts'
+import { num } from '../lib/format.ts'
+import { levelSoh, PRIORITY_STYLE } from '../lib/status.ts'
+import { PriorityBadge } from './Badges.tsx'
+import { ErrorBox } from './StateBox.tsx'
+
+export const PAGE_SIZE = 15
+export type Filter = 'all' | Priority
+const FILTERS: Filter[] = ['all', 'critical', 'data_review', 'attention', 'normal']
+
+interface Props {
+  rows: JsonState<FleetRow[]> & { reload: () => void }
+  query: string
+  onQuery: (q: string) => void
+  filter: Filter
+  onFilter: (f: Filter) => void
+  page: number
+  onPage: (p: number) => void
+  selectedId: string
+  onSelect: (id: string) => void
+}
+
+export function FleetList({ rows, query, onQuery, filter, onFilter, page, onPage, selectedId, onSelect }: Props) {
+  const all = rows.status === 'ok' ? rows.data : []
+  const q = query.trim().toLowerCase()
+  const filtered = all.filter((r) => (filter === 'all' || r.priority === filter) && (!q || r.id.toLowerCase().includes(q)))
+  const pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
+  const cur = Math.min(page, pages)
+  const slice = filtered.slice((cur - 1) * PAGE_SIZE, cur * PAGE_SIZE)
+
+  return (
+    <section aria-labelledby="list-title" className="flex min-w-0 flex-col rounded-xl border border-line bg-panel">
+      <div className="border-b border-line p-4">
+        <h2 id="list-title" className="text-lg font-bold">Batarya Bakım Öncelik Listesi</h2>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          <label className="relative min-w-40 flex-1">
+            <span className="sr-only">Batarya kimliği ara</span>
+            <Search aria-hidden className="pointer-events-none absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-mute" />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => onQuery(e.target.value)}
+              placeholder="Kimlik ara (ör. BT-10050)"
+              className="w-full rounded-md border border-line bg-bg py-2 pl-8 pr-3 text-sm placeholder:text-mute"
+            />
+          </label>
+        </div>
+        <div role="group" aria-label="Öncelik filtresi" className="mt-2 flex flex-wrap gap-1.5">
+          {FILTERS.map((f) => (
+            <button
+              key={f}
+              type="button"
+              aria-pressed={filter === f}
+              onClick={() => onFilter(f)}
+              className={`rounded-md border px-2.5 py-1 text-xs font-semibold ${
+                filter === f ? 'border-accent bg-accent/15 text-ink' : 'border-line text-mute hover:text-ink'
+              }`}
+            >
+              {f === 'all' ? 'Tümü' : PRIORITY_LABEL[f]}
+            </button>
+          ))}
+        </div>
+        <p className="mt-2 text-xs text-mute" aria-live="polite">
+          {rows.status === 'ok' ? `${filtered.length} sonuç · toplam ${all.length} batarya` : ' '}
+        </p>
+      </div>
+
+      {rows.status === 'error' && (
+        <ErrorBox className="m-4" error={rows.error} what="Filo özeti" onRetry={rows.reload} />
+      )}
+
+      {rows.status !== 'error' && (
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse text-left text-sm max-sm:block">
+            <thead className="max-sm:sr-only">
+              <tr className="text-xs uppercase tracking-wide text-mute">
+                <th scope="col" className="py-2 pl-4 pr-2 font-semibold">Batarya ID</th>
+                <th scope="col" className="px-2 py-2 font-semibold">Simüle SOH</th>
+                <th scope="col" className="px-2 py-2 font-semibold">Öncelik</th>
+                <th scope="col" className="py-2 pl-2 pr-4 font-semibold">Baskın sinyal · Önerilen aksiyon</th>
+              </tr>
+            </thead>
+            <tbody className="max-sm:block">
+              {rows.status !== 'ok' &&
+                Array.from({ length: 8 }, (_, i) => (
+                  <tr key={i} className="border-t border-line">
+                    <td colSpan={4} className="px-4 py-3.5">
+                      <div className="h-4 animate-pulse rounded bg-card" />
+                    </td>
+                  </tr>
+                ))}
+              {rows.status === 'ok' &&
+                slice.map((r) => {
+                  const sel = r.id === selectedId
+                  const st = PRIORITY_STYLE[r.priority]
+                  return (
+                    <tr
+                      key={r.id}
+                      onClick={() => onSelect(r.id)}
+                      aria-current={sel ? 'true' : undefined}
+                      className={`cursor-pointer border-t border-line hover:bg-card max-sm:grid max-sm:grid-cols-[1fr_auto_auto] max-sm:items-center ${sel ? 'bg-card' : ''}`}
+                    >
+                      <td className={`border-l-4 py-2.5 pl-3 pr-2 ${sel ? 'border-accent' : st.edge}`}>
+                        <button
+                          type="button"
+                          onClick={(e) => { e.stopPropagation(); onSelect(r.id) }}
+                          className="font-semibold tabular text-ink underline-offset-2 hover:underline"
+                        >
+                          {r.id}
+                        </button>
+                      </td>
+                      <td className={`px-2 py-2.5 tabular ${levelSoh(r.soh) === 'warning' ? 'text-warn' : ''}`}>%{num(r.soh, 1)}</td>
+                      <td className="px-2 py-2.5"><PriorityBadge priority={r.priority} /></td>
+                      <td className="py-2.5 pl-2 pr-4 max-sm:col-span-3 max-sm:pl-3">
+                        <div className="font-medium">{r.signal}</div>
+                        <div className="text-xs text-mute">{r.action}</div>
+                      </td>
+                    </tr>
+                  )
+                })}
+            </tbody>
+          </table>
+          {rows.status === 'ok' && filtered.length === 0 && (
+            <div className="flex flex-col items-center gap-2 px-4 py-10 text-center text-sm text-mute">
+              <SearchX aria-hidden className="size-6" />
+              <p>
+                {query ? <>“{query}” için sonuç yok.</> : 'Bu filtreyle eşleşen batarya yok.'} Aramayı veya filtreyi değiştirin.
+              </p>
+              <button
+                type="button"
+                onClick={() => { onQuery(''); onFilter('all') }}
+                className="rounded-md border border-line bg-card px-3 py-1.5 text-xs font-semibold text-ink hover:border-accent"
+              >
+                Filtreleri temizle
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
+      {rows.status === 'ok' && filtered.length > 0 && (
+        <nav aria-label="Sayfalama" className="mt-auto flex items-center justify-between border-t border-line px-4 py-2.5 text-xs text-mute">
+          <span className="tabular">Sayfa {cur} / {pages}</span>
+          <span className="flex gap-1.5">
+            <button type="button" aria-label="Önceki sayfa" disabled={cur <= 1} onClick={() => onPage(cur - 1)}
+              className="rounded-md border border-line p-1.5 enabled:hover:border-accent disabled:opacity-40">
+              <ChevronLeft aria-hidden className="size-4" />
+            </button>
+            <button type="button" aria-label="Sonraki sayfa" disabled={cur >= pages} onClick={() => onPage(cur + 1)}
+              className="rounded-md border border-line p-1.5 enabled:hover:border-accent disabled:opacity-40">
+              <ChevronRight aria-hidden className="size-4" />
+            </button>
+          </span>
+        </nav>
+      )}
+    </section>
+  )
+}

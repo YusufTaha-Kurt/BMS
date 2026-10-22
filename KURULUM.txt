@@ -1,0 +1,159 @@
+BINBIN BATARYA BAKIM DEMOSU — KURULUM VE CALISTIRMA
+Hazirlanma: 22 Ekim 2026
+
+Bu paket kaynak koddur. Kendi bilgisayarinizda bagimliliklari kurup
+verileri ureterek calistiracaksiniz. Komutlari asagidaki sirayla uygulayin.
+
+1. GEREKENLER
+
+  - Node.js: 22.23.1
+  - npm: 10.9.8 (bu Node surumuyle birlikte gelir)
+  - Guncel Chrome, Edge, Firefox veya Safari
+  - Ilk npm ci kurulumu sirasinda internet baglantisi
+
+Node.js'i resmi arsiv sayfasindan indirin:
+https://nodejs.org/en/download/archive/v22.23.1
+
+Windows: Installer Packages bolumundeki x64.msi dosyasini secin.
+ARM tabanli Windows kullaniyorsaniz arm64.msi secin.
+Kurulumda npm ve PATH seceneklerini varsayilan haliyle birakin.
+
+macOS: Installer Packages bolumundeki .pkg dosyasini kurun.
+
+Linux: Ayni sayfadaki islemci mimarinize uygun surumu veya mevcut
+Node surum yoneticinizi kullanin; hedef surum 22.23.1 olsun.
+
+Zaten nvm veya fnm kullaniyorsaniz web klasorundeki .nvmrc ve
+.node-version dosyalari 22.23.1 surumunu belirtir. nvm kullananlar
+web klasorunde "nvm install" ve "nvm use" calistirabilir.
+
+Python, Docker, veritabani, API anahtari veya ucretli hesap GEREKMEZ.
+
+2. ZIP'I ACIN VE TERMINALI DOGRU KLASORDE ACIN
+
+ZIP'in tamamini normal bir klasore cikarin; ZIP icinden calistirmayin.
+Klasoru acinca bu KURULUM.txt dosyasi ve yaninda web klasoru bulunur.
+
+Windows:
+  web klasorunu Dosya Gezgini'nde acin.
+  Adres cubuguna cmd yazip Enter'a basin.
+  Boylece Komut Istemi dogru klasorde acilir.
+
+macOS/Linux:
+  Terminal'i acin. "cd " yazin (sonunda bir bosluk var), web klasorunu
+  terminale surukleyin ve Enter'a basin.
+
+Dogru klasorde package.json ve package-lock.json dosyalari bulunur.
+Terminalde zaten yazilim klasorundeyseniz su komut yeterli:
+
+  cd web
+
+3. SURUMLERI KONTROL EDIN
+
+  node --version
+  npm --version
+
+Beklenen ciktilar:
+  v22.23.1
+  10.9.8
+
+Farkli Node surumu cikarsa 1. adimdaki surumu etkinlestirip terminali
+kapatip yeniden acin. node veya npm taninmiyorsa kurulumdan sonra yeni
+terminal acildigindan emin olun.
+
+4. ILK KURULUM — KOMUTLARI TEK TEK CALISTIRIN
+
+Her komut bittikten sonra siradakine gecin. Hata varsa devam etmeyin;
+terminaldeki hata metnini proje ekibine iletin.
+
+  npm ci
+  npm run data
+  npm run verify:data
+  npm run build
+  npm run preview -- --host 127.0.0.1 --port 4173 --strictPort
+
+npm ci: package-lock.json icindeki sabit bagimliliklari kurar.
+npm run data: 500 batarya, 30 gun ve yedi senaryonun verilerini uretir.
+npm run verify:data: veri kontrollerini calistirir; testler gecmelidir.
+npm run build: uygulamayi derler; sonuc dist klasorune yazilir.
+Son komut yerel onizleme sunucusunu baslatir ve terminal acik kalir.
+
+Tarayicida su adresi acin:
+
+  http://127.0.0.1:4173/
+
+Terminali kapatirsaniz sayfayi sunan islem durur.
+Durdurmak icin terminalde Ctrl+C basin.
+
+Windows PowerShell'de npm.ps1 calistirma izni hatasi alirsaniz sistem
+ayarini degistirmeyin. Komut Istemi (cmd) kullanin veya komutlarda
+"npm" yerine "npm.cmd" yazin. Ornek: npm.cmd ci
+
+5. SONRAKI ACILISLAR
+
+Ilk kurulum tamamlandiysa web klasorunde terminal acip sunu calistirin:
+
+  npm run preview -- --host 127.0.0.1 --port 4173 --strictPort
+
+Sonra http://127.0.0.1:4173/ adresini acin.
+Kaynak kod veya kurallar degistiyse once npm run data ve npm run build
+komutlarini yeniden calistirin.
+
+6. KOD GELISTIRMEK ISTERSENIZ
+
+web klasorunde:
+
+  npm run dev -- --host 127.0.0.1 --port 5173 --strictPort
+
+Adres: http://127.0.0.1:5173/
+Bu mod kod degisikliklerini ekrana yansitir. Sunum icin 4. adimdaki
+derleme + preview yolunu kullanabilirsiniz.
+
+7. SIK KARSILASILAN DURUMLAR
+
+  "Could not read package.json" / ENOENT:
+    Yanlis klasordesiniz. Terminal web klasorunde acik olmali.
+
+  "Port 4173 is already in use":
+    Daha once baslattiginiz sunucuyu Ctrl+C ile kapatin. Alternatif:
+    npm run preview -- --host 127.0.0.1 --port 4174 --strictPort
+    Bu durumda adres http://127.0.0.1:4174/ olur.
+
+  "vite/tsx not found" veya eksik modul:
+    web klasorunde npm ci komutunu yeniden calistirin.
+
+  Veri dosyasi bulunamiyor veya dist klasoru yok:
+    npm run data
+    npm run build
+    Ardindan preview komutunu yeniden calistirin ve sayfayi yenileyin.
+
+  npm ci ag/sertifika/indirme hatasi:
+    Internet ve kurumunuzun ag/proxy ayarlarini kontrol edin.
+    SSL dogrulamasini kapatmayin; hata metnini ekibe iletin.
+
+  Derlemede buyuk JavaScript paketi uyarisi:
+    Bu bilinen boyut uyarisidir. Derleme basariyla tamamlandiysa
+    tek basina kurulum hatasi degildir.
+
+index.html dosyasina cift tiklayarak acmayin; uygulama yukaridaki
+yerel sunucu adresinden acilir. npm ci icin yonetici/sudo kullanmayin.
+package-lock.json dosyasini silmeyin; npm update veya npm audit fix
+calistirmayin. Bu paket icin kurulum komutu npm ci'dir.
+
+8. PAKET HAKKINDA
+
+node_modules ve dist klasorleri paylasim paketine konmadi. Bagimliliklar
+sizin bilgisayarinizin isletim sistemi/islemcisine gore kurulur.
+web/public/data verileri de pakette yok; npm run data ile uretilir.
+Bu nedenle buyuk veya baska bilgisayara ozel dosya tasimaniz gerekmez.
+
+Butun demo verisi sentetiktir. Gercek BinBin verisi, ML egitimi,
+veritabani, QR veya kullanici hesabi bu surumde yoktur.
+
+Bu kurulum Node 22.23.1 / npm 10.9.8 ile hedeflenmistir.
+Kaynak paket temiz bir macOS klasorunde kurulup kontrolleri calistirilir;
+sonuc icin bu klasordeki KURULUM_TESTI.txt dosyasina bakin.
+Windows/Linux adimlari belgelenmistir; bu sistemlerde calistirildi
+iddiasi tasinmaz.
+
+Teknik kaynak: https://docs.npmjs.com/cli/v10/commands/npm-ci/

@@ -1,0 +1,36 @@
+KAYNAK PAKET KURULUM TESTI — 22 EKIM 2026
+
+ZIP ayri ve temiz bir klasore acildi. Onceki projenin node_modules,
+dist veya uretilmis veri klasorleri kullanilmadi.
+
+Test ortami: macOS / Apple Silicon
+Node: v22.23.1
+npm: 10.9.8
+
+SONUCLAR
+
+  Bagimlilik kurulumu: GECTI (216 paket)
+  Sentetik veri uretimi: GECTI (2840 veri dosyasi + manifest)
+  Veri testleri: GECTI (9/9)
+  Lint: GECTI
+  TypeScript ve uretim derlemesi: GECTI
+  Temiz kopyanin yerel onizlemesi: ACILDI
+  Tarayicida ilk ekran: 500 batarya ve operasyon paneli GORULDU
+  Tarayici hata gunlugu: HATA YOK
+
+Kurulum, npm onbellegindeki paketlerle npm ci --offline kullanilarak
+sinandi; kaynak paket kilitli bagimliliklarla sifirdan kuruldu.
+Arkadasiniz ilk kurulumda normal "npm ci" kullanmali; gerekli paketler
+internetten indirilir. Tamamen bos internet/paket onbellegiyle indirme
+ve Windows/Linux uzerinde kurulum bu testte yapilmadi.
+
+Veri seed: 20261023
+Veri surumu: 1.0.0
+Veri icerik ozeti baslangici: b053c7e43a59
+
+Inceleme aracinin guvenlik ortami tsx'in yerel IPC islemini ilk denemede
+engelledi. Veri uretimi ve build komutlari izinli test ortaminda aynen
+calistirilarak basariyla tamamlandi; uygulama betikleri degistirilmedi.
+
+Bu test kurulum ve acilisi dogrular. Onceki uygulama incelemesindeki
+iki iyilestirme notu incelemeler/ilk-demo/INCELEME.md icinde korunur.
