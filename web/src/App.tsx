@@ -1,14 +1,16 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { DAYS, DEFAULT_VIEW, FOCUS_DAY, SCENARIOS, type ScenarioId } from '../shared/config.ts'
 import type { DetailFile, FleetDayFile, FleetRow, HistoryFile, Manifest } from '../shared/types.ts'
-import { DetailPanel } from './components/DetailPanel.tsx'
+import { DetailPanel, type PanelTab } from './components/DetailPanel.tsx'
 import { FleetList, type Filter } from './components/FleetList.tsx'
 import { Guide, GUIDE_STEPS } from './components/Guide.tsx'
 import { ErrorBox, Loading } from './components/StateBox.tsx'
+import { QrCode } from './components/QrCode.tsx'
+import { QrDialog } from './components/QrDialog.tsx'
 import { TopBar } from './components/TopBar.tsx'
 import { feedbackKey, useFeedback } from './lib/feedback.ts'
 import { dataUrl, pad2, useJson, type JsonState } from './lib/loadJson.ts'
-import { DEMO_RULES as R } from '../shared/config.ts'
+import { aboutUrl } from './site.ts'
 
 type St<T> = JsonState<T> & { reload: () => void }
 
@@ -23,6 +25,8 @@ export default function App() {
   const [page, setPage] = useState(1)
   const [compareOn, setCompareOn] = useState(false)
   const [guideStep, setGuideStep] = useState<number | null>(null)
+  const [tab, setTab] = useState<PanelTab>('history')
+  const [qrOpen, setQrOpen] = useState(false)
   const feedback = useFeedback()
 
   const compare = compareOn && scenario !== 'baseline'
@@ -85,6 +89,7 @@ export default function App() {
     setFilter('all')
     setPage(1)
     setCompareOn(false)
+    setTab('history')
     feedback.clear()
   }
 
@@ -98,6 +103,7 @@ export default function App() {
     setFilter(v.filter)
     setQuery('')
     setPage(1)
+    setTab(v.focus === 'passport' ? 'passport' : v.tab ?? 'history')
     const id = v.focus ? FOCUS_ID[v.focus] : null
     // Yeni görünüm çizildikten sonra ilgili bölüme kaydır.
     window.setTimeout(() => {
@@ -135,6 +141,7 @@ export default function App() {
         counts={fleetOk ? fleet.data.counts : null}
         guideOpen={guideStep !== null}
         onGuide={() => (guideStep === null ? goStep(0) : closeGuide())}
+        onQr={() => setQrOpen(true)}
         tally={feedback.tally}
       />
       <main className="mx-auto grid max-w-[1600px] gap-4 px-4 py-4 lg:px-6 xl:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
@@ -155,16 +162,29 @@ export default function App() {
           baseDetail={showcase && compare ? pick(baseDetail, 'baseline', batteryId, day) : null}
           verdict={feedback.map[fbKey] ?? null}
           onVerdict={(v) => feedback.set(fbKey, v)}
+          tab={tab} onTab={setTab}
         />
       </main>
-      <footer className="mx-auto max-w-[1600px] px-4 pb-6 text-xs text-mute lg:px-6">
-        Sentetik veri; gerçek BinBin verisi değildir ve hiçbir değer BinBin filosu için performans iddiası taşımaz.
-        Demo eşikleri: sıcaklık {R.tempWarnC}/{R.tempCritC} °C, ΔV {R.dvWarnMv}/{R.dvCritMv} mV,
-        park gerilim düşüşü {R.parkWarnMvH}/{R.parkCritMvH} mV/sa, iç direnç {R.rWarnMohm}/{R.rCritMohm} mΩ,
-        veri yeterliliği &lt; %{R.coverageMinPct}, Simüle SOH &lt; %{R.sohAttentionPct}. Bunlar üretici sınırı değildir.
-        Hazırlayan: OSTİM Teknik Üniversitesi proje ekibi.
+      <footer className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-4 px-4 pb-8 pt-2 lg:px-6">
+        <p className="max-w-xl text-xs text-mute">
+          Sentetik veri ve demo eşikleri; BinBin filosu için performans iddiası değildir.
+          OSTİM Teknik Üniversitesi proje ekibi.
+        </p>
+        <a
+          href={aboutUrl()}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-3 rounded-xl border border-line bg-panel p-2.5 pr-4 hover:border-accent"
+        >
+          <QrCode value={aboutUrl()} size={72} label="Hakkımızda sayfası QR kodu" />
+          <span>
+            <span className="block text-sm font-bold">Bizi tanıyın</span>
+            <span className="block text-xs text-mute">QR'ı okutun · Hakkımızda</span>
+          </span>
+        </a>
       </footer>
       {guideStep !== null && <Guide step={guideStep} onStep={goStep} onClose={closeGuide} />}
+      {qrOpen && <QrDialog onClose={() => setQrOpen(false)} />}
     </div>
   )
 }

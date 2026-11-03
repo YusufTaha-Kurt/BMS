@@ -39,6 +39,13 @@ Teklif PDF'iyle karşılaştırma sonrası yapılanlar:
 - **Canlı yayın:** https://binbin-battery-intelligence.vercel.app (Vercel projesi `binbin-battery-intelligence`, kaynak dosyalardan derlenir: `npm run data && vite build`). İlk yayın Git bağlantısı olmadan yapıldı; GitHub deposu açılınca projeye bağlanacak.
 - **Kontroller:** 9/9 veri testi (yeni senaryo, açılış günü ve doğal arıza beklentileriyle genişletildi), typecheck, lint, build. Başsız Chrome ile 12 rehber adımı, senaryo seçimi, geri bildirim, sıfırlama ve 390 px görünümü tıklatıldı; konsol hatası yok, yatay taşma yok.
 
+## Sadeleştirme ve stant QR'ı (3 Kasım 2026, Claude Code)
+
+- **Daha az yazı:** Üst çubukta alt açıklamalar, senaryo açıklama satırı ve öncelik seviyesi alt yazıları kaldırıldı; kontroller tek satırda. Listede aksiyon alt satırı kaldırıldı (aksiyon detay panelinde). Metrik kartlarında eşik metinleri kaldırıldı (eşikler grafik çizgilerinde); "Normal" rozeti yalnız sapma varken gösterilir. Neden + Öneri + saha geri bildirimi tek kutuda.
+- **Sekmeler:** Detay panelinde Geçmiş / Telemetri / Pasaport sekmeleri; sunum rehberi ilgili sekmeyi kendisi açar (veri kaybı → Telemetri, pasaport → Pasaport). Pasaport açıklama paragrafları kısaltıldı.
+- **QR + Hakkımızda:** `qrcode-generator` (bağımlılıksız, MIT) ile tarayıcıda QR. Üst çubukta "Hakkımızda" tam ekran QR, sayfa altında küçük QR kartı. QR `/hakkimizda/` sayfasını açar (Vite çoklu sayfa; veri/grafik yüklemez). İletişim bilgileri `web/src/site.ts` içinde, **yer tutucu e-postalar gerçek adreslerle değiştirilmeli**.
+- **Kontroller:** typecheck, lint, build, 9/9 veri testi. Başsız Chromium ile 1440/390 px ekran görüntüleri, QR'ın `https://binbin-battery-intelligence.vercel.app/hakkimizda/` olarak çözüldüğü (jsQR), 12 rehber adımı ve sekme geçişleri, Hakkımızda → demo bağlantısı; konsol hatası ve yatay taşma yok. Vercel'e yeniden yayın yapılmadı.
+
 ## Doğrulananlar
 
 - Excalidraw ve yerel mimari/veri sözlüğü incelendi.

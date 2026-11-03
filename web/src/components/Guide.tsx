@@ -12,6 +12,8 @@ export interface GuideView {
   filter: Filter
   /** Adım açılınca görünür yapılacak bölüm. */
   focus?: 'top' | 'panel' | 'passport' | 'feedback' | 'history'
+  /** Detay panelinde açılacak sekme (varsayılan: Geçmiş; focus 'passport' ise Pasaport). */
+  tab?: 'history' | 'telemetry' | 'passport'
 }
 
 export interface GuideStep {
@@ -31,7 +33,7 @@ export const GUIDE_STEPS: GuideStep[] = [
   {
     title: 'Her önerinin gerekçesi var',
     say: 'Sistem kara kutu değil: bu bataryada tepe ΔV 200 mV kritik eşiği aşıyor ve gerekçe açıkça yazıyor. Kararı sistem değil, teknik personel verir; sistem önceliği ve nedenini sunar.',
-    show: '"Bakım nedeni" ve "Operasyonel aksiyon planı" kartları, ΔV grafiğindeki eşik çizgisi.',
+    show: '"Neden" ve "Öneri" kutusu; Geçmiş sekmesindeki ΔV eşik çizgisi.',
     view: { scenario: 'baseline', day: FOCUS_DAY, batteryId: NATURAL_FAULTS.imbalance, compare: false, filter: 'all', focus: 'panel' },
   },
   {
@@ -43,7 +45,7 @@ export const GUIDE_STEPS: GuideStep[] = [
   {
     title: 'Sapma büyüyünce teknik inceleme',
     say: 'Altı gün sonra tepe sıcaklık 55 °C eşiğini aşıyor ve öncelik yükseliyor. Telemetri grafiği ısınmanın gün içinde sürüş ve şarj anlarında nasıl arttığını gösteriyor.',
-    show: 'Günlük sıcaklık geçmişindeki yükseliş ve alttaki telemetri grafiği.',
+    show: 'Geçmiş sekmesindeki sıcaklık yükselişi; gün içi seyir için Telemetri sekmesi.',
     view: { scenario: 'temp-drift', day: FOCUS_DAY, batteryId: 'DEMO-001', compare: true, filter: 'all', focus: 'history' },
   },
   {
@@ -55,20 +57,20 @@ export const GUIDE_STEPS: GuideStep[] = [
   {
     title: 'Park geriliminde düşüş',
     say: 'Batarya park halindeyken akım çekilmediği halde gerilimi düşüyor. Bu, mikro kısa devre şüphesinin tipik işaretidir; BMS alarmı oluşmadan yakalanabilir.',
-    show: '"Park gerilim düşüşü" kartı ve geçmiş grafiği; telemetride öğle saatlerindeki gerilim eğimi.',
+    show: '"Park düşüşü" kartı ve geçmiş grafiği.',
     view: { scenario: 'self-discharge', day: FOCUS_DAY, batteryId: 'DEMO-007', compare: true, filter: 'all', focus: 'panel' },
   },
   {
     title: 'İç direnç artışı',
     say: 'Sürüş başlangıcındaki gerilim sıçramasından iç direnç tahmin ediliyor. Direnç arttıkça güç ve şarj kabulü düşer; AB tüzüğünün sağlık parametreleri arasında da yer alır.',
-    show: '"Tahmini iç direnç" kartı ve direnç geçmiş grafiği.',
+    show: '"İç direnç" kartı ve geçmiş grafiği.',
     view: { scenario: 'resistance-rise', day: FOCUS_DAY, batteryId: 'DEMO-008', compare: true, filter: 'all', focus: 'panel' },
   },
   {
     title: 'Veri yoksa sağlıklı sayılmaz',
     say: 'Telemetri kesildiğinde sistem bataryayı "sağlıklı" varsaymıyor; ayrı bir "Veri incelemesi" durumuna alıyor. Eksik ölçümler grafikte boşluk olarak kalıyor.',
-    show: '"Veri yeterliliği" kartı ve telemetrideki boşluklar.',
-    view: { scenario: 'data-loss', day: FOCUS_DAY, batteryId: 'DEMO-003', compare: true, filter: 'all', focus: 'panel' },
+    show: '"Veri yeterliliği" kartı ve Telemetri sekmesindeki boşluklar.',
+    view: { scenario: 'data-loss', day: FOCUS_DAY, batteryId: 'DEMO-003', compare: true, filter: 'all', focus: 'panel', tab: 'telemetry' },
   },
   {
     title: 'Karma filo günü',
@@ -79,7 +81,7 @@ export const GUIDE_STEPS: GuideStep[] = [
   {
     title: 'Dijital Batarya Pasaportu',
     say: 'Aynı veri, batarya kimliği altında pasaportu besliyor. SOH\'nin kaynağı (model, BMS, referans ölçüm) ayrı tutuluyor; olaylar denetlenebilir kayıt oluyor; şarj kaynaklı karbon ayrı hesaplanıyor.',
-    show: 'Pasaport kartındaki dört bölüm ve erişim seviyeleri.',
+    show: 'Pasaport sekmesindeki dört bölüm.',
     view: { scenario: 'fleet-day', day: FOCUS_DAY, batteryId: 'DEMO-007', compare: false, filter: 'critical', focus: 'passport' },
   },
   {
@@ -90,8 +92,8 @@ export const GUIDE_STEPS: GuideStep[] = [
   },
   {
     title: 'Sonraki adım: Faz 0',
-    say: 'Bu demo sentetik veriyle çalışıyor ve hiçbir sayı BinBin performansı iddiası değil. Faz 0\'da (ilk 4 hafta) BinBin verisiyle veri boşluk analizi yapılır, hangi modellerin kurulabileceği netleşir; her faz sonunda devam kararı birlikte verilir.',
-    show: 'Ekranın altındaki sentetik veri notu.',
+    say: 'Bu demo sentetik veriyle çalışıyor ve hiçbir sayı BinBin performansı iddiası değil. Faz 0\'da (ilk 4 hafta) BinBin verisiyle veri boşluk analizi yapılır, hangi modellerin kurulabileceği netleşir; her faz sonunda devam kararı birlikte verilir. Ekibimizle iletişim için QR\'ı okutabilirsiniz.',
+    show: 'Üstteki "Hakkımızda" düğmesi (büyük QR) veya sayfanın altındaki QR.',
     view: { scenario: 'baseline', day: FOCUS_DAY, batteryId: NATURAL_FAULTS.imbalance, compare: false, filter: 'all', focus: 'top' },
   },
 ]
