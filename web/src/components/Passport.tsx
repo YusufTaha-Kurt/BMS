@@ -1,9 +1,9 @@
 import { BadgeCheck, FileClock, Fingerprint, Leaf } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { CARBON, DEMO_RULES as R } from '../../shared/config.ts'
-import { PRIORITY_LABEL } from '../../shared/rules.ts'
 import type { DayRecord, HistoryFile } from '../../shared/types.ts'
-import { dateShort, dateTr, num, pct } from '../lib/format.ts'
+import { useI18n } from '../lib/i18n.tsx'
+import { explain } from '../lib/explain.ts'
 import { PRIORITY_STYLE } from '../lib/status.ts'
 
 interface Props {
@@ -12,12 +12,12 @@ interface Props {
 }
 
 /** Seçilen güne kadar öncelik değişimlerini denetlenebilir olay kaydına çevirir. */
-function eventsOf(days: DayRecord[], upTo: number) {
+function eventsOf(days: DayRecord[], upTo: number, label: (priority: DayRecord['priority']) => string) {
   const out: { date: string; label: string; signal: string; priority: DayRecord['priority'] }[] = []
   let prev: DayRecord['priority'] | null = null
   for (const d of days.slice(0, upTo)) {
     if (d.priority !== prev) {
-      out.push({ date: d.date, label: PRIORITY_LABEL[d.priority], signal: d.signal, priority: d.priority })
+      out.push({ date: d.date, label: label(d.priority), signal: d.signal, priority: d.priority })
       prev = d.priority
     }
   }
@@ -43,45 +43,47 @@ function Box({ icon, title, children }: { icon: ReactNode; title: string; childr
 }
 
 export function Passport({ history, day }: Props) {
-  const { profile, days, batteryId } = history
+  const { language, l, f: { dateShort, dateTr, num, pct }, priorityLabel } = useI18n()
+  const { profile, batteryId } = history
+  const days = history.days.map((d) => explain(d, language))
   const cur = days[day - 1]
-  const events = eventsOf(days, day)
+  const events = eventsOf(days, day, priorityLabel)
   const kwh = days.slice(0, day).reduce((a, d) => a + d.chargeWh, 0) / 1000 / CARBON.chargerEfficiency
   const co2 = kwh * CARBON.gridFactorKgPerKwh
   const lifecycle =
-    cur.priority === 'critical' ? 'Teknik inceleme önerildi' : cur.soh < R.sohAttentionPct ? 'Değerlendirme adayı' : 'Aktif kullanım'
+    cur.priority === 'critical' ? l('Technical review recommended', 'Teknik inceleme önerildi') : cur.soh < R.sohAttentionPct ? l('Assessment candidate', 'Değerlendirme adayı') : l('In active use', 'Aktif kullanım')
 
   return (
     <section id="passport" aria-labelledby="passport-title">
       <div className="mb-2.5 flex flex-wrap items-center justify-between gap-2">
         <h3 id="passport-title" className="flex items-center gap-1.5 text-sm font-bold">
-          <Fingerprint aria-hidden className="size-4 text-accent" /> Dijital Batarya Pasaportu
+          <Fingerprint aria-hidden className="size-4 text-accent" /> {l('Digital Battery Passport', 'Dijital Batarya Pasaportu')}
         </h3>
-        <span className="rounded border border-line px-1.5 py-0.5 text-[11px] text-mute" title="Regulation (EU) 2023/1542 hazırlık görünümü · sentetik kayıt">
-          AB 2023/1542 · sentetik
+        <span className="rounded border border-line px-1.5 py-0.5 text-[11px] text-mute" title={l('EU 2023/1542 preparation view · synthetic record', 'AB 2023/1542 hazırlık görünümü · sentetik kayıt')}>
+          {l('EU 2023/1542 · synthetic', 'AB 2023/1542 · sentetik')}
         </span>
       </div>
 
       <div className="grid gap-2.5 text-xs md:grid-cols-2">
-        <Box icon={<Fingerprint aria-hidden className="size-3.5" />} title="Kimlik">
+        <Box icon={<Fingerprint aria-hidden className="size-3.5" />} title={l('Identity', 'Kimlik')}>
           <dl>
-            <Row k="Seri no" v={profile.serial} />
-            <Row k="Model" v={`${profile.model} · ${profile.chemistry}`} />
-            <Row k="Nominal" v={`${num(profile.nominalV)} V · ${profile.nominalAh} Ah`} />
-            <Row k="Hizmete giriş" v={dateTr(profile.commissioned)} />
+            <Row k={l('Serial no.', 'Seri no')} v={profile.serial} />
+            <Row k={l('Model', 'Model')} v={`${profile.model} · ${profile.chemistry.replace('(sentetik)', l('(synthetic)', '(sentetik)'))}`} />
+            <Row k={l('Rated', 'Nominal')} v={`${num(profile.nominalV)} V · ${profile.nominalAh} Ah`} />
+            <Row k={l('Commissioned', 'Hizmete giriş')} v={dateTr(profile.commissioned)} />
           </dl>
         </Box>
 
-        <Box icon={<BadgeCheck aria-hidden className="size-3.5" />} title="Sağlık">
+        <Box icon={<BadgeCheck aria-hidden className="size-3.5" />} title={l('Health', 'Sağlık')}>
           <dl>
-            <Row k="SOH (model, simüle)" v={pct(cur.soh)} />
-            <Row k="İç direnç" v={cur.rMohm === null ? 'Ölçüm yok' : `${cur.rMohm} mΩ`} />
-            <Row k="BMS SOH" v="Pilotta" />
-            <Row k="Durum" v={lifecycle} />
+            <Row k={l('SOH (model, simulated)', 'SOH (model, simüle)')} v={pct(cur.soh)} />
+            <Row k={l('Internal resistance', 'İç direnç')} v={cur.rMohm === null ? l('No measurement', 'Ölçüm yok') : `${num(cur.rMohm, 0)} mΩ`} />
+            <Row k="BMS SOH" v={l('Pilot stage', 'Pilotta')} />
+            <Row k={l('Status', 'Durum')} v={lifecycle} />
           </dl>
         </Box>
 
-        <Box icon={<FileClock aria-hidden className="size-3.5" />} title={`Olay kaydı · ${batteryId}`}>
+        <Box icon={<FileClock aria-hidden className="size-3.5" />} title={`${l('Event log', 'Olay kaydı')} · ${batteryId}`}>
           <ol className="space-y-1">
             {events.slice(0, 4).map((e) => (
               <li key={e.date} className="flex items-start gap-2">
@@ -95,12 +97,12 @@ export function Passport({ history, day }: Props) {
           </ol>
         </Box>
 
-        <Box icon={<Leaf aria-hidden className="size-3.5 text-ok" />} title="Operasyonel karbon">
+        <Box icon={<Leaf aria-hidden className="size-3.5 text-ok" />} title={l('Operational carbon', 'Operasyonel karbon')}>
           <dl>
-            <Row k={`Enerji (1–${day}. gün)`} v={`${num(kwh, 1)} kWh`} />
-            <Row k="Emisyon" v={`${num(co2, 1)} kg CO₂e`} />
+            <Row k={l(`Energy (days 1–${day})`, `Enerji (1–${day}. gün)`)} v={`${num(kwh, 1)} kWh`} />
+            <Row k={l('Emissions', 'Emisyon')} v={`${num(co2, 1)} kg CO₂e`} />
           </dl>
-          <p className="mt-1.5 text-mute">Demo faktörü {num(CARBON.gridFactorKgPerKwh, 2)} kg/kWh.</p>
+          <p className="mt-1.5 text-mute">{l('Demo factor', 'Demo faktörü')} {num(CARBON.gridFactorKgPerKwh, 2)} kg/kWh.</p>
         </Box>
       </div>
     </section>

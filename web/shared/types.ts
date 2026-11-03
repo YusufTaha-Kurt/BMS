@@ -1,5 +1,7 @@
 import type { ScenarioDef, ScenarioId } from './config.ts'
 
+export type SiteLanguage = 'en' | 'tr'
+
 export type Priority = 'critical' | 'data_review' | 'attention' | 'normal'
 
 /** Bir bataryanın bir güne ait ölçüm özeti. Ölçüm yoksa null (sıfır değil). */

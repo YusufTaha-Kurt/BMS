@@ -3,11 +3,14 @@ import {
   Waves, Zap,
 } from 'lucide-react'
 import { useMemo, type ReactNode } from 'react'
-import { CARBON, DAYS, DEMO_RULES as R, SCENARIOS, SHOWCASE_IDS, type ScenarioId } from '../../shared/config.ts'
+import { CARBON, DAYS, DEMO_RULES as R, SHOWCASE_IDS, type ScenarioId } from '../../shared/config.ts'
 import type { DayRecord, DetailFile, FleetRow, HistoryFile } from '../../shared/types.ts'
 import type { Verdict } from '../lib/feedback.ts'
 import type { JsonState } from '../lib/loadJson.ts'
-import { dateTr, num, pct, signed, withUnit } from '../lib/format.ts'
+import { signed } from '../lib/format.ts'
+import { useI18n } from '../lib/i18n.tsx'
+import { explain } from '../lib/explain.ts'
+import type { SiteLanguage } from '../site.ts'
 import {
   LEVEL_PRIORITY, levelCoverage, levelDv, levelPark, levelR, levelSoh, levelTemp, PRIORITY_STYLE, type Level,
 } from '../lib/status.ts'
@@ -37,7 +40,6 @@ interface Props {
 
 export type PanelTab = 'history' | 'telemetry' | 'passport'
 
-const BASE_LABEL = 'Olaysız durum'
 
 const C = { main: '#5aa9ff', base: '#a3b3cf', warn: '#ffc15a', crit: '#ff8a8a', ok: '#6ee7a0' }
 
@@ -52,28 +54,29 @@ function Metric({
   level?: Level
   base?: { text: string; diff: string } | null
 }) {
+  const { l } = useI18n()
   const st = PRIORITY_STYLE[LEVEL_PRIORITY[level ?? 'normal']]
   const flagged = level !== undefined && level !== 'normal'
   return (
     <div className={`rounded-lg border bg-card p-3 ${flagged ? st.line : 'border-line'}`}>
-      <div className="flex items-center justify-between gap-2 text-xs font-semibold text-mute">
+      <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold text-mute">
         <span className="inline-flex items-center gap-1.5">{icon}{label}</span>
         {flagged && <LevelBadge level={level} />}
       </div>
-      <div className="mt-1 text-2xl font-bold tabular">{value}</div>
+      <div className="mt-1 break-words text-xl font-bold tabular sm:text-2xl">{value}</div>
       {detail && <div className="text-xs text-mute tabular">{detail}</div>}
       {base && (
         <div className="mt-1 text-xs text-mute tabular">
-          Olaysız {base.text} · <span className="font-semibold text-ink">{base.diff}</span>
+          {l('Baseline', 'Olaysız')} {base.text} · <span className="font-semibold text-ink">{base.diff}</span>
         </div>
       )}
     </div>
   )
 }
 
-function diffOf(cur: number | null, base: number | null, d: number, unit: string) {
+function diffOf(cur: number | null, base: number | null, d: number, unit: string, language: SiteLanguage) {
   if (cur === null || base === null) return null
-  return { diff: `${signed(cur - base, d)} ${unit}` }
+  return { diff: `${signed(cur - base, d, language)} ${unit}` }
 }
 
 const TABS: { id: PanelTab; label: string }[] = [
@@ -83,14 +86,14 @@ const TABS: { id: PanelTab; label: string }[] = [
 ]
 
 export function DetailPanel(p: Props) {
-  const sc = SCENARIOS.find((s) => s.id === p.scenario)!
-  const row = p.row.status === 'ok' ? p.row.data : null
+  const { language, l, f: { dateTr, num, pct, withUnit }, scenarioLabel } = useI18n()
+  const row = p.row.status === 'ok' && p.row.data ? explain(p.row.data, language) : null
   const base = p.baseRow?.status === 'ok' ? p.baseRow.data : null
 
   const baseMetric = (key: keyof DayRecord, d: number, unit: string, fmt: (n: number | null) => string) => {
     if (!p.baseRow || !row) return null
     if (p.baseRow.status !== 'ok' || !base) return null
-    const df = diffOf(row[key] as number | null, base[key] as number | null, d, unit)
+    const df = diffOf(row[key] as number | null, base[key] as number | null, d, unit, language)
     return { text: fmt(base[key] as number | null), diff: df?.diff ?? '—' }
   }
   const kwh = row ? row.chargeWh / 1000 / CARBON.chargerEfficiency : 0
@@ -101,19 +104,19 @@ export function DetailPanel(p: Props) {
         <div>
           <h2 id="panel-title" className="text-lg font-bold tabular">{p.batteryId}</h2>
           <p className="mt-0.5 text-sm text-mute">
-            {sc.label} · {row ? dateTr(row.date) : `${p.day}. gün`}
+            {scenarioLabel(p.scenario)} · {row ? dateTr(row.date) : l(`Day ${p.day}`, `${p.day}. gün`)}
           </p>
         </div>
         {row && <PriorityBadge priority={row.priority} size="lg" />}
       </div>
 
-      {p.row.status === 'error' && <ErrorBox error={p.row.error} what="Batarya günü" onRetry={p.row.reload} />}
+      {p.row.status === 'error' && <ErrorBox error={p.row.error} what={l('Battery day', 'Batarya günü')} onRetry={p.row.reload} />}
       {p.row.status === 'ok' && !row && (
         <div role="alert" className="rounded-lg border border-line bg-card p-4 text-sm text-mute">
-          {p.batteryId} bu senaryo/günde filo dosyasında bulunamadı.
+          {l(`${p.batteryId} was not found in this scenario/day.`, `${p.batteryId} bu senaryo/günde filo dosyasında bulunamadı.`)}
         </div>
       )}
-      {(p.row.status === 'loading' || p.row.status === 'idle') && <Loading className="py-10" label="Batarya günü yükleniyor…" />}
+      {(p.row.status === 'loading' || p.row.status === 'idle') && <Loading className="py-10" label={l('Loading battery day…', 'Batarya günü yükleniyor…')} />}
 
       {row && (
         <>
@@ -121,7 +124,7 @@ export function DetailPanel(p: Props) {
             <div className="grid gap-3 md:grid-cols-2">
               <div>
                 <h3 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-mute">
-                  <Info aria-hidden className="size-3.5" /> Neden
+                  <Info aria-hidden className="size-3.5" /> {l('Why', 'Neden')}
                 </h3>
                 <ul className="mt-1 space-y-0.5 text-sm">
                   {row.reasons.map((r) => <li key={r}>{r}</li>)}
@@ -129,10 +132,10 @@ export function DetailPanel(p: Props) {
               </div>
               <div>
                 <h3 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-mute">
-                  <ClipboardCheck aria-hidden className="size-3.5" /> Öneri
+                  <ClipboardCheck aria-hidden className="size-3.5" /> {l('Recommendation', 'Öneri')}
                 </h3>
                 <p className="mt-1 text-sm font-semibold">{row.action}</p>
-                <p className="mt-0.5 text-xs text-mute">Nihai karar teknik personelde.</p>
+                <p className="mt-0.5 text-xs text-mute">{l('Technical staff make the final decision.', 'Nihai karar teknik personelde.')}</p>
               </div>
             </div>
             {row.priority !== 'normal' && <FeedbackButtons verdict={p.verdict} onVerdict={p.onVerdict} />}
@@ -140,17 +143,17 @@ export function DetailPanel(p: Props) {
 
           <div className="grid grid-cols-2 gap-2.5 2xl:grid-cols-4">
             <Metric
-              icon={<Gauge aria-hidden className="size-3.5" />} label="SOH (simüle)"
+              icon={<Gauge aria-hidden className="size-3.5" />} label={l('SOH (simulated)', 'SOH (simüle)')}
               value={pct(row.soh)} level={levelSoh(row.soh)}
-              base={baseMetric('soh', 2, 'puan', (n) => pct(n))}
+              base={baseMetric('soh', 2, l('pp', 'puan'), (n) => pct(n))}
             />
             <Metric
               icon={<Activity aria-hidden className="size-3.5" />} label="SOC"
               value={pct(row.socMean)} level={row.socMean === null ? 'nodata' : 'normal'}
-              base={baseMetric('socMean', 1, 'puan', (n) => pct(n))}
+              base={baseMetric('socMean', 1, l('pp', 'puan'), (n) => pct(n))}
             />
             <Metric
-              icon={<Thermometer aria-hidden className="size-3.5" />} label="Sıcaklık"
+              icon={<Thermometer aria-hidden className="size-3.5" />} label={l('Temperature', 'Sıcaklık')}
               value={withUnit(row.tempMax, '°C')} level={levelTemp(row.tempMax)}
               base={baseMetric('tempMax', 1, '°C', (n) => withUnit(n, '°C'))}
             />
@@ -160,35 +163,35 @@ export function DetailPanel(p: Props) {
               base={baseMetric('dvMax', 0, 'mV', (n) => withUnit(n, 'mV', 0))}
             />
             <Metric
-              icon={<ParkingMeter aria-hidden className="size-3.5" />} label="Park düşüşü"
-              value={withUnit(row.parkDropMvH, 'mV/sa')} level={levelPark(row.parkDropMvH)}
-              base={baseMetric('parkDropMvH', 1, 'mV/sa', (n) => withUnit(n, 'mV/sa'))}
+              icon={<ParkingMeter aria-hidden className="size-3.5" />} label={l('Parked drop', 'Park düşüşü')}
+              value={withUnit(row.parkDropMvH, l('mV/h', 'mV/sa'))} level={levelPark(row.parkDropMvH)}
+              base={baseMetric('parkDropMvH', 1, l('mV/h', 'mV/sa'), (n) => withUnit(n, l('mV/h', 'mV/sa')))}
             />
             <Metric
-              icon={<Zap aria-hidden className="size-3.5" />} label="İç direnç"
+              icon={<Zap aria-hidden className="size-3.5" />} label={l('Internal resistance', 'İç direnç')}
               value={withUnit(row.rMohm, 'mΩ', 0)} level={levelR(row.rMohm)}
               base={baseMetric('rMohm', 0, 'mΩ', (n) => withUnit(n, 'mΩ', 0))}
             />
             <Metric
-              icon={<Database aria-hidden className="size-3.5" />} label="Veri yeterliliği"
+              icon={<Database aria-hidden className="size-3.5" />} label={l('Data coverage', 'Veri yeterliliği')}
               value={pct(row.coverage)} level={levelCoverage(row.coverage)}
-              base={baseMetric('coverage', 1, 'puan', (n) => pct(n))}
+              base={baseMetric('coverage', 1, l('pp', 'puan'), (n) => pct(n))}
             />
             <Metric
-              icon={<BatteryCharging aria-hidden className="size-3.5" />} label="Şarj enerjisi"
+              icon={<BatteryCharging aria-hidden className="size-3.5" />} label={l('Charging energy', 'Şarj enerjisi')}
               value={withUnit(kwh, 'kWh', 2)}
               detail={`≈ ${num(kwh * CARBON.gridFactorKgPerKwh, 2)} kg CO₂e`}
             />
           </div>
-          {p.baseRow && p.baseRow.status === 'loading' && <Loading label="Olaysız durum yükleniyor…" className="justify-start" />}
+          {p.baseRow && p.baseRow.status === 'loading' && <Loading label={l('Loading baseline…', 'Olaysız durum yükleniyor…')} className="justify-start" />}
           {p.baseRow && p.baseRow.status === 'error' && (
-            <ErrorBox error={p.baseRow.error} what="Olaysız durum karşılaştırması" onRetry={p.baseRow.reload} />
+            <ErrorBox error={p.baseRow.error} what={l('Baseline comparison', 'Olaysız durum karşılaştırması')} onRetry={p.baseRow.reload} />
           )}
         </>
       )}
 
       <div>
-        <div role="tablist" aria-label="Ayrıntılar" className="mb-3 flex gap-1 border-b border-line">
+        <div role="tablist" aria-label={l('Details', 'Ayrıntılar')} className="mb-3 flex gap-1 border-b border-line">
           {TABS.map((t) => (
             <button
               key={t.id}
@@ -202,7 +205,7 @@ export function DetailPanel(p: Props) {
                 p.tab === t.id ? 'border-accent text-ink' : 'border-transparent text-mute hover:text-ink'
               }`}
             >
-              {t.label}
+              {l(t.id === 'history' ? 'History' : t.id === 'telemetry' ? 'Telemetry' : 'Passport', t.label)}
             </button>
           ))}
         </div>
@@ -213,8 +216,8 @@ export function DetailPanel(p: Props) {
             p.history.status === 'ok'
               ? <Passport history={p.history.data} day={p.day} />
               : p.history.status === 'error'
-                ? <ErrorBox error={p.history.error} what="Pasaport" onRetry={p.history.reload} />
-                : <Loading className="py-8" label="Pasaport yükleniyor…" />
+                ? <ErrorBox error={p.history.error} what={l('Passport', 'Pasaport')} onRetry={p.history.reload} />
+                : <Loading className="py-8" label={l('Loading passport…', 'Pasaport yükleniyor…')} />
           )}
         </div>
       </div>
@@ -223,6 +226,7 @@ export function DetailPanel(p: Props) {
 }
 
 function FeedbackButtons({ verdict, onVerdict }: { verdict: Verdict | null; onVerdict: (v: Verdict | null) => void }) {
+  const { l } = useI18n()
   const btn = (v: Verdict, label: string, icon: ReactNode, on: string) => (
     <button
       type="button"
@@ -237,16 +241,17 @@ function FeedbackButtons({ verdict, onVerdict }: { verdict: Verdict | null; onVe
   )
   return (
     <div id="feedback" className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-line/60 pt-2.5">
-      <span className="mr-1 text-xs font-semibold text-mute">Saha geri bildirimi</span>
+      <span className="mr-1 text-xs font-semibold text-mute">{l('Demo feedback', 'Saha geri bildirimi')}</span>
       <div className="flex flex-wrap gap-1.5">
-        {btn('confirmed', 'Bulgu doğrulandı', <CircleCheck aria-hidden className="size-3.5" />, 'border-ok-line bg-ok-bg text-ok')}
-        {btn('false_alarm', 'Yanlış alarm', <CircleX aria-hidden className="size-3.5" />, 'border-crit-line bg-crit-bg text-crit')}
+        {btn('confirmed', l('Finding confirmed', 'Bulgu doğrulandı'), <CircleCheck aria-hidden className="size-3.5" />, 'border-ok-line bg-ok-bg text-ok')}
+        {btn('false_alarm', l('False alarm', 'Yanlış alarm'), <CircleX aria-hidden className="size-3.5" />, 'border-crit-line bg-crit-bg text-crit')}
       </div>
     </div>
   )
 }
 
 function HistorySection({ history, baseHistory, day, scenario }: Props) {
+  const { l, f: { pct }, scenarioLabel } = useI18n()
   const data = useMemo(() => {
     if (history.status !== 'ok') return []
     const b = baseHistory?.status === 'ok' ? baseHistory.data.days : null
@@ -259,32 +264,32 @@ function HistorySection({ history, baseHistory, day, scenario }: Props) {
     }))
   }, [history, baseHistory])
   const showBase = baseHistory?.status === 'ok'
-  const mk = (key: string, label = 'Bu senaryo') => [
+  const mk = (key: string, label = l('This scenario', 'Bu senaryo')) => [
     { key, label, color: C.main },
-    ...(showBase ? [{ key: `b_${key}`, label: BASE_LABEL, color: C.base, dashed: true }] : []),
+    ...(showBase ? [{ key: `b_${key}`, label: l('No-event baseline', 'Olaysız durum'), color: C.base, dashed: true }] : []),
   ]
-  const common = { xKey: 'day', xDomain: [1, DAYS] as [number, number], xTicks: [1, 5, 10, 15, 20, 25, 30], xLabel: 'Gün', markX: day, height: 150 }
+  const common = { xKey: 'day', xDomain: [1, DAYS] as [number, number], xTicks: [1, 5, 10, 15, 20, 25, 30], xLabel: l('Day', 'Gün'), markX: day, height: 150 }
 
   return (
     <div id="history">
-      <h3 className="sr-only">Günlük sağlık geçmişi, {SCENARIOS.find((s) => s.id === scenario)!.label}</h3>
-      {history.status === 'error' && <ErrorBox error={history.error} what="Günlük geçmiş" onRetry={history.reload} />}
-      {(history.status === 'loading' || history.status === 'idle') && <Loading className="py-8" label="Geçmiş yükleniyor…" />}
-      {baseHistory?.status === 'error' && <ErrorBox className="mb-2" error={baseHistory.error} what="Olaysız durum geçmişi" onRetry={baseHistory.reload} />}
+      <h3 className="sr-only">{l('Daily health history', 'Günlük sağlık geçmişi')}, {scenarioLabel(scenario)}</h3>
+      {history.status === 'error' && <ErrorBox error={history.error} what={l('Daily history', 'Günlük geçmiş')} onRetry={history.reload} />}
+      {(history.status === 'loading' || history.status === 'idle') && <Loading className="py-8" label={l('Loading history…', 'Geçmiş yükleniyor…')} />}
+      {baseHistory?.status === 'error' && <ErrorBox className="mb-2" error={baseHistory.error} what={l('Baseline history', 'Olaysız durum geçmişi')} onRetry={baseHistory.reload} />}
       {history.status === 'ok' && (
         <div className="grid gap-2.5 md:grid-cols-2">
           <MiniChart title="SOH" unit="%" data={data} series={mk('soh')} yDomain={['dataMin', 'dataMax']}
-            refs={[{ y: R.sohAttentionPct, label: `%${R.sohAttentionPct}`, color: C.warn }]} decimals={2} tickDecimals={1} {...common} />
-          <MiniChart title="Sıcaklık" unit="°C" data={data} series={mk('tempMax')} yDomain={[20, 'auto']}
+            refs={[{ y: R.sohAttentionPct, label: pct(R.sohAttentionPct, 0), color: C.warn }]} decimals={2} tickDecimals={1} {...common} />
+          <MiniChart title={l('Temperature', 'Sıcaklık')} unit="°C" data={data} series={mk('tempMax')} yDomain={[20, 'auto']}
             refs={[{ y: R.tempWarnC, label: `${R.tempWarnC} °C`, color: C.warn }, { y: R.tempCritC, label: `${R.tempCritC} °C`, color: C.crit }]} {...common} />
           <MiniChart title="ΔV" unit="mV" data={data} series={mk('dvMax')} yDomain={[0, 'auto']}
             refs={[{ y: R.dvWarnMv, label: `${R.dvWarnMv} mV`, color: C.warn }, { y: R.dvCritMv, label: `${R.dvCritMv} mV`, color: C.crit }]} decimals={0} {...common} />
-          <MiniChart title="Park gerilim düşüşü" unit="mV/sa" data={data} series={mk('parkDropMvH')} yDomain={[0, 'auto']}
+          <MiniChart title={l('Parked voltage drop', 'Park gerilim düşüşü')} unit={l('mV/h', 'mV/sa')} data={data} series={mk('parkDropMvH')} yDomain={[0, 'auto']}
             refs={[{ y: R.parkWarnMvH, label: `${R.parkWarnMvH}`, color: C.warn }, { y: R.parkCritMvH, label: `${R.parkCritMvH}`, color: C.crit }]} {...common} />
-          <MiniChart title="İç direnç" unit="mΩ" data={data} series={mk('rMohm')} yDomain={[0, 'auto']} decimals={0}
+          <MiniChart title={l('Internal resistance', 'İç direnç')} unit="mΩ" data={data} series={mk('rMohm')} yDomain={[0, 'auto']} decimals={0}
             refs={[{ y: R.rWarnMohm, label: `${R.rWarnMohm}`, color: C.warn }, { y: R.rCritMohm, label: `${R.rCritMohm}`, color: C.crit }]} {...common} />
-          <MiniChart title="Veri yeterliliği" unit="%" data={data} series={mk('coverage')} yDomain={[0, 100]}
-            refs={[{ y: R.coverageMinPct, label: `%${R.coverageMinPct}`, color: C.warn }]} {...common} />
+          <MiniChart title={l('Data coverage', 'Veri yeterliliği')} unit="%" data={data} series={mk('coverage')} yDomain={[0, 100]}
+            refs={[{ y: R.coverageMinPct, label: pct(R.coverageMinPct, 0), color: C.warn }]} {...common} />
         </div>
       )}
     </div>
@@ -294,6 +299,7 @@ function HistorySection({ history, baseHistory, day, scenario }: Props) {
 const HOURS = [0, 4, 8, 12, 16, 20, 24]
 
 function TelemetrySection({ isShowcase, detail, baseDetail, day, batteryId }: Props) {
+  const { l } = useI18n()
   const data = useMemo(() => {
     if (!detail || detail.status !== 'ok') return []
     const s = detail.data.series
@@ -309,34 +315,34 @@ function TelemetrySection({ isShowcase, detail, baseDetail, day, batteryId }: Pr
       <div className="flex gap-2 rounded-lg border border-dashed border-line p-3 text-sm text-mute">
         <Info aria-hidden className="mt-0.5 size-4 shrink-0" />
         <p>
-          {batteryId} için ayrıntılı telemetri yok. Örnek: {SHOWCASE_IDS[0]}…{SHOWCASE_IDS[SHOWCASE_IDS.length - 1]}.
+          {l(`Detailed telemetry is available for ${SHOWCASE_IDS[0]}–${SHOWCASE_IDS[SHOWCASE_IDS.length - 1]} only.`, `${batteryId} için ayrıntılı telemetri yok. Örnek: ${SHOWCASE_IDS[0]}…${SHOWCASE_IDS[SHOWCASE_IDS.length - 1]}.`)}
         </p>
       </div>
     )
   }
   const showBase = baseDetail?.status === 'ok'
   const mk = (key: string) => [
-    { key, label: 'Bu senaryo', color: C.main },
-    ...(showBase ? [{ key: `b_${key}`, label: BASE_LABEL, color: C.base, dashed: true }] : []),
+    { key, label: l('This scenario', 'Bu senaryo'), color: C.main },
+    ...(showBase ? [{ key: `b_${key}`, label: l('No-event baseline', 'Olaysız durum'), color: C.base, dashed: true }] : []),
   ]
-  const common = { xKey: 'h', xDomain: [0, 24] as [number, number], xTicks: HOURS, xLabel: 'Saat', xFormat: (v: number) => `${v}:00`, height: 150 }
+  const common = { xKey: 'h', xDomain: [0, 24] as [number, number], xTicks: HOURS, xLabel: l('Time', 'Saat'), xFormat: (v: number) => `${v}:00`, height: 150 }
 
   return (
     <div>
-      <h3 className="mb-2 text-xs text-mute">{day}. gün · 5 dakikalık kayıt · eksik ölçümler boşluk olarak kalır</h3>
-      {detail && detail.status === 'error' && <ErrorBox error={detail.error} what="Telemetri ayrıntısı" onRetry={detail.reload} />}
-      {(!detail || detail.status === 'loading' || detail.status === 'idle') && <Loading className="py-8" label="Telemetri yükleniyor…" />}
-      {baseDetail?.status === 'error' && <ErrorBox className="mb-2" error={baseDetail.error} what="Olaysız durum telemetrisi" onRetry={baseDetail.reload} />}
+      <h3 className="mb-2 text-xs text-mute">{l(`Day ${day} · 5-minute samples · missing readings remain gaps`, `${day}. gün · 5 dakikalık kayıt · eksik ölçümler boşluk olarak kalır`)}</h3>
+      {detail && detail.status === 'error' && <ErrorBox error={detail.error} what={l('Telemetry detail', 'Telemetri ayrıntısı')} onRetry={detail.reload} />}
+      {(!detail || detail.status === 'loading' || detail.status === 'idle') && <Loading className="py-8" label={l('Loading telemetry…', 'Telemetri yükleniyor…')} />}
+      {baseDetail?.status === 'error' && <ErrorBox className="mb-2" error={baseDetail.error} what={l('Baseline telemetry', 'Olaysız durum telemetrisi')} onRetry={baseDetail.reload} />}
       {detail && detail.status === 'ok' && (
         <div className="grid gap-2.5 md:grid-cols-2">
           <MiniChart title="SOC" unit="%" data={data} series={mk('soc')} yDomain={[0, 100]} {...common} />
-          <MiniChart title="Akım (deşarj +)" unit="A" data={data} series={mk('i')} decimals={1} {...common} />
-          <MiniChart title="Sıcaklık" unit="°C" data={data} series={mk('temp')} yDomain={[20, 'auto']}
+          <MiniChart title={l('Current (discharge +)', 'Akım (deşarj +)')} unit="A" data={data} series={mk('i')} decimals={1} {...common} />
+          <MiniChart title={l('Temperature', 'Sıcaklık')} unit="°C" data={data} series={mk('temp')} yDomain={[20, 'auto']}
             refs={[{ y: R.tempWarnC, label: `${R.tempWarnC} °C`, color: C.warn }, { y: R.tempCritC, label: `${R.tempCritC} °C`, color: C.crit }]} {...common} />
           <MiniChart title="ΔV" unit="mV" data={data} series={mk('dv')} yDomain={[0, 'auto']} decimals={0}
             refs={[{ y: R.dvWarnMv, label: `${R.dvWarnMv} mV`, color: C.warn }, { y: R.dvCritMv, label: `${R.dvCritMv} mV`, color: C.crit }]} {...common} />
           <div className="md:col-span-2">
-            <MiniChart title="Paket gerilimi" unit="V" data={data} series={mk('v')} yDomain={['auto', 'auto']} decimals={1} {...common} />
+            <MiniChart title={l('Pack voltage', 'Paket gerilimi')} unit="V" data={data} series={mk('v')} yDomain={['auto', 'auto']} decimals={1} {...common} />
           </div>
         </div>
       )}

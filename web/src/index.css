@@ -45,3 +45,8 @@ body {
 .tabular {
   font-variant-numeric: tabular-nums;
 }
+
+/* Keep the interactive guide usable above short mobile viewports. */
+.demo-guide { max-height: min(47dvh, 440px); overflow-y: auto; }
+@media (min-width: 640px) { .demo-guide { max-height: calc(100dvh - 32px); } }
+#demo-workspace { scroll-margin-top: 12px; }

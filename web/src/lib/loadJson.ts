@@ -1,11 +1,16 @@
 import { useCallback, useEffect, useState } from 'react'
 
 export type LoadErrorKind = 'missing' | 'failed'
+export type LoadErrorCode = 'missing' | 'network' | 'http' | 'json' | 'unknown'
 export class LoadError extends Error {
   kind: LoadErrorKind
-  constructor(kind: LoadErrorKind, message: string) {
-    super(message)
+  code: LoadErrorCode
+  httpStatus?: number
+  constructor(kind: LoadErrorKind, code: LoadErrorCode, httpStatus?: number) {
+    super(code)
     this.kind = kind
+    this.code = code
+    this.httpStatus = httpStatus
   }
 }
 
@@ -18,19 +23,19 @@ export async function loadJson<T>(url: string, signal: AbortSignal): Promise<T> 
     res = await fetch(url, { signal })
   } catch (e) {
     if (signal.aborted) throw e
-    throw new LoadError('failed', 'Dosya okunamadı (ağ/sunucu hatası).')
+    throw new LoadError('failed', 'network')
   }
-  if (res.status === 404) throw new LoadError('missing', 'Veri dosyası bulunamadı.')
-  if (!res.ok) throw new LoadError('failed', `Sunucu ${res.status} döndürdü.`)
+  if (res.status === 404) throw new LoadError('missing', 'missing')
+  if (!res.ok) throw new LoadError('failed', 'http', res.status)
   // Geliştirme sunucusu eksik dosya için index.html döndürebilir.
   if ((res.headers.get('content-type') ?? '').includes('text/html')) {
-    throw new LoadError('missing', 'Veri dosyası bulunamadı.')
+    throw new LoadError('missing', 'missing')
   }
   try {
     return (await res.json()) as T
   } catch (e) {
     if (signal.aborted) throw e
-    throw new LoadError('failed', 'Veri dosyası okunamadı (bozuk JSON).')
+    throw new LoadError('failed', 'json')
   }
 }
 
@@ -63,7 +68,7 @@ export function useJson<T>(url: string | null): JsonState<T> & { reload: () => v
           url,
           token,
           ok: false,
-          error: error instanceof LoadError ? error : new LoadError('failed', 'Beklenmeyen okuma hatası.'),
+          error: error instanceof LoadError ? error : new LoadError('failed', 'unknown'),
         })
       },
     )

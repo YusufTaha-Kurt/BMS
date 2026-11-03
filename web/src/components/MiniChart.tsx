@@ -1,7 +1,7 @@
 import {
   CartesianGrid, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts'
-import { num } from '../lib/format.ts'
+import { useI18n } from '../lib/i18n.tsx'
 
 export interface SeriesDef {
   key: string
@@ -40,6 +40,7 @@ export function MiniChart<T extends object>({
   title, unit, data, xKey, xDomain, xTicks, xFormat, xLabel, series, refs = [], markX,
   yDomain = ['auto', 'auto'], decimals = 1, tickDecimals = 0, height = 170,
 }: Props<T>) {
+  const { l, f: { num } } = useI18n()
   const fmt = xFormat ?? ((v: number) => String(v))
   return (
     <figure className="rounded-lg border border-line bg-card p-3">
@@ -78,7 +79,7 @@ export function MiniChart<T extends object>({
               contentStyle={{ background: '#0a1224', border: '1px solid #263a5e', borderRadius: 8, fontSize: 12 }}
               labelStyle={{ color: '#e8eef9' }}
               labelFormatter={(v) => `${xLabel}: ${fmt(Number(v))}`}
-              formatter={(v) => (typeof v === 'number' ? `${num(v, decimals)} ${unit}` : 'Ölçüm yok')}
+              formatter={(v) => (typeof v === 'number' ? `${num(v, decimals)} ${unit}` : l('No measurement', 'Ölçüm yok'))}
               isAnimationActive={false}
             />
             {refs.map((r) => (

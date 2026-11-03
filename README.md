@@ -24,9 +24,9 @@ npm run typecheck     # tsc -b
 npm run lint          # eslint
 ```
 
-Sunum sırasında üst çubuktaki **Sunum rehberi** düğmesi 12 adımlık yönlendirmeyi açar; her adım paneli ilgili senaryo/gün/bataryaya kendisi getirir ve sunucuya söylenecek cümleyi gösterir (← → ile ilerler, Esc kapatır).
+Üst çubuktaki **Guided demo / Demo rehberi** düğmesi ziyaretçiye yönelik 8 adımlık deneyimi açar. Her adım ilgili senaryo, gün ve bataryayı kurar; neye bakılacağını ve neyin denenebileceğini açıklar (← → ile ilerler, Esc kapatır). SOH, SOC ve ΔV gibi kavramlar ayrıca açılır gösterge rehberinde açıklanır.
 
-**Stant / QR:** Üst çubuktaki **Hakkımızda** düğmesi büyük bir QR açar; aynı QR sayfanın en altında da durur. QR, ayrı derlenen `/hakkimizda/` tanıtım sayfasını açar. Broşürle aynı petrol yeşili/bordo/lime kimliğini kullanan sayfa İngilizce açılır; üstteki EN/TR seçimiyle Türkçeye geçilir. Akış: broşür/poster → QR → proje ve ekip tanıtımı → demo. Adres korunduğu için basılı QR değişmez. Uygulama localhost'tan açılsa bile QR yayındaki adrese gider.
+**Stant / QR:** Üst çubuktaki **Project & team / Proje ve ekip** bağlantısı doğrudan tanıtım sayfasını açar. Büyük QR, alt kısımdaki ayrı **Share project QR / Proje QR’ını paylaş** düğmesindedir; küçük QR da sayfanın altında durur. QR, ayrı derlenen `/hakkimizda/` tanıtım sayfasını açar. Broşürle aynı petrol yeşili/bordo/lime kimliğini kullanan sayfa İngilizce açılır; üstteki EN/TR seçimiyle Türkçeye geçilir. Akış: broşür/poster → QR → proje ve ekip tanıtımı → demo. Adres korunduğu için basılı QR değişmez. Uygulama localhost'tan açılsa bile QR yayındaki adrese gider.
 
 Ekip isimleri (`PROJECT_TEAM`), akademik koordinatör (`ACADEMIC_COORDINATOR`), iletişim adresleri (`CONTACTS`, isteğe bağlı ortak `TEAM_EMAIL`) ve yayın adresi (`SITE_URL`) **`web/src/site.ts`** içindedir. Gerçek e-posta verilene kadar iletişim bağlantısı gösterilmez. Tanıtım metinleri `web/src/about/About.tsx`, bağımsız stilleri `web/src/about/about.css` içindedir; demo panelinin teması ayrı tutulur.
 
@@ -58,3 +58,9 @@ Aşamalar hedef ve kontrol noktalarıdır. Dosya yapısı, bileşen listesi ve u
 - [Önceki veri sözlüğü](../docs/cop31-demo-plan/data-dictionary.md)
 
 Kaynak dosyalar değiştirilmemiştir. Yeni çalışma için kapsam ve aşamalar bu klasörde izlenir.
+
+## Demo dili ve mobil kullanım
+
+Demo ve tanıtım sayfası EN/TR dil seçimini paylaşır. İlk ziyaret varsayılanı İngilizcedir; `?lang=en` / `?lang=tr` açık seçimi önceliklidir, son seçim mümkünse tarayıcıda saklanır. İki sayfanın geçiş bağlantıları seçilen dili taşır. Tarihler, sayılar, yüzdeler, senaryolar, durumlar, bakım gerekçeleri, grafikler, pasaport, rehber ve hata durumları yerelleştirilmiştir. Veri setinin hesapları ve seed/sürümü değişmemiştir; İngilizce açıklamalar aynı kural değerlendirmesinden üretilir.
+
+1280 px altında Filo ve Batarya ayrıntısı görünümleri ayrı gösterilir. Başlangıç Filo’dur; batarya veya senaryo seçimi Ayrıntı’ya geçirir. Filoya dönüş arama, filtre ve sayfayı korur. Masaüstünde iki sütun birlikte görünür.

@@ -218,3 +218,36 @@ test('öncelik kuralları ve sıralama', () => {
     }
   }
 })
+
+test('English explanations preserve every recorded priority and cover all scenario findings', () => {
+  const seen = new Set<string>()
+  for (const sc of SCENARIOS) {
+    for (const d of days) {
+      for (const row of fleet(sc.id, d).rows) {
+        const english = evaluate(row, DEMO_RULES, 'en')
+        const turkish = evaluate(row, DEMO_RULES, 'tr')
+        assert.equal(english.priority, row.priority)
+        assert.deepEqual(turkish, { priority: row.priority, signal: row.signal, action: row.action, reasons: row.reasons })
+        assert.ok(english.signal && english.action && english.reasons.length)
+        assert.ok(!/[ğüşöçıİĞÜŞÖÇ]/.test([english.signal, english.action, ...english.reasons].join(' ')))
+        seen.add(english.signal)
+      }
+    }
+  }
+  for (const signal of ['No deviation', 'Temperature drift', 'Cell imbalance (ΔV)', 'Parked voltage drop', 'Rising internal resistance', 'Low data coverage', 'Temperature increasing', 'Increasing ΔV', 'Parked voltage decreasing', 'Internal resistance increasing', 'Near the capacity threshold']) {
+    assert.ok(seen.has(signal), `English finding not exercised: ${signal}`)
+  }
+})
+
+test('EN/TR numbers, dates, percentages and missing readings use the chosen locale', async () => {
+  const { formatters } = await import('../src/lib/format.ts')
+  const en = formatters('en'), tr = formatters('tr')
+  assert.equal(en.num(1234.5), '1,234.5')
+  assert.equal(tr.num(1234.5), '1.234,5')
+  assert.equal(en.pct(84.8), '84.8%')
+  assert.equal(tr.pct(84.8), '%84,8')
+  assert.equal(en.withUnit(null, '°C'), 'No measurement')
+  assert.equal(tr.withUnit(null, '°C'), 'Ölçüm yok')
+  assert.equal(en.dateTr('2026-09-14'), '14 September 2026')
+  assert.equal(tr.dateTr('2026-09-14'), '14 Eylül 2026')
+})

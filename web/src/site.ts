@@ -1,11 +1,12 @@
 // Stant/QR ve Hakkımızda sayfası ayarları. İletişim bilgilerini yalnız bu dosyadan değiştirin.
+import type { SiteLanguage } from '../shared/types.ts'
+export type { SiteLanguage } from '../shared/types.ts'
 
 /** Yayındaki adres. Yerel çalıştırmada (localhost) QR yine bu adrese gider. */
 export const SITE_URL = 'https://binbin-battery-intelligence.vercel.app'
 
 export const ABOUT_PATH = 'hakkimizda/'
 
-export type SiteLanguage = 'en' | 'tr'
 export type LocalizedText = Partial<Record<SiteLanguage, string>>
 
 export interface TeamMember {
@@ -59,5 +60,5 @@ export function aboutUrl(): string {
 
 export function mailtoAll(): string {
   const to = TEAM_EMAIL || CONTACTS.map((c) => c.email).join(',')
-  return `mailto:${to}?subject=${encodeURIComponent('BinBin Battery Intelligence')}`
+  return `mailto:${to}?subject=${encodeURIComponent('Battery Intelligence')}`
 }

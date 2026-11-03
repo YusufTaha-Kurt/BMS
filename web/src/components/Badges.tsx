@@ -1,7 +1,7 @@
+import { useI18n } from '../lib/i18n.tsx'
 import { CircleCheck, FileSearch, OctagonAlert, TriangleAlert, type LucideIcon } from 'lucide-react'
-import { PRIORITY_LABEL } from '../../shared/rules.ts'
 import type { Priority } from '../../shared/types.ts'
-import { LEVEL_LABEL, LEVEL_PRIORITY, PRIORITY_STYLE, type Level } from '../lib/status.ts'
+import { LEVEL_PRIORITY, PRIORITY_STYLE, type Level } from '../lib/status.ts'
 
 export const PRIORITY_ICON: Record<Priority, LucideIcon> = {
   critical: OctagonAlert,
@@ -12,6 +12,7 @@ export const PRIORITY_ICON: Record<Priority, LucideIcon> = {
 
 /** Renk + ikon + metin: durum yalnız renkle anlatılmaz. */
 export function PriorityBadge({ priority, size = 'sm' }: { priority: Priority; size?: 'sm' | 'lg' }) {
+  const { priorityLabel } = useI18n()
   const s = PRIORITY_STYLE[priority]
   const Icon = PRIORITY_ICON[priority]
   return (
@@ -21,19 +22,20 @@ export function PriorityBadge({ priority, size = 'sm' }: { priority: Priority; s
       }`}
     >
       <Icon aria-hidden className={size === 'lg' ? 'size-4' : 'size-3.5'} />
-      {PRIORITY_LABEL[priority]}
+      {priorityLabel(priority)}
     </span>
   )
 }
 
 export function LevelBadge({ level }: { level: Level }) {
+  const { levelLabel } = useI18n()
   const p = LEVEL_PRIORITY[level]
   const s = PRIORITY_STYLE[p]
   const Icon = PRIORITY_ICON[p]
   return (
     <span className={`inline-flex items-center gap-1 text-xs font-semibold ${s.text}`}>
       <Icon aria-hidden className="size-3.5" />
-      {LEVEL_LABEL[level]}
+      {levelLabel(level)}
     </span>
   )
 }

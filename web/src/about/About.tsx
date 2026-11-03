@@ -1,8 +1,9 @@
 import { Activity, ArrowDown, ArrowRight, ArrowUpRight, ChevronDown, Fingerprint, ListChecks, Mail } from 'lucide-react'
-import { useEffect, useState } from 'react'
-import { CONTACTS, COORDINATOR_PROFILE, PROJECT_TEAM, TEAM_EMAIL, type SiteLanguage } from '../site.ts'
+import { useEffect } from 'react'
+import { CONTACTS, COORDINATOR_PROFILE, PROJECT_TEAM, TEAM_EMAIL } from '../site.ts'
 import institutionLockup from './assets/ostim-cop31.png'
 import { ProfileDetails } from './ProfileDetails.tsx'
+import { useI18n, withLanguage } from '../lib/i18n.tsx'
 
 const COPY = {
   en: {
@@ -93,7 +94,7 @@ function CircularBattery() {
 }
 
 export function About() {
-  const [language, setLanguage] = useState<SiteLanguage>('en')
+  const { language, setLanguage } = useI18n()
   const t = COPY[language]
   const publicEmails = CONTACTS.map((contact) => contact.email.trim()).filter(Boolean)
   const teamEmail = TEAM_EMAIL || publicEmails.join(',')
@@ -102,6 +103,8 @@ export function About() {
     document.documentElement.lang = language
     document.title = t.title
     document.querySelector('meta[name="description"]')?.setAttribute('content', t.description)
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', t.title)
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', t.description)
   }, [language, t])
 
   return (
@@ -115,7 +118,7 @@ export function About() {
           <nav className="header-nav" aria-label={t.nav}>
             <a href="#team">{t.team}</a>
             <a href="#project">{t.project}</a>
-            <a href="../" className="header-demo">{t.demo}<ArrowUpRight size={16} aria-hidden="true" /></a>
+            <a href={withLanguage('../', language)} className="header-demo">{t.demo}<ArrowUpRight size={16} aria-hidden="true" /></a>
           </nav>
           <div className="language-switch" role="group" aria-label={t.language}>
             {(['en', 'tr'] as const).map((lang) => (
@@ -134,7 +137,7 @@ export function About() {
                 <h1 id="hero-title">{t.headline.map((line, i) => <span key={line} className={i === 2 ? 'lime-text' : undefined}>{line}</span>)}</h1>
                 <p className="hero-intro">{t.intro}</p>
                 <div className="hero-actions">
-                  <a className="button button-lime" href="../">{t.demo}<ArrowUpRight size={20} aria-hidden="true" /></a>
+                  <a className="button button-lime" href={withLanguage('../', language)}>{t.demo}<ArrowUpRight size={20} aria-hidden="true" /></a>
                   <a className="text-link" href="#team">{t.team}<ArrowDown size={16} aria-hidden="true" /></a>
                 </div>
               </div>
@@ -204,7 +207,7 @@ export function About() {
         <section className="demo-section" aria-labelledby="demo-title">
           <div className="page-width demo-grid">
             <div><p className="eyebrow">{t.closingLabel}</p><h2 id="demo-title">{t.closingHeading.map((line) => <span key={line}>{line}</span>)}</h2></div>
-            <div className="demo-content"><p>{t.closingText}</p><a className="button button-dark" href="../">{t.demo}<ArrowUpRight size={21} aria-hidden="true" /></a><p className="demo-disclosure">{t.demoNote}</p>{teamEmail && <a className="contact-link" href={`mailto:${teamEmail}?subject=${encodeURIComponent('Battery Intelligence')}`}><Mail size={16} aria-hidden="true" />{t.contact}</a>}</div>
+            <div className="demo-content"><p>{t.closingText}</p><a className="button button-dark" href={withLanguage('../', language)}>{t.demo}<ArrowUpRight size={21} aria-hidden="true" /></a><p className="demo-disclosure">{t.demoNote}</p>{teamEmail && <a className="contact-link" href={`mailto:${teamEmail}?subject=${encodeURIComponent('Battery Intelligence')}`}><Mail size={16} aria-hidden="true" />{t.contact}</a>}</div>
           </div>
         </section>
       </main>

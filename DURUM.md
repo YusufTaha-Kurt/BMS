@@ -2,6 +2,14 @@
 
 Son güncelleme: 3 Kasım 2026 (broşürle uyumlu EN/TR tanıtım sayfası)
 
+## Çift dilli demo ve mobil görünüm geçişi (3 Kasım 2026)
+
+- Demo başlığı, alt açıklama ve rehberdeki şirket adı kaldırıldı; OSTİM–COP31 birleşik logosu ve nötr Battery Intelligence adı kullanılıyor. Tanıtıma dönüş doğrudan bağlantı; QR paylaşımı ayrı işlem. Alan adı ve basılı QR hedefi aynı.
+- Tanıtım ve demo EN/TR tercihini paylaşır; URL’de açık dil seçimi ve mümkünse tarayıcı tercihi korunur. Ekran metinleri, kural gerekçeleri/önerileri, senaryolar, tarihler/sayılar, grafikler, pasaport ve hata durumları iki dilde. Hesaplama koşulları/eşikleri ve veri seti aynı; varsayılan Türkçe veri çıktısı değişmedi.
+- Kullanıcı onayıyla 1280 px altında Filo / Batarya ayrıntısı geçişi eklendi. Batarya ve senaryo seçilince ayrıntı açılır; geri dönüş arama, filtre ve sayfayı korur. Gizli ayrıntı grafikleri oluşturulmaz. Masaüstünde iki sütun korunur.
+- Sunum metni yerine 8 adımlık ziyaretçi rehberi; SOH/SOC/ΔV/veri yeterliliği açıklamaları; geri bildirimin yalnız bu tarayıcıdaki demo olduğu bilgisi eklendi.
+- 11/11 veri/yerelleştirme testi geçti: tüm senaryo/gün kayıtlarında İngilizce öncelikler aynı, Türkçe metinler mevcut veriyle birebir; EN/TR sayı, tarih, yüzde ve null gösterimleri doğrulandı. TypeScript, build ve lint kontrolleri tamamlandı; tarayıcıda yedi senaryonun üç sekmesi, rehberin iki dilde sekiz adımı, mobil durum korunması ve iki sayfa arasında dil geçişi doğrulandı. 320/390/768/1440 px kontrollerinde taşma, hata veya uyarı yok.
+
 ## Kısa tanıtım ve satır içinde ekip profilleri (3 Kasım 2026)
 
 - Açılış kısaltıldı; demo düğmesi ve ekip bağlantısı ilk ekranda. Ekip doğrudan açılışın altında; sıralama Gizem, Gamze, Erhan, Yusuf, Ahmed ve akademik koordinatör Barış Taha Uludağ.
