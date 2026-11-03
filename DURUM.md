@@ -1,6 +1,13 @@
 # Güncel Durum
 
-Son güncelleme: 22 Ekim 2026 (ilk demo bağımsız kod/tarayıcı incelemesi)
+Son güncelleme: 3 Kasım 2026 (broşürle uyumlu EN/TR tanıtım sayfası)
+
+## Broşürden tanıtım sayfasına (3 Kasım 2026)
+
+- `/hakkimizda/` sayfası COP31 broşürünün petrol yeşili, bordo, lime ve kırık beyaz kimliğine uyarlandı. PDF özgün font bilgisini korumadığı için mevcut Inter kullanıldı; başlık ağırlıkları ve boşluklar referansa göre düzenlendi. Kurum logoları sağlanan broşürden alındı, batarya/döngü görseli SVG olarak çizildi.
+- İlk açılış İngilizce; üstte EN/TR seçimi var. Proje, çözüm, veri akışı, döngüsel kullanım, ekip ve demo bölümleri iki dilde mevcut. Ekip ve koordinatör isimleri broşürden aktarıldı. Örnek e-posta adresleri kaldırıldı; gerçek iletişim adresi eklenene kadar e-posta bağlantısı gösterilmiyor.
+- Basılı QR'ın hedefi ve demo giriş adresi korundu. Tanıtım sayfasının CSS'i ayrı giriş noktasından yüklenir; demo veri hattı ve hesapları değiştirilmedi.
+- Doğrulama: Node 22.23.1 ile `npm run build` (TypeScript dahil), `npm run lint`, `git diff --check`; üretim önizlemesinde EN/TR seçimi, İngilizce başlangıç, görsel yüklemesi, demoya geçiş ve iki dilde 320/390/768/1440 px yatay taşma kontrolü. Tarayıcıda error/warn kaydı yok. Veri hesapları değişmediğinden bu tasarım turunda veri testleri yeniden çalıştırılmadı.
 
 ## Kullanıcının belirlediği çerçeve
 

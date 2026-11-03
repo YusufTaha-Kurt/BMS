@@ -5,17 +5,25 @@ export const SITE_URL = 'https://binbin-battery-intelligence.vercel.app'
 
 export const ABOUT_PATH = 'hakkimizda/'
 
+/** Project credits from the team's COP31 brochure. Individual roles are not specified. */
+export const PROJECT_TEAM = [
+  'Erhan Bülbül',
+  'Gamze Geniş',
+  'Gizem Geniş',
+  'Ahmed Emre Demirel',
+  'Yusuf Taha Kurt',
+] as const
+
+export const ACADEMIC_COORDINATOR = 'Barış Taha Uludağ'
+
 export interface Contact {
   name: string
   role: string
   email: string
 }
 
-/** TODO: Ekip üyelerinin ad, rol ve e-posta adreslerini girin. Sıra ekranda aynen korunur. */
-export const CONTACTS: Contact[] = [
-  { name: 'Ad Soyad', role: 'Yazılım ve veri', email: 'ad.soyad@ornek.com' },
-  { name: 'Ad Soyad', role: 'Batarya ve donanım', email: 'ad.soyad2@ornek.com' },
-]
+/** Add verified public contact addresses here when available. Empty means no email link is shown. */
+export const CONTACTS: Contact[] = []
 
 /** Herkese tek seferde yazmak için ortak adres (ör. ekip@...). Boş bırakılırsa tüm adresler kullanılır. */
 export const TEAM_EMAIL = ''
