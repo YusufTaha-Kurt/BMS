@@ -129,9 +129,8 @@ export function About() {
       <a className="skip-link" href="#main">{t.skip}</a>
       <header className="site-header">
         <div className="page-width header-inner">
-          <a className="wordmark" href="#top" aria-label="BinBin Battery Intelligence">
-            <span className="wordmark-name">BİNBİN<span className="wordmark-dot" /></span>
-            <span className="wordmark-subtitle">BATTERY INTELLIGENCE</span>
+          <a className="header-identity" href="#top">
+            <img className="header-identity-logo" src={institutionLockup} width="915" height="343" alt={`${t.university} · COP31 Türkiye, Antalya`} />
           </a>
           <nav className="header-nav" aria-label={t.nav}>
             <a href="#project">{t.project}</a>
