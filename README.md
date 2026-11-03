@@ -26,7 +26,9 @@ npm run lint          # eslint
 
 Sunum sırasında üst çubuktaki **Sunum rehberi** düğmesi 12 adımlık yönlendirmeyi açar; her adım paneli ilgili senaryo/gün/bataryaya kendisi getirir ve sunucuya söylenecek cümleyi gösterir (← → ile ilerler, Esc kapatır).
 
-**Stant / QR:** Üst çubuktaki **Hakkımızda** düğmesi büyük bir QR açar; aynı QR sayfanın en altında da durur. QR, hafif ve ayrı derlenen `/hakkimizda/` sayfasını açar (kısa ekip tanıtımı + iletişim). Ekip adları, rolleri ve e-posta adresleri **yalnız `web/src/site.ts`** içinden düzenlenir (`CONTACTS`, isteğe bağlı ortak `TEAM_EMAIL`, yayın adresi `SITE_URL`). Uygulama localhost'tan açılsa bile QR yayındaki adrese gider.
+**Stant / QR:** Üst çubuktaki **Hakkımızda** düğmesi büyük bir QR açar; aynı QR sayfanın en altında da durur. QR, ayrı derlenen `/hakkimizda/` tanıtım sayfasını açar. Broşürle aynı petrol yeşili/bordo/lime kimliğini kullanan sayfa İngilizce açılır; üstteki EN/TR seçimiyle Türkçeye geçilir. Akış: broşür/poster → QR → proje ve ekip tanıtımı → demo. Adres korunduğu için basılı QR değişmez. Uygulama localhost'tan açılsa bile QR yayındaki adrese gider.
+
+Ekip isimleri (`PROJECT_TEAM`), akademik koordinatör (`ACADEMIC_COORDINATOR`), iletişim adresleri (`CONTACTS`, isteğe bağlı ortak `TEAM_EMAIL`) ve yayın adresi (`SITE_URL`) **`web/src/site.ts`** içindedir. Gerçek e-posta verilene kadar iletişim bağlantısı gösterilmez. Tanıtım metinleri `web/src/about/About.tsx`, bağımsız stilleri `web/src/about/about.css` içindedir; demo panelinin teması ayrı tutulur.
 
 Veri tamamen sentetiktir (sabit seed `20261023`); aynı seed aynı içeriği üretir (`manifest.json` içindeki `contentHash`). Eşikler `web/shared/config.ts` içinde tek yerde durur ve üretici sınırı değildir. Üretilen `web/public/data/` git'e alınmaz.
 
