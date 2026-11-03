@@ -2,6 +2,13 @@
 
 Son güncelleme: 3 Kasım 2026 (broşürle uyumlu EN/TR tanıtım sayfası)
 
+## Kısa tanıtım ve satır içinde ekip profilleri (3 Kasım 2026)
+
+- Açılış kısaltıldı; demo düğmesi ve ekip bağlantısı ilk ekranda. Ekip doğrudan açılışın altında; sıralama Gizem, Gamze, Erhan, Yusuf, Ahmed ve akademik koordinatör Barış Taha Uludağ.
+- İsim satırları görünür “View profile / Profili gör” etiketi ve aşağı okla, kendi yerinde genişler. İçerik kadar uzayan yerel `details/summary` yapısı kullanılır. Kişi bilgileri henüz verilmediğinden görev/biyografi/link uydurulmadı; koordinatörün broşürdeki görevi korunur. İki dilli içerik ve bağlantılar `web/src/site.ts` içinden eklenebilir.
+- Proje anlatımı üç kısa başlığa indirildi; ayrıntılı akış kapalı başlayan “How it works / Nasıl çalışır?” bölümünde. Tanıtım sayfasının metin, başlık ve paylaşım metaverilerinden önceki şirket adı kaldırıldı; alan adı ve demo paneli korunuyor.
+- Kontroller: altı profilin kendi yerinde büyümesi, bir seferde tek açık profil, klavyeyle açma/kapatma, iki dilde 320/390/768/1440 px taşma ve ilk ekranda demo görünürlüğü; TypeScript/üretim derlemesi ve lint. Kişisel içerikler hazır olduğunda aynı kayıtlar üzerinden eklenecek.
+
 ## Broşürden tanıtım sayfasına (3 Kasım 2026)
 
 - `/hakkimizda/` sayfası COP31 broşürünün petrol yeşili, bordo, lime ve kırık beyaz kimliğine uyarlandı. PDF özgün font bilgisini korumadığı için mevcut Inter kullanıldı; başlık ağırlıkları ve boşluklar referansa göre düzenlendi. Kurum logoları sağlanan broşürden alındı, batarya/döngü görseli SVG olarak çizildi.

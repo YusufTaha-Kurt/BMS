@@ -5,16 +5,34 @@ export const SITE_URL = 'https://binbin-battery-intelligence.vercel.app'
 
 export const ABOUT_PATH = 'hakkimizda/'
 
-/** Project credits from the team's COP31 brochure. Individual roles are not specified. */
-export const PROJECT_TEAM = [
-  'Erhan Bülbül',
-  'Gamze Geniş',
-  'Gizem Geniş',
-  'Ahmed Emre Demirel',
-  'Yusuf Taha Kurt',
-] as const
+export type SiteLanguage = 'en' | 'tr'
+export type LocalizedText = Partial<Record<SiteLanguage, string>>
+
+export interface TeamMember {
+  id: string
+  name: string
+  role?: LocalizedText
+  bio?: LocalizedText
+  photo?: string
+  links?: { label: string; url: string }[]
+}
+
+/** Display order is intentional. Add supplied biographies, roles, photos and links here. */
+export const PROJECT_TEAM: readonly TeamMember[] = [
+  { id: 'gizem', name: 'Gizem Geniş' },
+  { id: 'gamze', name: 'Gamze Geniş' },
+  { id: 'erhan', name: 'Erhan Bülbül' },
+  { id: 'yusuf', name: 'Yusuf Taha Kurt' },
+  { id: 'ahmed', name: 'Ahmed Emre Demirel' },
+]
 
 export const ACADEMIC_COORDINATOR = 'Barış Taha Uludağ'
+
+export const COORDINATOR_PROFILE: TeamMember = {
+  id: 'coordinator',
+  name: ACADEMIC_COORDINATOR,
+  role: { en: 'Academic coordinator', tr: 'Akademik koordinatör' },
+}
 
 export interface Contact {
   name: string

@@ -30,6 +30,8 @@ Sunum sırasında üst çubuktaki **Sunum rehberi** düğmesi 12 adımlık yönl
 
 Ekip isimleri (`PROJECT_TEAM`), akademik koordinatör (`ACADEMIC_COORDINATOR`), iletişim adresleri (`CONTACTS`, isteğe bağlı ortak `TEAM_EMAIL`) ve yayın adresi (`SITE_URL`) **`web/src/site.ts`** içindedir. Gerçek e-posta verilene kadar iletişim bağlantısı gösterilmez. Tanıtım metinleri `web/src/about/About.tsx`, bağımsız stilleri `web/src/about/about.css` içindedir; demo panelinin teması ayrı tutulur.
 
+Ekip açılışın hemen altındadır; sıra Gizem, Gamze, Erhan, Yusuf, Ahmed ve ardından akademik koordinatördür. Her isim kendi satırında genişleyen bir profil açar; pencere veya yeni sayfa açılmaz. `PROJECT_TEAM` ve `COORDINATOR_PROFILE` kayıtlarına isteğe bağlı `role` / `bio` (`en` ve `tr`), `photo` ve `links` (`label`, `url`) eklenebilir. Bilgi verilmemiş profillerde yalnız yakında paylaşılacağı belirtilir. Demo bağlantısı ilk ekrandadır; ayrıntılı proje akışı kapalı başlayan “How it works” bölümündedir.
+
 Veri tamamen sentetiktir (sabit seed `20261023`); aynı seed aynı içeriği üretir (`manifest.json` içindeki `contentHash`). Eşikler `web/shared/config.ts` içinde tek yerde durur ve üretici sınırı değildir. Üretilen `web/public/data/` git'e alınmaz.
 
 ## Dosyalar
