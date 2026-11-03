@@ -45,6 +45,7 @@ Teklif PDF'iyle karşılaştırma sonrası yapılanlar:
 - **Sekmeler:** Detay panelinde Geçmiş / Telemetri / Pasaport sekmeleri; sunum rehberi ilgili sekmeyi kendisi açar (veri kaybı → Telemetri, pasaport → Pasaport). Pasaport açıklama paragrafları kısaltıldı.
 - **QR + Hakkımızda:** `qrcode-generator` (bağımlılıksız, MIT) ile tarayıcıda QR. Üst çubukta "Hakkımızda" tam ekran QR, sayfa altında küçük QR kartı. QR `/hakkimizda/` sayfasını açar (Vite çoklu sayfa; veri/grafik yüklemez). İletişim bilgileri `web/src/site.ts` içinde, **yer tutucu e-postalar gerçek adreslerle değiştirilmeli**.
 - **Kontroller:** typecheck, lint, build, 9/9 veri testi. Başsız Chromium ile 1440/390 px ekran görüntüleri, QR'ın `https://binbin-battery-intelligence.vercel.app/hakkimizda/` olarak çözüldüğü (jsQR), 12 rehber adımı ve sekme geçişleri, Hakkımızda → demo bağlantısı; konsol hatası ve yatay taşma yok. Vercel'e yeniden yayın yapılmadı.
+- **Vercel düzeltmesi ve yayın:** Proje GitHub'a bağlandıktan sonra Git tetikli derlemeler `package.json` kökte olmadığı için (`npm install` ENOENT) hata veriyordu. Proje ayarları: kök dizin `web`, Node 22.x, kurulum `npm ci`, derleme `npm run build` (veri `prebuild` ile üretilir), çıktı `dist`. `claude/brave-goodall-jnyyzk` dalının `cc1c26f` commit'i production'a alındı ve https://binbin-battery-intelligence.vercel.app adresine bağlandı (READY).
 
 ## Doğrulananlar
 
