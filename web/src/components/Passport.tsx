@@ -1,4 +1,5 @@
-import { BadgeCheck, FileClock, Fingerprint, Leaf, QrCode, ShieldCheck } from 'lucide-react'
+import { BadgeCheck, FileClock, Fingerprint, Leaf } from 'lucide-react'
+import type { ReactNode } from 'react'
 import { CARBON, DEMO_RULES as R } from '../../shared/config.ts'
 import { PRIORITY_LABEL } from '../../shared/rules.ts'
 import type { DayRecord, HistoryFile } from '../../shared/types.ts'
@@ -32,6 +33,15 @@ function Row({ k, v }: { k: string; v: string }) {
   )
 }
 
+function Box({ icon, title, children }: { icon: ReactNode; title: string; children: ReactNode }) {
+  return (
+    <div className="rounded-lg border border-line bg-card p-3">
+      <h4 className="mb-1.5 flex items-center gap-1.5 font-semibold">{icon}{title}</h4>
+      {children}
+    </div>
+  )
+}
+
 export function Passport({ history, day }: Props) {
   const { profile, days, batteryId } = history
   const cur = days[day - 1]
@@ -39,54 +49,41 @@ export function Passport({ history, day }: Props) {
   const kwh = days.slice(0, day).reduce((a, d) => a + d.chargeWh, 0) / 1000 / CARBON.chargerEfficiency
   const co2 = kwh * CARBON.gridFactorKgPerKwh
   const lifecycle =
-    cur.priority === 'critical'
-      ? 'Aktif · teknik inceleme önerildi'
-      : cur.soh < R.sohAttentionPct
-        ? 'Aktif · yaşam döngüsü değerlendirmesi adayı'
-        : 'Aktif kullanım'
+    cur.priority === 'critical' ? 'Teknik inceleme önerildi' : cur.soh < R.sohAttentionPct ? 'Değerlendirme adayı' : 'Aktif kullanım'
 
   return (
-    <section id="passport" aria-labelledby="passport-title" className="rounded-xl border border-accent/40 bg-card/60 p-3">
-      <div className="flex flex-wrap items-center justify-between gap-2">
+    <section id="passport" aria-labelledby="passport-title">
+      <div className="mb-2.5 flex flex-wrap items-center justify-between gap-2">
         <h3 id="passport-title" className="flex items-center gap-1.5 text-sm font-bold">
           <Fingerprint aria-hidden className="size-4 text-accent" /> Dijital Batarya Pasaportu
-          <span className="font-normal text-mute">· {batteryId}</span>
         </h3>
-        <span className="rounded-md border border-line px-2 py-0.5 text-xs text-mute">
-          Regulation (EU) 2023/1542 hazırlık görünümü · sentetik kayıt
+        <span className="rounded border border-line px-1.5 py-0.5 text-[11px] text-mute" title="Regulation (EU) 2023/1542 hazırlık görünümü · sentetik kayıt">
+          AB 2023/1542 · sentetik
         </span>
       </div>
 
-      <div className="mt-2.5 grid gap-2.5 text-xs md:grid-cols-2 2xl:grid-cols-4">
-        <div className="rounded-lg border border-line bg-panel p-2.5">
-          <h4 className="mb-1 flex items-center gap-1.5 font-semibold"><QrCode aria-hidden className="size-3.5" /> Kimlik (model / tekil)</h4>
+      <div className="grid gap-2.5 text-xs md:grid-cols-2">
+        <Box icon={<Fingerprint aria-hidden className="size-3.5" />} title="Kimlik">
           <dl>
             <Row k="Seri no" v={profile.serial} />
-            <Row k="Model" v={profile.model} />
-            <Row k="Kimya" v={profile.chemistry} />
+            <Row k="Model" v={`${profile.model} · ${profile.chemistry}`} />
             <Row k="Nominal" v={`${num(profile.nominalV)} V · ${profile.nominalAh} Ah`} />
-            <Row k="Üretim" v={dateTr(profile.manufactured)} />
             <Row k="Hizmete giriş" v={dateTr(profile.commissioned)} />
-            <Row k="Pasaport statüsü" v="original" />
           </dl>
-        </div>
+        </Box>
 
-        <div className="rounded-lg border border-line bg-panel p-2.5">
-          <h4 className="mb-1 flex items-center gap-1.5 font-semibold"><BadgeCheck aria-hidden className="size-3.5" /> Sağlık kayıtları (kaynak ayrı)</h4>
+        <Box icon={<BadgeCheck aria-hidden className="size-3.5" />} title="Sağlık">
           <dl>
-            <Row k="Model tahmini SOH" v={`${pct(cur.soh)} · simüle`} />
-            <Row k="BMS SOH" v="Pilotta BMS'ten okunur" />
-            <Row k="Referans ölçüm" v="Yok · kontrollü test bekleniyor" />
-            <Row k="Tahmini iç direnç" v={cur.rMohm === null ? 'Ölçüm yok' : `${cur.rMohm} mΩ`} />
-            <Row k="Yaşam döngüsü" v={lifecycle} />
+            <Row k="SOH (model, simüle)" v={pct(cur.soh)} />
+            <Row k="İç direnç" v={cur.rMohm === null ? 'Ölçüm yok' : `${cur.rMohm} mΩ`} />
+            <Row k="BMS SOH" v="Pilotta" />
+            <Row k="Durum" v={lifecycle} />
           </dl>
-          <p className="mt-1.5 text-mute">Değerler birbirinin yerine kullanılmaz; her kayıt kaynak, tarih ve yöntemiyle saklanır.</p>
-        </div>
+        </Box>
 
-        <div className="rounded-lg border border-line bg-panel p-2.5">
-          <h4 className="mb-1 flex items-center gap-1.5 font-semibold"><FileClock aria-hidden className="size-3.5" /> Olay kayıtları (denetlenebilir)</h4>
+        <Box icon={<FileClock aria-hidden className="size-3.5" />} title={`Olay kaydı · ${batteryId}`}>
           <ol className="space-y-1">
-            {events.slice(0, 5).map((e) => (
+            {events.slice(0, 4).map((e) => (
               <li key={e.date} className="flex items-start gap-2">
                 <span className="w-12 shrink-0 tabular text-mute">{dateShort(e.date)}</span>
                 <span>
@@ -96,29 +93,15 @@ export function Passport({ history, day }: Props) {
               </li>
             ))}
           </ol>
-          <p className="mt-1.5 text-mute">Önceki kayıtlar silinmez; yalnız doğrulanmış özetler pasaporta yazılır, ham telemetri yazılmaz.</p>
-        </div>
+        </Box>
 
-        <div className="rounded-lg border border-line bg-panel p-2.5">
-          <h4 className="mb-1 flex items-center gap-1.5 font-semibold"><Leaf aria-hidden className="size-3.5 text-ok" /> Operasyonel karbon (Scope 2)</h4>
+        <Box icon={<Leaf aria-hidden className="size-3.5 text-ok" />} title="Operasyonel karbon">
           <dl>
-            <Row k={`Şebeke enerjisi (1–${day}. gün)`} v={`${num(kwh, 1)} kWh`} />
+            <Row k={`Enerji (1–${day}. gün)`} v={`${num(kwh, 1)} kWh`} />
             <Row k="Emisyon" v={`${num(co2, 1)} kg CO₂e`} />
-            <Row k="Resmî karbon ayak izi" v="Üretici beyanı (Annex II)" />
           </dl>
-          <p className="mt-1.5 text-mute">
-            Varsayım: şarj verimi %{Math.round(CARBON.chargerEfficiency * 100)}, faktör {num(CARBON.gridFactorKgPerKwh, 2)} kg/kWh (demo).
-            Pilotta ETKB-EVÇED tüketim noktası faktörü kullanılır.
-          </p>
-        </div>
-      </div>
-
-      <div className="mt-2.5 flex flex-wrap items-center gap-1.5 text-xs">
-        <ShieldCheck aria-hidden className="size-3.5 text-mute" />
-        <span className="text-mute">Erişim seviyeleri:</span>
-        <span className="rounded border border-line px-1.5 py-0.5">Kamuya açık</span>
-        <span className="rounded border border-line px-1.5 py-0.5">Meşru menfaat sahipleri</span>
-        <span className="rounded border border-line px-1.5 py-0.5">Piyasa gözetimi / Komisyon</span>
+          <p className="mt-1.5 text-mute">Demo faktörü {num(CARBON.gridFactorKgPerKwh, 2)} kg/kWh.</p>
+        </Box>
       </div>
     </section>
   )

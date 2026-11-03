@@ -1,6 +1,13 @@
 # Güncel Durum
 
-Son güncelleme: 22 Ekim 2026 (ilk demo bağımsız kod/tarayıcı incelemesi)
+Son güncelleme: 3 Kasım 2026 (broşürle uyumlu EN/TR tanıtım sayfası)
+
+## Broşürden tanıtım sayfasına (3 Kasım 2026)
+
+- `/hakkimizda/` sayfası COP31 broşürünün petrol yeşili, bordo, lime ve kırık beyaz kimliğine uyarlandı. PDF özgün font bilgisini korumadığı için mevcut Inter kullanıldı; başlık ağırlıkları ve boşluklar referansa göre düzenlendi. Kurum logoları sağlanan broşürden alındı, batarya/döngü görseli SVG olarak çizildi.
+- İlk açılış İngilizce; üstte EN/TR seçimi var. Proje, çözüm, veri akışı, döngüsel kullanım, ekip ve demo bölümleri iki dilde mevcut. Ekip ve koordinatör isimleri broşürden aktarıldı. Örnek e-posta adresleri kaldırıldı; gerçek iletişim adresi eklenene kadar e-posta bağlantısı gösterilmiyor.
+- Basılı QR'ın hedefi ve demo giriş adresi korundu. Tanıtım sayfasının CSS'i ayrı giriş noktasından yüklenir; demo veri hattı ve hesapları değiştirilmedi.
+- Doğrulama: Node 22.23.1 ile `npm run build` (TypeScript dahil), `npm run lint`, `git diff --check`; üretim önizlemesinde EN/TR seçimi, İngilizce başlangıç, görsel yüklemesi, demoya geçiş ve iki dilde 320/390/768/1440 px yatay taşma kontrolü. Tarayıcıda error/warn kaydı yok. Veri hesapları değişmediğinden bu tasarım turunda veri testleri yeniden çalıştırılmadı.
 
 ## Kullanıcının belirlediği çerçeve
 
@@ -38,6 +45,14 @@ Teklif PDF'iyle karşılaştırma sonrası yapılanlar:
 - **Sunum rehberi:** 12 adımlık yerleşik yönlendirme kartı (söylenecek cümle + ekranda gösterilecek yer; adım paneli kendisi kurar).
 - **Canlı yayın:** https://binbin-battery-intelligence.vercel.app (Vercel projesi `binbin-battery-intelligence`, kaynak dosyalardan derlenir: `npm run data && vite build`). İlk yayın Git bağlantısı olmadan yapıldı; GitHub deposu açılınca projeye bağlanacak.
 - **Kontroller:** 9/9 veri testi (yeni senaryo, açılış günü ve doğal arıza beklentileriyle genişletildi), typecheck, lint, build. Başsız Chrome ile 12 rehber adımı, senaryo seçimi, geri bildirim, sıfırlama ve 390 px görünümü tıklatıldı; konsol hatası yok, yatay taşma yok.
+
+## Sadeleştirme ve stant QR'ı (3 Kasım 2026, Claude Code)
+
+- **Daha az yazı:** Üst çubukta alt açıklamalar, senaryo açıklama satırı ve öncelik seviyesi alt yazıları kaldırıldı; kontroller tek satırda. Listede aksiyon alt satırı kaldırıldı (aksiyon detay panelinde). Metrik kartlarında eşik metinleri kaldırıldı (eşikler grafik çizgilerinde); "Normal" rozeti yalnız sapma varken gösterilir. Neden + Öneri + saha geri bildirimi tek kutuda.
+- **Sekmeler:** Detay panelinde Geçmiş / Telemetri / Pasaport sekmeleri; sunum rehberi ilgili sekmeyi kendisi açar (veri kaybı → Telemetri, pasaport → Pasaport). Pasaport açıklama paragrafları kısaltıldı.
+- **QR + Hakkımızda:** `qrcode-generator` (bağımlılıksız, MIT) ile tarayıcıda QR. Üst çubukta "Hakkımızda" tam ekran QR, sayfa altında küçük QR kartı. QR `/hakkimizda/` sayfasını açar (Vite çoklu sayfa; veri/grafik yüklemez). İletişim bilgileri `web/src/site.ts` içinde, **yer tutucu e-postalar gerçek adreslerle değiştirilmeli**.
+- **Kontroller:** typecheck, lint, build, 9/9 veri testi. Başsız Chromium ile 1440/390 px ekran görüntüleri, QR'ın `https://binbin-battery-intelligence.vercel.app/hakkimizda/` olarak çözüldüğü (jsQR), 12 rehber adımı ve sekme geçişleri, Hakkımızda → demo bağlantısı; konsol hatası ve yatay taşma yok. Vercel'e yeniden yayın yapılmadı.
+- **Vercel düzeltmesi ve yayın:** Proje GitHub'a bağlandıktan sonra Git tetikli derlemeler `package.json` kökte olmadığı için (`npm install` ENOENT) hata veriyordu. Proje ayarları: kök dizin `web`, Node 22.x, kurulum `npm ci`, derleme `npm run build` (veri `prebuild` ile üretilir), çıktı `dist`. `claude/brave-goodall-jnyyzk` dalının `cc1c26f` commit'i production'a alındı ve https://binbin-battery-intelligence.vercel.app adresine bağlandı (READY).
 
 ## Doğrulananlar
 

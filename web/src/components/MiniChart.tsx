@@ -47,7 +47,7 @@ export function MiniChart<T extends object>({
         <span className="font-semibold text-ink">
           {title} <span className="font-normal text-mute">({unit})</span>
         </span>
-        <span className="flex flex-wrap gap-x-3 text-mute">
+        {series.length > 1 && <span className="flex flex-wrap gap-x-3 text-mute">
           {series.map((s) => (
             <span key={s.key} className="inline-flex items-center gap-1">
               <svg aria-hidden width="16" height="6">
@@ -56,7 +56,7 @@ export function MiniChart<T extends object>({
               {s.label}
             </span>
           ))}
-        </span>
+        </span>}
       </figcaption>
       <div style={{ height }}>
         <ResponsiveContainer width="100%" height="100%">
@@ -71,8 +71,7 @@ export function MiniChart<T extends object>({
               tick={TICK}
               stroke="#263a5e"
               allowDataOverflow
-              label={{ value: xLabel, position: 'insideBottomRight', offset: -2, fill: '#a3b3cf', fontSize: 10 }}
-              height={38}
+              height={24}
             />
             <YAxis domain={yDomain} tick={TICK} stroke="#263a5e" width={44} tickFormatter={(v: number) => num(v, tickDecimals)} />
             <Tooltip

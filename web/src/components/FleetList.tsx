@@ -34,7 +34,12 @@ export function FleetList({ rows, query, onQuery, filter, onFilter, page, onPage
   return (
     <section aria-labelledby="list-title" className="flex min-w-0 flex-col rounded-xl border border-line bg-panel">
       <div className="border-b border-line p-4">
-        <h2 id="list-title" className="text-lg font-bold">Batarya Bakım Öncelik Listesi</h2>
+        <div className="flex items-baseline justify-between gap-2">
+          <h2 id="list-title" className="text-lg font-bold">Bakım öncelik listesi</h2>
+          <span className="text-xs text-mute tabular" aria-live="polite">
+            {rows.status === 'ok' ? (filtered.length === all.length ? `${all.length} batarya` : `${filtered.length} / ${all.length}`) : ''}
+          </span>
+        </div>
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <label className="relative min-w-40 flex-1">
             <span className="sr-only">Batarya kimliği ara</span>
@@ -43,7 +48,7 @@ export function FleetList({ rows, query, onQuery, filter, onFilter, page, onPage
               type="search"
               value={query}
               onChange={(e) => onQuery(e.target.value)}
-              placeholder="Kimlik ara (ör. BT-10050)"
+              placeholder="Batarya ara"
               className="w-full rounded-md border border-line bg-bg py-2 pl-8 pr-3 text-sm placeholder:text-mute"
             />
           </label>
@@ -63,9 +68,6 @@ export function FleetList({ rows, query, onQuery, filter, onFilter, page, onPage
             </button>
           ))}
         </div>
-        <p className="mt-2 text-xs text-mute" aria-live="polite">
-          {rows.status === 'ok' ? `${filtered.length} sonuç · toplam ${all.length} batarya` : ' '}
-        </p>
       </div>
 
       {rows.status === 'error' && (
@@ -77,10 +79,10 @@ export function FleetList({ rows, query, onQuery, filter, onFilter, page, onPage
           <table className="w-full border-collapse text-left text-sm max-sm:block">
             <thead className="max-sm:sr-only">
               <tr className="text-xs uppercase tracking-wide text-mute">
-                <th scope="col" className="py-2 pl-4 pr-2 font-semibold">Batarya ID</th>
-                <th scope="col" className="px-2 py-2 font-semibold">Simüle SOH</th>
+                <th scope="col" className="py-2 pl-4 pr-2 font-semibold">Batarya</th>
+                <th scope="col" className="px-2 py-2 font-semibold">SOH</th>
                 <th scope="col" className="px-2 py-2 font-semibold">Öncelik</th>
-                <th scope="col" className="py-2 pl-2 pr-4 font-semibold">Baskın sinyal · Önerilen aksiyon</th>
+                <th scope="col" className="py-2 pl-2 pr-4 font-semibold">Sinyal</th>
               </tr>
             </thead>
             <tbody className="max-sm:block">
@@ -107,17 +109,14 @@ export function FleetList({ rows, query, onQuery, filter, onFilter, page, onPage
                         <button
                           type="button"
                           onClick={(e) => { e.stopPropagation(); onSelect(r.id) }}
-                          className="font-semibold tabular text-ink underline-offset-2 hover:underline"
+                          className="whitespace-nowrap font-semibold tabular text-ink underline-offset-2 hover:underline"
                         >
                           {r.id}
                         </button>
                       </td>
                       <td className={`px-2 py-2.5 tabular ${levelSoh(r.soh) === 'warning' ? 'text-warn' : ''}`}>%{num(r.soh, 1)}</td>
                       <td className="px-2 py-2.5"><PriorityBadge priority={r.priority} /></td>
-                      <td className="py-2.5 pl-2 pr-4 max-sm:col-span-3 max-sm:pl-3">
-                        <div className="font-medium">{r.signal}</div>
-                        <div className="text-xs text-mute">{r.action}</div>
-                      </td>
+                      <td className="py-2.5 pl-2 pr-4 text-mute max-sm:col-span-3 max-sm:pt-0 max-sm:pl-4">{r.signal}</td>
                     </tr>
                   )
                 })}
