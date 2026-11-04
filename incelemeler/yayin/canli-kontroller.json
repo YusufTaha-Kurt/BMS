@@ -1,0 +1,606 @@
+[
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/?lang=tr",
+    "width": 390,
+    "lang": "tr",
+    "title": "Proje tanıtımı · BinBin Battery Intelligence",
+    "h1": [
+      "BinBin BatteryIntelligence"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../assets/site-BRFgPuNe.js",
+      "../assets/main-qUzg8WZ3.js",
+      "../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/kurumlar/?lang=tr",
+    "width": 390,
+    "lang": "tr",
+    "title": "Kurumsal yapı ve yöneticiler · BinBin Battery Intelligence",
+    "h1": [
+      "Kurumsal yapı ve yöneticiler"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/ekip/?lang=tr",
+    "width": 390,
+    "lang": "tr",
+    "title": "Proje ekibi · BinBin Battery Intelligence",
+    "h1": [
+      "Proje ekibi"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/proje/?lang=tr",
+    "width": 390,
+    "lang": "tr",
+    "title": "Proje detayları · BinBin Battery Intelligence",
+    "h1": [
+      "Proje detayları"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/demo/?lang=tr",
+    "width": 390,
+    "lang": "tr",
+    "title": "Demo ve sunum · BinBin Battery Intelligence",
+    "h1": [
+      "Demo ve sunum"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/karbon/?lang=tr",
+    "width": 390,
+    "lang": "tr",
+    "title": "Karbon etkisi ve döngüsellik · BinBin Battery Intelligence",
+    "h1": [
+      "Karbon etkisi ve döngüsellik"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/iletisim/?lang=tr",
+    "width": 390,
+    "lang": "tr",
+    "title": "İş birlikleri ve iletişim · BinBin Battery Intelligence",
+    "h1": [
+      "İş birlikleri ve iletişim"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/?lang=tr",
+    "width": 390,
+    "lang": "tr",
+    "title": "BT-10087 · BinBin Battery Intelligence",
+    "h1": [
+      "BinBin Battery Intelligence"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgb(10, 18, 36)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "./assets/main-Dheolh3F.js",
+      "./assets/main-GxYSzxD0.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/?lang=en",
+    "width": 390,
+    "lang": "en",
+    "title": "Project introduction · BinBin Battery Intelligence",
+    "h1": [
+      "BinBin BatteryIntelligence"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../assets/site-BRFgPuNe.js",
+      "../assets/main-qUzg8WZ3.js",
+      "../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/kurumlar/?lang=en",
+    "width": 390,
+    "lang": "en",
+    "title": "Institutional structure & leadership · BinBin Battery Intelligence",
+    "h1": [
+      "Institutional structure & leadership"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/ekip/?lang=en",
+    "width": 390,
+    "lang": "en",
+    "title": "Project team · BinBin Battery Intelligence",
+    "h1": [
+      "Project team"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/proje/?lang=en",
+    "width": 390,
+    "lang": "en",
+    "title": "Project details · BinBin Battery Intelligence",
+    "h1": [
+      "Project details"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/demo/?lang=en",
+    "width": 390,
+    "lang": "en",
+    "title": "Demo & presentation · BinBin Battery Intelligence",
+    "h1": [
+      "Demo & presentation"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/karbon/?lang=en",
+    "width": 390,
+    "lang": "en",
+    "title": "Carbon impact & circularity · BinBin Battery Intelligence",
+    "h1": [
+      "Carbon impact & circularity"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/iletisim/?lang=en",
+    "width": 390,
+    "lang": "en",
+    "title": "Collaboration & contact · BinBin Battery Intelligence",
+    "h1": [
+      "Collaboration & contact"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/?lang=en",
+    "width": 390,
+    "lang": "en",
+    "title": "BT-10087 · BinBin Battery Intelligence",
+    "h1": [
+      "BinBin Battery Intelligence"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgb(10, 18, 36)",
+    "batteryRows": 15,
+    "badImages": [],
+    "assets": [
+      "./assets/main-Dheolh3F.js",
+      "./assets/main-GxYSzxD0.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/?lang=tr",
+    "width": 1440,
+    "lang": "tr",
+    "title": "Proje tanıtımı · BinBin Battery Intelligence",
+    "h1": [
+      "BinBin BatteryIntelligence"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../assets/site-BRFgPuNe.js",
+      "../assets/main-qUzg8WZ3.js",
+      "../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/kurumlar/?lang=tr",
+    "width": 1440,
+    "lang": "tr",
+    "title": "Kurumsal yapı ve yöneticiler · BinBin Battery Intelligence",
+    "h1": [
+      "Kurumsal yapı ve yöneticiler"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/ekip/?lang=tr",
+    "width": 1440,
+    "lang": "tr",
+    "title": "Proje ekibi · BinBin Battery Intelligence",
+    "h1": [
+      "Proje ekibi"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/proje/?lang=tr",
+    "width": 1440,
+    "lang": "tr",
+    "title": "Proje detayları · BinBin Battery Intelligence",
+    "h1": [
+      "Proje detayları"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/demo/?lang=tr",
+    "width": 1440,
+    "lang": "tr",
+    "title": "Demo ve sunum · BinBin Battery Intelligence",
+    "h1": [
+      "Demo ve sunum"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/karbon/?lang=tr",
+    "width": 1440,
+    "lang": "tr",
+    "title": "Karbon etkisi ve döngüsellik · BinBin Battery Intelligence",
+    "h1": [
+      "Karbon etkisi ve döngüsellik"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/iletisim/?lang=tr",
+    "width": 1440,
+    "lang": "tr",
+    "title": "İş birlikleri ve iletişim · BinBin Battery Intelligence",
+    "h1": [
+      "İş birlikleri ve iletişim"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/?lang=tr",
+    "width": 1440,
+    "lang": "tr",
+    "title": "BT-10087 · BinBin Battery Intelligence",
+    "h1": [
+      "BinBin Battery Intelligence"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgb(10, 18, 36)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "./assets/main-Dheolh3F.js",
+      "./assets/main-GxYSzxD0.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/?lang=en",
+    "width": 1440,
+    "lang": "en",
+    "title": "Project introduction · BinBin Battery Intelligence",
+    "h1": [
+      "BinBin BatteryIntelligence"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../assets/site-BRFgPuNe.js",
+      "../assets/main-qUzg8WZ3.js",
+      "../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/kurumlar/?lang=en",
+    "width": 1440,
+    "lang": "en",
+    "title": "Institutional structure & leadership · BinBin Battery Intelligence",
+    "h1": [
+      "Institutional structure & leadership"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/ekip/?lang=en",
+    "width": 1440,
+    "lang": "en",
+    "title": "Project team · BinBin Battery Intelligence",
+    "h1": [
+      "Project team"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/proje/?lang=en",
+    "width": 1440,
+    "lang": "en",
+    "title": "Project details · BinBin Battery Intelligence",
+    "h1": [
+      "Project details"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/demo/?lang=en",
+    "width": 1440,
+    "lang": "en",
+    "title": "Demo & presentation · BinBin Battery Intelligence",
+    "h1": [
+      "Demo & presentation"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/karbon/?lang=en",
+    "width": 1440,
+    "lang": "en",
+    "title": "Carbon impact & circularity · BinBin Battery Intelligence",
+    "h1": [
+      "Carbon impact & circularity"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/hakkimizda/iletisim/?lang=en",
+    "width": 1440,
+    "lang": "en",
+    "title": "Collaboration & contact · BinBin Battery Intelligence",
+    "h1": [
+      "Collaboration & contact"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "batteryRows": 0,
+    "badImages": [],
+    "assets": [
+      "../../assets/site-BRFgPuNe.js",
+      "../../assets/main-qUzg8WZ3.js",
+      "../../assets/main-DvidVFwN.css"
+    ]
+  },
+  {
+    "url": "https://binbin-battery-intelligence.vercel.app/?lang=en",
+    "width": 1440,
+    "lang": "en",
+    "title": "BT-10087 · BinBin Battery Intelligence",
+    "h1": [
+      "BinBin Battery Intelligence"
+    ],
+    "main": 1,
+    "overflow": false,
+    "background": "rgb(10, 18, 36)",
+    "batteryRows": 15,
+    "badImages": [],
+    "assets": [
+      "./assets/main-Dheolh3F.js",
+      "./assets/main-GxYSzxD0.css"
+    ]
+  }
+]

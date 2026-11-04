@@ -1,0 +1,28 @@
+[
+  {
+    "test": "production-data-loaded",
+    "rows": 15,
+    "battery": "BT-10087",
+    "background": "rgb(10, 18, 36)"
+  },
+  {
+    "test": "production-hash-state",
+    "open": [
+      "profile-gizem"
+    ],
+    "focus": "main"
+  },
+  {
+    "test": "new-tab-launch-language",
+    "url": "https://binbin-battery-intelligence.vercel.app/?lang=en",
+    "lang": "en",
+    "rows": 15
+  },
+  {
+    "test": "production-telemetry",
+    "battery": "DEMO-001",
+    "scenario": "temp-drift",
+    "selectedTab": "Telemetri",
+    "charts": 5
+  }
+]

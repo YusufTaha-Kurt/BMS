@@ -2,7 +2,9 @@
 
 Başlangıç: 22 Ekim 2026. Durum: ilk çalışan sentetik demo `web/` altında kodlandı (bkz. `DURUM.md`); tam pipeline planı sürüyor.
 
-**Tasarım incelemeleri:** [Sabit inceleme kaydı](TASARIM_INCELEME_KAYDI.md), [HIG/apple-design ilk raporu](incelemeler/hig-apple-design/INCELEME.md), [özgünlük raporu](incelemeler/hig-apple-design/OZGUNLUK_INCELEMESI.md) ve [görsel sistem raporu](incelemeler/hig-apple-design/GORSEL_SISTEM_INCELEMESI.md). [Bağımsız kontroldeki](incelemeler/tasarim-bagimsiz-kontrol/INCELEME.md) hash yan etkisi giderildi; özet/ayrıntı ve stil düzenlemeleri [son kontrol kaydında](incelemeler/son-duzeltmeler/INCELEME.md). Yerel sürüm kullanıcı incelemesine hazır; gerçek cihaz/ekran okuyucu kabulü ve dış teslimler açık. Güncel sürüm bu çalışmalar kapsamında yayımlanmadı.
+**Yayın ve faz durumu — 4 Kasım 2026:** Güncel tanıtım [Vercel'de yayında](https://binbin-battery-intelligence.vercel.app/hakkimizda/); [mavi temalı demo](https://binbin-battery-intelligence.vercel.app/) aynı alan adının kökündedir. Kaynaklar GitHub `main` dalındadır. [Faz dosyası](WEB_SITESI_FAZ_PLANI.md), Faz 1–5'in boş alanlı arayüz kapsamında hazır olduğunu, Faz 6'nın arkadaşına bırakıldığını ve Faz 7'nin açık kabul/teslimlerini açıklar. [Yayın doğrulaması](incelemeler/yayin/INCELEME.md).
+
+**Tasarım incelemeleri:** [Sabit inceleme kaydı](TASARIM_INCELEME_KAYDI.md), [HIG/apple-design ilk raporu](incelemeler/hig-apple-design/INCELEME.md), [özgünlük raporu](incelemeler/hig-apple-design/OZGUNLUK_INCELEMESI.md) ve [görsel sistem raporu](incelemeler/hig-apple-design/GORSEL_SISTEM_INCELEMESI.md). [Bağımsız kontroldeki](incelemeler/tasarim-bagimsiz-kontrol/INCELEME.md) hash yan etkisi giderildi; özet/ayrıntı ve stil düzenlemeleri [son kontrol kaydında](incelemeler/son-duzeltmeler/INCELEME.md). Gerçek cihaz/ekran okuyucu kabulü ve dış teslimler açık.
 
 Hedef, Excalidraw pipeline’ının tamamını, teklif dosyasındaki bakım öncelik listesi ve batarya operasyon panelini referans alan çalışan yazılıma dönüştürmektir. Panel verisi sentetik üretim ve hesaplama hattından gelir.
 

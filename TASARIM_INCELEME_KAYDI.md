@@ -6,6 +6,8 @@ Bu dosya, tasarım çalışmalarında dönülecek ortak referanstır. Bulguları
 
 ## Referanslar
 
+**Yayın güncellemesi:** Kullanıcının 4 Kasım 2026 onayıyla bu uygulama GitHub `main` dalına gönderildi ve Vercel üretim yayını doğrulandı. Önceki tur kayıtlarındaki “yayın yapılmadı” ifadeleri o turların tarihsel durumudur. [Canlı kontrol kaydı](incelemeler/yayin/INCELEME.md); güncel açık fazlar [faz dosyasında](WEB_SITESI_FAZ_PLANI.md).
+
 1. [HIG / apple-design kullanılabilirlik incelemesi](incelemeler/hig-apple-design/INCELEME.md): 80 yerleşim durumu, etkileşim kanıtları ve 12 ana bulgu. Bu ilk rapor mevcut hâliyle korunur.
 2. [Özgünlük ve şablon hissi incelemesi](incelemeler/hig-apple-design/OZGUNLUK_INCELEMESI.md): HIG ve doğrudan şablon estetiğini ele alan Anthropic frontend-design kaynaklarıyla ilişkilendirilen, tasarıma özgü yorumlar. Bunlar AI üretimini saptayan ölçümler değildir.
 3. [Görsel sistem incelemesi](incelemeler/hig-apple-design/GORSEL_SISTEM_INCELEMESI.md): kullanıcının ek yönlendirmesiyle renk kombinasyonu, font seçimi, tipografik ölçek, bloklar, butonlar, boşluklar ve görsel kompozisyon ayrıca incelendi. Metin değişikliği tek başına yeterli kabul edilmez.
