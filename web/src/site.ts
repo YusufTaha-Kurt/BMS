@@ -51,16 +51,14 @@ export const COORDINATOR_PROFILE: TeamMember = {
 }
 
 /**
- * Faz 6 iletişim formu. Gerçek başvuru almak için üç koşul birlikte gerekir:
- * 1) Vercel ortam değişkenleri: CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL, RESEND_API_KEY (bkz. web/api/contact.ts)
- * 2) Kurumun onayladığı aydınlatma metninin adresi (o dilde boşsa form o dilde kapalı kalır)
- * 3) enabled: true
- * Koşullar sağlanmadan form görünür ama alanlar kapalıdır; hiçbir veri gönderilmez.
+ * İletişim formu. Gönderimler Supabase'teki collaboration_proposals tablosuna yazılır (bkz. web/api/contact.ts).
+ * Form üç koşulda açılır. enabled true, o dil için aydınlatma metni adresi dolu ve sunucuda Supabase ayarı var.
+ * Sunucu ayarı GET /api/contact ile okunur. Ayar yoksa alanlar kapalı kalır.
  */
 export const CONTACT_FORM: { enabled: boolean; endpoint: string; privacyNoticeUrl: LocalizedText } = {
-  enabled: false,
+  enabled: true,
   endpoint: '/api/contact',
-  privacyNoticeUrl: { tr: '', en: '' },
+  privacyNoticeUrl: { tr: '/hakkimizda/aydinlatma/?lang=tr', en: '/hakkimizda/aydinlatma/?lang=en' },
 }
 
 /**

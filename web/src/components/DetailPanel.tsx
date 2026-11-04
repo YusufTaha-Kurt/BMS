@@ -18,6 +18,7 @@ import {
 import { LevelBadge, PriorityBadge } from './Badges.tsx'
 import { MiniChart } from './MiniChart.tsx'
 import { Passport } from './Passport.tsx'
+import { useChartColors } from '../lib/chartColors.ts'
 import { ErrorBox, Loading } from './StateBox.tsx'
 
 type St<T> = JsonState<T> & { reload: () => void }
@@ -42,7 +43,6 @@ interface Props {
 export type { PanelTab } from '../../shared/view.ts'
 
 
-const C = { main: '#5aa9ff', base: '#a3b3cf', warn: '#ffc15a', crit: '#ff8a8a', ok: '#6ee7a0' }
 
 function Metric({
   icon, label, value, detail, level, base,
@@ -264,6 +264,7 @@ function FeedbackButtons({ verdict, onVerdict }: { verdict: Verdict | null; onVe
 }
 
 function HistorySection({ history, baseHistory, day, scenario }: Props) {
+  const C = useChartColors()
   const { l, f: { pct }, scenarioLabel } = useI18n()
   const data = useMemo(() => {
     if (history.status !== 'ok') return []
@@ -312,6 +313,7 @@ function HistorySection({ history, baseHistory, day, scenario }: Props) {
 const HOURS = [0, 4, 8, 12, 16, 20, 24]
 
 function TelemetrySection({ isShowcase, detail, baseDetail, day, batteryId }: Props) {
+  const C = useChartColors()
   const { l } = useI18n()
   const data = useMemo(() => {
     if (!detail || detail.status !== 'ok') return []

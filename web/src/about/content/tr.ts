@@ -44,6 +44,10 @@ export const common: SiteCopy = {
       label: 'İş birliği', title: 'İş birliği',
       description: 'Önerilen pilot iş birliği ve öneri formu.',
     },
+    privacy: {
+      label: 'Aydınlatma metni', title: 'Kişisel verilerin korunması aydınlatma metni',
+      description: 'İş birliği önerisi formuyla gönderilen kişisel verilerin nasıl işlendiği.',
+    },
   },
 }
 
@@ -113,7 +117,7 @@ export const organizations: OrganizationsCopy = {
     formText: 'Öneriler proje ekibine iletilir. Yanıt formda yazılan e-posta adresine gönderilir.',
     form: {
       intro: 'İsteğe bağlı alanlar belirtilmiştir. Diğer alanlar zorunludur.',
-      closed: 'Form henüz başvuru almıyor. Alıcı adres ve onaylı aydınlatma metni eklendiğinde açılacaktır.',
+      closed: 'Form şu anda başvuru almıyor.',
       labels: { name: 'Ad soyad', organization: 'Kurum', email: 'E-posta', phone: 'Telefon', message: 'Öneri' },
       optional: 'isteğe bağlı',
       hints: {
@@ -123,8 +127,9 @@ export const organizations: OrganizationsCopy = {
       },
       consentBefore: '',
       consentLink: 'Aydınlatma metnini',
-      consentAfter: ' okudum. Bilgilerimin bu öneriyi değerlendirmek ve yanıt vermek için işlenmesini kabul ediyorum.',
+      consentAfter: ' okudum.',
       consentPending: 'Aydınlatma metni kurum onayından sonra eklenecektir.',
+      transferConsent: 'Bilgilerimin aydınlatma metninde belirtilen yurt dışındaki sunucularda işlenmesine ve saklanmasına açık rıza veriyorum.',
       honeypot: 'Bu alanı boş bırakınız',
       submit: 'Öneriyi gönder',
       sending: 'Gönderiliyor',
@@ -133,7 +138,8 @@ export const organizations: OrganizationsCopy = {
       errors: {
         required: {
           name: 'Ad soyad yazınız.', organization: 'Kurum adını yazınız.', email: 'E-posta adresi yazınız.',
-          message: 'Öneri metnini yazınız.', consent: 'Aydınlatma metnini onaylayınız.',
+          message: 'Öneri metnini yazınız.', consent: 'Aydınlatma metnini okuduğunuzu onaylayınız.',
+          transferConsent: 'Yurt dışındaki sunucularda işleme için açık rıza veriniz.',
         },
         tooShort: 'En az {min} karakter yazınız.',
         tooLong: 'En fazla {max} karakter yazılabilir.',
@@ -155,3 +161,4 @@ export const organizations: OrganizationsCopy = {
 
 export { project, carbon } from './technical.tr.ts'
 export { demo } from './demo.tr.ts'
+export { privacy } from './privacy.tr.ts'

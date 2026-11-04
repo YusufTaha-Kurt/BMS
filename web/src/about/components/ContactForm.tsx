@@ -5,10 +5,10 @@ import { useI18n } from '../../lib/i18n.tsx'
 import { CONTACT_FORM } from '../../site.ts'
 import { CONTENT } from '../content/index.ts'
 
-type Values = { name: string; organization: string; email: string; phone: string; message: string; consent: boolean; website: string }
+type Values = { name: string; organization: string; email: string; phone: string; message: string; consent: boolean; transferConsent: boolean; website: string }
 type Failure = 'not_configured' | 'rate_limited' | 'delivery_failed' | 'network' | 'generic'
-const EMPTY: Values = { name: '', organization: '', email: '', phone: '', message: '', consent: false, website: '' }
-const ORDER: ContactField[] = ['name', 'organization', 'email', 'phone', 'message', 'consent']
+const EMPTY: Values = { name: '', organization: '', email: '', phone: '', message: '', consent: false, transferConsent: false, website: '' }
+const ORDER: ContactField[] = ['name', 'organization', 'email', 'phone', 'message', 'consent', 'transferConsent']
 
 function httpsUrl(value: string | undefined): string | undefined {
   if (!value?.trim()) return
@@ -23,7 +23,18 @@ export function ContactForm() {
   const copy = CONTENT[language].organizations.collaborations
   const t = copy.form
   const privacyUrl = httpsUrl(CONTACT_FORM.privacyNoticeUrl[language])
-  const open = CONTACT_FORM.enabled && Boolean(privacyUrl)
+  // Sunucuda veri tabanı ayarı yoksa form açılmaz. Yerel önizlemede fonksiyon olmadığı için kapalı kalır.
+  const [serverReady, setServerReady] = useState(false)
+  useEffect(() => {
+    if (!CONTACT_FORM.enabled) return
+    let active = true
+    fetch(CONTACT_FORM.endpoint, { headers: { Accept: 'application/json' } })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((body: { configured?: boolean } | null) => { if (active) setServerReady(body?.configured === true) })
+      .catch(() => { /* Form kapalı kalır. */ })
+    return () => { active = false }
+  }, [])
+  const open = CONTACT_FORM.enabled && Boolean(privacyUrl) && serverReady
   const id = useId()
   const [values, setValues] = useState<Values>(EMPTY)
   const [errors, setErrors] = useState<ContactErrors>({})
@@ -199,6 +210,12 @@ export function ContactForm() {
               </label>
             </div>
             {error('consent')}
+            <div className="contact-consent">
+              <input id={fieldId('transferConsent')} name="transferConsent" type="checkbox" checked={values.transferConsent}
+                aria-invalid={Boolean(message('transferConsent'))} aria-describedby={describedBy('transferConsent')} onChange={(e) => update('transferConsent', e.target.checked)} />
+              <label htmlFor={fieldId('transferConsent')}>{t.transferConsent}</label>
+            </div>
+            {error('transferConsent')}
             <button type="submit" className="button button-primary contact-submit">
               {status === 'sending' ? t.sending : t.submit}<Send size={17} aria-hidden="true" />
             </button>

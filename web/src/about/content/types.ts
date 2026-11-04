@@ -94,6 +94,13 @@ export interface DemoCopy {
   }
 }
 
+export interface PrivacyCopy {
+  version: string
+  intro: string
+  sections: { title: string; lead?: string; items?: string[]; paragraphs?: string[] }[]
+  universitySite: string
+}
+
 export interface ContactFormCopy {
   intro: string
   closed: string
@@ -104,13 +111,14 @@ export interface ContactFormCopy {
   consentLink: string
   consentAfter: string
   consentPending: string
+  transferConsent: string
   honeypot: string
   submit: string
   sending: string
   counter: string
   summaryTitle: string
   errors: {
-    required: Record<'name' | 'organization' | 'email' | 'message' | 'consent', string>
+    required: Record<'name' | 'organization' | 'email' | 'message' | 'consent' | 'transferConsent', string>
     tooShort: string
     tooLong: string
     invalidEmail: string

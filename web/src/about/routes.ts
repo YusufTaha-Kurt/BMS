@@ -7,6 +7,7 @@ export const SITE_PAGES = [
   { id: 'demo', slug: 'demo' },
   { id: 'carbon', slug: 'karbon' },
   { id: 'contact', slug: 'iletisim' },
+  { id: 'privacy', slug: 'aydinlatma', hidden: true },
 ] as const
 
 export type PageId = typeof SITE_PAGES[number]['id']

@@ -21,7 +21,7 @@ Sade tasarım turundan (4 Kasım 2026) beri boş alanlar sitede gösterilmez. Bi
 | 9 | Karbon ölçümleri | `content/technical.*.ts` → `carbon` | Bekliyor | Ölçüm noktası ve dönemi, enerji, faktör değeri, yılı ve kaynağı, hesaplanan emisyon, tedarikçi belgeleri. Demo faktörü kullanılmaz. |
 | 10 | Sunum (TR/EN) | `web/src/about/demoMedia.ts` → `DEMO_MEDIA` | Bekliyor | Dosya gelince `web/public/media/` altına eklenir. Bölüm dosya olmadan görünmez. |
 | 11 | Tanıtım videosu (TR/EN) | `DEMO_MEDIA[*].video` | Bekliyor | Video ve aynı dilde WebVTT altyazı. |
-| 12 | İletişim formu | `web/src/site.ts` → `CONTACT_FORM`, `web/api/contact.ts`, Vercel ortam değişkenleri | Kısmi | Form hazır ve kapalı. Açmak için alıcı adres (`CONTACT_TO_EMAIL`), Resend gönderen adresi ve anahtarı, kurum onaylı TR/EN aydınlatma metni, `enabled: true` ve canlı test gönderimi. [Faz 6 kaydı](incelemeler/faz-6/INCELEME.md). |
+| 12 | İletişim formu | `web/api/contact.ts`, `supabase/migrations/`, Vercel ortam değişkenleri | Kısmi | Form, aydınlatma metni ve Supabase kaydı hazır. Açılması için BMS-Web projesinde migration SQL'inin çalıştırılması ve Vercel'e `SUPABASE_URL`, `SUPABASE_KEY` girilmesi gerekir. Ardından canlıda deneme gönderimi. Aydınlatma metninin üniversitenin KVKK birimince gözden geçirilmesi önerilir. |
 | 13 | Demo ekran görüntüleri | `web/src/about/assets/demo/` | Hazır | Demo arayüzü değişirse yeniden alınmalı. Öneri metinleri bu turda sadeleşti, görüntülerdeki eski öneri cümlesi yenilenebilir. |
 | 14 | Resmî kaynak bağlantıları | `web/src/about/sources.ts` | Hazır | Yayından önce açıldıkları kontrol edilmeli. |
 | 15 | Son içerik güncelleme tarihi | `web/src/site.ts` → `SITE_CONTENT_UPDATED` | Hazır | İçerik eklendiğinde elle güncellenir. |

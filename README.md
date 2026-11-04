@@ -42,6 +42,13 @@ Ana sayfada kısa ekip özeti bulunur; tam profiller `/hakkimizda/ekip/` sayfas�
 
 Veri tamamen sentetiktir (sabit seed `20261023`); aynı seed aynı içeriği üretir (`manifest.json` içindeki `contentHash`). Eşikler `web/shared/config.ts` içinde tek yerde durur ve üretici sınırı değildir. Üretilen `web/public/data/` git'e alınmaz.
 
+## Tema, aydınlatma metni ve form veri tabanı (4 Kasım 2026)
+
+- **Açık/koyu tema:** Tanıtım sitesi, demo ve 404 sayfası iki temayı destekler. İlk açılışta cihazın ayarı izlenir, üst bilgideki güneş/ay düğmesi tercihi tarayıcıda saklar ve bütün sayfalarda geçerli olur. Kod `web/src/lib/theme.ts`, düğme `web/src/components/ThemeToggle.tsx`. Renkler `web/src/about/site.css` ve `web/src/index.css` içinde `data-theme` değerine göre tanımlıdır. Grafik renkleri `web/src/lib/chartColors.ts` içindedir.
+- **Aydınlatma metni:** `/hakkimizda/aydinlatma/` (menüde yok, formdan bağlantılı). Metin `web/src/about/content/privacy.tr.ts` ve `privacy.en.ts`. KVKK 10. madde ve Aydınlatma Tebliği yapısına göre OSTİM Teknik Üniversitesi veri sorumlusu olarak yazıldı. Metin değişirse `web/api/contact.ts` → `PRIVACY_VERSION` güncellenir.
+- **Form veri tabanı:** Gönderimler Supabase'teki `collaboration_proposals` tablosuna yazılır. Tablo `supabase/migrations/20261104_collaboration_proposals.sql` ile oluşturulur. Anonim rol yalnız ekleme yapabilir. Vercel ortam değişkenleri `SUPABASE_URL` ve `SUPABASE_KEY` (yayımlanabilir anahtar). Bu iki değer girilip yeniden yayın yapılınca form kendiliğinden açılır. E-posta bildirimi isteğe bağlıdır (`CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `RESEND_API_KEY`).
+- Form iki onay ister. Aydınlatma metninin okunduğu ve yurt dışındaki sunucularda işleme için açık rıza. İkisinin zamanı ve metin sürümü kayıtla birlikte saklanır.
+
 ## Sade tasarım ve metin kuralları (4 Kasım 2026)
 
 Bu bölüm güncel düzenleme noktalarıdır. Aşağıdaki faz bölümleri geliştirme geçmişidir. Orada adı geçen `about.css`, `technical.css`, `projectData.ts`, `EmptyValue`, `TEAM_EMAIL` gibi dosya ve alanlar artık yoktur.

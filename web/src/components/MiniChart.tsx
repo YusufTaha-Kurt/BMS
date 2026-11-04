@@ -3,6 +3,7 @@ import {
 } from 'recharts'
 import { useId } from 'react'
 import { useI18n } from '../lib/i18n.tsx'
+import { useChartColors } from '../lib/chartColors.ts'
 
 export interface SeriesDef {
   key: string
@@ -34,7 +35,6 @@ interface Props<T extends object> {
   height?: number
 }
 
-const TICK = { fill: '#a3b3cf', fontSize: 12 }
 
 /** Eksik ölçümler null kalır; çizgi bu noktalarda kesilir (sıfırla doldurulmaz). */
 export function MiniChart<T extends object>({
@@ -42,6 +42,7 @@ export function MiniChart<T extends object>({
   yDomain = ['auto', 'auto'], decimals = 1, tickDecimals = 0, height = 170,
 }: Props<T>) {
   const { l, f: { num } } = useI18n()
+  const colors = useChartColors()
   const id = useId()
   const values = data.map((item) => (item as Record<string, unknown>)[series[0].key])
   const measured = values.filter((value): value is number => typeof value === 'number' && Number.isFinite(value))
@@ -78,22 +79,22 @@ export function MiniChart<T extends object>({
       <div style={{ height }}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart aria-labelledby={`${id}-title`} aria-describedby={`${id}-summary`} data={data} margin={{ top: 6, right: 8, bottom: 0, left: -8 }}>
-            <CartesianGrid stroke="#263a5e" strokeDasharray="3 3" vertical={false} />
+            <CartesianGrid stroke={colors.grid} strokeDasharray="3 3" vertical={false} />
             <XAxis
               dataKey={xKey}
               type="number"
               domain={xDomain}
               ticks={xTicks}
               tickFormatter={fmt}
-              tick={TICK}
-              stroke="#263a5e"
+              tick={{ fill: colors.tick, fontSize: 12 }}
+              stroke={colors.grid}
               allowDataOverflow
               height={24}
             />
-            <YAxis domain={yDomain} tick={TICK} stroke="#263a5e" width={44} tickFormatter={(v: number) => num(v, tickDecimals)} />
+            <YAxis domain={yDomain} tick={{ fill: colors.tick, fontSize: 12 }} stroke={colors.grid} width={44} tickFormatter={(v: number) => num(v, tickDecimals)} />
             <Tooltip
-              contentStyle={{ background: '#0a1224', border: '1px solid #263a5e', borderRadius: 8, fontSize: 12 }}
-              labelStyle={{ color: '#e8eef9' }}
+              contentStyle={{ background: colors.tooltipBg, border: `1px solid ${colors.grid}`, borderRadius: 8, fontSize: 12 }}
+              labelStyle={{ color: colors.tooltipInk }}
               labelFormatter={(v) => `${xLabel}: ${fmt(Number(v))}`}
               formatter={(v) => (typeof v === 'number' ? `${num(v, decimals)} ${unit}` : l('No measurement', 'Ölçüm yok'))}
               isAnimationActive={false}
@@ -102,7 +103,7 @@ export function MiniChart<T extends object>({
               <ReferenceLine key={r.label} y={r.y} stroke={r.color} strokeDasharray="4 3"
                 label={{ value: r.label, fill: r.color, fontSize: 12, position: 'insideTopLeft' }} />
             ))}
-            {markX !== undefined && <ReferenceLine x={markX} stroke="#5aa9ff" strokeWidth={1.5} />}
+            {markX !== undefined && <ReferenceLine x={markX} stroke={colors.main} strokeWidth={1.5} />}
             {series.map((s) => (
               <Line
                 key={s.key}

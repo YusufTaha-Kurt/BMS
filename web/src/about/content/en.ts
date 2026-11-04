@@ -44,6 +44,10 @@ export const common: SiteCopy = {
       label: 'Collaboration', title: 'Collaboration',
       description: 'The proposed pilot collaboration and the proposal form.',
     },
+    privacy: {
+      label: 'Privacy notice', title: 'Personal data privacy notice',
+      description: 'How personal data sent through the collaboration proposal form is processed.',
+    },
   },
 }
 
@@ -113,7 +117,7 @@ export const organizations: OrganizationsCopy = {
     formText: 'Proposals go to the project team. The reply is sent to the email address given in the form.',
     form: {
       intro: 'Optional fields are marked. All other fields are required.',
-      closed: 'The form is not accepting submissions yet. It will open once the recipient address and the approved privacy notice are added.',
+      closed: 'The form is not accepting submissions at the moment.',
       labels: { name: 'Full name', organization: 'Organisation', email: 'Email', phone: 'Phone', message: 'Proposal' },
       optional: 'optional',
       hints: {
@@ -123,8 +127,9 @@ export const organizations: OrganizationsCopy = {
       },
       consentBefore: 'I have read the ',
       consentLink: 'privacy notice',
-      consentAfter: ' and agree that my details are processed to assess this proposal and reply to me.',
+      consentAfter: '.',
       consentPending: 'The privacy notice will be added after institutional approval.',
+      transferConsent: 'I give explicit consent to my details being processed and stored on the servers abroad listed in the privacy notice.',
       honeypot: 'Leave this field empty',
       submit: 'Send proposal',
       sending: 'Sending',
@@ -133,7 +138,8 @@ export const organizations: OrganizationsCopy = {
       errors: {
         required: {
           name: 'Enter your full name.', organization: 'Enter your organisation.', email: 'Enter an email address.',
-          message: 'Enter the proposal text.', consent: 'Accept the privacy notice.',
+          message: 'Enter the proposal text.', consent: 'Confirm that you have read the privacy notice.',
+          transferConsent: 'Give explicit consent for processing on servers abroad.',
         },
         tooShort: 'Enter at least {min} characters.',
         tooLong: 'Up to {max} characters are allowed.',
@@ -155,3 +161,4 @@ export const organizations: OrganizationsCopy = {
 
 export { project, carbon } from './technical.en.ts'
 export { demo } from './demo.en.ts'
+export { privacy } from './privacy.en.ts'

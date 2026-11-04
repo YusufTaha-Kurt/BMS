@@ -23,6 +23,28 @@
   --color-ok-line: #1f7a55;
 }
 
+:root[data-theme='light'] {
+  --color-bg: #eef2f8;
+  --color-panel: #ffffff;
+  --color-card: #f6f8fc;
+  --color-line: #cfd8e6;
+  --color-ink: #101b2e;
+  --color-mute: #4c5b74;
+  --color-accent: #1d64c2;
+  --color-crit: #b3202e;
+  --color-crit-bg: #fdecee;
+  --color-crit-line: #e2a0a7;
+  --color-warn: #8a5600;
+  --color-warn-bg: #fff3d9;
+  --color-warn-line: #e0b35a;
+  --color-data: #6338c0;
+  --color-data-bg: #f2ecff;
+  --color-data-line: #b9a1ea;
+  --color-ok: #1b7448;
+  --color-ok-bg: #e5f5ec;
+  --color-ok-line: #8dcdac;
+}
+
 html,
 body,
 #root {

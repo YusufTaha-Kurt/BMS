@@ -8,6 +8,7 @@ import { CollaborationsPage } from './CollaborationsPage.tsx'
 import { ProjectPage } from './ProjectPage.tsx'
 import { CarbonPage } from './CarbonPage.tsx'
 import { DemoPage } from './DemoPage.tsx'
+import { PrivacyPage } from './PrivacyPage.tsx'
 import { CONTENT } from './content/index.ts'
 import { currentPage, pagePath, type PageId } from './routes.ts'
 import { PageTemplate } from './components/PageTemplate.tsx'
@@ -15,7 +16,7 @@ import { SiteLayout } from './components/SiteLayout.tsx'
 
 const PAGE_COMPONENTS: Record<PageId, ComponentType> = {
   home: About, team: TeamPage, institutions: InstitutionsPage, contact: CollaborationsPage,
-  project: ProjectPage, carbon: CarbonPage, demo: DemoPage,
+  project: ProjectPage, carbon: CarbonPage, demo: DemoPage, privacy: PrivacyPage,
 }
 
 export function SiteApp() {

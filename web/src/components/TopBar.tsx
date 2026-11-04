@@ -5,6 +5,7 @@ import { useI18n, withLanguage } from '../lib/i18n.tsx'
 import { PROJECT_NAME } from '../site.ts'
 import { PRIORITY_STYLE } from '../lib/status.ts'
 import { PRIORITY_ICON } from './Badges.tsx'
+import { ThemeToggle } from './ThemeToggle.tsx'
 
 interface Props {
   scenario: ScenarioId; onScenario: (s: ScenarioId) => void
@@ -29,6 +30,7 @@ export function TopBar({ scenario, onScenario, day, onDay, date, compare, onComp
           <div className="flex gap-0.5" role="group" aria-label={l('Language', 'Dil')}>
             {(['en', 'tr'] as const).map((lang) => <button key={lang} type="button" lang={lang} aria-label={lang === 'en' ? 'English' : 'Türkçe'} aria-pressed={language === lang} onClick={() => setLanguage(lang)} className={`rounded px-2 py-2 text-xs font-bold ${language === lang ? 'bg-accent text-bg' : 'text-mute hover:text-ink'}`}>{lang.toUpperCase()}</button>)}
           </div>
+          <ThemeToggle className="inline-grid place-items-center rounded-md border border-line bg-card px-2.5 py-2 text-mute hover:text-ink" />
           <a href={withLanguage(`${import.meta.env.BASE_URL}hakkimizda/`, language)} title={l('Project and team', 'Proje ve ekip')} className="inline-flex items-center gap-1.5 rounded-md border border-line bg-card px-2.5 py-2 text-xs font-semibold hover:border-accent"><ArrowLeft size={15} aria-hidden="true" /><span className="max-sm:sr-only">{l('Project & team', 'Proje ve ekip')}</span></a>
           <button id="guide-trigger" type="button" onClick={onGuide} aria-pressed={guideOpen} title={l('Guided demo', 'Demo rehberi')} className={`inline-flex items-center gap-1.5 rounded-md border px-2.5 py-2 text-xs font-semibold ${guideOpen ? 'border-accent bg-accent/20' : 'border-accent/60 bg-accent/10 hover:bg-accent/20'}`}><Presentation size={16} aria-hidden="true" /><span className="max-sm:sr-only">{l('Guided demo', 'Demo rehberi')}</span></button>
         </div>

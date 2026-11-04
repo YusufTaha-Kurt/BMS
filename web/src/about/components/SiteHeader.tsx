@@ -5,6 +5,7 @@ import { CONTENT } from '../content/index.ts'
 import { pagePath, SITE_PAGES, type PageId } from '../routes.ts'
 import { DemoAccess } from './DemoAccess.tsx'
 import universityLogo from '../assets/logo-ostim-teknik.png'
+import { ThemeToggle } from '../../components/ThemeToggle.tsx'
 
 export function SiteHeader({ pageId }: { pageId: PageId | undefined }) {
   const { language, setLanguage } = useI18n()
@@ -51,13 +52,14 @@ export function SiteHeader({ pageId }: { pageId: PageId | undefined }) {
                 <button key={lang} type="button" lang={lang} aria-label={lang === 'en' ? 'English' : 'Türkçe'} aria-pressed={language === lang} onClick={() => setLanguage(lang)}>{lang.toUpperCase()}</button>
               ))}
             </div>
+            <ThemeToggle className="theme-toggle" />
             <button className="site-menu-toggle" type="button" ref={trigger} aria-label={menuOpen ? t.closeMenu : t.openMenu} aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => setMenuOpen((open) => !open)}>
               {menuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
             </button>
           </div>
         </div>
         <nav id="site-navigation" className={`site-navigation${menuOpen ? ' is-open' : ''}`} aria-label={t.navigation}>
-          {SITE_PAGES.map(({ id }) => (
+          {SITE_PAGES.filter((page) => !('hidden' in page)).map(({ id }) => (
             <a key={id} href={withLanguage(pagePath(id), language)} aria-current={pageId === id ? 'page' : undefined} onClick={() => setMenuOpen(false)}>{t.pages[id].label}</a>
           ))}
         </nav>

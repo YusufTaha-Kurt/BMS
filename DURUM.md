@@ -9,6 +9,14 @@ Son güncelleme: 4 Kasım 2026 (sade tasarım, logolar, metin düzeltmesi; `main
 - Canlıda 390/1440px × TR/EN × sekiz adres olmak üzere 32 yerleşim; sentetik veri yükleme, sıcaklık senaryosu/telemetri, profil durumunun korunması ve EN yeni sekme demo açılışı doğrulandı. Yakalanan error/warn yok. [Kanıt](incelemeler/yayin/INCELEME.md).
 - [Faz dosyası](WEB_SITESI_FAZ_PLANI.md) yayın ve açık işleri açıklayan güncel metni içerir. Faz 6 bekliyor. Faz 7'nin yayın kısmı yapıldı; gerçek cihaz/ekran okuyucu, içerik/izin ve dosya/form kabul işleri hâlâ açık.
 
+## Tema, aydınlatma metni ve Supabase hazırlığı (4 Kasım 2026)
+
+- Açık/koyu tema eklendi. Tanıtım, demo ve 404 sayfası cihaz ayarını izler, tercih düğmeyle değişir ve saklanır.
+- `/hakkimizda/aydinlatma/` KVKK aydınlatma metni eklendi. Başka bir kurumun metni kopyalanmadı. Kamu kurumlarının kullandığı Tebliğ yapısı izlendi, veri sorumlusu, işlenen veriler, amaç, hukuki sebep, aktarım, saklama, haklar ve başvuru bölümleri bu projeye göre yazıldı.
+- Form verisi Supabase'e yazılacak şekilde değiştirildi. Önceki hâlde veri tabanı yoktu, form yalnız Resend ile e-posta gönderecek şekilde kurulmuştu ve kapalıydı.
+- Supabase bağlantısı bu oturumda yalnız `ilmislam` organizasyonunu görüyor. Kullanıcının belirttiği `BMS-ARGE` / `BMS-Web` projesine erişim yok. Tablo SQL'i depoda hazır. Form, Vercel'e Supabase ayarları girildiğinde kendiliğinden açılır. O zamana kadar kapalı görünür.
+- `npm test` 19/19, build ve lint temiz. 9 adres × 2 dil × 3 genişlik = 54 yerleşim ve 24 iç bağlantı geçti. Formun açılma kapısı ve iki onay kutusu tarayıcıda denendi.
+
 ## Sade tasarım, logolar ve metin düzeltmesi (4 Kasım 2026)
 
 - Kullanıcı sitenin sade görünmesini, logoların eklenmesini, bütün metinlerin yüklediği üslup kılavuzuna göre yazılmasını ve proje e-postasının kaldırılmasını istedi.
