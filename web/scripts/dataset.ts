@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto'
 import {
-  DATA_VERSION, DAYS, EVENT_DAY, FLEET_SIZE, DEMO_RULES, NATURAL_FAULTS, SCENARIOS, SEED, SHOWCASE_IDS,
+  batteryIds, DATA_VERSION, DAYS, EVENT_DAY, FLEET_SIZE, DEMO_RULES, NATURAL_FAULTS, SCENARIOS, SEED, SHOWCASE_IDS,
   SIM_START, STEP_MINUTES,
 } from '../shared/config.ts'
 import { compareRows, countPriorities, evaluate } from '../shared/rules.ts'
@@ -14,13 +14,7 @@ export interface Dataset {
   manifest: Manifest
 }
 
-export function batteryIds(): string[] {
-  const ids: string[] = SHOWCASE_IDS.slice()
-  for (let i = ids.length; i < FLEET_SIZE; i++) {
-    ids.push(`BT-${String(10001 + i - SHOWCASE_IDS.length)}`)
-  }
-  return ids
-}
+export { batteryIds }
 
 const pad = (n: number) => String(n).padStart(2, '0')
 

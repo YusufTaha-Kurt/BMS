@@ -1,14 +1,17 @@
-import { BadgeCheck, FileClock, Fingerprint, Leaf } from 'lucide-react'
-import type { ReactNode } from 'react'
-import { CARBON, DEMO_RULES as R } from '../../shared/config.ts'
+import { BadgeCheck, Check, Copy, FileClock, Fingerprint, Leaf, Link2 } from 'lucide-react'
+import { useEffect, useState, type ReactNode } from 'react'
+import { CARBON, DEMO_RULES as R, type ScenarioId } from '../../shared/config.ts'
 import type { DayRecord, HistoryFile } from '../../shared/types.ts'
 import { useI18n } from '../lib/i18n.tsx'
 import { explain } from '../lib/explain.ts'
 import { PRIORITY_STYLE } from '../lib/status.ts'
+import { passportUrl } from '../lib/viewUrl.ts'
+import { QrCode } from './QrCode.tsx'
 
 interface Props {
   history: HistoryFile
   day: number
+  scenario: ScenarioId
 }
 
 /** Seçilen güne kadar öncelik değişimlerini denetlenebilir olay kaydına çevirir. */
@@ -42,7 +45,7 @@ function Box({ icon, title, children }: { icon: ReactNode; title: string; childr
   )
 }
 
-export function Passport({ history, day }: Props) {
+export function Passport({ history, day, scenario }: Props) {
   const { language, l, f: { dateShort, dateTr, num, pct }, priorityLabel } = useI18n()
   const { profile, batteryId } = history
   const days = history.days.map((d) => explain(d, language))
@@ -105,6 +108,43 @@ export function Passport({ history, day }: Props) {
           <p className="mt-1.5 text-mute">{l('Demo factor', 'Demo faktörü')} {num(CARBON.gridFactorKgPerKwh, 2)} kg/kWh.</p>
         </Box>
       </div>
+      <PassportLink url={passportUrl({ scenario, day, batteryId }, language)} batteryId={batteryId} />
     </section>
+  )
+}
+
+/** Her kimliğin sabit adresi ve QR'ı; aynı senaryo/gün ile açılır. Sentetik kayıt olduğu ayrıca belirtilir. */
+function PassportLink({ url, batteryId }: { url: string; batteryId: string }) {
+  const { l } = useI18n()
+  // Kopyalanan adres saklanır; görünüm değişince onay kendiliğinden kalkar.
+  const [copiedUrl, setCopiedUrl] = useState<string | null>(null)
+  const copied = copiedUrl === url
+  useEffect(() => {
+    if (copiedUrl === null) return
+    const timer = window.setTimeout(() => setCopiedUrl(null), 2500)
+    return () => window.clearTimeout(timer)
+  }, [copiedUrl])
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(url); setCopiedUrl(url) } catch { /* Bağlantı metni yine seçilebilir. */ }
+  }
+  return (
+    <div className="mt-2.5 flex flex-wrap items-center gap-3 rounded-lg border border-line bg-card p-3 text-xs">
+      <QrCode value={url} size={104} label={l(`QR code for the ${batteryId} passport view`, `${batteryId} pasaport görünümü QR kodu`)} className="shrink-0 p-1" />
+      <div className="min-w-0 flex-1 basis-56">
+        <h4 className="mb-1 flex items-center gap-1.5 font-semibold"><Link2 aria-hidden className="size-3.5" />{l('Passport link', 'Pasaport bağlantısı')}</h4>
+        <p className="text-mute">{l(
+          'Opens this synthetic record with the same scenario and day, for example on a phone. It is not a registered EU battery passport.',
+          'Bu sentetik kaydı aynı senaryo ve günle açar; örneğin telefonda. Kayıtlı bir AB batarya pasaportu değildir.',
+        )}</p>
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          <a href={url} className="min-w-0 break-all font-medium text-accent underline-offset-2 hover:underline">{url.replace(/^https?:\/\//, '')}</a>
+          <button type="button" onClick={copy} className="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-line px-3 font-semibold hover:border-accent">
+            {copied ? <Check aria-hidden className="size-3.5 text-ok" /> : <Copy aria-hidden className="size-3.5" />}
+            {copied ? l('Copied', 'Kopyalandı') : l('Copy link', 'Bağlantıyı kopyala')}
+          </button>
+          <span className="sr-only" role="status">{copied ? l('Link copied', 'Bağlantı kopyalandı') : ''}</span>
+        </div>
+      </div>
+    </div>
   )
 }

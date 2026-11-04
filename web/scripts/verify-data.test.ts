@@ -251,3 +251,31 @@ test('EN/TR numbers, dates, percentages and missing readings use the chosen loca
   assert.equal(en.dateTr('2026-09-14'), '14 September 2026')
   assert.equal(tr.dateTr('2026-09-14'), '14 Eylül 2026')
 })
+
+test('passport links: every fleet ID resolves, unknown IDs are reported and defaults stay off the URL', async () => {
+  const { batteryIds, normalizeBatteryId } = await import('../shared/config.ts')
+  const { DEFAULT_DEMO_VIEW, readView, writeView } = await import('../shared/view.ts')
+  const ids = fleet('baseline', 1).rows.map((r) => r.id).sort()
+  assert.deepEqual(batteryIds().slice().sort(), ids)
+  for (const id of ids) {
+    assert.equal(normalizeBatteryId(id.toLowerCase()), id)
+    assert.equal(history('baseline', id).batteryId, id)
+  }
+  for (const bad of ['', 'BT-10000', `BT-${10001 + FLEET_SIZE - SHOWCASE_IDS.length}`, 'DEMO-009', 'BT-1OO87', '../manifest']) {
+    assert.equal(normalizeBatteryId(bad), null, bad)
+  }
+
+  // Varsayılan görünüm adres çubuğuna yazılmaz; dil gibi diğer parametreler korunur.
+  assert.equal(writeView(new URLSearchParams('lang=tr'), DEFAULT_DEMO_VIEW).toString(), 'lang=tr')
+  const shared = writeView(new URLSearchParams('lang=en'), { scenario: 'temp-drift', day: 20, batteryId: 'DEMO-001', tab: 'passport' })
+  assert.deepEqual(readView(`?${shared}`), {
+    view: { scenario: 'temp-drift', day: 20, batteryId: 'DEMO-001', tab: 'passport' }, requested: true, unknownBattery: null,
+  })
+  // Yalnız senaryo verilirse senaryonun hedef bataryası ve odak günü açılır.
+  assert.deepEqual(readView('?scenario=data-loss').view, { scenario: 'data-loss', day: FOCUS_DAY, batteryId: 'DEMO-003', tab: 'history' })
+  // Geçersiz değerler sessizce varsayılana döner; bilinmeyen kimlik bildirilir.
+  const invalid = readView('?battery=BT-99999&scenario=nope&day=31&tab=x')
+  assert.deepEqual(invalid.view, DEFAULT_DEMO_VIEW)
+  assert.equal(invalid.unknownBattery, 'BT-99999')
+  assert.equal(readView('').requested, false)
+})

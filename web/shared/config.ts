@@ -99,6 +99,23 @@ export const SHOWCASE_IDS = [
   'DEMO-008',
 ] as const
 
+/** Filo kimlikleri: önce vitrin bataryaları, ardından BT-10001… Üretici ve arayüz aynı listeyi kullanır. */
+export function batteryIds(): string[] {
+  const ids: string[] = SHOWCASE_IDS.slice()
+  for (let i = ids.length; i < FLEET_SIZE; i++) ids.push(`BT-${10001 + i - SHOWCASE_IDS.length}`)
+  return ids
+}
+
+/** Adres çubuğundan gelen kimliği büyük harfe çevirir; filoda yoksa null döner. */
+export function normalizeBatteryId(raw: string | null | undefined): string | null {
+  const id = raw?.trim().toUpperCase() ?? ''
+  if ((SHOWCASE_IDS as readonly string[]).includes(id)) return id
+  const match = /^BT-(\d{5})$/.exec(id)
+  if (!match) return null
+  const n = Number(match[1])
+  return n >= 10001 && n < 10001 + FLEET_SIZE - SHOWCASE_IDS.length ? id : null
+}
+
 /** Olay eklenmeden de teknik inceleme gerektiren filo bataryaları (parametre düzeyinde ayarlanır). */
 export const NATURAL_FAULTS = {
   imbalance: 'BT-10087',

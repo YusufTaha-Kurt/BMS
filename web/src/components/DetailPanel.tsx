@@ -5,6 +5,7 @@ import {
 import { useMemo, type ReactNode } from 'react'
 import { CARBON, DAYS, DEMO_RULES as R, SHOWCASE_IDS, type ScenarioId } from '../../shared/config.ts'
 import type { DayRecord, DetailFile, FleetRow, HistoryFile } from '../../shared/types.ts'
+import type { PanelTab } from '../../shared/view.ts'
 import type { Verdict } from '../lib/feedback.ts'
 import type { JsonState } from '../lib/loadJson.ts'
 import { signed } from '../lib/format.ts'
@@ -38,7 +39,7 @@ interface Props {
   onTab: (t: PanelTab) => void
 }
 
-export type PanelTab = 'history' | 'telemetry' | 'passport'
+export type { PanelTab } from '../../shared/view.ts'
 
 
 const C = { main: '#5aa9ff', base: '#a3b3cf', warn: '#ffc15a', crit: '#ff8a8a', ok: '#6ee7a0' }
@@ -226,7 +227,7 @@ export function DetailPanel(p: Props) {
           {p.tab === 'telemetry' && <TelemetrySection {...p} />}
           {p.tab === 'passport' && (
             p.history.status === 'ok'
-              ? <Passport history={p.history.data} day={p.day} />
+              ? <Passport history={p.history.data} day={p.day} scenario={p.scenario} />
               : p.history.status === 'error'
                 ? <ErrorBox error={p.history.error} what={l('Passport', 'Pasaport')} onRetry={p.history.reload} />
                 : <Loading className="py-8" label={l('Loading passport…', 'Pasaport yükleniyor…')} />

@@ -1,6 +1,6 @@
 # Güncel Durum
 
-Son güncelleme: 4 Kasım 2026 (GitHub main güncellendi; Vercel üretim yayını doğrulandı)
+Son güncelleme: 4 Kasım 2026 (durum analizi; pasaport bağlantısı, 404 ve yayın kontrol listesi eklendi — yayın bekliyor)
 
 ## GitHub ve Vercel yayını
 
@@ -8,6 +8,14 @@ Son güncelleme: 4 Kasım 2026 (GitHub main güncellendi; Vercel üretim yayın�
 - Vercel dağıtımı başarıyla tamamlandı. [Tanıtım](https://binbin-battery-intelligence.vercel.app/hakkimizda/) ve [demo](https://binbin-battery-intelligence.vercel.app/) üretim alan adında çalışıyor.
 - Canlıda 390/1440px × TR/EN × sekiz adres olmak üzere 32 yerleşim; sentetik veri yükleme, sıcaklık senaryosu/telemetri, profil durumunun korunması ve EN yeni sekme demo açılışı doğrulandı. Yakalanan error/warn yok. [Kanıt](incelemeler/yayin/INCELEME.md).
 - [Faz dosyası](WEB_SITESI_FAZ_PLANI.md) yayın ve açık işleri açıklayan güncel metni içerir. Faz 6 bekliyor. Faz 7'nin yayın kısmı yapıldı; gerçek cihaz/ekran okuyucu, içerik/izin ve dosya/form kabul işleri hâlâ açık.
+
+## Durum analizi ve teknik eksiklerin tamamlanması (4 Kasım 2026)
+
+- Temiz kurulumda build/TypeScript/lint ve veri testleri geçti. Kalan işler dış teslimlere (içerik, izin, PDF/video, pilot/karbon ölçümleri), Faz 6 formuna (arkadaşına bırakıldı) ve gerçek cihaz/ekran okuyucu kabulüne bağlı.
+- Kodla kapatılabilen eksikler tamamlandı: demoda paylaşılabilir görünüm adresi (`?battery=…&scenario=…&day=…&tab=…`), 500 kimlik için pasaport bağlantısı + QR + kopyalama, bilinmeyen kimlikte açıklayıcı bildirim, iki dilli 404 sayfası. Varsayılan görünüm adrese yazılmaz; demo kökü ve basılı QR değişmedi. Veri içeriği/`contentHash` aynı.
+- 12/12 veri testi (yeni pasaport/adres testi dâhil), build ve lint geçti; yerel üretim önizlemesinde masaüstü/mobil akışlar ve konsol kontrol edildi. [Kayıt ve ekranlar](incelemeler/eksik-tamamlama/INCELEME.md).
+- İçerik/izin/teslim durumu ve nihai kontrol listesi: [YAYIN_KONTROL_LISTESI.md](YAYIN_KONTROL_LISTESI.md).
+- Değişiklikler `claude/laughing-hawking-xsk5nj` dalında; `main`'e birleştirme ve Vercel yayını kullanıcı onayı bekliyor.
 
 Aşağıdaki bölümler yayından önceki uygulama ve inceleme turlarının tarihsel kayıtlarıdır; güncel yayın durumu yukarıdadır.
 

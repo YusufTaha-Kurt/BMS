@@ -1,7 +1,7 @@
-import { ArrowLeft, QrCode as QrIcon } from 'lucide-react'
+import { ArrowLeft, Info, QrCode as QrIcon, X } from 'lucide-react'
 import { useI18n, withLanguage } from './lib/i18n.tsx'
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
-import { DAYS, DEFAULT_VIEW, FOCUS_DAY, SCENARIOS, type ScenarioId } from '../shared/config.ts'
+import { DAYS, DEFAULT_VIEW, FLEET_SIZE, FOCUS_DAY, SCENARIOS, SHOWCASE_IDS, type ScenarioId } from '../shared/config.ts'
 import type { DetailFile, FleetDayFile, FleetRow, HistoryFile, Manifest } from '../shared/types.ts'
 import { DetailPanel, type PanelTab } from './components/DetailPanel.tsx'
 import { FleetList, type Filter } from './components/FleetList.tsx'
@@ -13,6 +13,7 @@ import { TopBar } from './components/TopBar.tsx'
 import { feedbackKey, useFeedback } from './lib/feedback.ts'
 import { dataUrl, pad2, useJson, type JsonState } from './lib/loadJson.ts'
 import { aboutUrl, PROJECT_NAME } from './site.ts'
+import { DEFAULT_DEMO_VIEW, readView, writeView } from './lib/viewUrl.ts'
 
 type St<T> = JsonState<T> & { reload: () => void }
 
@@ -28,16 +29,19 @@ const subscribeDesktop = (notify: () => void) => {
 export default function App() {
   const { language, l } = useI18n()
   const isDesktop = useSyncExternalStore(subscribeDesktop, desktopSnapshot)
-  const [mobileView, setMobileView] = useState<'fleet' | 'detail'>('fleet')
-  const [scenario, setScenario] = useState<ScenarioId>(DEFAULT_VIEW.scenario)
-  const [day, setDay] = useState(DEFAULT_VIEW.day)
-  const [batteryId, setBatteryId] = useState(DEFAULT_VIEW.batteryId)
+  // Adresteki görünüm (ör. pasaport QR'ı) yalnız ilk açılışta okunur; sonra durum adrese yazılır.
+  const [initial] = useState(() => readView(window.location.search))
+  const [unknownBattery, setUnknownBattery] = useState(initial.unknownBattery)
+  const [mobileView, setMobileView] = useState<'fleet' | 'detail'>(initial.requested ? 'detail' : 'fleet')
+  const [scenario, setScenario] = useState<ScenarioId>(initial.view.scenario)
+  const [day, setDay] = useState(initial.view.day)
+  const [batteryId, setBatteryId] = useState(initial.view.batteryId)
   const [query, setQuery] = useState('')
   const [filter, setFilter] = useState<Filter>('all')
   const [page, setPage] = useState(1)
-  const [compareOn, setCompareOn] = useState(false)
+  const [compareOn, setCompareOn] = useState(() => SCENARIOS.find((s) => s.id === initial.view.scenario)?.targetId != null)
   const [guideStep, setGuideStep] = useState<number | null>(null)
-  const [tab, setTab] = useState<PanelTab>('history')
+  const [tab, setTab] = useState<PanelTab>(initial.view.tab)
   const [qrOpen, setQrOpen] = useState(false)
   const feedback = useFeedback()
   const viewFrame = useRef<number | null>(null)
@@ -116,8 +120,9 @@ export default function App() {
     setFilter('all')
     setPage(1)
     setCompareOn(false)
-    setTab('history')
+    setTab(DEFAULT_DEMO_VIEW.tab)
     setMobileView('fleet')
+    setUnknownBattery(null)
     feedback.clear()
   }
 
@@ -139,6 +144,15 @@ export default function App() {
     setGuideStep(null)
     requestAnimationFrame(() => document.getElementById('guide-trigger')?.focus())
   }, [])
+
+  // Görünüm paylaşılabilir kalsın: lang gibi diğer parametreler korunur, varsayılanlar yazılmaz.
+  useEffect(() => {
+    const url = new URL(window.location.href)
+    const next = writeView(url.searchParams, { scenario, day, batteryId, tab }).toString()
+    if (next === url.searchParams.toString()) return
+    url.search = next
+    window.history.replaceState(window.history.state, '', url)
+  }, [scenario, day, batteryId, tab])
 
   useEffect(() => {
     document.title = `${batteryId} · ${PROJECT_NAME}`
@@ -176,6 +190,20 @@ export default function App() {
         <button type="button" aria-pressed={mobileView === 'fleet'} aria-controls="fleet-view" onClick={() => showMobileView('fleet')} className={`flex-1 rounded-md border px-3 py-2.5 text-sm font-semibold ${mobileView === 'fleet' ? 'border-accent bg-accent/15' : 'border-line text-mute'}`}>{l('Fleet', 'Filo')}</button>
         <button type="button" aria-pressed={mobileView === 'detail'} aria-controls="detail-view" onClick={() => showMobileView('detail')} className={`flex-1 rounded-md border px-3 py-2.5 text-sm font-semibold ${mobileView === 'detail' ? 'border-accent bg-accent/15' : 'border-line text-mute'}`}>{l('Battery details', 'Batarya ayrıntısı')}</button>
       </nav>
+      {unknownBattery !== null && (
+        <div role="status" className="mx-auto mt-4 flex max-w-[1600px] items-start gap-2 px-4 lg:px-6">
+          <div className="flex w-full items-start gap-2 rounded-lg border border-warn-line bg-warn-bg p-3 text-sm">
+            <Info aria-hidden className="mt-0.5 size-4 shrink-0 text-warn" />
+            <p className="flex-1">
+              {l(
+                `Battery “${unknownBattery}” is not part of this synthetic demo fleet. Valid IDs: ${SHOWCASE_IDS[0]}…${SHOWCASE_IDS[SHOWCASE_IDS.length - 1]} and BT-10001…BT-${10000 + FLEET_SIZE - SHOWCASE_IDS.length}. Showing ${initial.view.batteryId} instead.`,
+                `“${unknownBattery}” kimlikli batarya bu sentetik demo filosunda yok. Geçerli kimlikler: ${SHOWCASE_IDS[0]}…${SHOWCASE_IDS[SHOWCASE_IDS.length - 1]} ve BT-10001…BT-${10000 + FLEET_SIZE - SHOWCASE_IDS.length}. Yerine ${initial.view.batteryId} gösteriliyor.`,
+              )}
+            </p>
+            <button type="button" onClick={() => setUnknownBattery(null)} aria-label={l('Dismiss notice', 'Bildirimi kapat')} className="-m-1 rounded-md p-2 text-mute hover:text-ink"><X aria-hidden className="size-4" /></button>
+          </div>
+        </div>
+      )}
       <main id="demo-main" tabIndex={-1} className="mx-auto grid max-w-[1600px] gap-4 px-4 py-4 lg:px-6 xl:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
         <div id="fleet-view" className={`${mobileView === 'fleet' ? '' : 'hidden'} min-w-0 xl:block`}>
         <FleetList

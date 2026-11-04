@@ -28,6 +28,8 @@ npm run typecheck     # tsc -b
 npm run lint          # eslint
 ```
 
+**Paylaşılabilir görünüm ve pasaport bağlantısı:** Demo seçili görünümü adrese yazar: `?battery=BT-10087&scenario=temp-drift&day=20&tab=passport` (varsayılan değerler yazılmaz, `lang` korunur). Pasaport sekmesinin altında bu görünümü açan adres, QR ve kopyala düğmesi vardır; yerel kopyada da yayındaki adresi üretir. Filoda olmayan kimlik açıklayıcı bildirimle varsayılan bataryaya döner. Kurallar `web/shared/view.ts`, kimlik listesi `web/shared/config.ts` → `batteryIds()` içindedir. Bilinmeyen adresler için iki dilli `web/public/404.html` kullanılır. İçerik/izin/teslim durumu: [YAYIN_KONTROL_LISTESI.md](YAYIN_KONTROL_LISTESI.md).
+
 Üst çubuktaki **Guided demo / Demo rehberi** düğmesi ziyaretçiye yönelik 8 adımlık deneyimi açar. Her adım ilgili senaryo, gün ve bataryayı kurar; neye bakılacağını ve neyin denenebileceğini açıklar (← → ile ilerler, Esc kapatır). SOH, SOC ve ΔV gibi kavramlar ayrıca açılır gösterge rehberinde açıklanır.
 
 **Stant / QR:** Üst çubuktaki **Project & team / Proje ve ekip** bağlantısı doğrudan tanıtım sayfasını açar. Büyük QR, alt kısımdaki ayrı **Share project QR / Proje QR’ını paylaş** düğmesindedir; küçük QR da sayfanın altında durur. QR, ayrı derlenen `/hakkimizda/` tanıtım sayfasını açar. Broşürle aynı petrol yeşili/bordo/lime kimliğini kullanan sayfa İngilizce açılır; üstteki EN/TR seçimiyle Türkçeye geçilir. Akış: broşür/poster → QR → proje ve ekip tanıtımı → demo. Adres korunduğu için basılı QR değişmez. Uygulama localhost'tan açılsa bile QR yayındaki adrese gider.
@@ -153,6 +155,7 @@ Kontrol kaydı: [Faz 5 incelemesi](incelemeler/faz-5/INCELEME.md). GitHub'a gön
 - [Sekiz aşamalı tam pipeline planı ve kabul ölçütleri](MVP_PLANI.md)
 - [Kod inceleme ve Claude Code ile çalışma düzeni](CALISMA_DUZENI.md)
 - [Mevcut durum ve açık kararlar](DURUM.md)
+- [Yayın kontrol listesi: içerik, izin ve teslim durumu](YAYIN_KONTROL_LISTESI.md)
 
 ## Çalışma ilkesi
 
