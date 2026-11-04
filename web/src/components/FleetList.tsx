@@ -36,7 +36,7 @@ export function FleetList({ rows, query, onQuery, filter, onFilter, page, onPage
     <section aria-labelledby="list-title" className="flex min-w-0 flex-col rounded-xl border border-line bg-panel">
       <div className="border-b border-line p-4">
         <div className="flex items-baseline justify-between gap-2">
-          <h2 id="list-title" className="text-lg font-bold">{l('Maintenance priorities', 'Bakım öncelik listesi')}</h2>
+          <h2 id="list-title" tabIndex={-1} className="text-lg font-bold">{l('Maintenance priorities', 'Bakım öncelik listesi')}</h2>
           <span className="text-xs text-mute tabular" aria-live="polite">
             {rows.status === 'ok' ? (filtered.length === all.length ? l(`${all.length} batteries`, `${all.length} batarya`) : `${filtered.length} / ${all.length}`) : ''}
           </span>
@@ -109,6 +109,7 @@ export function FleetList({ rows, query, onQuery, filter, onFilter, page, onPage
                       <td className={`border-l-4 py-2.5 pl-3 pr-2 ${sel ? 'border-accent' : st.edge}`}>
                         <button
                           type="button"
+                          data-battery-id={r.id}
                           onClick={(e) => { e.stopPropagation(); onSelect(r.id) }}
                           className="whitespace-nowrap font-semibold tabular text-ink underline-offset-2 hover:underline"
                         >

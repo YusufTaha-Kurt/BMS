@@ -1,0 +1,237 @@
+[
+  {
+    "test": "team-skip-preserves-closed-tr",
+    "url": "http://127.0.0.1:4173/hakkimizda/ekip/?lang=tr#main",
+    "focus": "main",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "team-top-preserves-open-tr",
+    "url": "http://127.0.0.1:4173/hakkimizda/ekip/?lang=tr#top",
+    "focus": "",
+    "open": [
+      "profile-gizem"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "project-skip-preserves-closed-tr",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=tr#main",
+    "focus": "main",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "methods-link-opens-only-related-tr",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=tr#project-methods",
+    "focus": "",
+    "open": [
+      "project-methods"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "nested-target-reveals-ancestors-tr",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=tr#project-passport-access",
+    "focus": "",
+    "open": [
+      "project-methods",
+      "project-passport-details",
+      "project-passport-access"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "carbon-fields-direct-address-tr",
+    "url": "http://127.0.0.1:4173/hakkimizda/karbon/?lang=tr#carbon-information-title",
+    "focus": "",
+    "open": [
+      "carbon-information-title"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "team-skip-preserves-closed-en",
+    "url": "http://127.0.0.1:4173/hakkimizda/ekip/?lang=en#main",
+    "focus": "main",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "team-top-preserves-open-en",
+    "url": "http://127.0.0.1:4173/hakkimizda/ekip/?lang=en#top",
+    "focus": "",
+    "open": [
+      "profile-gizem"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "project-skip-preserves-closed-en",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=en#main",
+    "focus": "main",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "methods-link-opens-only-related-en",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=en#project-methods",
+    "focus": "",
+    "open": [
+      "project-methods"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "nested-target-reveals-ancestors-en",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=en#project-passport-access",
+    "focus": "",
+    "open": [
+      "project-methods",
+      "project-passport-details",
+      "project-passport-access"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "carbon-fields-direct-address-en",
+    "url": "http://127.0.0.1:4173/hakkimizda/karbon/?lang=en#carbon-information-title",
+    "focus": "",
+    "open": [
+      "carbon-information-title"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "nested-target-cold-load-en",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=en#project-passport-access",
+    "focus": "",
+    "open": [
+      "project-passport-details",
+      "project-passport-access"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "nested-target-language-preserves-state",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=tr#project-passport-access",
+    "focus": "",
+    "open": [
+      "project-passport-details",
+      "project-passport-access"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "pilot-link",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=tr#project-pilot",
+    "focus": "",
+    "open": [
+      "project-passport-details",
+      "project-passport-access"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "history-back-nested",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=tr#project-passport-access",
+    "focus": "",
+    "open": [
+      "project-passport-details",
+      "project-passport-access"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "history-forward-pilot",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=tr#project-pilot",
+    "focus": "",
+    "open": [
+      "project-passport-details",
+      "project-passport-access"
+    ],
+    "overflow": false
+  },
+  {
+    "test": "mobile-detail-focus",
+    "url": "http://127.0.0.1:4173/?lang=tr",
+    "focus": "panel-title",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "tabs-right",
+    "url": "http://127.0.0.1:4173/?lang=tr",
+    "focus": "tab-telemetry",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "mobile-return-and-search",
+    "focus": "BT-10087",
+    "query": "BT-10087"
+  },
+  {
+    "test": "guide-open-390-tr",
+    "url": "http://127.0.0.1:4173/?lang=tr",
+    "focus": "demo-guide",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "guide-finish-390-tr",
+    "url": "http://127.0.0.1:4173/?lang=tr",
+    "focus": "guide-trigger",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "guide-open-390-en",
+    "url": "http://127.0.0.1:4173/?lang=en",
+    "focus": "demo-guide",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "guide-finish-390-en",
+    "url": "http://127.0.0.1:4173/?lang=en",
+    "focus": "guide-trigger",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "guide-open-1440-tr",
+    "url": "http://127.0.0.1:4173/?lang=tr",
+    "focus": "demo-guide",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "guide-finish-1440-tr",
+    "url": "http://127.0.0.1:4173/?lang=tr",
+    "focus": "guide-trigger",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "guide-open-1440-en",
+    "url": "http://127.0.0.1:4173/?lang=en",
+    "focus": "demo-guide",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "guide-finish-1440-en",
+    "url": "http://127.0.0.1:4173/?lang=en",
+    "focus": "guide-trigger",
+    "open": [],
+    "overflow": false
+  },
+  {
+    "test": "landscape-guide-in-flow",
+    "guideBottom": 390,
+    "workspaceTop": 390,
+    "overflow": false
+  }
+]

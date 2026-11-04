@@ -1,0 +1,602 @@
+[
+  {
+    "width": 360,
+    "lang": "tr",
+    "page": "proje",
+    "initial": {
+      "access": 4,
+      "blankFields": 4,
+      "brokenAnchors": 0,
+      "disclosures": [
+        false,
+        false
+      ],
+      "fields": 4,
+      "flow": 6,
+      "forms": 0,
+      "indicators": 0,
+      "lifecycle": 5,
+      "methods": 5,
+      "overflow": false,
+      "sourceLinks": [
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/2026-08-13/eng/"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/eu-digital-product-passport-faq-batteries_en"
+        }
+      ],
+      "timeline": 6
+    },
+    "after": {
+      "clipped": 0,
+      "open": [
+        true,
+        true
+      ],
+      "overflow": false
+    }
+  },
+  {
+    "width": 360,
+    "lang": "tr",
+    "page": "karbon",
+    "initial": {
+      "access": 0,
+      "blankFields": 10,
+      "brokenAnchors": 0,
+      "disclosures": [],
+      "fields": 10,
+      "flow": 0,
+      "forms": 0,
+      "formula": "Operasyonel emisyon=Şebekeden çekilen enerji×Elektrik tüketim noktası emisyon faktörü",
+      "indicators": 2,
+      "lifecycle": 0,
+      "methods": 0,
+      "notice": "Bu sayfadaki etkiler beklenen etkilerdir ve tahmin niteliğindedir. Ölçülmüş sonuçlar pilot çalışmanın ardından paylaşılacaktır.",
+      "overflow": false,
+      "sourceLinks": [
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://duyuru.enerji.gov.tr/evced-cevre-ve-iklim-elektrik-uretim-tuketim-emisyon-faktorleri"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/2026-08-13/eng/"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://duyuru.enerji.gov.tr/evced-cevre-ve-iklim-elektrik-uretim-tuketim-emisyon-faktorleri"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://unfccc.int/cop31"
+        }
+      ],
+      "timeline": 0
+    },
+    "after": {
+      "clipped": 0,
+      "open": [],
+      "overflow": false
+    }
+  },
+  {
+    "width": 360,
+    "lang": "en",
+    "page": "proje",
+    "initial": {
+      "access": 4,
+      "blankFields": 4,
+      "brokenAnchors": 0,
+      "disclosures": [
+        false,
+        false
+      ],
+      "fields": 4,
+      "flow": 6,
+      "forms": 0,
+      "indicators": 0,
+      "lifecycle": 5,
+      "methods": 5,
+      "overflow": false,
+      "sourceLinks": [
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/2026-08-13/eng/"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/eu-digital-product-passport-faq-batteries_en"
+        }
+      ],
+      "timeline": 6
+    },
+    "after": {
+      "clipped": 0,
+      "open": [
+        true,
+        true
+      ],
+      "overflow": false
+    }
+  },
+  {
+    "width": 360,
+    "lang": "en",
+    "page": "karbon",
+    "initial": {
+      "access": 0,
+      "blankFields": 10,
+      "brokenAnchors": 0,
+      "disclosures": [],
+      "fields": 10,
+      "flow": 0,
+      "forms": 0,
+      "formula": "Operational emissions=Energy drawn from the grid×Electricity consumption-point emissions factor",
+      "indicators": 2,
+      "lifecycle": 0,
+      "methods": 0,
+      "notice": "The effects described on this page are expected effects and estimates. Measured results will be shared after the pilot study.",
+      "overflow": false,
+      "sourceLinks": [
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://duyuru.enerji.gov.tr/evced-cevre-ve-iklim-elektrik-uretim-tuketim-emisyon-faktorleri"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/2026-08-13/eng/"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://duyuru.enerji.gov.tr/evced-cevre-ve-iklim-elektrik-uretim-tuketim-emisyon-faktorleri"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://unfccc.int/cop31"
+        }
+      ],
+      "timeline": 0
+    },
+    "after": {
+      "clipped": 0,
+      "open": [],
+      "overflow": false
+    }
+  },
+  {
+    "width": 768,
+    "lang": "tr",
+    "page": "proje",
+    "initial": {
+      "access": 4,
+      "blankFields": 4,
+      "brokenAnchors": 0,
+      "disclosures": [
+        false,
+        false
+      ],
+      "fields": 4,
+      "flow": 6,
+      "forms": 0,
+      "indicators": 0,
+      "lifecycle": 5,
+      "methods": 5,
+      "overflow": false,
+      "sourceLinks": [
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/2026-08-13/eng/"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/eu-digital-product-passport-faq-batteries_en"
+        }
+      ],
+      "timeline": 6
+    },
+    "after": {
+      "clipped": 0,
+      "open": [
+        true,
+        true
+      ],
+      "overflow": false
+    }
+  },
+  {
+    "width": 768,
+    "lang": "tr",
+    "page": "karbon",
+    "initial": {
+      "access": 0,
+      "blankFields": 10,
+      "brokenAnchors": 0,
+      "disclosures": [],
+      "fields": 10,
+      "flow": 0,
+      "forms": 0,
+      "formula": "Operasyonel emisyon=Şebekeden çekilen enerji×Elektrik tüketim noktası emisyon faktörü",
+      "indicators": 2,
+      "lifecycle": 0,
+      "methods": 0,
+      "notice": "Bu sayfadaki etkiler beklenen etkilerdir ve tahmin niteliğindedir. Ölçülmüş sonuçlar pilot çalışmanın ardından paylaşılacaktır.",
+      "overflow": false,
+      "sourceLinks": [
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://duyuru.enerji.gov.tr/evced-cevre-ve-iklim-elektrik-uretim-tuketim-emisyon-faktorleri"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/2026-08-13/eng/"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://duyuru.enerji.gov.tr/evced-cevre-ve-iklim-elektrik-uretim-tuketim-emisyon-faktorleri"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://unfccc.int/cop31"
+        }
+      ],
+      "timeline": 0
+    },
+    "after": {
+      "clipped": 0,
+      "open": [],
+      "overflow": false
+    }
+  },
+  {
+    "width": 768,
+    "lang": "en",
+    "page": "proje",
+    "initial": {
+      "access": 4,
+      "blankFields": 4,
+      "brokenAnchors": 0,
+      "disclosures": [
+        false,
+        false
+      ],
+      "fields": 4,
+      "flow": 6,
+      "forms": 0,
+      "indicators": 0,
+      "lifecycle": 5,
+      "methods": 5,
+      "overflow": false,
+      "sourceLinks": [
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/2026-08-13/eng/"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/eu-digital-product-passport-faq-batteries_en"
+        }
+      ],
+      "timeline": 6
+    },
+    "after": {
+      "clipped": 0,
+      "open": [
+        true,
+        true
+      ],
+      "overflow": false
+    }
+  },
+  {
+    "width": 768,
+    "lang": "en",
+    "page": "karbon",
+    "initial": {
+      "access": 0,
+      "blankFields": 10,
+      "brokenAnchors": 0,
+      "disclosures": [],
+      "fields": 10,
+      "flow": 0,
+      "forms": 0,
+      "formula": "Operational emissions=Energy drawn from the grid×Electricity consumption-point emissions factor",
+      "indicators": 2,
+      "lifecycle": 0,
+      "methods": 0,
+      "notice": "The effects described on this page are expected effects and estimates. Measured results will be shared after the pilot study.",
+      "overflow": false,
+      "sourceLinks": [
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://duyuru.enerji.gov.tr/evced-cevre-ve-iklim-elektrik-uretim-tuketim-emisyon-faktorleri"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/2026-08-13/eng/"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://duyuru.enerji.gov.tr/evced-cevre-ve-iklim-elektrik-uretim-tuketim-emisyon-faktorleri"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://unfccc.int/cop31"
+        }
+      ],
+      "timeline": 0
+    },
+    "after": {
+      "clipped": 0,
+      "open": [],
+      "overflow": false
+    }
+  },
+  {
+    "width": 1440,
+    "lang": "tr",
+    "page": "proje",
+    "initial": {
+      "access": 4,
+      "blankFields": 4,
+      "brokenAnchors": 0,
+      "disclosures": [
+        false,
+        false
+      ],
+      "fields": 4,
+      "flow": 6,
+      "forms": 0,
+      "indicators": 0,
+      "lifecycle": 5,
+      "methods": 5,
+      "overflow": false,
+      "sourceLinks": [
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/2026-08-13/eng/"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/eu-digital-product-passport-faq-batteries_en"
+        }
+      ],
+      "timeline": 6
+    },
+    "after": {
+      "clipped": 0,
+      "open": [
+        true,
+        true
+      ],
+      "overflow": false
+    }
+  },
+  {
+    "width": 1440,
+    "lang": "tr",
+    "page": "karbon",
+    "initial": {
+      "access": 0,
+      "blankFields": 10,
+      "brokenAnchors": 0,
+      "disclosures": [],
+      "fields": 10,
+      "flow": 0,
+      "forms": 0,
+      "formula": "Operasyonel emisyon=Şebekeden çekilen enerji×Elektrik tüketim noktası emisyon faktörü",
+      "indicators": 2,
+      "lifecycle": 0,
+      "methods": 0,
+      "notice": "Bu sayfadaki etkiler beklenen etkilerdir ve tahmin niteliğindedir. Ölçülmüş sonuçlar pilot çalışmanın ardından paylaşılacaktır.",
+      "overflow": false,
+      "sourceLinks": [
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://duyuru.enerji.gov.tr/evced-cevre-ve-iklim-elektrik-uretim-tuketim-emisyon-faktorleri"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/2026-08-13/eng/"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://duyuru.enerji.gov.tr/evced-cevre-ve-iklim-elektrik-uretim-tuketim-emisyon-faktorleri"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://unfccc.int/cop31"
+        }
+      ],
+      "timeline": 0
+    },
+    "after": {
+      "clipped": 0,
+      "open": [],
+      "overflow": false
+    }
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "page": "proje",
+    "initial": {
+      "access": 4,
+      "blankFields": 4,
+      "brokenAnchors": 0,
+      "disclosures": [
+        false,
+        false
+      ],
+      "fields": 4,
+      "flow": 6,
+      "forms": 0,
+      "indicators": 0,
+      "lifecycle": 5,
+      "methods": 5,
+      "overflow": false,
+      "sourceLinks": [
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/2026-08-13/eng/"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/eu-digital-product-passport-faq-batteries_en"
+        }
+      ],
+      "timeline": 6
+    },
+    "after": {
+      "clipped": 0,
+      "open": [
+        true,
+        true
+      ],
+      "overflow": false
+    }
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "page": "karbon",
+    "initial": {
+      "access": 0,
+      "blankFields": 10,
+      "brokenAnchors": 0,
+      "disclosures": [],
+      "fields": 10,
+      "flow": 0,
+      "forms": 0,
+      "formula": "Operational emissions=Energy drawn from the grid×Electricity consumption-point emissions factor",
+      "indicators": 2,
+      "lifecycle": 0,
+      "methods": 0,
+      "notice": "The effects described on this page are expected effects and estimates. Measured results will be shared after the pilot study.",
+      "overflow": false,
+      "sourceLinks": [
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://duyuru.enerji.gov.tr/evced-cevre-ve-iklim-elektrik-uretim-tuketim-emisyon-faktorleri"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/2026-08-13/eng/"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://duyuru.enerji.gov.tr/evced-cevre-ve-iklim-elektrik-uretim-tuketim-emisyon-faktorleri"
+        },
+        {
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "url": "https://unfccc.int/cop31"
+        }
+      ],
+      "timeline": 0
+    },
+    "after": {
+      "clipped": 0,
+      "open": [],
+      "overflow": false
+    }
+  }
+]

@@ -46,7 +46,17 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* Keep the interactive guide usable above short mobile viewports. */
-.demo-guide { max-height: min(47dvh, 440px); overflow-y: auto; }
-@media (min-width: 640px) { .demo-guide { max-height: calc(100dvh - 32px); } }
-#demo-workspace { scroll-margin-top: 12px; }
+/* The non-modal guide reserves its own space and never covers measurements. */
+.demo-guide { margin: 16px auto 0; width: calc(100% - 32px); max-width: 1552px; border-radius: 3px; }
+.guide-toggle, .guide-target { display: inline-flex; align-items: center; min-height: 44px; margin-right: 24px; }
+#demo-workspace, #panel-title, #list-title, #passport, #feedback { scroll-margin-top: 16px; }
+button, select, input[type="search"], summary, header a { min-height: 44px; }
+button { min-width: 44px; }
+input[type="range"] { min-height: 44px; }
+header label:has(input[type="checkbox"]) { min-height: 44px; }
+.text-\[11px\] { font-size: 12px; }
+.chart-summary { line-height: 1.6; margin-bottom: 8px; }
+.demo-skip { position: fixed; top: 8px; left: 8px; z-index: 100; background: var(--color-accent); color: var(--color-bg); padding: 12px 18px; transform: translateY(-160%); }
+.demo-skip:focus { transform: none; }
+#demo-main:focus { outline: none; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }

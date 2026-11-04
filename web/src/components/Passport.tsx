@@ -54,7 +54,7 @@ export function Passport({ history, day }: Props) {
     cur.priority === 'critical' ? l('Technical review recommended', 'Teknik inceleme önerildi') : cur.soh < R.sohAttentionPct ? l('Assessment candidate', 'Değerlendirme adayı') : l('In active use', 'Aktif kullanım')
 
   return (
-    <section id="passport" aria-labelledby="passport-title">
+    <section id="passport" tabIndex={-1} aria-labelledby="passport-title">
       <div className="mb-2.5 flex flex-wrap items-center justify-between gap-2">
         <h3 id="passport-title" className="flex items-center gap-1.5 text-sm font-bold">
           <Fingerprint aria-hidden className="size-4 text-accent" /> {l('Digital Battery Passport', 'Dijital Batarya Pasaportu')}

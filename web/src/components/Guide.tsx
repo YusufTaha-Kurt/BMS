@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight, X } from 'lucide-react'
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { EVENT_DAY, FOCUS_DAY, NATURAL_FAULTS, type ScenarioId } from '../../shared/config.ts'
 import type { SiteLanguage } from '../site.ts'
 import { useI18n } from '../lib/i18n.tsx'
@@ -75,23 +75,32 @@ export function Guide({ step, onStep, onClose }: { step: number; onStep: (i: num
   const { language, l } = useI18n()
   const text = GUIDE_STEPS[step].text[language]
   const last = GUIDE_STEPS.length - 1
+  const guide = useRef<HTMLElement>(null)
+  const [expanded, setExpanded] = useState(true)
+  useEffect(() => { guide.current?.focus() }, [])
   useEffect(() => {
-    const onKey = (event: KeyboardEvent) => {
-      const target = event.target as HTMLElement | null
-      if (target && ['INPUT', 'SELECT', 'TEXTAREA'].includes(target.tagName)) return
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && !event.defaultPrevented) onClose()
+    }
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [onClose])
+  const target = GUIDE_STEPS[step].view.focus
+  const targetId = target === 'top' ? 'list-title' : target === 'passport' ? 'passport' : target === 'feedback' ? 'feedback' : 'panel-title'
+  return (
+    <aside id="demo-guide" ref={guide} tabIndex={-1} onKeyDown={(event) => {
+      if (event.defaultPrevented) return
+      if (event.key === 'Escape') { event.preventDefault(); onClose(); return }
+      if ((event.target as HTMLElement).closest('input, select, textarea, [role="application"], [role="tablist"]')) return
       if (event.key === 'ArrowRight' && step < last) { event.preventDefault(); onStep(step + 1) }
       else if (event.key === 'ArrowLeft' && step > 0) { event.preventDefault(); onStep(step - 1) }
-      else if (event.key === 'Escape') onClose()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [step, last, onStep, onClose])
-  return (
-    <aside aria-label={l('Guided demo', 'Demo rehberi')} className="demo-guide fixed inset-x-2 bottom-2 z-50 rounded-xl border border-accent/60 bg-panel p-4 shadow-2xl sm:inset-x-auto sm:right-4 sm:bottom-4 sm:w-[400px]">
-      <div className="sticky top-0 z-10 flex items-start justify-between gap-3 bg-panel"><div><p className="text-xs font-semibold text-accent">{l('Guided demo', 'Demo rehberi')} · {step + 1} / {GUIDE_STEPS.length}</p><h2 className="mt-1 text-base font-bold">{text.title}</h2></div><button type="button" onClick={onClose} aria-label={l('Close guide', 'Rehberi kapat')} className="rounded-md p-1 text-mute hover:text-ink"><X size={20} aria-hidden /></button></div>
-      <p className="mt-3 text-sm leading-relaxed">{text.body}</p>
-      <p className="mt-3 rounded-md border border-line bg-card p-2.5 text-xs leading-relaxed text-mute"><strong className="text-ink">{l('Try this: ', 'Deneyin: ')}</strong>{text.task}</p>
-      <div className="sticky bottom-0 mt-3 flex items-center justify-between gap-2 border-t border-line bg-panel pt-3"><button type="button" disabled={step === 0} onClick={() => onStep(step - 1)} className="inline-flex items-center gap-1 rounded-md border border-line px-2.5 py-1.5 text-sm font-semibold disabled:opacity-40"><ArrowLeft size={15} aria-hidden />{l('Back', 'Geri')}</button><span className="text-xs text-mute">{step + 1} / {GUIDE_STEPS.length}</span><button type="button" onClick={() => step < last ? onStep(step + 1) : onClose()} className="inline-flex items-center gap-1 rounded-md border border-accent bg-accent/20 px-2.5 py-1.5 text-sm font-semibold">{step < last ? l('Next', 'İleri') : l('Finish', 'Bitir')}<ArrowRight size={15} aria-hidden /></button></div>
+    }} aria-label={l('Guided demo', 'Demo rehberi')} className="demo-guide border border-line bg-panel p-4">
+      <div className="top-0 z-10 flex items-start justify-between gap-3 bg-panel"><div><p role="status" aria-live="polite" aria-atomic="true" className="text-xs font-semibold text-accent">{l('Guided demo', 'Demo rehberi')} · {step + 1} / {GUIDE_STEPS.length} · {text.title}</p><h2 className="mt-1 text-base font-bold">{text.title}</h2></div><button type="button" onClick={onClose} aria-label={l('Close guide', 'Rehberi kapat')} className="rounded-md p-1 text-mute hover:text-ink"><X size={20} aria-hidden /></button></div>
+      <button type="button" className="guide-toggle text-sm underline" aria-expanded={expanded} aria-controls="guide-explanation" onClick={() => setExpanded(!expanded)}>{expanded ? l('Hide explanation', 'Açıklamayı gizle') : l('Show explanation', 'Açıklamayı göster')}</button>
+      <div id="guide-explanation" hidden={!expanded}><p className="mt-3 text-sm leading-relaxed">{text.body}</p>
+      <p className="mt-3 rounded-md border border-line bg-card p-2.5 text-xs leading-relaxed text-mute"><strong className="text-ink">{l('Try this: ', 'Deneyin: ')}</strong>{text.task}</p></div>
+      <a className="guide-target text-sm underline" href={`#${targetId}`}>{l('Inspect this step in the demo', 'Bu adımı demoda incele')}</a>
+      <div className="bottom-0 mt-3 flex items-center justify-between gap-2 border-t border-line bg-panel pt-3"><button type="button" disabled={step === 0} onClick={() => onStep(step - 1)} className="inline-flex items-center gap-1 rounded-md border border-line px-2.5 py-1.5 text-sm font-semibold disabled:opacity-40"><ArrowLeft size={15} aria-hidden />{l('Back', 'Geri')}</button><span className="text-xs text-mute">{step + 1} / {GUIDE_STEPS.length}</span><button type="button" onClick={() => step < last ? onStep(step + 1) : onClose()} className="inline-flex items-center gap-1 rounded-md border border-accent bg-accent/20 px-2.5 py-1.5 text-sm font-semibold">{step < last ? l('Next', 'İleri') : l('Finish', 'Bitir')}<ArrowRight size={15} aria-hidden /></button></div>
     </aside>
   )
 }

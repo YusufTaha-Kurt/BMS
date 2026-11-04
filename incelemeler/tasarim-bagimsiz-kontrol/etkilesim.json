@@ -1,0 +1,133 @@
+[
+  {
+    "test": "profile-language",
+    "url": "http://127.0.0.1:4173/hakkimizda/ekip/?lang=en#profile-gizem",
+    "lang": "en",
+    "open": [
+      "profile-gizem"
+    ]
+  },
+  {
+    "test": "single-profile",
+    "open": [
+      "profile-gamze"
+    ]
+  },
+  {
+    "test": "menu-escape",
+    "focus": "Open menu",
+    "expanded": "false"
+  },
+  {
+    "test": "mobile-detail-focus",
+    "focus": "panel-title",
+    "text": "BT-10087"
+  },
+  {
+    "test": "tabs-right",
+    "focus": "tab-telemetry",
+    "selected": "Telemetri"
+  },
+  {
+    "test": "tabs-end",
+    "focus": "tab-passport",
+    "selected": "Pasaport"
+  },
+  {
+    "test": "mobile-return-focus",
+    "focus": "BT-10087",
+    "battery": "BT-10087",
+    "query": "BT-10087"
+  },
+  {
+    "test": "guide-open-focus",
+    "focus": "demo-guide"
+  },
+  {
+    "test": "chart-arrow-does-not-advance-guide",
+    "status": "Demo rehberi · 2 / 8 · Erken uyarıyı görün",
+    "charts": [
+      {
+        "label": "_r_c_-title",
+        "description": "_r_c_-summary"
+      },
+      {
+        "label": "_r_d_-title",
+        "description": "_r_d_-summary"
+      },
+      {
+        "label": "_r_e_-title",
+        "description": "_r_e_-summary"
+      },
+      {
+        "label": "_r_f_-title",
+        "description": "_r_f_-summary"
+      },
+      {
+        "label": "_r_g_-title",
+        "description": "_r_g_-summary"
+      },
+      {
+        "label": "_r_h_-title",
+        "description": "_r_h_-summary"
+      }
+    ]
+  },
+  {
+    "test": "guide-close-focus",
+    "focus": "guide-trigger",
+    "guide": false
+  },
+  {
+    "test": "team-before-skip",
+    "open": []
+  },
+  {
+    "test": "team-after-skip",
+    "hash": "#main",
+    "focus": "main",
+    "open": [
+      "profile-coordinator"
+    ]
+  },
+  {
+    "test": "project-before-skip",
+    "details": [
+      {
+        "title": "Planlanan analiz yöntemleri",
+        "open": false
+      },
+      {
+        "title": "Planlanan erişim ayrımı",
+        "open": false
+      }
+    ]
+  },
+  {
+    "test": "project-after-skip",
+    "details": [
+      {
+        "title": "Planlanan analiz yöntemleri",
+        "open": true
+      },
+      {
+        "title": "Planlanan erişim ayrımı",
+        "open": true
+      }
+    ]
+  },
+  {
+    "test": "project-backtop",
+    "hash": "#top",
+    "details": [
+      {
+        "title": "Planlanan analiz yöntemleri",
+        "open": true
+      },
+      {
+        "title": "Planlanan erişim ayrımı",
+        "open": true
+      }
+    ]
+  }
+]

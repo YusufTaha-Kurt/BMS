@@ -1,0 +1,128 @@
+[
+  {
+    "url": "http://127.0.0.1:4173/?lang=tr",
+    "width": 390,
+    "overflow": false,
+    "background": "rgb(10, 18, 36)",
+    "accent": "#5aa9ff",
+    "loadedImages": []
+  },
+  {
+    "url": "http://127.0.0.1:4173/hakkimizda/?lang=tr",
+    "width": 390,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "accent": "",
+    "loadedImages": [
+      {
+        "src": "http://127.0.0.1:4173/assets/hero-telemetry-tr-AXmE7C2T.jpg",
+        "width": 788
+      }
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=tr",
+    "width": 390,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "accent": "",
+    "loadedImages": []
+  },
+  {
+    "url": "http://127.0.0.1:4173/?lang=en",
+    "width": 390,
+    "overflow": false,
+    "background": "rgb(10, 18, 36)",
+    "accent": "#5aa9ff",
+    "loadedImages": []
+  },
+  {
+    "url": "http://127.0.0.1:4173/hakkimizda/?lang=en",
+    "width": 390,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "accent": "",
+    "loadedImages": [
+      {
+        "src": "http://127.0.0.1:4173/assets/hero-telemetry-en-D216rnZO.jpg",
+        "width": 788
+      }
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=en",
+    "width": 390,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "accent": "",
+    "loadedImages": []
+  },
+  {
+    "url": "http://127.0.0.1:4173/?lang=tr",
+    "width": 1440,
+    "overflow": false,
+    "background": "rgb(10, 18, 36)",
+    "accent": "#5aa9ff",
+    "loadedImages": []
+  },
+  {
+    "url": "http://127.0.0.1:4173/hakkimizda/?lang=tr",
+    "width": 1440,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "accent": "",
+    "loadedImages": [
+      {
+        "src": "http://127.0.0.1:4173/assets/hero-telemetry-tr-AXmE7C2T.jpg",
+        "width": 788
+      }
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=tr",
+    "width": 1440,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "accent": "",
+    "loadedImages": [
+      {
+        "src": "http://127.0.0.1:4173/assets/fleet-tr-OsBeVHMd.jpg",
+        "width": 1425
+      }
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:4173/?lang=en",
+    "width": 1440,
+    "overflow": false,
+    "background": "rgb(10, 18, 36)",
+    "accent": "#5aa9ff",
+    "loadedImages": []
+  },
+  {
+    "url": "http://127.0.0.1:4173/hakkimizda/?lang=en",
+    "width": 1440,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "accent": "",
+    "loadedImages": [
+      {
+        "src": "http://127.0.0.1:4173/assets/hero-telemetry-en-D216rnZO.jpg",
+        "width": 788
+      }
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=en",
+    "width": 1440,
+    "overflow": false,
+    "background": "rgba(0, 0, 0, 0)",
+    "accent": "",
+    "loadedImages": [
+      {
+        "src": "http://127.0.0.1:4173/assets/fleet-en-54zJEgdm.jpg",
+        "width": 1425
+      }
+    ]
+  }
+]

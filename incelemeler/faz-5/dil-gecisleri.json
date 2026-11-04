@@ -1,0 +1,32 @@
+[
+  {
+    "expected": "tr",
+    "images": [
+      "http://127.0.0.1:4173/assets/fleet-tr-TKiSi_tD.jpg",
+      "http://127.0.0.1:4173/assets/telemetry-tr-qXIPJedW.jpg",
+      "http://127.0.0.1:4173/assets/passport-tr-Cpi4gm41.jpg"
+    ],
+    "language": "tr",
+    "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=tr"
+  },
+  {
+    "reload": true,
+    "language": "tr",
+    "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=tr"
+  },
+  {
+    "expected": "en",
+    "images": [
+      "http://127.0.0.1:4173/assets/fleet-en-Zt68ffao.jpg",
+      "http://127.0.0.1:4173/assets/telemetry-en-qFYlVHdC.jpg",
+      "http://127.0.0.1:4173/assets/passport-en-flC9cENF.jpg"
+    ],
+    "language": "en",
+    "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=en"
+  },
+  {
+    "reload": true,
+    "language": "en",
+    "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=en"
+  }
+]

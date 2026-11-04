@@ -1,0 +1,30 @@
+[
+  {
+    "lang": "tr",
+    "before": {
+      "filter": "Teknik inceleme",
+      "query": "BT-10087"
+    },
+    "detailVisible": true,
+    "after": {
+      "filter": "Teknik inceleme",
+      "fleetVisible": true,
+      "overflow": false,
+      "query": "BT-10087"
+    }
+  },
+  {
+    "lang": "en",
+    "before": {
+      "filter": "Technical review",
+      "query": "BT-10087"
+    },
+    "detailVisible": true,
+    "after": {
+      "filter": "Technical review",
+      "fleetVisible": true,
+      "overflow": false,
+      "query": "BT-10087"
+    }
+  }
+]

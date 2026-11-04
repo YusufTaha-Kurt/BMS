@@ -1,0 +1,690 @@
+{
+  "brochure": [
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/?lang=tr",
+      "width": 320,
+      "overflow": false,
+      "height": 6830,
+      "h1": [
+        "BinBin BatteryIntelligence"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/kurumlar/?lang=tr",
+      "width": 320,
+      "overflow": false,
+      "height": 4171,
+      "h1": [
+        "Kurumsal yapı ve yöneticiler"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/ekip/?lang=tr",
+      "width": 320,
+      "overflow": false,
+      "height": 1707,
+      "h1": [
+        "Proje ekibi"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=tr",
+      "width": 320,
+      "overflow": false,
+      "height": 10509,
+      "h1": [
+        "Proje detayları"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=tr",
+      "width": 320,
+      "overflow": false,
+      "height": 6548,
+      "h1": [
+        "Demo ve sunum"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/karbon/?lang=tr",
+      "width": 320,
+      "overflow": false,
+      "height": 7137,
+      "h1": [
+        "Karbon etkisi ve döngüsellik"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/iletisim/?lang=tr",
+      "width": 320,
+      "overflow": false,
+      "height": 3178,
+      "h1": [
+        "İş birlikleri ve iletişim"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/?lang=en",
+      "width": 320,
+      "overflow": false,
+      "height": 6721,
+      "h1": [
+        "BinBin BatteryIntelligence"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/kurumlar/?lang=en",
+      "width": 320,
+      "overflow": false,
+      "height": 4239,
+      "h1": [
+        "Institutional structure & leadership"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/ekip/?lang=en",
+      "width": 320,
+      "overflow": false,
+      "height": 1685,
+      "h1": [
+        "Project team"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=en",
+      "width": 320,
+      "overflow": false,
+      "height": 10811,
+      "h1": [
+        "Project details"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=en",
+      "width": 320,
+      "overflow": false,
+      "height": 6515,
+      "h1": [
+        "Demo & presentation"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/karbon/?lang=en",
+      "width": 320,
+      "overflow": false,
+      "height": 7405,
+      "h1": [
+        "Carbon impact & circularity"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/iletisim/?lang=en",
+      "width": 320,
+      "overflow": false,
+      "height": 3189,
+      "h1": [
+        "Collaboration & contact"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/?lang=tr",
+      "width": 768,
+      "overflow": false,
+      "height": 4569,
+      "h1": [
+        "BinBin BatteryIntelligence"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/kurumlar/?lang=tr",
+      "width": 768,
+      "overflow": false,
+      "height": 2492,
+      "h1": [
+        "Kurumsal yapı ve yöneticiler"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/ekip/?lang=tr",
+      "width": 768,
+      "overflow": false,
+      "height": 1452,
+      "h1": [
+        "Proje ekibi"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=tr",
+      "width": 768,
+      "overflow": false,
+      "height": 6226,
+      "h1": [
+        "Proje detayları"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=tr",
+      "width": 768,
+      "overflow": false,
+      "height": 5104,
+      "h1": [
+        "Demo ve sunum"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/karbon/?lang=tr",
+      "width": 768,
+      "overflow": false,
+      "height": 4171,
+      "h1": [
+        "Karbon etkisi ve döngüsellik"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/iletisim/?lang=tr",
+      "width": 768,
+      "overflow": false,
+      "height": 2038,
+      "h1": [
+        "İş birlikleri ve iletişim"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/?lang=en",
+      "width": 768,
+      "overflow": false,
+      "height": 4525,
+      "h1": [
+        "BinBin BatteryIntelligence"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/kurumlar/?lang=en",
+      "width": 768,
+      "overflow": false,
+      "height": 2501,
+      "h1": [
+        "Institutional structure & leadership"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/ekip/?lang=en",
+      "width": 768,
+      "overflow": false,
+      "height": 1506,
+      "h1": [
+        "Project team"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=en",
+      "width": 768,
+      "overflow": false,
+      "height": 6483,
+      "h1": [
+        "Project details"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=en",
+      "width": 768,
+      "overflow": false,
+      "height": 5156,
+      "h1": [
+        "Demo & presentation"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/karbon/?lang=en",
+      "width": 768,
+      "overflow": false,
+      "height": 4325,
+      "h1": [
+        "Carbon impact & circularity"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/iletisim/?lang=en",
+      "width": 768,
+      "overflow": false,
+      "height": 2090,
+      "h1": [
+        "Collaboration & contact"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/?lang=tr",
+      "width": 1440,
+      "overflow": false,
+      "height": 4047,
+      "h1": [
+        "BinBin BatteryIntelligence"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/kurumlar/?lang=tr",
+      "width": 1440,
+      "overflow": false,
+      "height": 2263,
+      "h1": [
+        "Kurumsal yapı ve yöneticiler"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/ekip/?lang=tr",
+      "width": 1440,
+      "overflow": false,
+      "height": 1400,
+      "h1": [
+        "Proje ekibi"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=tr",
+      "width": 1440,
+      "overflow": false,
+      "height": 5475,
+      "h1": [
+        "Proje detayları"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=tr",
+      "width": 1440,
+      "overflow": false,
+      "height": 4422,
+      "h1": [
+        "Demo ve sunum"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/karbon/?lang=tr",
+      "width": 1440,
+      "overflow": false,
+      "height": 3500,
+      "h1": [
+        "Karbon etkisi ve döngüsellik"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/iletisim/?lang=tr",
+      "width": 1440,
+      "overflow": false,
+      "height": 1826,
+      "h1": [
+        "İş birlikleri ve iletişim"
+      ],
+      "main": 1,
+      "lang": "tr",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/?lang=en",
+      "width": 1440,
+      "overflow": false,
+      "height": 4013,
+      "h1": [
+        "BinBin BatteryIntelligence"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/kurumlar/?lang=en",
+      "width": 1440,
+      "overflow": false,
+      "height": 2263,
+      "h1": [
+        "Institutional structure & leadership"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/ekip/?lang=en",
+      "width": 1440,
+      "overflow": false,
+      "height": 1430,
+      "h1": [
+        "Project team"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=en",
+      "width": 1440,
+      "overflow": false,
+      "height": 5497,
+      "h1": [
+        "Project details"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=en",
+      "width": 1440,
+      "overflow": false,
+      "height": 4423,
+      "h1": [
+        "Demo & presentation"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/karbon/?lang=en",
+      "width": 1440,
+      "overflow": false,
+      "height": 3578,
+      "h1": [
+        "Carbon impact & circularity"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/iletisim/?lang=en",
+      "width": 1440,
+      "overflow": false,
+      "height": 1885,
+      "h1": [
+        "Collaboration & contact"
+      ],
+      "main": 1,
+      "lang": "en",
+      "badImages": [],
+      "altMissing": 0,
+      "badHash": [],
+      "externalWrongTarget": []
+    }
+  ],
+  "demo": [
+    {
+      "url": "http://127.0.0.1:4173/?lang=tr",
+      "width": 320,
+      "height": 3323,
+      "overflow": false,
+      "main": 1,
+      "h1": 1,
+      "lang": "tr"
+    },
+    {
+      "url": "http://127.0.0.1:4173/?lang=en",
+      "width": 320,
+      "height": 3255,
+      "overflow": false,
+      "main": 1,
+      "h1": 1,
+      "lang": "en"
+    },
+    {
+      "url": "http://127.0.0.1:4173/?lang=tr",
+      "width": 768,
+      "height": 1845,
+      "overflow": false,
+      "main": 1,
+      "h1": 1,
+      "lang": "tr"
+    },
+    {
+      "url": "http://127.0.0.1:4173/?lang=en",
+      "width": 768,
+      "height": 1877,
+      "overflow": false,
+      "main": 1,
+      "h1": 1,
+      "lang": "en"
+    },
+    {
+      "url": "http://127.0.0.1:4173/?lang=tr",
+      "width": 1440,
+      "height": 1902,
+      "overflow": false,
+      "main": 1,
+      "h1": 1,
+      "lang": "tr"
+    },
+    {
+      "url": "http://127.0.0.1:4173/?lang=en",
+      "width": 1440,
+      "height": 1902,
+      "overflow": false,
+      "main": 1,
+      "h1": 1,
+      "lang": "en"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+/* Page-specific presentation. */
+.showcase-start .demo-access { max-width: 360px; justify-self: end; }
+.showcase-guide { display: grid; gap: 0; list-style: none; margin: 26px 0 0; padding: 0; }
+.showcase-guide li { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 22px; padding-block: 23px; border-top: 1px solid var(--rule); }
+.showcase-guide h3 { font-size: 19px; line-height: 1.5; letter-spacing: -.025em; }
+.showcase-gallery { display: grid; gap: 28px; margin-top: 28px; }
+.showcase-image { display: block; min-width: 0; border-radius: 2px; overflow: hidden; background: #101c34; color: var(--paper); }
+.showcase-image img { display: block; width: 100%; height: auto; }
+.showcase-image:hover > span { color: var(--accent-soft); }
+.showcase-gallery h3 { font-size: 21px; line-height: 1.5; letter-spacing: -.025em; }
+.showcase-materials { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 26px; }
+.showcase-material > svg { color: var(--burgundy); }
+.showcase-file-links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 20px; }
+.showcase-material video { display: block; width: 100%; margin-top: 20px; border-radius: 4px; background: var(--petrol); }
+.showcase-material > .home-link { margin-top: 15px; }
+.showcase-start { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: 40px; margin-top: 34px; padding: 28px 0; border-block: 1px solid var(--rule); border-radius: 0; background: transparent; color: var(--petrol); }
+.showcase-start h2 { max-width: 510px; line-height: 1.25; letter-spacing: -.035em; font-size: 30px; font-weight: 400; }
+.showcase-start > div > p { max-width: 580px; margin-top: 18px; line-height: 1.85; font-size: 16px; color: var(--text-secondary); }
+.showcase-start .demo-access-note { color: var(--text-secondary); }
+.showcase-start a:focus-visible { outline-color: var(--burgundy); }
+.showcase-number { display: grid; place-items: center; align-self: start; height: 38px; font-weight: 700; color: var(--burgundy); border: 0; border-radius: 0; font-size: 14px; }
+.showcase-guide p { max-width: 870px; margin-top: 10px; color: var(--text-secondary); line-height: 1.85; font-size: 16px; }
+.showcase-gallery figure { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 30px; align-items: center; margin: 0; padding: 26px 0; border: 0; border-top: 1px solid var(--rule); border-radius: 0; background: transparent; }
+.showcase-gallery figcaption > p { margin-top: 17px; line-height: 1.9; color: var(--text-secondary); font-size: 16px; }
+.showcase-gallery figcaption > .showcase-label { border-left: 2px solid var(--burgundy); padding-left: 14px; color: var(--petrol); font-size: 14px; }
+.showcase-gallery figcaption > .showcase-credit { font-size: 13px; }
+.showcase-image > span { display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 44px; padding: 12px 16px; line-height: 1.65; font-size: 14px; }
+.showcase-material { min-width: 0; border: 0; border-top: 1px solid var(--rule); border-radius: 0; padding: 24px 0; }
+.showcase-material h3 { line-height: 1.5; letter-spacing: -.03em; font-size: 21px; margin-top: 14px; }
+.showcase-material > p { max-width: 470px; margin-top: 15px; line-height: 1.9; color: var(--text-secondary); font-size: 16px; }
+.showcase-material > .showcase-pending { display: inline-block; border-radius: 4px; font-weight: 650; border: 0; padding: 0; font-size: 14px; color: var(--text-secondary); }
+
+@media (max-width: 1000px) {
+.showcase-gallery figcaption { max-width: 700px; }
+.showcase-gallery figure { display: grid; align-items: center; margin: 0; grid-template-columns: 1fr; gap: 24px; padding: 26px 0; border: 0; border-top: 1px solid var(--rule); border-radius: 0; background: transparent; }
+}
+
+@media (max-width: 740px) {
+.showcase-start .demo-access { max-width: 360px; justify-self: start; }
+.showcase-guide li { display: grid; border-top: 1px solid var(--rule); grid-template-columns: 32px minmax(0, 1fr); gap: 16px; padding-block: 22px; }
+.showcase-guide h3 { line-height: 1.5; letter-spacing: -.025em; font-size: 17px; }
+.showcase-gallery h3 { line-height: 1.5; letter-spacing: -.025em; font-size: 20px; }
+.showcase-materials { display: grid; gap: 22px; margin-top: 26px; grid-template-columns: 1fr; }
+.showcase-start { display: grid; align-items: center; margin-top: 34px; grid-template-columns: 1fr; gap: 26px; padding: 28px 0; border-block: 1px solid var(--rule); border-radius: 0; background: transparent; color: var(--petrol); }
+.showcase-number { display: grid; place-items: center; align-self: start; font-weight: 700; color: var(--burgundy); height: 32px; border: 0; border-radius: 0; font-size: 14px; }
+.showcase-gallery figure { display: grid; align-items: center; margin: 0; grid-template-columns: 1fr; gap: 22px; padding: 26px 0; border: 0; border-top: 1px solid var(--rule); border-radius: 0; background: transparent; }
+}

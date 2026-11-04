@@ -1,0 +1,56 @@
+[
+  {
+    "background": "rgba(0, 0, 0, 0)",
+    "color": "rgb(83, 98, 96)",
+    "font": "-apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+    "height": 44,
+    "size": "13px",
+    "text": "EN",
+    "width": 44
+  },
+  {
+    "background": "rgba(0, 0, 0, 0)",
+    "color": "rgb(128, 29, 58)",
+    "font": "-apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+    "height": 44,
+    "size": "13px",
+    "text": "TR",
+    "width": 44
+  },
+  {
+    "background": "rgba(0, 0, 0, 0)",
+    "color": "rgb(38, 54, 55)",
+    "font": "Georgia, \"Times New Roman\", serif",
+    "height": 138.234375,
+    "size": "64px",
+    "text": "BinBin BatteryIntelligence",
+    "width": 561.359375
+  },
+  {
+    "background": "rgba(0, 0, 0, 0)",
+    "color": "rgb(38, 54, 55)",
+    "font": "-apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+    "height": 61.1875,
+    "size": "18px",
+    "text": "Paylaşımlı mikromobilite için batarya sağlığı takibi, bakım karar desteği ve Dijital Batarya Pasaportu.",
+    "width": 490
+  },
+  {
+    "background": "rgb(128, 29, 58)",
+    "color": "rgb(255, 255, 255)",
+    "font": "-apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+    "height": 48,
+    "size": "15px",
+    "text": "Demoyu aç (yeni sekmede açılır)",
+    "width": 165.5546875
+  },
+  {
+    "background": "rgba(0, 0, 0, 0)",
+    "color": "rgb(83, 98, 96)",
+    "font": "-apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+    "height": 42.890625,
+    "size": "13px",
+    "text": "Sentetik veri kullanılır. Bu demo BinBin’in gerçek filo verisini veya nihai arayüzü göstermez.",
+    "width": 390
+  }
+]

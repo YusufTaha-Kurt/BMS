@@ -1,0 +1,32 @@
+[
+  {
+    "lang": "tr",
+    "newTab": "4",
+    "opened": {
+      "heading": "BinBin Battery Intelligence",
+      "language": "tr",
+      "robots": "noindex",
+      "title": "BT-10087 · BinBin Battery Intelligence",
+      "url": "http://127.0.0.1:4173/?lang=tr"
+    },
+    "returned": {
+      "language": "tr",
+      "url": "http://127.0.0.1:4173/hakkimizda/?lang=tr"
+    }
+  },
+  {
+    "lang": "en",
+    "newTab": "5",
+    "opened": {
+      "heading": "BinBin Battery Intelligence",
+      "language": "en",
+      "robots": "noindex",
+      "title": "BT-10087 · BinBin Battery Intelligence",
+      "url": "http://127.0.0.1:4173/?lang=en"
+    },
+    "returned": {
+      "language": "en",
+      "url": "http://127.0.0.1:4173/hakkimizda/?lang=en"
+    }
+  }
+]

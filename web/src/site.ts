@@ -6,6 +6,10 @@ export type { SiteLanguage } from '../shared/types.ts'
 export const SITE_URL = 'https://binbin-battery-intelligence.vercel.app'
 
 export const ABOUT_PATH = 'hakkimizda/'
+export const PROJECT_NAME = 'BinBin Battery Intelligence'
+
+/** Actual editorial update, not the visitor's clock or the build date. */
+export const SITE_CONTENT_UPDATED = '2026-11-04'
 
 export type LocalizedText = Partial<Record<SiteLanguage, string>>
 
@@ -13,12 +17,15 @@ export interface TeamMember {
   id: string
   name: string
   role?: LocalizedText
+  workPackage?: LocalizedText
+  contribution?: LocalizedText
   bio?: LocalizedText
   photo?: string
-  links?: { label: string; url: string }[]
+  photoCredit?: LocalizedText
+  links?: { label: string | LocalizedText; url: string }[]
 }
 
-/** Display order is intentional. Add supplied biographies, roles, photos and links here. */
+/** Unknown fields stay empty. Add only supplied EN/TR content; preserve this order. */
 export const PROJECT_TEAM: readonly TeamMember[] = [
   { id: 'gizem', name: 'Gizem Geniş' },
   { id: 'gamze', name: 'Gamze Geniş' },
@@ -33,6 +40,14 @@ export const COORDINATOR_PROFILE: TeamMember = {
   id: 'coordinator',
   name: ACADEMIC_COORDINATOR,
   role: { en: 'Academic coordinator', tr: 'Akademik koordinatör' },
+  workPackage: {
+    en: 'Project coordination and BinBin communication',
+    tr: 'Proje koordinasyonu ve BinBin iletişimi',
+  },
+  contribution: {
+    en: 'Coordination of the project, communication with BinBin and phase transition decisions.',
+    tr: 'Proje koordinasyonu, BinBin ile iletişim ve faz geçiş kararlarının koordinasyonu.',
+  },
 }
 
 export interface Contact {

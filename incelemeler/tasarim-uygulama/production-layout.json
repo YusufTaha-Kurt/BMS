@@ -1,0 +1,290 @@
+[
+  {
+    "width": 390,
+    "lang": "tr",
+    "route": "/hakkimizda/",
+    "actualLanguage": "tr",
+    "client": 375,
+    "scroll": 375,
+    "title": "Proje tanıtımı · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "tr",
+    "route": "/hakkimizda/kurumlar/",
+    "actualLanguage": "tr",
+    "client": 375,
+    "scroll": 375,
+    "title": "Kurumsal yapı ve yöneticiler · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "tr",
+    "route": "/hakkimizda/ekip/",
+    "actualLanguage": "tr",
+    "client": 375,
+    "scroll": 375,
+    "title": "Proje ekibi · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "tr",
+    "route": "/hakkimizda/proje/",
+    "actualLanguage": "tr",
+    "client": 375,
+    "scroll": 375,
+    "title": "Proje detayları · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "tr",
+    "route": "/hakkimizda/demo/",
+    "actualLanguage": "tr",
+    "client": 375,
+    "scroll": 375,
+    "title": "Demo ve sunum · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "tr",
+    "route": "/hakkimizda/karbon/",
+    "actualLanguage": "tr",
+    "client": 375,
+    "scroll": 375,
+    "title": "Karbon etkisi ve döngüsellik · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "tr",
+    "route": "/hakkimizda/iletisim/",
+    "actualLanguage": "tr",
+    "client": 375,
+    "scroll": 375,
+    "title": "İş birlikleri ve iletişim · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "tr",
+    "route": "/",
+    "actualLanguage": "tr",
+    "client": 375,
+    "scroll": 375,
+    "title": "BT-10087 · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "route": "/hakkimizda/",
+    "actualLanguage": "en",
+    "client": 375,
+    "scroll": 375,
+    "title": "Project introduction · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "route": "/hakkimizda/kurumlar/",
+    "actualLanguage": "en",
+    "client": 375,
+    "scroll": 375,
+    "title": "Institutional structure & leadership · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "route": "/hakkimizda/ekip/",
+    "actualLanguage": "en",
+    "client": 375,
+    "scroll": 375,
+    "title": "Project team · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "route": "/hakkimizda/proje/",
+    "actualLanguage": "en",
+    "client": 375,
+    "scroll": 375,
+    "title": "Project details · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "route": "/hakkimizda/demo/",
+    "actualLanguage": "en",
+    "client": 375,
+    "scroll": 375,
+    "title": "Demo & presentation · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "route": "/hakkimizda/karbon/",
+    "actualLanguage": "en",
+    "client": 375,
+    "scroll": 375,
+    "title": "Carbon impact & circularity · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "route": "/hakkimizda/iletisim/",
+    "actualLanguage": "en",
+    "client": 375,
+    "scroll": 375,
+    "title": "Collaboration & contact · BinBin Battery Intelligence"
+  },
+  {
+    "width": 390,
+    "lang": "en",
+    "route": "/",
+    "actualLanguage": "en",
+    "client": 375,
+    "scroll": 375,
+    "title": "BT-10087 · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "tr",
+    "route": "/hakkimizda/",
+    "actualLanguage": "tr",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Proje tanıtımı · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "tr",
+    "route": "/hakkimizda/kurumlar/",
+    "actualLanguage": "tr",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Kurumsal yapı ve yöneticiler · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "tr",
+    "route": "/hakkimizda/ekip/",
+    "actualLanguage": "tr",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Proje ekibi · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "tr",
+    "route": "/hakkimizda/proje/",
+    "actualLanguage": "tr",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Proje detayları · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "tr",
+    "route": "/hakkimizda/demo/",
+    "actualLanguage": "tr",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Demo ve sunum · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "tr",
+    "route": "/hakkimizda/karbon/",
+    "actualLanguage": "tr",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Karbon etkisi ve döngüsellik · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "tr",
+    "route": "/hakkimizda/iletisim/",
+    "actualLanguage": "tr",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "İş birlikleri ve iletişim · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "tr",
+    "route": "/",
+    "actualLanguage": "tr",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "BT-10087 · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "route": "/hakkimizda/",
+    "actualLanguage": "en",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Project introduction · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "route": "/hakkimizda/kurumlar/",
+    "actualLanguage": "en",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Institutional structure & leadership · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "route": "/hakkimizda/ekip/",
+    "actualLanguage": "en",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Project team · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "route": "/hakkimizda/proje/",
+    "actualLanguage": "en",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Project details · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "route": "/hakkimizda/demo/",
+    "actualLanguage": "en",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Demo & presentation · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "route": "/hakkimizda/karbon/",
+    "actualLanguage": "en",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Carbon impact & circularity · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "route": "/hakkimizda/iletisim/",
+    "actualLanguage": "en",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "Collaboration & contact · BinBin Battery Intelligence"
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "route": "/",
+    "actualLanguage": "en",
+    "client": 1425,
+    "scroll": 1425,
+    "title": "BT-10087 · BinBin Battery Intelligence"
+  }
+]

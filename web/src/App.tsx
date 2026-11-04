@@ -1,6 +1,6 @@
 import { ArrowLeft, QrCode as QrIcon } from 'lucide-react'
 import { useI18n, withLanguage } from './lib/i18n.tsx'
-import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import { DAYS, DEFAULT_VIEW, FOCUS_DAY, SCENARIOS, type ScenarioId } from '../shared/config.ts'
 import type { DetailFile, FleetDayFile, FleetRow, HistoryFile, Manifest } from '../shared/types.ts'
 import { DetailPanel, type PanelTab } from './components/DetailPanel.tsx'
@@ -12,11 +12,10 @@ import { QrDialog } from './components/QrDialog.tsx'
 import { TopBar } from './components/TopBar.tsx'
 import { feedbackKey, useFeedback } from './lib/feedback.ts'
 import { dataUrl, pad2, useJson, type JsonState } from './lib/loadJson.ts'
-import { aboutUrl } from './site.ts'
+import { aboutUrl, PROJECT_NAME } from './site.ts'
 
 type St<T> = JsonState<T> & { reload: () => void }
 
-const FOCUS_ID = { top: null, panel: 'panel-title', passport: 'passport', feedback: 'feedback', history: 'history' } as const
 
 const desktopQuery = '(min-width: 1280px)'
 const desktopSnapshot = () => window.matchMedia(desktopQuery).matches
@@ -41,6 +40,8 @@ export default function App() {
   const [tab, setTab] = useState<PanelTab>('history')
   const [qrOpen, setQrOpen] = useState(false)
   const feedback = useFeedback()
+  const viewFrame = useRef<number | null>(null)
+  useEffect(() => () => { if (viewFrame.current !== null) cancelAnimationFrame(viewFrame.current) }, [])
 
   const compare = compareOn && scenario !== 'baseline'
   const manifest = useJson<Manifest>(dataUrl('manifest.json'))
@@ -81,9 +82,17 @@ export default function App() {
 
   const showMobileView = (view: 'fleet' | 'detail') => {
     setMobileView(view)
-    if (window.matchMedia('(max-width: 1279px)').matches) window.requestAnimationFrame(() => {
-      document.getElementById('demo-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    })
+    if (!isDesktop) {
+      if (viewFrame.current !== null) cancelAnimationFrame(viewFrame.current)
+      viewFrame.current = requestAnimationFrame(() => {
+        const target = view === 'detail'
+          ? document.getElementById('panel-title')
+          : document.querySelector<HTMLElement>(`[data-battery-id="${batteryId}"]`) ?? document.getElementById('list-title')
+        target?.focus({ preventScroll: true })
+        target?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' })
+        viewFrame.current = null
+      })
+    }
   }
 
   // Senaryo seçilince olayın teknik inceleme seviyesine ulaştığı gün ve olaysız karşılaştırma açılır.
@@ -124,19 +133,15 @@ export default function App() {
     setQuery('')
     setPage(1)
     setTab(v.focus === 'passport' ? 'passport' : v.tab ?? 'history')
-    const id = v.focus ? FOCUS_ID[v.focus] : null
-    // Yeni görünüm çizildikten sonra ilgili bölüme kaydır.
-    window.setTimeout(() => {
-      if (v.focus === 'top') { window.scrollTo({ top: 0, behavior: 'smooth' }); return }
-      const el = id ? (document.getElementById(id) ?? document.getElementById('panel-title')) : document.getElementById('panel-title')
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      else window.scrollTo({ top: 0, behavior: 'smooth' })
-    }, 350)
+
   }, [])
-  const closeGuide = useCallback(() => setGuideStep(null), [])
+  const closeGuide = useCallback(() => {
+    setGuideStep(null)
+    requestAnimationFrame(() => document.getElementById('guide-trigger')?.focus())
+  }, [])
 
   useEffect(() => {
-    document.title = `${batteryId} · Battery Intelligence`
+    document.title = `${batteryId} · ${PROJECT_NAME}`
     document.querySelector('meta[name="description"]')?.setAttribute('content', l('Interactive battery health, maintenance priorities and Digital Battery Passport demo using synthetic data · OSTİM Technical University', 'Sentetik veriyle batarya sağlığı, bakım öncelikleri ve Dijital Batarya Pasaportu demosu · OSTİM Teknik Üniversitesi'))
   }, [batteryId, l])
 
@@ -154,7 +159,8 @@ export default function App() {
   const fbKey = feedbackKey(scenario, batteryId)
 
   return (
-    <div className={`min-h-screen ${guideStep !== null ? 'pb-[52dvh] sm:pb-0' : ''}`}>
+    <div className="min-h-screen">
+      <a className="demo-skip" href="#demo-main">{l('Skip to demo content', 'Demo içeriğine geç')}</a>
       <TopBar
         scenario={scenario} onScenario={onScenario}
         day={day} onDay={(d) => setDay(Math.min(DAYS, Math.max(1, d)))}
@@ -165,11 +171,12 @@ export default function App() {
         onGuide={() => (guideStep === null ? goStep(0) : closeGuide())}
         tally={feedback.tally}
       />
+      {guideStep !== null && <Guide step={guideStep} onStep={goStep} onClose={closeGuide} />}
       <nav id="demo-workspace" aria-label={l('Demo views', 'Demo görünümleri')} className="mx-auto flex max-w-[1600px] gap-2 px-4 pt-4 xl:hidden">
         <button type="button" aria-pressed={mobileView === 'fleet'} aria-controls="fleet-view" onClick={() => showMobileView('fleet')} className={`flex-1 rounded-md border px-3 py-2.5 text-sm font-semibold ${mobileView === 'fleet' ? 'border-accent bg-accent/15' : 'border-line text-mute'}`}>{l('Fleet', 'Filo')}</button>
         <button type="button" aria-pressed={mobileView === 'detail'} aria-controls="detail-view" onClick={() => showMobileView('detail')} className={`flex-1 rounded-md border px-3 py-2.5 text-sm font-semibold ${mobileView === 'detail' ? 'border-accent bg-accent/15' : 'border-line text-mute'}`}>{l('Battery details', 'Batarya ayrıntısı')}</button>
       </nav>
-      <main className="mx-auto grid max-w-[1600px] gap-4 px-4 py-4 lg:px-6 xl:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+      <main id="demo-main" tabIndex={-1} className="mx-auto grid max-w-[1600px] gap-4 px-4 py-4 lg:px-6 xl:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
         <div id="fleet-view" className={`${mobileView === 'fleet' ? '' : 'hidden'} min-w-0 xl:block`}>
         <FleetList
           rows={rowsState}
@@ -211,7 +218,6 @@ export default function App() {
         </a>
         <button type="button" onClick={() => setQrOpen(true)} className="inline-flex items-center gap-2 rounded-md border border-line px-3 py-2 text-xs font-semibold hover:border-accent"><QrIcon size={16} aria-hidden />{l('Share project QR', 'Proje QR’ını paylaş')}</button>
       </footer>
-      {guideStep !== null && <Guide step={guideStep} onStep={goStep} onClose={closeGuide} />}
       {qrOpen && <QrDialog onClose={() => setQrOpen(false)} />}
     </div>
   )

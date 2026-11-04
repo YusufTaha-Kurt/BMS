@@ -1,0 +1,48 @@
+[
+  {
+    "page": "proje",
+    "expected": "en",
+    "h1": "Project details",
+    "language": "en",
+    "path": "/hakkimizda/proje/",
+    "query": "?lang=en"
+  },
+  {
+    "page": "proje",
+    "expected": "tr",
+    "h1": "Proje detayları",
+    "language": "tr",
+    "path": "/hakkimizda/proje/",
+    "query": "?lang=tr"
+  },
+  {
+    "page": "proje",
+    "reload": true,
+    "language": "tr",
+    "path": "/hakkimizda/proje/",
+    "query": "?lang=tr"
+  },
+  {
+    "page": "karbon",
+    "expected": "en",
+    "h1": "Carbon impact & circularity",
+    "language": "en",
+    "path": "/hakkimizda/karbon/",
+    "query": "?lang=en"
+  },
+  {
+    "page": "karbon",
+    "expected": "tr",
+    "h1": "Karbon etkisi ve döngüsellik",
+    "language": "tr",
+    "path": "/hakkimizda/karbon/",
+    "query": "?lang=tr"
+  },
+  {
+    "page": "karbon",
+    "reload": true,
+    "language": "tr",
+    "path": "/hakkimizda/karbon/",
+    "query": "?lang=tr"
+  }
+]

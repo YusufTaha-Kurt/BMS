@@ -1,0 +1,54 @@
+[
+  {
+    "test": "direct-pilot",
+    "lang": "tr",
+    "result": {
+      "hash": "#project-pilot",
+      "top": 47.8828125
+    }
+  },
+  {
+    "test": "reload-pilot",
+    "lang": "tr",
+    "result": {
+      "hash": "#project-pilot",
+      "top": 47.8828125
+    }
+  },
+  {
+    "test": "methods-hash-opens-details",
+    "lang": "tr",
+    "result": ""
+  },
+  {
+    "test": "language-preserves-route-hash",
+    "lang": "tr",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=en#project-methods"
+  },
+  {
+    "test": "direct-pilot",
+    "lang": "en",
+    "result": {
+      "hash": "#project-pilot",
+      "top": 47.875
+    }
+  },
+  {
+    "test": "reload-pilot",
+    "lang": "en",
+    "result": {
+      "hash": "#project-pilot",
+      "top": 48.078125
+    }
+  },
+  {
+    "test": "methods-hash-opens-details",
+    "lang": "en",
+    "result": ""
+  },
+  {
+    "test": "language-preserves-route-hash",
+    "lang": "en",
+    "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=tr#project-methods"
+  }
+]

@@ -1,0 +1,282 @@
+[
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "tr",
+    "step": 1,
+    "status": "Demo rehberi · 1 / 8 · Filoyu keşfedin",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "tr",
+    "step": 2,
+    "status": "Demo rehberi · 2 / 8 · Erken uyarıyı görün",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "tr",
+    "step": 3,
+    "status": "Demo rehberi · 3 / 8 · Önceliğin neden değiştiğini inceleyin",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "tr",
+    "step": 4,
+    "status": "Demo rehberi · 4 / 8 · Eksik veri sağlıklı demek değildir",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "tr",
+    "step": 5,
+    "status": "Demo rehberi · 5 / 8 · Karma filoda öncelik belirleyin",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "tr",
+    "step": 6,
+    "status": "Demo rehberi · 6 / 8 · Bir bataryanın kaydını takip edin",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "tr",
+    "step": 7,
+    "status": "Demo rehberi · 7 / 8 · Geri bildirim düğmelerini deneyin",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "tr",
+    "step": 8,
+    "status": "Demo rehberi · 8 / 8 · Keşfetmeye devam edin",
+    "overflow": false
+  },
+  {
+    "test": "guide-finish-focus",
+    "width": 390,
+    "lang": "tr",
+    "focus": "guide-trigger"
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "en",
+    "step": 1,
+    "status": "Guided demo · 1 / 8 · Start with the fleet",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "en",
+    "step": 2,
+    "status": "Guided demo · 2 / 8 · Spot an early warning",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "en",
+    "step": 3,
+    "status": "Guided demo · 3 / 8 · See why the priority changes",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "en",
+    "step": 4,
+    "status": "Guided demo · 4 / 8 · Missing data is not good health",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "en",
+    "step": 5,
+    "status": "Guided demo · 5 / 8 · Prioritise a mixed fleet",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "en",
+    "step": 6,
+    "status": "Guided demo · 6 / 8 · Follow one battery’s record",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "en",
+    "step": 7,
+    "status": "Guided demo · 7 / 8 · Try the feedback controls",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 390,
+    "lang": "en",
+    "step": 8,
+    "status": "Guided demo · 8 / 8 · Explore on your own",
+    "overflow": false
+  },
+  {
+    "test": "guide-finish-focus",
+    "width": 390,
+    "lang": "en",
+    "focus": "guide-trigger"
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "tr",
+    "step": 1,
+    "status": "Demo rehberi · 1 / 8 · Filoyu keşfedin",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "tr",
+    "step": 2,
+    "status": "Demo rehberi · 2 / 8 · Erken uyarıyı görün",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "tr",
+    "step": 3,
+    "status": "Demo rehberi · 3 / 8 · Önceliğin neden değiştiğini inceleyin",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "tr",
+    "step": 4,
+    "status": "Demo rehberi · 4 / 8 · Eksik veri sağlıklı demek değildir",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "tr",
+    "step": 5,
+    "status": "Demo rehberi · 5 / 8 · Karma filoda öncelik belirleyin",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "tr",
+    "step": 6,
+    "status": "Demo rehberi · 6 / 8 · Bir bataryanın kaydını takip edin",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "tr",
+    "step": 7,
+    "status": "Demo rehberi · 7 / 8 · Geri bildirim düğmelerini deneyin",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "tr",
+    "step": 8,
+    "status": "Demo rehberi · 8 / 8 · Keşfetmeye devam edin",
+    "overflow": false
+  },
+  {
+    "test": "guide-finish-focus",
+    "width": 1440,
+    "lang": "tr",
+    "focus": "guide-trigger"
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "en",
+    "step": 1,
+    "status": "Guided demo · 1 / 8 · Start with the fleet",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "en",
+    "step": 2,
+    "status": "Guided demo · 2 / 8 · Spot an early warning",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "en",
+    "step": 3,
+    "status": "Guided demo · 3 / 8 · See why the priority changes",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "en",
+    "step": 4,
+    "status": "Guided demo · 4 / 8 · Missing data is not good health",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "en",
+    "step": 5,
+    "status": "Guided demo · 5 / 8 · Prioritise a mixed fleet",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "en",
+    "step": 6,
+    "status": "Guided demo · 6 / 8 · Follow one battery’s record",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "en",
+    "step": 7,
+    "status": "Guided demo · 7 / 8 · Try the feedback controls",
+    "overflow": false
+  },
+  {
+    "test": "guide-step",
+    "width": 1440,
+    "lang": "en",
+    "step": 8,
+    "status": "Guided demo · 8 / 8 · Explore on your own",
+    "overflow": false
+  },
+  {
+    "test": "guide-finish-focus",
+    "width": 1440,
+    "lang": "en",
+    "focus": "guide-trigger"
+  }
+]

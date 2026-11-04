@@ -1,0 +1,55 @@
+/* Profiles stay in normal document flow and grow as content is supplied. */
+.team-roster { max-width: 900px; margin-top: 46px; }
+.team-roster > ul { list-style: none; padding: 0; margin: 15px 0 0; }
+.team-roster > ul > li { border-bottom: 1px solid var(--rule); }
+.member-profile { scroll-margin-top: 24px; }
+.profile-row { width: 100%; display: grid; grid-template-columns: 26px minmax(0, 1fr) 22px; gap: 20px; align-items: center; padding: 22px 12px; list-style: none; cursor: pointer; color: var(--petrol); transition: background .15s ease; }
+.profile-row::-webkit-details-marker { display: none; }
+.profile-row:hover, .profile-row:focus-visible { background: var(--surface); }
+.profile-row:focus-visible { outline: 3px solid var(--burgundy); outline-offset: -3px; }
+.member-index { font-size: 14px; color: var(--text-secondary); }
+.member-copy { min-width: 0; }
+.member-copy strong { display: block; font-size: 21px; line-height: 1.5; letter-spacing: -.025em; font-weight: 650; overflow-wrap: anywhere; }
+.member-copy > span { display: block; margin-top: 6px; color: var(--text-secondary); font-size: 14px; }
+.profile-row > svg { color: var(--burgundy); }
+.when-open { display: none; }
+.member-profile[open] > .profile-row .when-open { display: inline; }
+.member-profile[open] > .profile-row .when-closed { display: none; }
+.member-profile[open] > .profile-row > svg { transform: rotate(180deg); }
+.member-profile[open] { background: var(--surface); }
+.profile-details { padding: 0 30px 30px 58px; }
+.profile-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 23px 28px; margin: 0; padding-top: 16px; }
+.profile-fields > div { min-width: 0; }
+.profile-fields dt { color: var(--burgundy); font-size: 14px; font-weight: 650; margin-bottom: 10px; }
+.profile-fields dd { margin: 0; min-height: 36px; color: var(--text-secondary); font-size: 14px; line-height: 1.85; white-space: pre-line; overflow-wrap: anywhere; }
+.profile-empty { display: block; min-height: 36px; padding: 5px 10px; border: 1px dashed #b5c6bf; border-radius: 4px; color: var(--text-secondary); background: var(--paper); }
+.profile-links-field { grid-column: 1 / -1; }
+.profile-links { display: flex; flex-wrap: wrap; gap: 12px 22px; }
+.profile-links a { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; font-size: 14px; font-weight: 600; border-bottom: 1px solid var(--rule); }
+.profile-links a:hover { color: var(--burgundy); }
+.profile-figure { margin: 0 0 20px; }
+.profile-photo { display: block; width: 88px; height: 88px; object-fit: cover; border-radius: 2px; }
+.profile-figure figcaption { font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-top: 8px; }
+.coordinator { margin-top: 38px; padding-top: 12px; }
+.coordinator-profile { grid-template-columns: minmax(0, 1fr) 22px; }
+.coordinator .profile-details { padding-left: 12px; }
+@media (max-width: 740px) {
+  .team-roster { margin-top: 32px; }
+  .profile-row { grid-template-columns: 18px minmax(0, 1fr) 20px; gap: 12px; padding: 19px 5px; }
+  .member-copy strong { font-size: 18px; }
+  .member-copy > span { font-size: 14px; }
+  .profile-details { padding: 0 16px 24px 35px; }
+  .profile-fields { grid-template-columns: 1fr; gap: 20px; }
+  .profile-fields dd { font-size: 14px; }
+  .coordinator-profile { grid-template-columns: minmax(0, 1fr) 20px; }
+  .coordinator .profile-details { padding-left: 5px; }
+}
+@media (prefers-reduced-motion: reduce) { .profile-row { transition: none; } }
+
+.member-copy > span, .profile-fields dt, .profile-links a { font-size: 14px; }
+.profile-fields { gap: 0 28px; }
+.profile-fields > div { padding-block: 12px; border-bottom: 1px solid var(--rule); }
+.profile-fields dd { font-size: 16px; min-height: 0; }
+.profile-empty { min-height: 0; padding: 0; border: 0; background: transparent; }
+.member-profile[open] { background: var(--surface); }
+.profile-row:hover, .profile-row:focus-visible { background: var(--surface); }

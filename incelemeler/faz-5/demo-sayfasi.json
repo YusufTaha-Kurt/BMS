@@ -1,0 +1,356 @@
+[
+  {
+    "width": 360,
+    "lang": "tr",
+    "credits": 3,
+    "enlarge": [
+      {
+        "label": "Ekran görüntüsünü büyüt — 01 / Filo ve bakım öncelikleri (yeni sekmede açılır)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/fleet-tr-TKiSi_tD.jpg"
+      },
+      {
+        "label": "Ekran görüntüsünü büyüt — 02 / Tekil batarya ve telemetri (yeni sekmede açılır)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/telemetry-tr-qXIPJedW.jpg"
+      },
+      {
+        "label": "Ekran görüntüsünü büyüt — 03 / Dijital Batarya Pasaportu (yeni sekmede açılır)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/passport-tr-Cpi4gm41.jpg"
+      }
+    ],
+    "images": [
+      {
+        "alt": "Türkçe demo: filo sayaçları, bakım öncelik listesi ve seçili BT-10087 bataryasının göstergeleri.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/fleet-tr-TKiSi_tD.jpg"
+      },
+      {
+        "alt": "Türkçe demo: DEMO-001 sıcaklık sapması için göstergeler ve olaysız durumla karşılaştırmalı telemetri grafikleri.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/telemetry-tr-qXIPJedW.jpg"
+      },
+      {
+        "alt": "Türkçe demo pasaportu: sentetik kimlik, sağlık, DEMO-001 olay kaydı ve örnek operasyonel karbon alanları.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/passport-tr-Cpi4gm41.jpg"
+      }
+    ],
+    "labels": 3,
+    "launches": [
+      {
+        "note": "Sentetik veri kullanılır. Bu demo BinBin’in gerçek filo verisini veya nihai arayüzü göstermez.",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/?lang=tr"
+      },
+      {
+        "note": "Sentetik veri kullanılır. Bu demo BinBin’in gerçek filo verisini veya nihai arayüzü göstermez.",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/?lang=tr"
+      }
+    ],
+    "mediaElements": 0,
+    "overflow": false,
+    "pending": [
+      "Hazırlanıyor",
+      "Hazırlanıyor"
+    ],
+    "steps": 5
+  },
+  {
+    "width": 360,
+    "lang": "en",
+    "credits": 3,
+    "enlarge": [
+      {
+        "label": "Enlarge screenshot — 01 / Fleet and maintenance priorities (opens in a new tab)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/fleet-en-Zt68ffao.jpg"
+      },
+      {
+        "label": "Enlarge screenshot — 02 / One battery and its telemetry (opens in a new tab)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/telemetry-en-qFYlVHdC.jpg"
+      },
+      {
+        "label": "Enlarge screenshot — 03 / Digital Battery Passport (opens in a new tab)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/passport-en-flC9cENF.jpg"
+      }
+    ],
+    "images": [
+      {
+        "alt": "English demo: fleet counters, maintenance priority list and indicators for selected battery BT-10087.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/fleet-en-Zt68ffao.jpg"
+      },
+      {
+        "alt": "English demo: DEMO-001 temperature drift indicators and telemetry charts compared with a no-event baseline.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/telemetry-en-qFYlVHdC.jpg"
+      },
+      {
+        "alt": "English demo passport: synthetic identity, health, DEMO-001 event log and illustrative operational carbon fields.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/passport-en-flC9cENF.jpg"
+      }
+    ],
+    "labels": 3,
+    "launches": [
+      {
+        "note": "Synthetic data. This demo does not show BinBin’s real fleet data or the final interface.",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/?lang=en"
+      },
+      {
+        "note": "Synthetic data. This demo does not show BinBin’s real fleet data or the final interface.",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/?lang=en"
+      }
+    ],
+    "mediaElements": 0,
+    "overflow": false,
+    "pending": [
+      "In preparation",
+      "In preparation"
+    ],
+    "steps": 5
+  },
+  {
+    "width": 768,
+    "lang": "tr",
+    "credits": 3,
+    "enlarge": [
+      {
+        "label": "Ekran görüntüsünü büyüt — 01 / Filo ve bakım öncelikleri (yeni sekmede açılır)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/fleet-tr-TKiSi_tD.jpg"
+      },
+      {
+        "label": "Ekran görüntüsünü büyüt — 02 / Tekil batarya ve telemetri (yeni sekmede açılır)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/telemetry-tr-qXIPJedW.jpg"
+      },
+      {
+        "label": "Ekran görüntüsünü büyüt — 03 / Dijital Batarya Pasaportu (yeni sekmede açılır)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/passport-tr-Cpi4gm41.jpg"
+      }
+    ],
+    "images": [
+      {
+        "alt": "Türkçe demo: filo sayaçları, bakım öncelik listesi ve seçili BT-10087 bataryasının göstergeleri.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/fleet-tr-TKiSi_tD.jpg"
+      },
+      {
+        "alt": "Türkçe demo: DEMO-001 sıcaklık sapması için göstergeler ve olaysız durumla karşılaştırmalı telemetri grafikleri.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/telemetry-tr-qXIPJedW.jpg"
+      },
+      {
+        "alt": "Türkçe demo pasaportu: sentetik kimlik, sağlık, DEMO-001 olay kaydı ve örnek operasyonel karbon alanları.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/passport-tr-Cpi4gm41.jpg"
+      }
+    ],
+    "labels": 3,
+    "launches": [
+      {
+        "note": "Sentetik veri kullanılır. Bu demo BinBin’in gerçek filo verisini veya nihai arayüzü göstermez.",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/?lang=tr"
+      },
+      {
+        "note": "Sentetik veri kullanılır. Bu demo BinBin’in gerçek filo verisini veya nihai arayüzü göstermez.",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/?lang=tr"
+      }
+    ],
+    "mediaElements": 0,
+    "overflow": false,
+    "pending": [
+      "Hazırlanıyor",
+      "Hazırlanıyor"
+    ],
+    "steps": 5
+  },
+  {
+    "width": 768,
+    "lang": "en",
+    "credits": 3,
+    "enlarge": [
+      {
+        "label": "Enlarge screenshot — 01 / Fleet and maintenance priorities (opens in a new tab)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/fleet-en-Zt68ffao.jpg"
+      },
+      {
+        "label": "Enlarge screenshot — 02 / One battery and its telemetry (opens in a new tab)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/telemetry-en-qFYlVHdC.jpg"
+      },
+      {
+        "label": "Enlarge screenshot — 03 / Digital Battery Passport (opens in a new tab)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/passport-en-flC9cENF.jpg"
+      }
+    ],
+    "images": [
+      {
+        "alt": "English demo: fleet counters, maintenance priority list and indicators for selected battery BT-10087.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/fleet-en-Zt68ffao.jpg"
+      },
+      {
+        "alt": "English demo: DEMO-001 temperature drift indicators and telemetry charts compared with a no-event baseline.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/telemetry-en-qFYlVHdC.jpg"
+      },
+      {
+        "alt": "English demo passport: synthetic identity, health, DEMO-001 event log and illustrative operational carbon fields.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/passport-en-flC9cENF.jpg"
+      }
+    ],
+    "labels": 3,
+    "launches": [
+      {
+        "note": "Synthetic data. This demo does not show BinBin’s real fleet data or the final interface.",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/?lang=en"
+      },
+      {
+        "note": "Synthetic data. This demo does not show BinBin’s real fleet data or the final interface.",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/?lang=en"
+      }
+    ],
+    "mediaElements": 0,
+    "overflow": false,
+    "pending": [
+      "In preparation",
+      "In preparation"
+    ],
+    "steps": 5
+  },
+  {
+    "width": 1440,
+    "lang": "tr",
+    "credits": 3,
+    "enlarge": [
+      {
+        "label": "Ekran görüntüsünü büyüt — 01 / Filo ve bakım öncelikleri (yeni sekmede açılır)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/fleet-tr-TKiSi_tD.jpg"
+      },
+      {
+        "label": "Ekran görüntüsünü büyüt — 02 / Tekil batarya ve telemetri (yeni sekmede açılır)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/telemetry-tr-qXIPJedW.jpg"
+      },
+      {
+        "label": "Ekran görüntüsünü büyüt — 03 / Dijital Batarya Pasaportu (yeni sekmede açılır)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/passport-tr-Cpi4gm41.jpg"
+      }
+    ],
+    "images": [
+      {
+        "alt": "Türkçe demo: filo sayaçları, bakım öncelik listesi ve seçili BT-10087 bataryasının göstergeleri.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/fleet-tr-TKiSi_tD.jpg"
+      },
+      {
+        "alt": "Türkçe demo: DEMO-001 sıcaklık sapması için göstergeler ve olaysız durumla karşılaştırmalı telemetri grafikleri.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/telemetry-tr-qXIPJedW.jpg"
+      },
+      {
+        "alt": "Türkçe demo pasaportu: sentetik kimlik, sağlık, DEMO-001 olay kaydı ve örnek operasyonel karbon alanları.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/passport-tr-Cpi4gm41.jpg"
+      }
+    ],
+    "labels": 3,
+    "launches": [
+      {
+        "note": "Sentetik veri kullanılır. Bu demo BinBin’in gerçek filo verisini veya nihai arayüzü göstermez.",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/?lang=tr"
+      },
+      {
+        "note": "Sentetik veri kullanılır. Bu demo BinBin’in gerçek filo verisini veya nihai arayüzü göstermez.",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/?lang=tr"
+      }
+    ],
+    "mediaElements": 0,
+    "overflow": false,
+    "pending": [
+      "Hazırlanıyor",
+      "Hazırlanıyor"
+    ],
+    "steps": 5
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "credits": 3,
+    "enlarge": [
+      {
+        "label": "Enlarge screenshot — 01 / Fleet and maintenance priorities (opens in a new tab)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/fleet-en-Zt68ffao.jpg"
+      },
+      {
+        "label": "Enlarge screenshot — 02 / One battery and its telemetry (opens in a new tab)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/telemetry-en-qFYlVHdC.jpg"
+      },
+      {
+        "label": "Enlarge screenshot — 03 / Digital Battery Passport (opens in a new tab)",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/assets/passport-en-flC9cENF.jpg"
+      }
+    ],
+    "images": [
+      {
+        "alt": "English demo: fleet counters, maintenance priority list and indicators for selected battery BT-10087.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/fleet-en-Zt68ffao.jpg"
+      },
+      {
+        "alt": "English demo: DEMO-001 temperature drift indicators and telemetry charts compared with a no-event baseline.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/telemetry-en-qFYlVHdC.jpg"
+      },
+      {
+        "alt": "English demo passport: synthetic identity, health, DEMO-001 event log and illustrative operational carbon fields.",
+        "loaded": true,
+        "src": "http://127.0.0.1:4173/assets/passport-en-flC9cENF.jpg"
+      }
+    ],
+    "labels": 3,
+    "launches": [
+      {
+        "note": "Synthetic data. This demo does not show BinBin’s real fleet data or the final interface.",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/?lang=en"
+      },
+      {
+        "note": "Synthetic data. This demo does not show BinBin’s real fleet data or the final interface.",
+        "target": "_blank",
+        "url": "http://127.0.0.1:4173/?lang=en"
+      }
+    ],
+    "mediaElements": 0,
+    "overflow": false,
+    "pending": [
+      "In preparation",
+      "In preparation"
+    ],
+    "steps": 5
+  }
+]

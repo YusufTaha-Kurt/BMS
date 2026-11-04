@@ -1,0 +1,47 @@
+[
+  {
+    "test": "demo-skip",
+    "focus": "demo-main"
+  },
+  {
+    "test": "production-mobile-focus",
+    "focus": "panel-title"
+  },
+  {
+    "test": "tab-wrap-left",
+    "focus": "tab-passport"
+  },
+  {
+    "test": "production-guide-chart",
+    "status": "Guided demo · 2 / 8 · Spot an early warning"
+  },
+  {
+    "test": "escape-from-chart",
+    "focus": "guide-trigger"
+  },
+  {
+    "test": "feedback",
+    "pressed": "true"
+  },
+  {
+    "test": "pilot-link",
+    "hash": "#project-pilot"
+  },
+  {
+    "test": "history-back",
+    "hash": ""
+  },
+  {
+    "test": "history-forward",
+    "result": {
+      "hash": "#project-pilot",
+      "top": 66.3828125
+    }
+  },
+  {
+    "test": "reset",
+    "snapshot": [
+      "    - option \"Normal fleet\" [selected]"
+    ]
+  }
+]

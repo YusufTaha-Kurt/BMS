@@ -1,0 +1,231 @@
+[
+  {
+    "test": "tab-arrow-right",
+    "state": {
+      "activeId": "tab-history",
+      "chartRoles": [
+        {
+          "label": null,
+          "role": "status",
+          "tabIndex": -1
+        },
+        {
+          "label": null,
+          "role": "application",
+          "tabIndex": 0
+        },
+        {
+          "label": null,
+          "role": "status",
+          "tabIndex": -1
+        },
+        {
+          "label": null,
+          "role": "application",
+          "tabIndex": 0
+        },
+        {
+          "label": null,
+          "role": "status",
+          "tabIndex": -1
+        },
+        {
+          "label": null,
+          "role": "application",
+          "tabIndex": 0
+        },
+        {
+          "label": null,
+          "role": "status",
+          "tabIndex": -1
+        },
+        {
+          "label": null,
+          "role": "application",
+          "tabIndex": 0
+        },
+        {
+          "label": null,
+          "role": "status",
+          "tabIndex": -1
+        },
+        {
+          "label": null,
+          "role": "application",
+          "tabIndex": 0
+        },
+        {
+          "label": null,
+          "role": "status",
+          "tabIndex": -1
+        },
+        {
+          "label": null,
+          "role": "application",
+          "tabIndex": 0
+        }
+      ],
+      "selected": "tab-history",
+      "tabIndexes": [
+        {
+          "id": "tab-history",
+          "tabIndex": 0
+        },
+        {
+          "id": "tab-telemetry",
+          "tabIndex": 0
+        },
+        {
+          "id": "tab-passport",
+          "tabIndex": 0
+        }
+      ]
+    }
+  },
+  {
+    "test": "guide-open-focus",
+    "state": {
+      "focus": "<button type=\"button\" aria-pressed=\"true\" title=\"Demo rehberi\" class=\"inline-flex items-center gap-1.5 rounded-md border px-2.5 py-2 text-xs font-semibold border-accent bg-accent/20\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-lin",
+      "guideRole": null,
+      "insideGuide": false,
+      "liveRegions": [
+        {
+          "live": "polite",
+          "role": null,
+          "text": "500 batarya"
+        },
+        {
+          "live": "assertive",
+          "role": "status",
+          "text": ""
+        },
+        {
+          "live": "assertive",
+          "role": "status",
+          "text": ""
+        },
+        {
+          "live": "assertive",
+          "role": "status",
+          "text": ""
+        },
+        {
+          "live": "assertive",
+          "role": "status",
+          "text": ""
+        },
+        {
+          "live": "assertive",
+          "role": "status",
+          "text": ""
+        },
+        {
+          "live": "assertive",
+          "role": "status",
+          "text": ""
+        }
+      ]
+    }
+  },
+  {
+    "test": "guide-close-focus",
+    "state": {
+      "focus": "BODY",
+      "label": null,
+      "text": "\n    OSTİM Teknik Üniversitesi · COP31BinBin Battery Intelli"
+    }
+  },
+  {
+    "test": "mobile-open-detail-focus",
+    "state": {
+      "detailVisible": true,
+      "focusTag": "BODY",
+      "focusText": "\n    OSTİM Teknik Üniversitesi · COP31BinBin Battery Intelli",
+      "focusVisible": true
+    }
+  },
+  {
+    "test": "mobile-back-focus",
+    "state": {
+      "focusTag": "BODY",
+      "focusText": "\n    OSTİM Teknik Üniversitesi · COP31BinBin Battery Intelli",
+      "focusVisible": true
+    }
+  },
+  {
+    "test": "project-direct-hash",
+    "state": {
+      "direct": {
+        "hash": "#project-pilot",
+        "scroll": 0,
+        "targetTop": 6733.4375
+      }
+    }
+  },
+  {
+    "test": "team-direct-hash-and-language",
+    "state": {
+      "tr": {
+        "open": [
+          "profile-coordinator"
+        ],
+        "overflow": false,
+        "scroll": 467
+      },
+      "en": {
+        "lang": "en",
+        "open": [
+          "profile-coordinator"
+        ],
+        "overflow": false
+      }
+    }
+  },
+  {
+    "test": "menu-escape",
+    "state": {
+      "expanded": "false",
+      "focus": "Menüyü aç"
+    }
+  },
+  {
+    "test": "qr-open-focus",
+    "state": {
+      "dialogOpen": true,
+      "focus": "QR’ı kapat",
+      "inside": true
+    }
+  },
+  {
+    "test": "qr-close-focus",
+    "state": {
+      "dialogs": 0,
+      "focus": "Proje QR’ını paylaş"
+    }
+  },
+  {
+    "test": "guide-chart-arrow-collision",
+    "state": {
+      "before": "Erken uyarıyı görün",
+      "after": "Önceliğin neden değiştiğini inceleyin"
+    }
+  },
+  {
+    "test": "landscape-guide",
+    "state": {
+      "guideHeight": 309.75,
+      "guideTop": 64.25,
+      "height": 390,
+      "scrollWidth": 829,
+      "width": 844
+    }
+  },
+  {
+    "test": "mobile-detail-next-tab",
+    "state": {
+      "label": "Proje ve ekip",
+      "tag": "A",
+      "text": "OSTİM Teknik Üniversitesi · COP31BinBin Battery Intelligence"
+    }
+  }
+]

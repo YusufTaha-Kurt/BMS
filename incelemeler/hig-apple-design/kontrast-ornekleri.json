@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Gövde / açık zemin",
+    "fg": "#4b6265",
+    "bg": "#f4f6f5",
+    "ratio": 5.98
+  },
+  {
+    "name": "Gövde / kart",
+    "fg": "#4b6265",
+    "bg": "#edf2ef",
+    "ratio": 5.74
+  },
+  {
+    "name": "Bordo / açık zemin",
+    "fg": "#8b1538",
+    "bg": "#f4f6f5",
+    "ratio": 8.55
+  },
+  {
+    "name": "Demo ikincil metin / panel",
+    "fg": "#bed0cc",
+    "bg": "#15363a",
+    "ratio": 8.07
+  },
+  {
+    "name": "Demo grafik ekseni / kart",
+    "fg": "#a3b3cf",
+    "bg": "#1d4244",
+    "ratio": 5.17
+  },
+  {
+    "name": "Demo ana grafik çizgisi / kart",
+    "fg": "#5aa9ff",
+    "bg": "#1d4244",
+    "ratio": 4.47
+  },
+  {
+    "name": "Lime / petrol",
+    "fg": "#d6f451",
+    "bg": "#0e2a2e",
+    "ratio": 12.18
+  }
+]

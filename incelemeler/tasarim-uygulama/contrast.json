@@ -1,0 +1,62 @@
+[
+  {
+    "pair": "Gövde / kâğıt",
+    "foreground": "#263637",
+    "background": "#faf9f6",
+    "ratio": 11.98
+  },
+  {
+    "pair": "Yardımcı / kâğıt",
+    "foreground": "#536260",
+    "background": "#faf9f6",
+    "ratio": 6.07
+  },
+  {
+    "pair": "Yardımcı / yüzey",
+    "foreground": "#536260",
+    "background": "#f0f1ed",
+    "ratio": 5.64
+  },
+  {
+    "pair": "Bordo / kâğıt",
+    "foreground": "#801d3a",
+    "background": "#faf9f6",
+    "ratio": 9.26
+  },
+  {
+    "pair": "Buton metni / bordo",
+    "foreground": "#ffffff",
+    "background": "#801d3a",
+    "ratio": 9.75
+  },
+  {
+    "pair": "Demo metni / panel",
+    "foreground": "#f4f6f5",
+    "background": "#203334",
+    "ratio": 12.21
+  },
+  {
+    "pair": "Demo yardımcı / kart",
+    "foreground": "#bed0cc",
+    "background": "#293f40",
+    "ratio": 6.96
+  },
+  {
+    "pair": "Demo vurgu / panel",
+    "foreground": "#f0c4d0",
+    "background": "#203334",
+    "ratio": 8.53
+  },
+  {
+    "pair": "Grafik işaret / kart",
+    "foreground": "#a3b3cf",
+    "background": "#293f40",
+    "ratio": 5.27
+  },
+  {
+    "pair": "Grafik veri / kart",
+    "foreground": "#5aa9ff",
+    "background": "#293f40",
+    "ratio": 4.55
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "test": "back-top-hidden-at-footer",
+    "hidden": ""
+  },
+  {
+    "test": "gallery-tr",
+    "images": [
+      {
+        "complete": true,
+        "src": "http://127.0.0.1:4174/assets/fleet-tr-DcCaGu9X.jpg",
+        "width": 1425
+      },
+      {
+        "complete": true,
+        "src": "http://127.0.0.1:4174/assets/telemetry-tr-D18IVcJa.jpg",
+        "width": 1425
+      },
+      {
+        "complete": true,
+        "src": "http://127.0.0.1:4174/assets/passport-tr-C1W3IXw9.jpg",
+        "width": 1425
+      }
+    ]
+  },
+  {
+    "test": "new-tab-demo-language",
+    "url": "http://127.0.0.1:4174/?lang=en",
+    "title": "BT-10087 · BinBin Battery Intelligence"
+  }
+]

@@ -1,0 +1,96 @@
+[
+  {
+    "test": "detail-focus",
+    "lang": "tr",
+    "focus": "panel-title"
+  },
+  {
+    "test": "detail-next-tab",
+    "lang": "tr",
+    "text": "Bulgu doğrulandı"
+  },
+  {
+    "test": "fleet-return",
+    "lang": "tr",
+    "result": {
+      "battery": "BT-10087",
+      "filter": [
+        "TR",
+        "Teknik inceleme"
+      ],
+      "query": "BT-10087"
+    }
+  },
+  {
+    "test": "qr-dialog",
+    "lang": "tr",
+    "link": "https://binbin-battery-intelligence.vercel.app/hakkimizda/"
+  },
+  {
+    "test": "qr-focus-return",
+    "lang": "tr",
+    "text": "Proje QR’ını paylaş"
+  },
+  {
+    "test": "menu-escape",
+    "lang": "tr",
+    "focus": {
+      "expanded": "false",
+      "label": "Menüyü aç"
+    }
+  },
+  {
+    "test": "single-profile",
+    "lang": "tr",
+    "open": [
+      "profile-gamze"
+    ]
+  },
+  {
+    "test": "detail-focus",
+    "lang": "en",
+    "focus": "panel-title"
+  },
+  {
+    "test": "detail-next-tab",
+    "lang": "en",
+    "text": "Finding confirmed"
+  },
+  {
+    "test": "fleet-return",
+    "lang": "en",
+    "result": {
+      "battery": "BT-10087",
+      "filter": [
+        "EN",
+        "Technical review"
+      ],
+      "query": "BT-10087"
+    }
+  },
+  {
+    "test": "qr-dialog",
+    "lang": "en",
+    "link": "https://binbin-battery-intelligence.vercel.app/hakkimizda/"
+  },
+  {
+    "test": "qr-focus-return",
+    "lang": "en",
+    "text": "Share project QR"
+  },
+  {
+    "test": "menu-escape",
+    "lang": "en",
+    "focus": {
+      "expanded": "false",
+      "label": "Open menu"
+    }
+  },
+  {
+    "test": "single-profile",
+    "lang": "en",
+    "open": [
+      "profile-gamze"
+    ]
+  }
+]

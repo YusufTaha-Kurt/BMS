@@ -1,0 +1,234 @@
+[
+  {
+    "view": "brochure-mobile",
+    "sizes": [
+      {
+        "h": 44,
+        "label": "English",
+        "text": "EN",
+        "w": 44
+      },
+      {
+        "h": 44,
+        "label": "Türkçe",
+        "text": "TR",
+        "w": 44
+      },
+      {
+        "h": 44,
+        "label": "Menüyü aç",
+        "text": "",
+        "w": 44
+      },
+      {
+        "h": 48,
+        "label": null,
+        "text": "Demoyu aç (yeni sekmede açılır)",
+        "w": 165.5546875
+      }
+    ]
+  },
+  {
+    "view": "demo-mobile",
+    "sizes": [
+      {
+        "h": 44,
+        "label": "English",
+        "text": "EN",
+        "w": 44
+      },
+      {
+        "h": 44,
+        "label": "Türkçe",
+        "text": "TR",
+        "w": 44
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "Demo rehberi",
+        "w": 44
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "Normal filoSıcaklık sapmasıHücre dengesizliğiVeri kaybıPark gerilim düşüşüİç direnç artışıKarma filo günü",
+        "w": 178.5
+      },
+      {
+        "h": 44,
+        "label": "Önceki gün",
+        "text": "",
+        "w": 44
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "",
+        "w": 96
+      },
+      {
+        "h": 44,
+        "label": "Sonraki gün",
+        "text": "",
+        "w": 44
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "Sıfırla",
+        "w": 87.4296875
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "Filo",
+        "w": 167.5
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "Batarya ayrıntısı",
+        "w": 167.5
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "Tümü",
+        "w": 54.8125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "Teknik inceleme",
+        "w": 115.96875
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "Veri incelemesi",
+        "w": 110.578125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "İzlemeye al",
+        "w": 87.015625
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "Normal",
+        "w": 64.1328125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10087",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10213",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10379",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10038",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10041",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10060",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10078",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10112",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10189",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10222",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10243",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10322",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10446",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10002",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "BT-10006",
+        "w": 71.203125
+      },
+      {
+        "h": 44,
+        "label": "Önceki sayfa",
+        "text": "",
+        "w": 44
+      },
+      {
+        "h": 44,
+        "label": "Sonraki sayfa",
+        "text": "",
+        "w": 44
+      },
+      {
+        "h": 44,
+        "label": null,
+        "text": "Proje QR’ını paylaş",
+        "w": 158.1015625
+      }
+    ]
+  }
+]

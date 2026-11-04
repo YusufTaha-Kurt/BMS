@@ -1,0 +1,70 @@
+[
+  {
+    "lang": "tr",
+    "tab": "Geçmiş",
+    "client": 305,
+    "labels": [
+      "_r_0_-title",
+      "_r_1_-title",
+      "_r_2_-title",
+      "_r_3_-title",
+      "_r_4_-title",
+      "_r_5_-title"
+    ],
+    "scroll": 305
+  },
+  {
+    "lang": "tr",
+    "tab": "Telemetri",
+    "client": 305,
+    "labels": [
+      "_r_i_-title",
+      "_r_j_-title",
+      "_r_k_-title",
+      "_r_l_-title",
+      "_r_m_-title"
+    ],
+    "scroll": 305
+  },
+  {
+    "lang": "tr",
+    "tab": "Pasaport",
+    "client": 305,
+    "labels": [],
+    "scroll": 305
+  },
+  {
+    "lang": "en",
+    "tab": "History",
+    "client": 305,
+    "labels": [
+      "_r_0_-title",
+      "_r_1_-title",
+      "_r_2_-title",
+      "_r_3_-title",
+      "_r_4_-title",
+      "_r_5_-title"
+    ],
+    "scroll": 305
+  },
+  {
+    "lang": "en",
+    "tab": "Telemetry",
+    "client": 305,
+    "labels": [
+      "_r_i_-title",
+      "_r_j_-title",
+      "_r_k_-title",
+      "_r_l_-title",
+      "_r_m_-title"
+    ],
+    "scroll": 305
+  },
+  {
+    "lang": "en",
+    "tab": "Passport",
+    "client": 305,
+    "labels": [],
+    "scroll": 305
+  }
+]

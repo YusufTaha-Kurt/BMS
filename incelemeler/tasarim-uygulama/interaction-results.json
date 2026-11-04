@@ -1,0 +1,22 @@
+[
+  {
+    "test": "guide-open-focus",
+    "value": "demo-guide"
+  },
+  {
+    "test": "chart-arrows-do-not-change-guide",
+    "value": "Demo rehberi · 2 / 8 · Erken uyarıyı görün"
+  },
+  {
+    "test": "tab-end",
+    "value": "tab-passport"
+  },
+  {
+    "test": "tab-home",
+    "value": "tab-history"
+  },
+  {
+    "test": "guide-close-focus",
+    "value": "guide-trigger"
+  }
+]

@@ -102,7 +102,7 @@ export function DetailPanel(p: Props) {
     <section aria-labelledby="panel-title" className="flex min-w-0 flex-col gap-4 rounded-xl border border-line bg-panel p-4">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h2 id="panel-title" className="text-lg font-bold tabular">{p.batteryId}</h2>
+          <h2 id="panel-title" tabIndex={-1} className="text-lg font-bold tabular">{p.batteryId}</h2>
           <p className="mt-0.5 text-sm text-mute">
             {scenarioLabel(p.scenario)} · {row ? dateTr(row.date) : l(`Day ${p.day}`, `${p.day}. gün`)}
           </p>
@@ -199,6 +199,18 @@ export function DetailPanel(p: Props) {
               type="button"
               role="tab"
               aria-selected={p.tab === t.id}
+              tabIndex={p.tab === t.id ? 0 : -1}
+              onKeyDown={(event) => {
+                if (event.altKey || event.ctrlKey || event.metaKey) return
+                const index = TABS.findIndex((item) => item.id === p.tab)
+                const next = event.key === 'ArrowRight' ? (index + 1) % TABS.length
+                  : event.key === 'ArrowLeft' ? (index + TABS.length - 1) % TABS.length
+                  : event.key === 'Home' ? 0 : event.key === 'End' ? TABS.length - 1 : null
+                if (next === null) return
+                event.preventDefault()
+                p.onTab(TABS[next].id)
+                document.getElementById(`tab-${TABS[next].id}`)?.focus()
+              }}
               aria-controls="tab-panel"
               onClick={() => p.onTab(t.id)}
               className={`-mb-px border-b-2 px-3 py-2 text-sm font-semibold ${
@@ -209,7 +221,7 @@ export function DetailPanel(p: Props) {
             </button>
           ))}
         </div>
-        <div id="tab-panel" role="tabpanel" aria-labelledby={`tab-${p.tab}`}>
+        <div id="tab-panel" role="tabpanel" tabIndex={0} aria-labelledby={`tab-${p.tab}`}>
           {p.tab === 'history' && <HistorySection {...p} />}
           {p.tab === 'telemetry' && <TelemetrySection {...p} />}
           {p.tab === 'passport' && (
@@ -240,7 +252,7 @@ function FeedbackButtons({ verdict, onVerdict }: { verdict: Verdict | null; onVe
     </button>
   )
   return (
-    <div id="feedback" className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-line/60 pt-2.5">
+    <div id="feedback" tabIndex={-1} className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-line/60 pt-2.5">
       <span className="mr-1 text-xs font-semibold text-mute">{l('Demo feedback', 'Saha geri bildirimi')}</span>
       <div className="flex flex-wrap gap-1.5">
         {btn('confirmed', l('Finding confirmed', 'Bulgu doğrulandı'), <CircleCheck aria-hidden className="size-3.5" />, 'border-ok-line bg-ok-bg text-ok')}

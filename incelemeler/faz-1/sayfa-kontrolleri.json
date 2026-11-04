@@ -1,0 +1,759 @@
+{
+  "date": "2026-11-04",
+  "checks": [
+    {
+      "path": "/hakkimizda/",
+      "lang": "en",
+      "activePath": "/hakkimizda/",
+      "description": "Meet the OSTİM Technical University team developing battery health intelligence and a Digital Battery Passport for shared micromobility.",
+      "documentWidth": 1425,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "en",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Project introduction · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/kurumlar/",
+      "lang": "en",
+      "activePath": "/hakkimizda/kurumlar/",
+      "description": "Information about OSTİM Foundation, OSTİM Technical University and the institutional structure behind the project.",
+      "documentWidth": 1425,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "en",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Institutional structure & leadership · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/ekip/",
+      "lang": "en",
+      "activePath": "/hakkimizda/ekip/",
+      "description": "Meet the project team and academic coordinator, and learn about their roles and contributions.",
+      "documentWidth": 1440,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "en",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Project team · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/proje/",
+      "lang": "en",
+      "activePath": "/hakkimizda/proje/",
+      "description": "The proposed approach to battery health, maintenance decision support and the Digital Battery Passport.",
+      "documentWidth": 1440,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "en",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Project details · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/demo/",
+      "lang": "en",
+      "activePath": "/hakkimizda/demo/",
+      "description": "Explore the interactive concept demo. A short guide and presentation materials are being prepared.",
+      "documentWidth": 1425,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "en",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Demo & presentation · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/karbon/",
+      "lang": "en",
+      "activePath": "/hakkimizda/karbon/",
+      "description": "The project’s expected contributions, calculation approach and limitations will be explained here. Measured results are not yet available.",
+      "documentWidth": 1440,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "en",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Carbon impact & circularity · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/iletisim/",
+      "lang": "en",
+      "activePath": "/hakkimizda/iletisim/",
+      "description": "Information about proposed collaboration and project contact options is being prepared.",
+      "documentWidth": 1440,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "en",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Collaboration & contact · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/",
+      "description": "Paylaşımlı mikromobilite için batarya sağlığı ve Dijital Batarya Pasaportu geliştiren OSTİM Teknik Üniversitesi ekibiyle tanışın.",
+      "documentWidth": 1425,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "tr",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Proje tanıtımı · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/kurumlar/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/kurumlar/",
+      "description": "OSTİM Vakfı, OSTİM Teknik Üniversitesi ve projenin arkasındaki kurumsal yapı hakkında bilgiler.",
+      "documentWidth": 1440,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "tr",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Kurumsal yapı ve yöneticiler · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/ekip/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/ekip/",
+      "description": "Proje ekibini ve akademik koordinatörü, rollerini ve projeye katkılarını tanıyın.",
+      "documentWidth": 1440,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "tr",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Proje ekibi · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/proje/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/proje/",
+      "description": "Batarya sağlığı, bakım karar desteği ve Dijital Batarya Pasaportu için önerilen yaklaşım.",
+      "documentWidth": 1440,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "tr",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Proje detayları · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/demo/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/demo/",
+      "description": "Etkileşimli konsept demoyu inceleyin. Kısa kullanım rehberi ve sunum materyalleri hazırlanıyor.",
+      "documentWidth": 1425,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "tr",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Demo ve sunum · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/karbon/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/karbon/",
+      "description": "Projenin beklenen katkıları, hesaplama yaklaşımı ve sınırları burada açıklanacak. Henüz ölçülmüş sonuç bulunmuyor.",
+      "documentWidth": 1440,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "tr",
+      "launchLinks": true,
+      "links": 7,
+      "title": "Karbon etkisi ve döngüsellik · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/iletisim/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/iletisim/",
+      "description": "Önerilen iş birlikleri ve proje iletişim seçeneklerine ilişkin bilgiler hazırlanıyor.",
+      "documentWidth": 1440,
+      "emptyEmail": false,
+      "h1": 1,
+      "language": "tr",
+      "launchLinks": true,
+      "links": 7,
+      "title": "İş birlikleri ve iletişim · BinBin Battery Intelligence",
+      "updated": "2026-11-04",
+      "width": 1440
+    },
+    {
+      "path": "/hakkimizda/",
+      "lang": "en",
+      "activePath": "/hakkimizda/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Batteries withmore thanone life.",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/kurumlar/",
+      "lang": "en",
+      "activePath": "/hakkimizda/kurumlar/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Institutional structure & leadership",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/ekip/",
+      "lang": "en",
+      "activePath": "/hakkimizda/ekip/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Project team",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/proje/",
+      "lang": "en",
+      "activePath": "/hakkimizda/proje/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Project details",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/demo/",
+      "lang": "en",
+      "activePath": "/hakkimizda/demo/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Demo & presentation",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/karbon/",
+      "lang": "en",
+      "activePath": "/hakkimizda/karbon/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Carbon impact & circularity",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/iletisim/",
+      "lang": "en",
+      "activePath": "/hakkimizda/iletisim/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Collaboration & contact",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Birden fazlaömrü olanbataryalar.",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/kurumlar/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/kurumlar/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Kurumsal yapı ve yöneticiler",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/ekip/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/ekip/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Proje ekibi",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/proje/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/proje/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Proje detayları",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/demo/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/demo/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Demo ve sunum",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/karbon/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/karbon/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "Karbon etkisi ve döngüsellik",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/iletisim/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/iletisim/",
+      "documentWidth": 753,
+      "h1": 1,
+      "heading": "İş birlikleri ve iletişim",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 768
+    },
+    {
+      "path": "/hakkimizda/",
+      "lang": "en",
+      "activePath": "/hakkimizda/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Batteries withmore thanone life.",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/kurumlar/",
+      "lang": "en",
+      "activePath": "/hakkimizda/kurumlar/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Institutional structure & leadership",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/ekip/",
+      "lang": "en",
+      "activePath": "/hakkimizda/ekip/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Project team",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/proje/",
+      "lang": "en",
+      "activePath": "/hakkimizda/proje/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Project details",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/demo/",
+      "lang": "en",
+      "activePath": "/hakkimizda/demo/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Demo & presentation",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/karbon/",
+      "lang": "en",
+      "activePath": "/hakkimizda/karbon/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Carbon impact & circularity",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/iletisim/",
+      "lang": "en",
+      "activePath": "/hakkimizda/iletisim/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Collaboration & contact",
+      "language": "en",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Birden fazlaömrü olanbataryalar.",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/kurumlar/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/kurumlar/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Kurumsal yapı ve yöneticiler",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/ekip/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/ekip/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Proje ekibi",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/proje/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/proje/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Proje detayları",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/demo/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/demo/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Demo ve sunum",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/karbon/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/karbon/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "Karbon etkisi ve döngüsellik",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    },
+    {
+      "path": "/hakkimizda/iletisim/",
+      "lang": "tr",
+      "activePath": "/hakkimizda/iletisim/",
+      "documentWidth": 345,
+      "h1": 1,
+      "heading": "İş birlikleri ve iletişim",
+      "language": "tr",
+      "links": 7,
+      "menuVisible": true,
+      "navigationHidden": true,
+      "width": 360
+    }
+  ],
+  "languageSwitches": [
+    {
+      "path": "/hakkimizda/",
+      "switched": {
+        "heading": "Birden fazlaömrü olanbataryalar.",
+        "lang": "tr",
+        "meta": "Proje tanıtımı · BinBin Battery Intelligence",
+        "path": "/hakkimizda/",
+        "query": "tr",
+        "title": "Proje tanıtımı · BinBin Battery Intelligence"
+      },
+      "reloaded": {
+        "lang": "tr",
+        "path": "/hakkimizda/",
+        "query": "tr"
+      }
+    },
+    {
+      "path": "/hakkimizda/",
+      "back": {
+        "lang": "en",
+        "path": "/hakkimizda/",
+        "query": "en"
+      }
+    },
+    {
+      "path": "/hakkimizda/kurumlar/",
+      "switched": {
+        "heading": "Kurumsal yapı ve yöneticiler",
+        "lang": "tr",
+        "meta": "Kurumsal yapı ve yöneticiler · BinBin Battery Intelligence",
+        "path": "/hakkimizda/kurumlar/",
+        "query": "tr",
+        "title": "Kurumsal yapı ve yöneticiler · BinBin Battery Intelligence"
+      },
+      "reloaded": {
+        "lang": "tr",
+        "path": "/hakkimizda/kurumlar/",
+        "query": "tr"
+      }
+    },
+    {
+      "path": "/hakkimizda/kurumlar/",
+      "back": {
+        "lang": "en",
+        "path": "/hakkimizda/kurumlar/",
+        "query": "en"
+      }
+    },
+    {
+      "path": "/hakkimizda/ekip/",
+      "switched": {
+        "heading": "Proje ekibi",
+        "lang": "tr",
+        "meta": "Proje ekibi · BinBin Battery Intelligence",
+        "path": "/hakkimizda/ekip/",
+        "query": "tr",
+        "title": "Proje ekibi · BinBin Battery Intelligence"
+      },
+      "reloaded": {
+        "lang": "tr",
+        "path": "/hakkimizda/ekip/",
+        "query": "tr"
+      }
+    },
+    {
+      "path": "/hakkimizda/ekip/",
+      "back": {
+        "lang": "en",
+        "path": "/hakkimizda/ekip/",
+        "query": "en"
+      }
+    },
+    {
+      "path": "/hakkimizda/proje/",
+      "switched": {
+        "heading": "Proje detayları",
+        "lang": "tr",
+        "meta": "Proje detayları · BinBin Battery Intelligence",
+        "path": "/hakkimizda/proje/",
+        "query": "tr",
+        "title": "Proje detayları · BinBin Battery Intelligence"
+      },
+      "reloaded": {
+        "lang": "tr",
+        "path": "/hakkimizda/proje/",
+        "query": "tr"
+      }
+    },
+    {
+      "path": "/hakkimizda/proje/",
+      "back": {
+        "lang": "en",
+        "path": "/hakkimizda/proje/",
+        "query": "en"
+      }
+    },
+    {
+      "path": "/hakkimizda/demo/",
+      "switched": {
+        "heading": "Demo ve sunum",
+        "lang": "tr",
+        "meta": "Demo ve sunum · BinBin Battery Intelligence",
+        "path": "/hakkimizda/demo/",
+        "query": "tr",
+        "title": "Demo ve sunum · BinBin Battery Intelligence"
+      },
+      "reloaded": {
+        "lang": "tr",
+        "path": "/hakkimizda/demo/",
+        "query": "tr"
+      }
+    },
+    {
+      "path": "/hakkimizda/demo/",
+      "back": {
+        "lang": "en",
+        "path": "/hakkimizda/demo/",
+        "query": "en"
+      }
+    },
+    {
+      "path": "/hakkimizda/karbon/",
+      "switched": {
+        "heading": "Karbon etkisi ve döngüsellik",
+        "lang": "tr",
+        "meta": "Karbon etkisi ve döngüsellik · BinBin Battery Intelligence",
+        "path": "/hakkimizda/karbon/",
+        "query": "tr",
+        "title": "Karbon etkisi ve döngüsellik · BinBin Battery Intelligence"
+      },
+      "reloaded": {
+        "lang": "tr",
+        "path": "/hakkimizda/karbon/",
+        "query": "tr"
+      }
+    },
+    {
+      "path": "/hakkimizda/karbon/",
+      "back": {
+        "lang": "en",
+        "path": "/hakkimizda/karbon/",
+        "query": "en"
+      }
+    },
+    {
+      "path": "/hakkimizda/iletisim/",
+      "switched": {
+        "heading": "İş birlikleri ve iletişim",
+        "lang": "tr",
+        "meta": "İş birlikleri ve iletişim · BinBin Battery Intelligence",
+        "path": "/hakkimizda/iletisim/",
+        "query": "tr",
+        "title": "İş birlikleri ve iletişim · BinBin Battery Intelligence"
+      },
+      "reloaded": {
+        "lang": "tr",
+        "path": "/hakkimizda/iletisim/",
+        "query": "tr"
+      }
+    },
+    {
+      "path": "/hakkimizda/iletisim/",
+      "back": {
+        "lang": "en",
+        "path": "/hakkimizda/iletisim/",
+        "query": "en"
+      }
+    }
+  ],
+  "guideSteps": [
+    "Filoyu keşfedin",
+    "Erken uyarıyı görün",
+    "Önceliğin neden değiştiğini inceleyin",
+    "Eksik veri sağlıklı demek değildir",
+    "Karma filoda öncelik belirleyin",
+    "Bir bataryanın kaydını takip edin",
+    "Geri bildirim düğmelerini deneyin",
+    "Keşfetmeye devam edin"
+  ]
+}

@@ -1,6 +1,86 @@
 # Güncel Durum
 
-Son güncelleme: 3 Kasım 2026 (broşürle uyumlu EN/TR tanıtım sayfası)
+Son güncelleme: 4 Kasım 2026 (son düzeltmeler tamamlandı; yerel sürüm kullanıcı incelemesine hazır)
+
+## Demo için mavi tema tercihi
+
+Kullanıcı yeşil demo zeminini beğenmediğini, önceki mavi görünümü tercih ettiğini belirtti. Önceki lacivert/mavi zemin, panel, kart, metin ve vurgu paleti geri getirildi; grafik çizgileri ve tanıtımda kullanılan sekiz demo görseli güncellendi. Üretim derlemesi ve iki dilde mobil/masaüstü 12 görünüm kontrolü geçti. Dört metin/zemin çiftinde kontrast en az 6,91:1. [Kayıt ve güncel ekran](incelemeler/mavi-demo/INCELEME.md). Yerel sürüm; commit/push/yayın yok.
+
+## Son düzeltmeler ve kullanıcı incelemesi
+
+- Genel `#main`/`#top` bağlantıları artık açılır alanları istemeden açmaz. Doğrudan teknik bölüm ve iç içe pasaport adresleri çalışır; kullanıcı seçimleri korunur.
+- Ana sayfa tekrarları azaltıldı; pasaport ayrıntıları ve bekleyen karbon alanları disclosure içinde toplandı. 360px TR başlangıç yüksekliği ana sayfada 6305→5489px, projede 9657→8703px, karbonda 6526→5970px. Yazılar küçültülmedi, teknik içerik ve boş alanlar korundu.
+- Üç stil dosyasında tekrarlar birleştirildi; eski lime/dark adları sadeleştirildi. Kurumlar/demo sayfalarının altı hesaplanan stil durumunda fark yok.
+- Son üretim derlemesi (TypeScript dâhil), lint ve 11 veri testi geçti. 80 yerleşim ve 32 rehber adımı, hash/dil/geçmiş, mobil odak, galeri açılışı ve konsol kontrol edildi. [Son rapor ve ekranlar](incelemeler/son-duzeltmeler/INCELEME.md).
+- UX-06 giderildi, UX-09 iyileştirmesi kullanıcı incelemesinde; UX-05/10 gerçek OS/ekran okuyucu kabulü açık. Faz 6 başlamadı. Gerçek içerik/izin/PDF/video/e-posta teslimleri ve Faz 7 yayın kabulü bekliyor. Commit/push/yayın yok.
+
+Aşağıdaki bölümler önceki uygulama ve inceleme turlarının kayıtlarıdır; güncel durum yukarıdadır.
+
+## Tasarım ve kullanılabilirlik uygulaması (4 Kasım 2026)
+
+- Kullanıcının doğrudan uygulama isteğiyle ortak görsel sistem, ana sayfa kompozisyonu ve içerik türlerine uygun düzenler yenilendi: açık kâğıt zemin, bordo ana eylem, sistem sans/Georgia başlıklar; süreç, karşılaştırma, takvim, kişiler ve boş alanlar ayrı yapılarla sunuluyor. Gerçek sentetik demo ayrıntısı ana görsel oldu; altı demo ekranı güncellendi.
+- Mobil odak/dönüş, rehber kısayol kapsamı ve odağı, sekme klavye modeli, bölüm hash'leri, skip link, hedef boyutları ve rehberin kısa ekran yerleşimi için düzenlemeler yapıldı. Son bağımsız kontrolde sekiz UX maddesinin çözümü desteklendi; UX-05/10 cihaz/ekran okuyucu kabulü, UX-06 genel hash yan etkisi ve UX-09 okuma yükü nedeniyle kısmi. OZ-01–08 ve GS-01–08 uygulamaya yansıdı; estetik son kabul açık.
+- Node 22 üretim derlemesi, typecheck, lint, 11/11 veri/yerelleştirme testi ve diff kontrolü geçti. 80 yerleşim, derlenmiş sürümde 32 ek yerleşim, 32 rehber adımı, yedi senaryonun üç sekmesi, TR/EN odak/arama/filtre/menü/QR ve bölüm adresleri kontrol edildi. Seçilmiş 10 renk çiftinde kontrast en az 4,55:1. Bu sonuç tam WCAG/cihaz sertifikası değildir.
+- İlk inceleme raporları değişmedi. Veri/hesaplama kaynakları, adresler ve basılı QR hedefi korundu. Önceki yerel faz çalışmaları geri alınmadı. Bilinmeyen bilgiler boş; Faz 6 formu başlamadı. GitHub gönderimi, commit ve yayın yapılmadı.
+- [Güncel sabit kayıt](TASARIM_INCELEME_KAYDI.md) · [Uygulama, testler ve güncel ekranlar](incelemeler/tasarim-uygulama/UYGULAMA_DOGRULAMA.md).
+- [Son bağımsız kontrol ve faz karşılaştırması](incelemeler/tasarim-bagimsiz-kontrol/INCELEME.md): build/typecheck/lint ve 11 veri testi tekrar geçti; 55 yerleşim durumu kontrol edildi. `#main`/`#top` hedeflerinin açılır alanları istemeden açması tekrar üretildi. Bu incelemede ürün kodu değiştirilmedi. Faz 1–5 boş alanlı taslak kapsamında hazır; Faz 6 bekliyor, Faz 7 kısmi.
+
+Aşağıdaki inceleme ve faz kayıtları önceki turların tarihsel durumunu anlatır; güncel durum üstteki uygulama kaydıdır.
+
+## Sabit tasarım incelemeleri (4 Kasım 2026)
+
+- Kullanıcı, HIG/apple-design incelemesindeki bulguların korunmasını istedi. Ortak referans: [Tasarım inceleme kaydı](TASARIM_INCELEME_KAYDI.md). Önceki 12 bulgu UX-01–12 olarak açık durumdadır; ilk rapor ve kanıtları korunur.
+- Sitenin “AI üretimi gibi görünmesi” ayrıca; tekrarlayan kartlar, genel sloganlar, görsel ritim, okuyucuya seslenme ve projeye özgü malzeme açısından değerlendirildi. [Özgünlük incelemesi](incelemeler/hig-apple-design/OZGUNLUK_INCELEMESI.md) tasarım yorumlarını HIG'in doğrudan kurallarından ayırır. OZ-01–08 öneridir; uygulama yapılmadı.
+- Kullanıcı görsel tasarımın da değerlendirilmesini özellikle istedi. [Görsel sistem incelemesi](incelemeler/hig-apple-design/GORSEL_SISTEM_INCELEMESI.md), renk rolleri/kombinasyonu, font seçimi/ölçeği, bloklar, butonlar, boşluklar ve görsel kompozisyon için GS-01–08 önerilerini ekler. Renk/font tercihleri değerlendirmeye açıktır; ürün tasarımı değiştirilmedi.
+- Kullanıcı Faz 6 iletişim formunu arkadaşına bıraktı; form bekleyen iştir. Faz 7 ve yayın yapılmadı. Bilinmeyen bilgilerin boş kalması kararı sürer.
+- Bu turda ürün kodu, görünür site metinleri veya sayfa tasarımı değiştirilmedi. GitHub'a gönderim veya yayın yoktur.
+
+## Web sitesi Faz 5 — Demo ve sunum (4 Kasım 2026)
+
+- Kullanıcının plan onayıyla brief s. 8 ve ortak kurallar uygulandı. `/hakkimizda/demo/` artık genel hazırlık kartı yerine demo erişimi, beş adımlı kısa rehber, üç açıklamalı ekran ve sunum materyallerini içerir.
+- Ekranlar yenilenen yerel demodan TR/EN ayrı kaydedildi: normal filo/14. gün; DEMO-001 sıcaklık sapması/14. gün telemetri; aynı bataryanın pasaportu. Kaynak, alt metin, sentetik/nihai arayüz değil açıklaması vardır. JPEG dosyaları yaklaşık 115–132 KiB; yeni sekmede büyütülür.
+- Demoda proje adı `BinBin Battery Intelligence` oldu. Başlık ve favicon yenilendi; petrol/lime kimliği tanıtımla uyumlandı. Kurum adı metin olarak gösterilir. Üstte gerçek filo verisi ve nihai arayüz olmadığı açıkça belirtilir. Veri üretimi, eşikler ve karar kuralları değiştirilmedi.
+- Sunum PDF'i ve video henüz sağlanmadı. `demoMedia.ts` içinde dil bazında dosya bilgisi eklendiğinde PDF görüntüleme/indirme veya altyazılı video alanı açılır; mevcut hâlde hazırlık kartları vardır. Gerçek dosya erişimi/oynatma kontrolleri dosyalar geldikten sonra yapılacaktır.
+- Node 22 derleme, TypeScript ve lint; 48 sayfa/boyut/dil durumu, altı yeni sayfa kontrolü, 32 etkileşimli rehber adımı, mobil arama/filtre korunması, yeni sekmede demo açılışı ve tanıtıma dönüş doğrulandı. Ayrıntılar: [Faz 5 incelemesi](incelemeler/faz-5/INCELEME.md).
+- Yerel taslak hazır. Sunum/video dosyaları ile önceki içerik/izin teslimleri bekleniyor. GitHub'a gönderim veya Vercel yayını yapılmadı. Faz 6–7 uygulanmadı.
+
+## Web sitesi Faz 4 — Proje detayları ve karbon (4 Kasım 2026)
+
+- Kullanıcının onayıyla brief s. 7 ve 9, genel kurallar ve proje teklifinin ilgili bölümleri uygulandı. Bilinmeyen bilgilerin boş kalması kararı korundu.
+- `/hakkimizda/proje/`: sade özet, amaç/hedef kitle, varsayımsal bakım senaryosu, altı adımlı akış, dört veri erişim önceliği, açılır planlanan yöntemler ve pasaport erişimi, yaşam döngüsü durumları ve teklifin göreli pilot Faz 0–5 takvimi hazırdır. Salt okunur erişim, BMS korumaları ve teknik personelin son kararı açıklandı.
+- `/hakkimizda/karbon/`: beklenen etki uyarısı, iki ayrı karbon göstergesi, sayısal değer içermeyen emisyon formülü, varsayımlar, ikinci yaşam değerlendirme sınırları ve resmî kaynaklar eklendi. Ölçülmüş tasarruf/azaltım veya model doğruluğu iddiası yoktur.
+- Dört pilot ve on gerçek karbon bilgi alanı `web/src/about/projectData.ts` içinde boş; metinler `content/technical.tr.ts` / `technical.en.ts` içinde yönetilir. Demo verisi veya demo faktörü bu alanlara bağlanmaz.
+- Teklifin V2/71 veri noktası dayanağı tarihsel olarak belirtilir; güncel Komisyon kaynaklarına bağlantı ve Faz 0 eşleştirmesi vardır. Bu sayfalar tamamlanmış mevzuat uyumu veya gerçek pasaport hizmeti iddiası değildir.
+- Node 22 üretim derlemesi, TypeScript ve lint geçti. İki dil × üç ekran boyutu × yedi sayfa; yeni sayfalarda 12 içerik/etkileşim durumu, dört dil değişimi ve iki yenileme doğrulandı. Kanıtlar: [Faz 4 incelemesi](incelemeler/faz-4/INCELEME.md).
+- Yerel taslak hazır. Gerçek pilot bilgileri, ölçümler ve kaynaklar bekleniyor. GitHub'a gönderim veya Vercel yayını yapılmadı. Faz 5–7 uygulanmadı.
+
+## Web sitesi Faz 3 — Kurumlar ve iş birlikleri (4 Kasım 2026)
+
+- Kullanıcı, netleşmemiş bilgiler dışında brief içeriğinin kullanılmasını ve aynı boş alan yaklaşımıyla ilerlenmesini istedi.
+- `/hakkimizda/kurumlar/`: iki kurumun kısa tanıtımı, aralarındaki ilişki, resmî bağlantılar, brief'teki dört taslak yönetici adı ve Ar-Ge/projeler sorumlusu için boş kayıt hazırlandı. Kurumdan teyit edilmemiş unvan, kurum ve e-posta alanları boş kalır.
+- `/hakkimizda/iletisim/`: BinBin'in tam şirket adı, “önerilen pilot iş birliği” durumu ve teklifin önerdiği yaklaşım; Sustain Bridge için başlık ve boş alanlar; proje iletişimi ve Faz 6 form bölümü eklendi. Kesinleşmiş ortaklık veya imzalı anlaşma iddiası eklenmedi.
+- Kişi/kurum bilgileri `web/src/about/organizations.ts` içinde; metinler ayrı EN/TR dosyalarında yönetilir. Logolar onaylı görsel ve kaynakları sağlanana kadar boş alanlardır. Gerçek form/gönderim/veri toplama yoktur.
+- Node 22 derleme, TypeScript, lint; iki dil × üç ekran boyutu × yedi sayfa kontrolü geçti. Ayrıntılar ve ekranlar: [Faz 3 incelemesi](incelemeler/faz-3/INCELEME.md).
+- Arayüz yerelde hazır; kurum teyitleri, iş birliği onayları ve e-posta bilgileri bekleniyor. GitHub'a gönderim veya Vercel yayını yapılmadı. Faz 4–7 uygulanmadı.
+
+## Web sitesi Faz 2 — Ana sayfa ve ekip taslağı (4 Kasım 2026)
+
+- Kullanıcı, henüz bilinmeyen bilgilerin boş alanlarla bırakılarak sayfaların hazırlanmasını istedi; gerçek içerikleri ekipten aldıktan sonra sağlayacak. Bu karar sonraki fazlar için de geçerlidir.
+- Ana sayfaya proje adı, teklif/pilot planlama aşaması, sorun/çözüm özeti, görünür altı adımlı akış, kısa ekip özeti, kurumların kısa tanıtımı, COP31 bağlamı ve ilgili sayfalara yönlendirmeler eklendi. Mevzuat ve kurum özetleri resmî kaynaklarla desteklendi.
+- `/hakkimizda/ekip/` artık hazırlık kartı yerine beş üye ve akademik koordinatörün satır içinde açılan profillerini gösterir. Rol, çalışma paketi, katkı, kısa tanıtım ve bağlantı alanları hazırdır. Üye bilgileri “—” olarak kalır; koordinatörün kaynakta bulunan bilgileri eklenmiştir.
+- Kullanıcı gerçek içerikleri verdiğinde `web/src/site.ts` kayıtları güncellenecek. Bilinmeyen görev, biyografi, fotoğraf veya bağlantı üretilmedi.
+- Kontroller ve ekranlar: [Faz 2 incelemesi](incelemeler/faz-2/INCELEME.md). GitHub'a gönderim veya canlı yayın yapılmadı. Faz 3–7 uygulanmadı.
+
+## Web sitesi Faz 1 — Ortak düzen (4 Kasım 2026)
+
+- Kullanıcının uygulama planı onayıyla ortak site yapısı kodlandı. Kaynak sürüm `02ea760`; güncel kaynak brief’in s. 2–3 ve 11’i, teklifin kapak/özet bölümleri esas alındı.
+- `/hakkimizda/` altında kurumlar, ekip, proje, demo, karbon ve iletişim adresleri eklendi. Yedi sayfa Vite tarafından ayrı HTML olarak derlenir; aynı React girişini ve ortak şablonu kullanır. Ana sayfanın mevcut içerikleri/profilleri korunur. Yeni içerikler iki dilli hazırlık alanlarıdır.
+- Ortak üstbilgi, aktif menü, mobil açılır menü (Escape/odak dönüşü), EN/TR, sayfa metaverileri, içeriğe atlama ve altbilgi oluşturuldu. Ortak dil metinleri `en.ts` / `tr.ts` içinde; proje e-postası ve gerçek güncelleme tarihi `site.ts` içinde yönetilir.
+- Basılı QR hedefi `/hakkimizda/`, demo girişi `/` olarak kaldı. Demo bağlantıları yeni sekmede doğru dille açılır ve yanlarında gerçek filo/nihai arayüz olmadığını belirten sentetik veri açıklaması bulunur.
+- Derleme, TypeScript, lint ve 360/768/1440 px × EN/TR × 7 sayfa kontrolleri geçti. Aynı sayfada dil değiştirme, doğrudan açılış/yenileme, mobil menü ve demo rehberi/dönüş akışı doğrulandı. Kanıtlar [Faz 1 incelemesinde](incelemeler/faz-1/INCELEME.md).
+- Gerçek kurumsal proje e-postası ve yayın izinleri bekleniyor. Yeni üstbilgi metin tabanlıdır. Canlı siteye yayın veya GitHub'a gönderim yapılmadı. Faz 2–7 uygulanmadı.
+
+Aşağıdaki bölümler önceki geliştirme turlarının tarihsel kayıtlarıdır.
 
 ## Çift dilli demo ve mobil görünüm geçişi (3 Kasım 2026)
 

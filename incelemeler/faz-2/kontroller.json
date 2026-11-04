@@ -1,0 +1,955 @@
+{
+  "pages": [
+    {
+      "page": "home",
+      "requestedWidth": 360,
+      "requestedLanguage": "en",
+      "allExternalNewTab": true,
+      "demoInFirstScreen": true,
+      "destinations": [
+        {
+          "lang": "en",
+          "path": "/hakkimizda/proje/"
+        },
+        {
+          "lang": "en",
+          "path": "/hakkimizda/ekip/"
+        },
+        {
+          "lang": "en",
+          "path": "/hakkimizda/demo/"
+        },
+        {
+          "lang": "en",
+          "path": "/hakkimizda/karbon/"
+        },
+        {
+          "lang": "en",
+          "path": "/hakkimizda/iletisim/"
+        }
+      ],
+      "h1": "BinBin BatteryIntelligence",
+      "language": "en",
+      "mainProfileCount": 0,
+      "scrollWidth": 345,
+      "steps": 6,
+      "width": 360
+    },
+    {
+      "page": "team",
+      "requestedWidth": 360,
+      "requestedLanguage": "en",
+      "language": "en",
+      "names": [
+        "Gizem Geniş",
+        "Gamze Geniş",
+        "Erhan Bülbül",
+        "Yusuf Taha Kurt",
+        "Ahmed Emre Demirel",
+        "Barış Taha Uludağ"
+      ],
+      "open": 0,
+      "profiles": 6,
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "page": "home",
+      "requestedWidth": 360,
+      "requestedLanguage": "tr",
+      "allExternalNewTab": true,
+      "demoInFirstScreen": true,
+      "destinations": [
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/proje/"
+        },
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/ekip/"
+        },
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/demo/"
+        },
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/karbon/"
+        },
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/iletisim/"
+        }
+      ],
+      "h1": "BinBin BatteryIntelligence",
+      "language": "tr",
+      "mainProfileCount": 0,
+      "scrollWidth": 345,
+      "steps": 6,
+      "width": 360
+    },
+    {
+      "page": "team",
+      "requestedWidth": 360,
+      "requestedLanguage": "tr",
+      "language": "tr",
+      "names": [
+        "Gizem Geniş",
+        "Gamze Geniş",
+        "Erhan Bülbül",
+        "Yusuf Taha Kurt",
+        "Ahmed Emre Demirel",
+        "Barış Taha Uludağ"
+      ],
+      "open": 0,
+      "profiles": 6,
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "page": "home",
+      "requestedWidth": 768,
+      "requestedLanguage": "en",
+      "allExternalNewTab": true,
+      "demoInFirstScreen": true,
+      "destinations": [
+        {
+          "lang": "en",
+          "path": "/hakkimizda/proje/"
+        },
+        {
+          "lang": "en",
+          "path": "/hakkimizda/ekip/"
+        },
+        {
+          "lang": "en",
+          "path": "/hakkimizda/demo/"
+        },
+        {
+          "lang": "en",
+          "path": "/hakkimizda/karbon/"
+        },
+        {
+          "lang": "en",
+          "path": "/hakkimizda/iletisim/"
+        }
+      ],
+      "h1": "BinBin BatteryIntelligence",
+      "language": "en",
+      "mainProfileCount": 0,
+      "scrollWidth": 753,
+      "steps": 6,
+      "width": 768
+    },
+    {
+      "page": "team",
+      "requestedWidth": 768,
+      "requestedLanguage": "en",
+      "language": "en",
+      "names": [
+        "Gizem Geniş",
+        "Gamze Geniş",
+        "Erhan Bülbül",
+        "Yusuf Taha Kurt",
+        "Ahmed Emre Demirel",
+        "Barış Taha Uludağ"
+      ],
+      "open": 0,
+      "profiles": 6,
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "page": "home",
+      "requestedWidth": 768,
+      "requestedLanguage": "tr",
+      "allExternalNewTab": true,
+      "demoInFirstScreen": true,
+      "destinations": [
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/proje/"
+        },
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/ekip/"
+        },
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/demo/"
+        },
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/karbon/"
+        },
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/iletisim/"
+        }
+      ],
+      "h1": "BinBin BatteryIntelligence",
+      "language": "tr",
+      "mainProfileCount": 0,
+      "scrollWidth": 753,
+      "steps": 6,
+      "width": 768
+    },
+    {
+      "page": "team",
+      "requestedWidth": 768,
+      "requestedLanguage": "tr",
+      "language": "tr",
+      "names": [
+        "Gizem Geniş",
+        "Gamze Geniş",
+        "Erhan Bülbül",
+        "Yusuf Taha Kurt",
+        "Ahmed Emre Demirel",
+        "Barış Taha Uludağ"
+      ],
+      "open": 0,
+      "profiles": 6,
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "page": "home",
+      "requestedWidth": 1440,
+      "requestedLanguage": "en",
+      "allExternalNewTab": true,
+      "demoInFirstScreen": true,
+      "destinations": [
+        {
+          "lang": "en",
+          "path": "/hakkimizda/proje/"
+        },
+        {
+          "lang": "en",
+          "path": "/hakkimizda/ekip/"
+        },
+        {
+          "lang": "en",
+          "path": "/hakkimizda/demo/"
+        },
+        {
+          "lang": "en",
+          "path": "/hakkimizda/karbon/"
+        },
+        {
+          "lang": "en",
+          "path": "/hakkimizda/iletisim/"
+        }
+      ],
+      "h1": "BinBin BatteryIntelligence",
+      "language": "en",
+      "mainProfileCount": 0,
+      "scrollWidth": 1425,
+      "steps": 6,
+      "width": 1440
+    },
+    {
+      "page": "team",
+      "requestedWidth": 1440,
+      "requestedLanguage": "en",
+      "language": "en",
+      "names": [
+        "Gizem Geniş",
+        "Gamze Geniş",
+        "Erhan Bülbül",
+        "Yusuf Taha Kurt",
+        "Ahmed Emre Demirel",
+        "Barış Taha Uludağ"
+      ],
+      "open": 0,
+      "profiles": 6,
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "page": "home",
+      "requestedWidth": 1440,
+      "requestedLanguage": "tr",
+      "allExternalNewTab": true,
+      "demoInFirstScreen": true,
+      "destinations": [
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/proje/"
+        },
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/ekip/"
+        },
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/demo/"
+        },
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/karbon/"
+        },
+        {
+          "lang": "tr",
+          "path": "/hakkimizda/iletisim/"
+        }
+      ],
+      "h1": "BinBin BatteryIntelligence",
+      "language": "tr",
+      "mainProfileCount": 0,
+      "scrollWidth": 1425,
+      "steps": 6,
+      "width": 1440
+    },
+    {
+      "page": "team",
+      "requestedWidth": 1440,
+      "requestedLanguage": "tr",
+      "language": "tr",
+      "names": [
+        "Gizem Geniş",
+        "Gamze Geniş",
+        "Erhan Bülbül",
+        "Yusuf Taha Kurt",
+        "Ahmed Emre Demirel",
+        "Barış Taha Uludağ"
+      ],
+      "open": 0,
+      "profiles": 6,
+      "scrollWidth": 1425,
+      "width": 1440
+    }
+  ],
+  "profiles": [
+    {
+      "requestedWidth": 360,
+      "lang": "en",
+      "index": 0,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-gizem"
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "requestedWidth": 360,
+      "lang": "en",
+      "index": 1,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-gamze"
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "requestedWidth": 360,
+      "lang": "en",
+      "index": 2,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-erhan"
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "requestedWidth": 360,
+      "lang": "en",
+      "index": 3,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-yusuf"
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "requestedWidth": 360,
+      "lang": "en",
+      "index": 4,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-ahmed"
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "requestedWidth": 360,
+      "lang": "en",
+      "index": 5,
+      "dialogs": 0,
+      "empty": 2,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-coordinator"
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "requestedWidth": 360,
+      "lang": "tr",
+      "index": 0,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-gizem"
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "requestedWidth": 360,
+      "lang": "tr",
+      "index": 1,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-gamze"
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "requestedWidth": 360,
+      "lang": "tr",
+      "index": 2,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-erhan"
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "requestedWidth": 360,
+      "lang": "tr",
+      "index": 3,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-yusuf"
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "requestedWidth": 360,
+      "lang": "tr",
+      "index": 4,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-ahmed"
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "requestedWidth": 360,
+      "lang": "tr",
+      "index": 5,
+      "dialogs": 0,
+      "empty": 2,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-coordinator"
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "requestedWidth": 768,
+      "lang": "en",
+      "index": 0,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-gizem"
+      ],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "requestedWidth": 768,
+      "lang": "en",
+      "index": 1,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-gamze"
+      ],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "requestedWidth": 768,
+      "lang": "en",
+      "index": 2,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-erhan"
+      ],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "requestedWidth": 768,
+      "lang": "en",
+      "index": 3,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-yusuf"
+      ],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "requestedWidth": 768,
+      "lang": "en",
+      "index": 4,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-ahmed"
+      ],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "requestedWidth": 768,
+      "lang": "en",
+      "index": 5,
+      "dialogs": 0,
+      "empty": 2,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-coordinator"
+      ],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "requestedWidth": 768,
+      "lang": "tr",
+      "index": 0,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-gizem"
+      ],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "requestedWidth": 768,
+      "lang": "tr",
+      "index": 1,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-gamze"
+      ],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "requestedWidth": 768,
+      "lang": "tr",
+      "index": 2,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-erhan"
+      ],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "requestedWidth": 768,
+      "lang": "tr",
+      "index": 3,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-yusuf"
+      ],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "requestedWidth": 768,
+      "lang": "tr",
+      "index": 4,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-ahmed"
+      ],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "requestedWidth": 768,
+      "lang": "tr",
+      "index": 5,
+      "dialogs": 0,
+      "empty": 2,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-coordinator"
+      ],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "requestedWidth": 1440,
+      "lang": "en",
+      "index": 0,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-gizem"
+      ],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "requestedWidth": 1440,
+      "lang": "en",
+      "index": 1,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-gamze"
+      ],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "requestedWidth": 1440,
+      "lang": "en",
+      "index": 2,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-erhan"
+      ],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "requestedWidth": 1440,
+      "lang": "en",
+      "index": 3,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-yusuf"
+      ],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "requestedWidth": 1440,
+      "lang": "en",
+      "index": 4,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-ahmed"
+      ],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "requestedWidth": 1440,
+      "lang": "en",
+      "index": 5,
+      "dialogs": 0,
+      "empty": 2,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-coordinator"
+      ],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "requestedWidth": 1440,
+      "lang": "tr",
+      "index": 0,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-gizem"
+      ],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "requestedWidth": 1440,
+      "lang": "tr",
+      "index": 1,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-gamze"
+      ],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "requestedWidth": 1440,
+      "lang": "tr",
+      "index": 2,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-erhan"
+      ],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "requestedWidth": 1440,
+      "lang": "tr",
+      "index": 3,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-yusuf"
+      ],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "requestedWidth": 1440,
+      "lang": "tr",
+      "index": 4,
+      "dialogs": 0,
+      "empty": 5,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-ahmed"
+      ],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "requestedWidth": 1440,
+      "lang": "tr",
+      "index": 5,
+      "dialogs": 0,
+      "empty": 2,
+      "fields": 5,
+      "images": 0,
+      "open": [
+        "profile-coordinator"
+      ],
+      "scrollWidth": 1425,
+      "width": 1440
+    }
+  ],
+  "languageSwitches": [
+    {
+      "requestedWidth": 360,
+      "from": "en",
+      "hash": "",
+      "labels": [
+        "Rol",
+        "Çalışma paketi",
+        "Katkı",
+        "Kısa tanıtım",
+        "Bağlantılar"
+      ],
+      "language": "tr",
+      "open": [
+        "profile-coordinator"
+      ]
+    },
+    {
+      "requestedWidth": 360,
+      "from": "tr",
+      "hash": "",
+      "labels": [
+        "Role",
+        "Work package",
+        "Contribution",
+        "Short biography",
+        "Links"
+      ],
+      "language": "en",
+      "open": [
+        "profile-coordinator"
+      ]
+    },
+    {
+      "requestedWidth": 768,
+      "from": "en",
+      "hash": "",
+      "labels": [
+        "Rol",
+        "Çalışma paketi",
+        "Katkı",
+        "Kısa tanıtım",
+        "Bağlantılar"
+      ],
+      "language": "tr",
+      "open": [
+        "profile-coordinator"
+      ]
+    },
+    {
+      "requestedWidth": 768,
+      "from": "tr",
+      "hash": "",
+      "labels": [
+        "Role",
+        "Work package",
+        "Contribution",
+        "Short biography",
+        "Links"
+      ],
+      "language": "en",
+      "open": [
+        "profile-coordinator"
+      ]
+    },
+    {
+      "requestedWidth": 1440,
+      "from": "en",
+      "hash": "",
+      "labels": [
+        "Rol",
+        "Çalışma paketi",
+        "Katkı",
+        "Kısa tanıtım",
+        "Bağlantılar"
+      ],
+      "language": "tr",
+      "open": [
+        "profile-coordinator"
+      ]
+    },
+    {
+      "requestedWidth": 1440,
+      "from": "tr",
+      "hash": "",
+      "labels": [
+        "Role",
+        "Work package",
+        "Contribution",
+        "Short biography",
+        "Links"
+      ],
+      "language": "en",
+      "open": [
+        "profile-coordinator"
+      ]
+    }
+  ],
+  "navigation": [
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/proje/?lang=tr",
+      "h1": "Proje detayları"
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/ekip/?lang=tr",
+      "h1": "Proje ekibi"
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/demo/?lang=tr",
+      "h1": "Demo ve sunum"
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/karbon/?lang=tr",
+      "h1": "Karbon etkisi ve döngüsellik"
+    },
+    {
+      "url": "http://127.0.0.1:4173/hakkimizda/iletisim/?lang=tr",
+      "h1": "İş birlikleri ve iletişim"
+    }
+  ],
+  "deepLink": {
+    "hash": "#profile-ahmed",
+    "open": [
+      "profile-ahmed"
+    ]
+  },
+  "console": []
+}

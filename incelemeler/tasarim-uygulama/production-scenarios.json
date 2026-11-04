@@ -1,0 +1,128 @@
+[
+  {
+    "scenario": "baseline",
+    "tab": "History",
+    "heading": "BT-10087",
+    "selected": "true"
+  },
+  {
+    "scenario": "baseline",
+    "tab": "Telemetry",
+    "heading": "BT-10087",
+    "selected": "true"
+  },
+  {
+    "scenario": "baseline",
+    "tab": "Passport",
+    "heading": "BT-10087",
+    "selected": "true"
+  },
+  {
+    "scenario": "temp-drift",
+    "tab": "History",
+    "heading": "DEMO-001",
+    "selected": "true"
+  },
+  {
+    "scenario": "temp-drift",
+    "tab": "Telemetry",
+    "heading": "DEMO-001",
+    "selected": "true"
+  },
+  {
+    "scenario": "temp-drift",
+    "tab": "Passport",
+    "heading": "DEMO-001",
+    "selected": "true"
+  },
+  {
+    "scenario": "cell-imbalance",
+    "tab": "History",
+    "heading": "DEMO-002",
+    "selected": "true"
+  },
+  {
+    "scenario": "cell-imbalance",
+    "tab": "Telemetry",
+    "heading": "DEMO-002",
+    "selected": "true"
+  },
+  {
+    "scenario": "cell-imbalance",
+    "tab": "Passport",
+    "heading": "DEMO-002",
+    "selected": "true"
+  },
+  {
+    "scenario": "data-loss",
+    "tab": "History",
+    "heading": "DEMO-003",
+    "selected": "true"
+  },
+  {
+    "scenario": "data-loss",
+    "tab": "Telemetry",
+    "heading": "DEMO-003",
+    "selected": "true"
+  },
+  {
+    "scenario": "data-loss",
+    "tab": "Passport",
+    "heading": "DEMO-003",
+    "selected": "true"
+  },
+  {
+    "scenario": "self-discharge",
+    "tab": "History",
+    "heading": "DEMO-007",
+    "selected": "true"
+  },
+  {
+    "scenario": "self-discharge",
+    "tab": "Telemetry",
+    "heading": "DEMO-007",
+    "selected": "true"
+  },
+  {
+    "scenario": "self-discharge",
+    "tab": "Passport",
+    "heading": "DEMO-007",
+    "selected": "true"
+  },
+  {
+    "scenario": "resistance-rise",
+    "tab": "History",
+    "heading": "DEMO-008",
+    "selected": "true"
+  },
+  {
+    "scenario": "resistance-rise",
+    "tab": "Telemetry",
+    "heading": "DEMO-008",
+    "selected": "true"
+  },
+  {
+    "scenario": "resistance-rise",
+    "tab": "Passport",
+    "heading": "DEMO-008",
+    "selected": "true"
+  },
+  {
+    "scenario": "fleet-day",
+    "tab": "History",
+    "heading": "DEMO-001",
+    "selected": "true"
+  },
+  {
+    "scenario": "fleet-day",
+    "tab": "Telemetry",
+    "heading": "DEMO-001",
+    "selected": "true"
+  },
+  {
+    "scenario": "fleet-day",
+    "tab": "Passport",
+    "heading": "DEMO-001",
+    "selected": "true"
+  }
+]

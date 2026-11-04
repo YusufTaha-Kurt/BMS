@@ -1,0 +1,28 @@
+{
+  "newTab": {
+    "url": "http://127.0.0.1:4173/assets/passport-tr-C1W3IXw9.jpg",
+    "width": 1425,
+    "height": 990,
+    "complete": true
+  },
+  "images": [
+    {
+      "src": "http://127.0.0.1:4173/assets/fleet-tr-DcCaGu9X.jpg",
+      "complete": true,
+      "width": 1425,
+      "alt": "Türkçe demo: filo sayaçları, bakım öncelik listesi ve seçili BT-10087 bataryasının göstergeleri."
+    },
+    {
+      "src": "http://127.0.0.1:4173/assets/telemetry-tr-D18IVcJa.jpg",
+      "complete": true,
+      "width": 1425,
+      "alt": "Türkçe demo: DEMO-001 sıcaklık sapması için göstergeler ve olaysız durumla karşılaştırmalı telemetri grafikleri."
+    },
+    {
+      "src": "http://127.0.0.1:4173/assets/passport-tr-C1W3IXw9.jpg",
+      "complete": true,
+      "width": 1425,
+      "alt": "Türkçe demo pasaportu: sentetik kimlik, sağlık, DEMO-001 olay kaydı ve örnek operasyonel karbon alanları."
+    }
+  ]
+}
