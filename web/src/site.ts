@@ -59,6 +59,19 @@ export interface Contact {
 /** Add verified public contact addresses here when available. Empty means no email link is shown. */
 export const CONTACTS: Contact[] = []
 
+/**
+ * Faz 6 iletişim formu. Gerçek başvuru almak için üç koşul birlikte gerekir:
+ * 1) Vercel ortam değişkenleri: CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL, RESEND_API_KEY (bkz. web/api/contact.ts)
+ * 2) Kurumun onayladığı aydınlatma metninin adresi (o dilde boşsa form o dilde kapalı kalır)
+ * 3) enabled: true
+ * Koşullar sağlanmadan form görünür ama alanlar kapalıdır; hiçbir veri gönderilmez.
+ */
+export const CONTACT_FORM: { enabled: boolean; endpoint: string; privacyNoticeUrl: LocalizedText } = {
+  enabled: false,
+  endpoint: '/api/contact',
+  privacyNoticeUrl: { tr: '', en: '' },
+}
+
 /** Herkese tek seferde yazmak için ortak adres (ör. ekip@...). Boş bırakılırsa tüm adresler kullanılır. */
 export const TEAM_EMAIL = ''
 

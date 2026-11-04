@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Clock3 } from 'lucide-react'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { useI18n, withLanguage } from '../lib/i18n.tsx'
 import { TEAM_EMAIL } from '../site.ts'
 import { CONTENT } from './content/index.ts'
@@ -7,6 +7,7 @@ import { pagePath } from './routes.ts'
 import { PageTemplate } from './components/PageTemplate.tsx'
 import { EmptyValue } from './components/EmptyValue.tsx'
 import { OrganizationMark } from './components/OrganizationMark.tsx'
+import { ContactForm } from './components/ContactForm.tsx'
 
 function websiteUrl(value: string | undefined): string | undefined {
   if (!value) return
@@ -50,9 +51,7 @@ export function CollaborationsPage() {
         <dl className="org-fields"><div><dt>{copy.email}</dt><dd>{email ? <a className="org-email" href={`mailto:${email}`}>{email}</a> : empty()}</dd></div></dl>
       </section>
 
-      <section className="org-form-placeholder" id="collaboration-form" aria-labelledby="collaboration-form-title">
-        <Clock3 size={24} aria-hidden="true" /><div><h2 id="collaboration-form-title">{copy.formTitle}</h2><p>{copy.formText}</p></div>
-      </section>
+      <ContactForm />
       <div className="org-related">
         <a className="home-link" href={withLanguage(pagePath('institutions'), language)}>{copy.institutionsLink}<ArrowRight size={17} aria-hidden="true" /></a>
         <a className="home-link" href={withLanguage(pagePath('project'), language)}>{copy.projectLink}<ArrowRight size={17} aria-hidden="true" /></a>

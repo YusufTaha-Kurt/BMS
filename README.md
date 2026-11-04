@@ -2,7 +2,7 @@
 
 Başlangıç: 22 Ekim 2026. Durum: ilk çalışan sentetik demo `web/` altında kodlandı (bkz. `DURUM.md`); tam pipeline planı sürüyor.
 
-**Yayın ve faz durumu — 4 Kasım 2026:** Güncel tanıtım [Vercel'de yayında](https://binbin-battery-intelligence.vercel.app/hakkimizda/); [mavi temalı demo](https://binbin-battery-intelligence.vercel.app/) aynı alan adının kökündedir. Kaynaklar GitHub `main` dalındadır. [Faz dosyası](WEB_SITESI_FAZ_PLANI.md), Faz 1–5'in boş alanlı arayüz kapsamında hazır olduğunu, Faz 6'nın arkadaşına bırakıldığını ve Faz 7'nin açık kabul/teslimlerini açıklar. [Yayın doğrulaması](incelemeler/yayin/INCELEME.md).
+**Yayın ve faz durumu — 4 Kasım 2026:** Güncel tanıtım [Vercel'de yayında](https://binbin-battery-intelligence.vercel.app/hakkimizda/); [mavi temalı demo](https://binbin-battery-intelligence.vercel.app/) aynı alan adının kökündedir. Kaynaklar GitHub `main` dalındadır. [Faz dosyası](WEB_SITESI_FAZ_PLANI.md), yedi fazın kod/arayüz kapsamında tamamlandığını açıklar; Faz 6 formu alıcı adres ve onaylı aydınlatma metni gelene kadar kapalıdır. Açık dış teslimler ve kabul işleri [yayın kontrol listesindedir](YAYIN_KONTROL_LISTESI.md). Son form ve kontrol değişiklikleri `claude/laughing-hawking-xsk5nj` dalındadır; `main`'e birleştirilince Vercel'de yayımlanır. [Yayın doğrulaması](incelemeler/yayin/INCELEME.md).
 
 **Tasarım incelemeleri:** [Sabit inceleme kaydı](TASARIM_INCELEME_KAYDI.md), [HIG/apple-design ilk raporu](incelemeler/hig-apple-design/INCELEME.md), [özgünlük raporu](incelemeler/hig-apple-design/OZGUNLUK_INCELEMESI.md) ve [görsel sistem raporu](incelemeler/hig-apple-design/GORSEL_SISTEM_INCELEMESI.md). [Bağımsız kontroldeki](incelemeler/tasarim-bagimsiz-kontrol/INCELEME.md) hash yan etkisi giderildi; özet/ayrıntı ve stil düzenlemeleri [son kontrol kaydında](incelemeler/son-duzeltmeler/INCELEME.md). Gerçek cihaz/ekran okuyucu kabulü ve dış teslimler açık.
 
@@ -24,6 +24,8 @@ npm run dev           # geliştirme sunucusu (başlamadan önce veri yoksa otoma
 npm run build         # tip kontrolü + üretim derlemesi (veri yoksa otomatik üretilir) → dist/
 npm run preview       # dist/ çıktısını http://localhost:4173 adresinde sunar
 npm run verify:data   # veri kontrolleri (önce npm run data)
+npm run test:contact  # iletişim formu doğrulama ve sunucu fonksiyonu testleri
+npm test              # tüm testler
 npm run typecheck     # tsc -b
 npm run lint          # eslint
 ```
@@ -147,6 +149,14 @@ Video alanı için aynı dilde WebVTT altyazı gerekir; `poster` isteğe bağlı
 Demo adı `site.ts` içindeki `PROJECT_NAME` ile başlıkta ve sekme adında kullanılır. `TopBar.tsx` kurumun metin kimliğini ve açık sentetik veri notunu gösterir; `index.css`, kullanıcının tercihiyle önceki lacivert/mavi temayı tanımlar. Tanıtımdaki demo ekranları da bu sürümden yenilendi; [tema kontrolü](incelemeler/mavi-demo/INCELEME.md). Hesaplama kuralları, veri seti, EN/TR, mobil Filo/Ayrıntı ve sekiz adımlı rehber korunur. Demo kökündeki `noindex` devam eder.
 
 Kontrol kaydı: [Faz 5 incelemesi](incelemeler/faz-5/INCELEME.md). GitHub'a gönderim veya canlı yayın yapılmadı.
+
+## Web sitesi — Faz 6: iletişim formu
+
+- `web/src/about/components/ContactForm.tsx`: `/hakkimizda/iletisim/#collaboration-form` formu; metinler `content/tr.ts` / `en.ts` → `collaborations.form`, stiller `contact-form.css`.
+- `web/api/contact.ts`: Vercel fonksiyonu (`/api/contact`) ve tarayıcıyla ortak `validateContact` kuralları. Resend HTTP API'siyle e-posta gönderir; ek paket yoktur.
+- Ortam değişkenleri (Vercel → Settings → Environment Variables): `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `RESEND_API_KEY`. Eksikse fonksiyon 503 döner.
+- `web/src/site.ts` → `CONTACT_FORM`: `enabled` ve dil bazında `privacyNoticeUrl`. İkisi de hazır olmadan form görünür ama kapalıdır. Açma adımları ve test gönderimi: [Faz 6 kaydı](incelemeler/faz-6/INCELEME.md).
+- Yerel `npm run dev`/`preview` `/api` fonksiyonunu çalıştırmaz; fonksiyon testleri `npm run test:contact` ile, gerçek gönderim Vercel'de yapılır.
 
 ## Dosyalar
 

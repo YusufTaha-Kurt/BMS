@@ -20,7 +20,7 @@ Durum anahtarı: **Hazır** = içerik ve gerekiyorsa izin var · **Bekliyor** = 
 | 10 | Karbon ölçümleri (10 alan) | `projectData.ts` → `CARBON_INFORMATION` | Bekliyor | Ölçüm noktası/dönemi, enerji, faktör değeri/yılı/kaynağı, emisyon, tedarikçi belgeleri. Demo faktörü (0,45 kg/kWh) buraya taşınmaz. |
 | 11 | Sunum PDF'i (TR/EN) | `web/src/about/demoMedia.ts` → `DEMO_MEDIA` | Bekliyor | Koordinatörden dosya; `web/public/media/` altına eklenir. |
 | 12 | Tanıtım videosu (TR/EN) | `DEMO_MEDIA[*].video` | Bekliyor | Video + aynı dilde WebVTT altyazı; isteğe bağlı poster. |
-| 13 | İletişim formu (Faz 6) | `/hakkimizda/iletisim/#collaboration-form` | Bekliyor | Kullanıcı kararıyla arkadaşına bırakıldı. Alıcı adres, kurum onaylı aydınlatma metni, spam koruması, test gönderimi. Başvuru alınmıyor. |
+| 13 | İletişim formu (Faz 6) | `web/src/site.ts` → `CONTACT_FORM`; `web/api/contact.ts`; Vercel ortam değişkenleri | Kısmi | Form, doğrulama, spam koruması ve gönderim fonksiyonu hazır, kapalı. Açmak için: alıcı adres (`CONTACT_TO_EMAIL`), Resend gönderen adresi ve anahtarı, kurum onaylı TR/EN aydınlatma metni adresi, `enabled: true`, canlı test gönderimi. Adımlar: [Faz 6 kaydı](incelemeler/faz-6/INCELEME.md). |
 | 14 | Demo ekran görüntüleri | `web/src/about/assets/demo/` | Hazır | Gerçek sentetik demodan TR/EN; demo arayüzü değişirse yeniden alınmalı. |
 | 15 | Resmî kaynak bağlantıları | `web/src/about/sources.ts` | Hazır | Yayından önce bağlantıların hâlâ açıldığı kontrol edilmeli. |
 | 16 | Son içerik güncelleme tarihi | `web/src/site.ts` → `SITE_CONTENT_UPDATED` | Hazır | Gerçek içerik eklendiğinde tarih elle güncellenir. |
@@ -43,14 +43,17 @@ Pasaport bağlantısı bu sürümle eklendi; üretim alan adında yeni yayından
 
 Teknik kontroller (bu depoda tekrar çalıştırılabilir):
 
-- [x] `npm run build` (TypeScript dâhil), `npm run lint`, `npm run verify:data` (12 test) geçiyor.
+- [x] `npm run build` (TypeScript dâhil), `npm run lint`, `npm test` (12 veri + 6 form testi) geçiyor.
+- [x] 8 adres × EN/TR × 360/768/1440 px = 48 durumda tek h1, doğru dil, taşma/bozuk görsel yok; 22 iç bağlantı 200 ([Faz 7 kaydı](incelemeler/faz-7/INCELEME.md)).
+- [x] Form: kapalıyken gönderim yok; açık derlemede doğrulama, gönderiliyor, başarı ve dört hata durumu; bot tuzakları ve oran sınırı test edildi ([Faz 6 kaydı](incelemeler/faz-6/INCELEME.md)).
 - [x] Yedi tanıtım adresi doğrudan açılıyor; EN/TR aynı sayfada değişiyor; demo yeni sekmede seçilen dille açılıyor.
 - [x] Basılı QR → `/hakkimizda/` → demo akışı korunuyor; demo kökü `/` değişmedi.
 - [x] 500 batarya kimliği için pasaport adresi (`?battery=…&tab=passport`) ve QR; bilinmeyen kimlikte açıklayıcı bildirim.
 - [x] Bilinmeyen adresler için iki dilli 404 sayfası (`web/public/404.html`).
 - [x] 390/1440 px'te yatay taşma yok; tarayıcı konsolunda error/warn yok (yerel üretim önizlemesi).
-- [ ] Yeni sürüm Vercel'e yayımlandıktan sonra canlıda pasaport bağlantısı, 404 ve QR okutma kontrolü.
+- [ ] Bu dalın `main`'e birleştirilip Vercel'e yayımlanması; ardından canlıda pasaport bağlantısı, 404, QR okutma ve kapalı form kontrolü.
+- [ ] Sekiz dış kaynak bağlantısının yayın günü açıldığının kontrolü (bu ortamdan dış ağ yoktu).
 - [ ] Gerçek telefon/tablette dokunma, OS “hareketi azalt” (UX-05) ve VoiceOver/TalkBack/NVDA (UX-10) kabulü.
 - [ ] Sunum PDF'i görüntüleme/indirme ve video oynatma/altyazı (dosyalar gelince).
-- [ ] Form başarı/hata durumları ve doğru alıcıya test gönderimi (Faz 6 gelince).
+- [ ] Form açıldıktan sonra canlıda doğru alıcıya gerçek test gönderimi.
 - [ ] Bölüm 1'deki “Bekliyor/Kısmi” satırları kapatıldı; izinler yazılı olarak arşivlendi.

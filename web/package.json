@@ -10,6 +10,8 @@
     "data": "tsx scripts/generate-data.ts",
     "ensure:data": "tsx scripts/ensure-data.ts",
     "verify:data": "node --import tsx --test scripts/verify-data.test.ts",
+    "test:contact": "node --import tsx --test scripts/contact.test.ts",
+    "test": "node --import tsx --test scripts/verify-data.test.ts scripts/contact.test.ts",
     "predev": "npm run ensure:data",
     "dev": "vite",
     "prebuild": "npm run ensure:data",

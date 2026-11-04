@@ -79,6 +79,7 @@ export interface OrganizationsCopy {
     email: string
     formTitle: string
     formText: string
+    form: ContactFormCopy
     institutionsLink: string
     projectLink: string
   }
@@ -139,4 +140,30 @@ export interface DemoCopy {
     videoLabel: string; captions: string; videoFallback: string
   }
   related: { project: string; carbon: string }
+}
+
+export interface ContactFormCopy {
+  intro: string
+  closed: string
+  labels: { name: string; organization: string; email: string; phone: string; message: string }
+  optional: string
+  hints: { email: string; phone: string; message: string }
+  consentBefore: string
+  consentLink: string
+  consentAfter: string
+  consentPending: string
+  honeypot: string
+  submit: string
+  sending: string
+  counter: string
+  summaryTitle: string
+  errors: {
+    required: Record<'name' | 'organization' | 'email' | 'message' | 'consent', string>
+    tooShort: string
+    tooLong: string
+    invalidEmail: string
+    invalidPhone: string
+  }
+  success: { title: string; text: string; again: string }
+  failure: { title: string; not_configured: string; rate_limited: string; delivery_failed: string; network: string; generic: string }
 }

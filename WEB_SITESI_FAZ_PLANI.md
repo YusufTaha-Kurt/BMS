@@ -4,6 +4,8 @@ Bu plan, hocanın hazırladığı **`COP31_Web_Sitesi_Brief_BinBin.pdf`** esas a
 
 ## Güncel durum — 4 Kasım 2026
 
+**Son tur:** Kullanıcının isteğiyle Faz 6 formu da uygulandı ve Faz 7 kontrolleri bu dalın son hâliyle yeniden yapıldı. Yedi fazın kod ve arayüz kapsamı tamamdır; kutular aşağıda işaretlidir. Bu, dış içerik/izinlerin, formun gerçek başvuruya açılmasının, gerçek cihaz kabulünün veya bu sürümün canlı yayınının tamamlandığı anlamına gelmez; açık işler [yayın kontrol listesinde](YAYIN_KONTROL_LISTESI.md). [Faz 6 kaydı](incelemeler/faz-6/INCELEME.md) · [Faz 7 kaydı](incelemeler/faz-7/INCELEME.md).
+
 **Faz 1–5, kullanıcının bilinmeyen bilgileri boş bırakarak ilerleme kararı doğrultusunda arayüz ve mevcut içerik kapsamıyla hazırdır.** Sayfalar iki dilde çalışır; ekip/kurum/pilot/karbon bilgileri verilmediyse etiketli boş alanlar korunur. Bu kutular gerçek saha pilotunun, ölçümlerin veya bütün yayın izinlerinin tamamlandığı anlamına gelmez.
 
 Son tasarım/kullanılabilirlik düzenlemeleri, genel bölüm bağlantısı düzeltmesi ve kullanıcının seçtiği **lacivert–mavi demo teması** bu sürüme dâhildir. Ana sayfa ve demo tanıtımındaki ekran görüntüleri mavi sürümden yenilenmiştir. Kaynaklar, sentetik veri açıklamaları, basılı QR hedefi ve demo hesaplama kuralları korunur.
@@ -15,14 +17,14 @@ Son tasarım/kullanılabilirlik düzenlemeleri, genel bölüm bağlantısı düz
 | 3 — Kurumlar/iş birlikleri | Kurumlar, taslak yönetici kayıtları ve önerilen/pending iş birliği alanları hazır. | Yazılı teyitler, onaylı kapsam/katkı, resmî iletişim ve logo izinleri. |
 | 4 — Proje/karbon | Teknik anlatım, göreli pilot takvimi, beklenen etkiler ve hesaplama sınırları hazır. | Gerçek pilot bilgileri, enerji ölçümleri ve doğrulanmış faktör/kaynak kayıtları. |
 | 5 — Demo/sunum | Çalışan sentetik demo, beş adımlı tanıtım rehberi ve iki dilde görseller hazır. | Koordinatörden sunum PDF'i/video; teslim sonrası dosya erişimi/oynatma kabulü. |
-| 6 — Form | Kullanıcı tarafından arkadaşına bırakıldı; yalnız hazırlık bölümü var. | Form, alıcı, kurum onaylı aydınlatma, spam koruması ve gerçek test gönderimi. Başvuru alınmıyor. |
-| 7 — Kontrol/yayın | Yerel build/TypeScript/lint, 11 veri testi, 80 yerleşim ve 32 rehber adımı doğrulandı. GitHub gönderimi ve Vercel üretim yayını yapıldı; canlıda 32 yerleşim, veri yükleme, telemetri, profil/hash ve yeni sekmede demo açılışı kontrol edildi. Sonraki turda pasaport bağlantısı/QR, 404 sayfası ve [yayın kontrol listesi](YAYIN_KONTROL_LISTESI.md) eklendi (12 test). | Yeni sürümün yayını ve canlı kontrolü, gerçek cihaz/ekran okuyucu kabulü, bekleyen içerik/izin/PDF/video/form teslimleri. |
+| 6 — Form | İki dilli form, ortak istemci/sunucu doğrulaması, spam koruması, gönderiliyor/başarı/hata durumları ve Vercel gönderim fonksiyonu hazır; gizli bilgiler ortam değişkeninde. Form kapalı açılır. | Alıcı adres, e-posta servisi anahtarı, kurum onaylı aydınlatma metni, `enabled: true` ve canlı test gönderimi. Bunlar gelene kadar başvuru alınmaz. |
+| 7 — Kontrol/yayın | Yerel build/TypeScript/lint, 11 veri testi, 80 yerleşim ve 32 rehber adımı doğrulandı. GitHub gönderimi ve Vercel üretim yayını yapıldı; canlıda 32 yerleşim, veri yükleme, telemetri, profil/hash ve yeni sekmede demo açılışı kontrol edildi. Sonraki turlarda pasaport bağlantısı/QR, 404 sayfası, [yayın kontrol listesi](YAYIN_KONTROL_LISTESI.md) eklendi; son hâlde 18 test, 48 yerleşim ve 22 iç bağlantı geçti. | Bu dalın `main`'e birleştirilip yayımlanması ve canlı kontrolü, gerçek cihaz/ekran okuyucu kabulü, dış bağlantıların yayın günü kontrolü, bekleyen içerik/izin/PDF/video/form teslimleri. |
 
 **Yayın kaydı — doğrulandı:** Kullanıcının onayıyla arayüz sürümü [a31d0a5](https://github.com/YusufTaha-Kurt/BMS/commit/a31d0a589244e39b27e2b4107f505066f821b3b8) `main` dalına gönderildi. [Vercel dağıtımı](https://vercel.com/ytkurt06-3576s-projects/binbin-battery-intelligence/8ETxtiz4Azof5UiXnSo6iK8HtkUQ) başarıyla tamamlandı; yeni sayfalar ve mavi demo ana üretim alan adında açıldı. Canlı tanıtım: [binbin-battery-intelligence.vercel.app/hakkimizda/](https://binbin-battery-intelligence.vercel.app/hakkimizda/); demo: [binbin-battery-intelligence.vercel.app](https://binbin-battery-intelligence.vercel.app/). [Yayın kontrolü ve ekranlar](incelemeler/yayin/INCELEME.md). Sonraki belge güncellemeleri de aynı dalda tutulur; yayın yapılmış olması açık içerik ve kabul işlerini tamamlanmış saymaz.
 
 **Eksik tamamlama turu — 4 Kasım 2026:** Kodla kapatılabilen eksikler tamamlandı: demoda paylaşılabilir görünüm/pasaport adresi ve QR, bilinmeyen kimlik bildirimi, iki dilli 404 sayfası. İzin durum listesi, teslim bağlantıları ve nihai kontrol listesi [YAYIN_KONTROL_LISTESI.md](YAYIN_KONTROL_LISTESI.md) içinde. [Kayıt](incelemeler/eksik-tamamlama/INCELEME.md). Bu sürüm henüz yayımlanmadı.
 
-Faz 6 ve 7 kutuları, açık işleri görünür tutmak için işaretlenmemiştir. Aşağıdaki faz açıklamaları ilk uygulama turlarının kayıtlarını da içerir; son durum için bu bölüm esas alınır. [Son düzeltme kontrolleri](incelemeler/son-duzeltmeler/INCELEME.md) · [Mavi demo tercihi ve kontrolü](incelemeler/mavi-demo/INCELEME.md).
+Faz 6 ve 7 kutuları son turda, Faz 1–5'teki gibi “kod/arayüz kapsamı tamam, dış teslimler ayrı izlenir” anlamında işaretlendi. Aşağıdaki faz açıklamaları ilk uygulama turlarının kayıtlarını da içerir; son durum için bu bölüm esas alınır. [Son düzeltme kontrolleri](incelemeler/son-duzeltmeler/INCELEME.md) · [Mavi demo tercihi ve kontrolü](incelemeler/mavi-demo/INCELEME.md).
 
 **Sabit tasarım incelemeleri — 4 Kasım 2026:** [Tasarım inceleme kaydı](TASARIM_INCELEME_KAYDI.md), 12 kullanılabilirlik bulgusunu ve özgünlük/şablon hissi değerlendirmesini birlikte izler. [Son düzeltmeler](incelemeler/son-duzeltmeler/INCELEME.md): bağımsız kontroldeki genel hash yan etkisi giderildi; özet/ayrıntı ayrımı ve stil temizliği uygulandı. On UX maddesinde yerel düzeltme/iyileştirme doğrulandı; UX-05/10 gerçek cihaz/ekran okuyucu kabulü açık. Tasarım kullanıcı incelemesine hazırdır. Bu çalışma Faz 6 formunu başlatmaz veya Faz 7 yayın kabulünü tamamlamaz.
 
@@ -64,13 +66,15 @@ Kaynak PDF’ler depoda bulunmayabilir. Çalışan kişiye ve kullandığı AI�
 
   Kullanıcı onayıyla iki dilli demo/sunum sayfası, beş adımlı kısa rehber ve her dilde üç açıklamalı gerçek demo ekranı hazırlandı (4 Kasım 2026). Sunum PDF'i ve video sağlanmadığından iki hazırlık kartı durur; dosya uydurulmadı. Demo adı ve görsel kimliği tanıtımla uyumlandı. Mevcut sekiz adımlı rehber ve mobil akış doğrulandı. İnceleme: [Faz 5 kontrol kaydı](incelemeler/faz-5/INCELEME.md). Yerelde doğrulandı; yayın yapılmadı.
 
-- [ ] **Faz 6 — İletişim formu** — Brief: PDF s. 10–11.
+- [x] **Faz 6 — İletişim formu** — Brief: PDF s. 10–11.
 
-  **Kullanıcı kararı:** Form geliştirmesi arkadaşına bırakıldı. Bu iş bekliyor; tamamlandı sayılmadı. Gerçek başvuru alınmıyor.
+  **Güncel:** Kullanıcı önce formu arkadaşına bırakmıştı; 4 Kasım'daki son turda bütün fazların bitirilmesini istedi ve form uygulandı. Form kapalı açılır; alıcı adres, e-posta servisi anahtarı ve onaylı aydınlatma metni eklenip canlı test gönderimi yapılınca başvuru alır. [Faz 6 kaydı](incelemeler/faz-6/INCELEME.md).
 
   Ad-soyad, kurum, e-posta, isteğe bağlı telefon, öneri açıklaması ve aydınlatma kutusuyla iki dilli form hazırla. Alan kontrollerini, en az 20 karakterlik açıklamayı, spam korumasını ve gönderiliyor/başarı/hata durumlarını uygula. Gönderimleri belirlenen kurumsal adrese ilet veya güvenli serviste sakla; gizli anahtarları ortam değişkenlerinde tut. Alıcı adresi ve kurumun onayladığı aydınlatma metni hazır olmadan gerçek başvuru toplamaya açma. Formun tamamlanması için test gönderiminin doğru alıcıya ulaştığını doğrula.
 
-- [ ] **Faz 7 — Kontrol ve yayın** — Brief: PDF s. 11–12.
+- [x] **Faz 7 — Kontrol ve yayın** — Brief: PDF s. 11–12.
+
+  Son tur: 18 test, 48 yerleşim, 22 iç bağlantı, form durumları ve kontrol listesi tamam. Bu sürümün canlı yayını `main`'e birleştirmeyle olur; gerçek cihaz/ekran okuyucu kabulü ve dış teslimler açık. [Faz 7 kaydı](incelemeler/faz-7/INCELEME.md).
 
   Sayfaları birleştir; telefon, tablet ve masaüstünde iki dili, gezinmeyi, erişilebilirliği ve yatay taşmayı kontrol et. İç/dış bağlantıları, QR → tanıtım → demo akışını, sunum/video erişimini ve formun başarı/hata durumlarını dene. Brief’in yayın öncesi içerik, teyit ve izin listesini tamamla; gerekli derleme ve kod kontrollerini çalıştır. README, düzenlenebilir TR/EN içerikler, izin durum listesi ve teslim bağlantılarını güncelle. Eksik dış teslimleri açıkça kaydederek önizlemeyi incele ve yayını doğrula.
 

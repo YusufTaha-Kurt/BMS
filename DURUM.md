@@ -1,6 +1,6 @@
 # Güncel Durum
 
-Son güncelleme: 4 Kasım 2026 (durum analizi; pasaport bağlantısı, 404 ve yayın kontrol listesi eklendi — yayın bekliyor)
+Son güncelleme: 4 Kasım 2026 (Faz 6 formu ve Faz 7 kontrolleri tamamlandı; `main` birleştirmesi ve yayın bekliyor)
 
 ## GitHub ve Vercel yayını
 
@@ -8,6 +8,13 @@ Son güncelleme: 4 Kasım 2026 (durum analizi; pasaport bağlantısı, 404 ve ya
 - Vercel dağıtımı başarıyla tamamlandı. [Tanıtım](https://binbin-battery-intelligence.vercel.app/hakkimizda/) ve [demo](https://binbin-battery-intelligence.vercel.app/) üretim alan adında çalışıyor.
 - Canlıda 390/1440px × TR/EN × sekiz adres olmak üzere 32 yerleşim; sentetik veri yükleme, sıcaklık senaryosu/telemetri, profil durumunun korunması ve EN yeni sekme demo açılışı doğrulandı. Yakalanan error/warn yok. [Kanıt](incelemeler/yayin/INCELEME.md).
 - [Faz dosyası](WEB_SITESI_FAZ_PLANI.md) yayın ve açık işleri açıklayan güncel metni içerir. Faz 6 bekliyor. Faz 7'nin yayın kısmı yapıldı; gerçek cihaz/ekran okuyucu, içerik/izin ve dosya/form kabul işleri hâlâ açık.
+
+## Faz 6–7 tamamlandı (4 Kasım 2026)
+
+- Kullanıcı bütün fazların bitirilmesini istedi. Faz 6 iletişim formu uygulandı: iki dilli alanlar, ortak istemci/sunucu doğrulaması, tuzak alanı + süre kontrolü + Origin/oran sınırı, gönderiliyor/başarı/hata durumları, `web/api/contact.ts` Vercel fonksiyonu (Resend). Alıcı ve anahtar ortam değişkenlerinde. Form `CONTACT_FORM.enabled: false` ve boş aydınlatma adresiyle kapalı; veri toplamaz. [Faz 6 kaydı](incelemeler/faz-6/INCELEME.md).
+- Faz 7: `npm test` 18/18, build/lint temiz; 48 yerleşim durumu ve 22 iç bağlantı geçti; konsol temiz. [Faz 7 kaydı](incelemeler/faz-7/INCELEME.md).
+- Faz planında yedi faz işaretli. Açık işler (dış içerik/izinler, form açılışı ve test gönderimi, gerçek cihaz/ekran okuyucu kabulü, dış bağlantı kontrolü, bu sürümün `main` üzerinden yayını) [YAYIN_KONTROL_LISTESI.md](YAYIN_KONTROL_LISTESI.md) içinde.
+- Değişiklikler `claude/laughing-hawking-xsk5nj` dalında. Vercel yayını `main`'e birleştirmeyle tetiklenir.
 
 ## Durum analizi ve teknik eksiklerin tamamlanması (4 Kasım 2026)
 
