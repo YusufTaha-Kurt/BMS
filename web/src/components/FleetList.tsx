@@ -128,7 +128,7 @@ export function FleetList({ rows, query, onQuery, filter, onFilter, page, onPage
             <div className="flex flex-col items-center gap-2 px-4 py-10 text-center text-sm text-mute">
               <SearchX aria-hidden className="size-6" />
               <p>
-                {query ? l(`No results for “${query}”.`, `“${query}” için sonuç yok.`) : l('No batteries match this filter.', 'Bu filtreyle eşleşen batarya yok.')} {l('Change your search or filter.', 'Aramayı veya filtreyi değiştirin.')}
+                {query ? l(`No results for “${query}”.`, `“${query}” için sonuç yok.`) : l('No batteries match this filter.', 'Bu filtreyle eşleşen batarya yok.')} {l('Change your search or filter.', 'Aramayı veya filtreyi değiştiriniz.')}
               </p>
               <button
                 type="button"

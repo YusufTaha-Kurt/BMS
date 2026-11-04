@@ -133,8 +133,8 @@ function PassportLink({ url, batteryId }: { url: string; batteryId: string }) {
       <div className="min-w-0 flex-1 basis-56">
         <h4 className="mb-1 flex items-center gap-1.5 font-semibold"><Link2 aria-hidden className="size-3.5" />{l('Passport link', 'Pasaport bağlantısı')}</h4>
         <p className="text-mute">{l(
-          'Opens this synthetic record with the same scenario and day, for example on a phone. It is not a registered EU battery passport.',
-          'Bu sentetik kaydı aynı senaryo ve günle açar; örneğin telefonda. Kayıtlı bir AB batarya pasaportu değildir.',
+          'Opens this synthetic record with the same scenario and day. It is not a registered EU battery passport.',
+          'Bu sentetik kaydı aynı senaryo ve günle açar. Kayıtlı bir AB batarya pasaportu değildir.',
         )}</p>
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <a href={url} className="min-w-0 break-all font-medium text-accent underline-offset-2 hover:underline">{url.replace(/^https?:\/\//, '')}</a>

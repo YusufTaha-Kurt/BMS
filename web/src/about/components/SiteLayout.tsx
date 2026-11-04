@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react'
+import { useEffect, type ReactNode } from 'react'
 import { useI18n } from '../../lib/i18n.tsx'
 import { CONTENT } from '../content/index.ts'
 import type { PageId } from '../routes.ts'
@@ -6,7 +6,6 @@ import { SiteFooter } from './SiteFooter.tsx'
 import { SiteHeader } from './SiteHeader.tsx'
 
 export function SiteLayout({ pageId, children }: { pageId: PageId | undefined; children: ReactNode }) {
-  const [showReturn, setShowReturn] = useState(false)
   const { language } = useI18n()
   const t = CONTENT[language].common
   const page = pageId ? t.pages[pageId] : t.notFound
@@ -41,30 +40,12 @@ export function SiteLayout({ pageId, children }: { pageId: PageId | undefined; c
     return () => { cancelAnimationFrame(frame); window.removeEventListener('hashchange', revealHash); window.removeEventListener('popstate', revealHash) }
   }, [pageId, language])
 
-  useEffect(() => {
-    const header = document.querySelector('.site-header')
-    if (!header) return
-    const footer = document.querySelector('.site-footer')
-    let headerVisible = true
-    let footerVisible = false
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.target === header) headerVisible = entry.isIntersecting
-        if (entry.target === footer) footerVisible = entry.isIntersecting
-      }
-      setShowReturn(!headerVisible && !footerVisible)
-    })
-    observer.observe(header)
-    if (footer) observer.observe(footer)
-    return () => observer.disconnect()
-  }, [])
 
   return (
     <div className="about-page" id="top">
       <a className="skip-link" href="#main">{t.skip}</a>
       <SiteHeader pageId={pageId} />
       <main id="main" tabIndex={-1}>{children}</main>
-      <a className="reading-return" hidden={!showReturn} href="#top">{t.footer.backTop} ↑</a>
       <SiteFooter />
     </div>
   )

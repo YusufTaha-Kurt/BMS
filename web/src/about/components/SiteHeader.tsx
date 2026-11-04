@@ -4,6 +4,7 @@ import { useI18n, withLanguage } from '../../lib/i18n.tsx'
 import { CONTENT } from '../content/index.ts'
 import { pagePath, SITE_PAGES, type PageId } from '../routes.ts'
 import { DemoAccess } from './DemoAccess.tsx'
+import universityLogo from '../assets/logo-ostim-teknik.png'
 
 export function SiteHeader({ pageId }: { pageId: PageId | undefined }) {
   const { language, setLanguage } = useI18n()
@@ -41,8 +42,8 @@ export function SiteHeader({ pageId }: { pageId: PageId | undefined }) {
       <div className="page-width site-header-inner">
         <div className="site-header-top">
           <a className="site-identity" href={withLanguage(pagePath('home'), language)} aria-label={t.homeLink}>
-            <span className="site-institution">{t.institution}</span>
-            <strong>BinBin Battery Intelligence<span className="site-edition">COP31</span></strong>
+            <img src={universityLogo} alt="" width="105" height="40" />
+            <strong>BinBin Battery Intelligence</strong>
           </a>
           <div className="site-header-controls">
             <div className="site-language" role="group" aria-label={t.language}>

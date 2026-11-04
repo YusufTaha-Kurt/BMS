@@ -114,12 +114,10 @@ export function ContactForm() {
   )
 
   return (
-    <section className="contact-form-section" id="collaboration-form" aria-labelledby="collaboration-form-title">
-      <div className="contact-form-intro">
-        <h2 className="org-section-title" id="collaboration-form-title">{copy.formTitle}</h2>
-        <p className="org-section-intro">{copy.formText}</p>
-        {!open && <p className="contact-closed" id={fieldId('closed')}>{t.closed}</p>}
-      </div>
+    <section className="section stacked contact-form-section" id="collaboration-form" aria-labelledby="collaboration-form-title">
+      <h2 id="collaboration-form-title">{copy.formTitle}</h2>
+      <p className="muted">{copy.formText}</p>
+      {!open && <p className="notice" id={fieldId('closed')}>{t.closed}</p>}
 
       {status === 'success' ? (
         <div className="contact-success" role="status">
@@ -135,7 +133,7 @@ export function ContactForm() {
           {listed.length > 0 && (
             <div className="contact-summary" role="alert" tabIndex={-1} ref={summaryRef}>
               <p>{t.summaryTitle}</p>
-              <ul>{listed.map((field) => <li key={field}><a href={`#${fieldId(field)}`}>{field === 'consent' ? t.errors.required.consent : `${t.labels[field as keyof typeof t.labels]}: ${message(field)}`}</a></li>)}</ul>
+              <ul>{listed.map((field) => <li key={field}><a href={`#${fieldId(field)}`}>{message(field)}</a></li>)}</ul>
             </div>
           )}
           {status === 'error' && (

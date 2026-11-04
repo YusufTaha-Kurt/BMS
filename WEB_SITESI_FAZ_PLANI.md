@@ -4,6 +4,8 @@ Bu plan, hocanın hazırladığı **`COP31_Web_Sitesi_Brief_BinBin.pdf`** esas a
 
 ## Güncel durum — 4 Kasım 2026
 
+**Sade tasarım turu:** Site sadeleştirildi, OSTİM Teknik Üniversitesi ve COP31 logoları eklendi, proje e-postası kaldırıldı ve bütün görünür metinler kullanıcının üslup kılavuzuna göre yeniden yazıldı. Boş alanlar artık gösterilmez. [Kayıt](incelemeler/sade-tasarim/INCELEME.md).
+
 **Son tur:** Kullanıcının isteğiyle Faz 6 formu da uygulandı ve Faz 7 kontrolleri bu dalın son hâliyle yeniden yapıldı. Yedi fazın kod ve arayüz kapsamı tamamdır; kutular aşağıda işaretlidir. Bu, dış içerik/izinlerin, formun gerçek başvuruya açılmasının, gerçek cihaz kabulünün veya bu sürümün canlı yayınının tamamlandığı anlamına gelmez; açık işler [yayın kontrol listesinde](YAYIN_KONTROL_LISTESI.md). [Faz 6 kaydı](incelemeler/faz-6/INCELEME.md) · [Faz 7 kaydı](incelemeler/faz-7/INCELEME.md).
 
 **Faz 1–5, kullanıcının bilinmeyen bilgileri boş bırakarak ilerleme kararı doğrultusunda arayüz ve mevcut içerik kapsamıyla hazırdır.** Sayfalar iki dilde çalışır; ekip/kurum/pilot/karbon bilgileri verilmediyse etiketli boş alanlar korunur. Bu kutular gerçek saha pilotunun, ölçümlerin veya bütün yayın izinlerinin tamamlandığı anlamına gelmez.
@@ -12,7 +14,7 @@ Son tasarım/kullanılabilirlik düzenlemeleri, genel bölüm bağlantısı düz
 
 | Faz | Mevcut kapsam | Kalan iş |
 | --- | --- | --- |
-| 1 — Ortak düzen | Yedi tanıtım adresi, ortak menü/altbilgi, mobil görünüm, EN/TR ve demo/QR akışı hazır. | Gerçek proje e-postası ve son cihaz kabulü. |
+| 1 — Ortak düzen | Yedi tanıtım adresi, ortak menü/altbilgi, mobil görünüm, EN/TR ve demo/QR akışı hazır. Proje e-postası olmayacak. | Son cihaz kabulü. |
 | 2 — Ana sayfa/ekip | Kısa proje tanıtımı ve yerinde açılan ekip profilleri hazır. | Ekipten gelecek rol, çalışma paketi, katkı, biyografi ve varsa izinli görseller. |
 | 3 — Kurumlar/iş birlikleri | Kurumlar, taslak yönetici kayıtları ve önerilen/pending iş birliği alanları hazır. | Yazılı teyitler, onaylı kapsam/katkı, resmî iletişim ve logo izinleri. |
 | 4 — Proje/karbon | Teknik anlatım, göreli pilot takvimi, beklenen etkiler ve hesaplama sınırları hazır. | Gerçek pilot bilgileri, enerji ölçümleri ve doğrulanmış faktör/kaynak kayıtları. |

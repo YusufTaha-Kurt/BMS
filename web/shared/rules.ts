@@ -51,7 +51,7 @@ export function evaluate(m: RuleInput, r = DEMO_RULES, language: 'tr' | 'en' = '
     findings.push({
       priority: 'critical',
       signal: 'Sıcaklık sapması',
-      action: 'Teknik inceleme önerilir: soğutma ve bağlantılar',
+      action: 'Soğutma ve bağlantılar için teknik inceleme önerilir',
       reason: `Tepe sıcaklık ${tr(m.tempMax)} °C ≥ ${r.tempCritC} °C kritik eşik`,
     })
   }
@@ -59,7 +59,7 @@ export function evaluate(m: RuleInput, r = DEMO_RULES, language: 'tr' | 'en' = '
     findings.push({
       priority: 'critical',
       signal: 'Hücre dengesizliği (ΔV)',
-      action: 'Teknik inceleme önerilir: hücre/grup dengesi',
+      action: 'Hücre ve grup dengesi için teknik inceleme önerilir',
       reason: `Tepe ΔV ${tr(m.dvMax, 0)} mV ≥ ${r.dvCritMv} mV kritik eşik`,
     })
   }
@@ -67,7 +67,7 @@ export function evaluate(m: RuleInput, r = DEMO_RULES, language: 'tr' | 'en' = '
     findings.push({
       priority: 'critical',
       signal: 'Park geriliminde düşüş',
-      action: 'Teknik inceleme önerilir: mikro kısa devre şüphesi',
+      action: 'Mikro kısa devre şüphesiyle teknik inceleme önerilir',
       reason: `Park gerilim düşüşü ${tr(m.parkDropMvH)} mV/sa ≥ ${r.parkCritMvH} mV/sa kritik eşik`,
     })
   }
@@ -75,7 +75,7 @@ export function evaluate(m: RuleInput, r = DEMO_RULES, language: 'tr' | 'en' = '
     findings.push({
       priority: 'critical',
       signal: 'İç direnç artışı',
-      action: 'Teknik inceleme önerilir: bağlantı ve hücre direnci',
+      action: 'Bağlantı ve hücre direnci için teknik inceleme önerilir',
       reason: `Tahmini iç direnç ${tr(m.rMohm, 0)} mΩ ≥ ${r.rCritMohm} mΩ kritik eşik`,
     })
   }
@@ -83,7 +83,7 @@ export function evaluate(m: RuleInput, r = DEMO_RULES, language: 'tr' | 'en' = '
     findings.push({
       priority: 'data_review',
       signal: 'Veri yeterliliği düşük',
-      action: 'Veri hattı ve cihaz bağlantısı kontrol edilmeli; eksik veri sağlıklı sayılmaz',
+      action: 'Veri hattı ve cihaz bağlantısı kontrol edilmeli. Eksik veri sağlıklı sayılmaz',
       reason: `Veri yeterliliği %${tr(m.coverage)} < %${r.coverageMinPct} alt sınır`,
     })
   }
@@ -91,7 +91,7 @@ export function evaluate(m: RuleInput, r = DEMO_RULES, language: 'tr' | 'en' = '
     findings.push({
       priority: 'attention',
       signal: 'Sıcaklık yükseliyor',
-      action: 'İzlemeye al: kullanım ve soğutma gözden geçirilsin',
+      action: 'İzlemeye alınmalı, kullanım ve soğutma gözden geçirilmeli',
       reason: `Tepe sıcaklık ${tr(m.tempMax)} °C ≥ ${r.tempWarnC} °C uyarı eşiği`,
     })
   }
@@ -99,7 +99,7 @@ export function evaluate(m: RuleInput, r = DEMO_RULES, language: 'tr' | 'en' = '
     findings.push({
       priority: 'attention',
       signal: 'ΔV artıyor',
-      action: 'İzlemeye al: dengeleme şarjı planlanabilir',
+      action: 'İzlemeye alınmalı, dengeleme şarjı planlanabilir',
       reason: `Tepe ΔV ${tr(m.dvMax, 0)} mV ≥ ${r.dvWarnMv} mV uyarı eşiği`,
     })
   }
@@ -107,7 +107,7 @@ export function evaluate(m: RuleInput, r = DEMO_RULES, language: 'tr' | 'en' = '
     findings.push({
       priority: 'attention',
       signal: 'Park gerilimi düşüyor',
-      action: 'İzlemeye al: park gerilimi takip edilsin',
+      action: 'İzlemeye alınmalı, park gerilimi takip edilmeli',
       reason: `Park gerilim düşüşü ${tr(m.parkDropMvH)} mV/sa ≥ ${r.parkWarnMvH} mV/sa uyarı eşiği`,
     })
   }
@@ -115,7 +115,7 @@ export function evaluate(m: RuleInput, r = DEMO_RULES, language: 'tr' | 'en' = '
     findings.push({
       priority: 'attention',
       signal: 'İç direnç yükseliyor',
-      action: 'İzlemeye al: güç ve şarj kabulü takip edilsin',
+      action: 'İzlemeye alınmalı, güç ve şarj kabulü takip edilmeli',
       reason: `Tahmini iç direnç ${tr(m.rMohm, 0)} mΩ ≥ ${r.rWarnMohm} mΩ uyarı eşiği`,
     })
   }
@@ -123,7 +123,7 @@ export function evaluate(m: RuleInput, r = DEMO_RULES, language: 'tr' | 'en' = '
     findings.push({
       priority: 'attention',
       signal: 'Kapasite eşiğine yakın',
-      action: 'Yaşam döngüsü değerlendirmesine aday (değişim / ikinci yaşam)',
+      action: 'Değişim veya ikinci kullanım değerlendirmesine aday',
       reason: `Simüle SOH %${tr(m.soh)} < %${r.sohAttentionPct}`,
     })
   }
@@ -145,16 +145,16 @@ export function evaluate(m: RuleInput, r = DEMO_RULES, language: 'tr' | 'en' = '
     const n = (value: number | null, digits = 1) => value === null ? '—' : value.toFixed(digits)
     // Presentation only: the findings and their priority are calculated above, once.
     const english: Record<string, { signal: string; action: string; reason: string }> = {
-      'Sıcaklık sapması': { signal: 'Temperature drift', action: 'Technical review recommended: cooling and connections', reason: `Peak temperature ${n(m.tempMax)} °C ≥ ${r.tempCritC} °C critical threshold` },
-      'Hücre dengesizliği (ΔV)': { signal: 'Cell imbalance (ΔV)', action: 'Technical review recommended: cell/group balance', reason: `Peak ΔV ${n(m.dvMax, 0)} mV ≥ ${r.dvCritMv} mV critical threshold` },
-      'Park geriliminde düşüş': { signal: 'Parked voltage drop', action: 'Technical review recommended: suspected internal leakage', reason: `Parked voltage drop ${n(m.parkDropMvH)} mV/h ≥ ${r.parkCritMvH} mV/h critical threshold` },
-      'İç direnç artışı': { signal: 'Rising internal resistance', action: 'Technical review recommended: connections and cell resistance', reason: `Estimated internal resistance ${n(m.rMohm, 0)} mΩ ≥ ${r.rCritMohm} mΩ critical threshold` },
-      'Veri yeterliliği düşük': { signal: 'Low data coverage', action: 'Check the data pipeline and device connection; missing data does not mean a healthy battery', reason: `Data coverage ${n(m.coverage)}% < ${r.coverageMinPct}% minimum` },
-      'Sıcaklık yükseliyor': { signal: 'Temperature increasing', action: 'Monitor: review usage and cooling', reason: `Peak temperature ${n(m.tempMax)} °C ≥ ${r.tempWarnC} °C warning threshold` },
-      'ΔV artıyor': { signal: 'Increasing ΔV', action: 'Monitor: consider a balancing charge', reason: `Peak ΔV ${n(m.dvMax, 0)} mV ≥ ${r.dvWarnMv} mV warning threshold` },
-      'Park gerilimi düşüyor': { signal: 'Parked voltage decreasing', action: 'Monitor: track the parked voltage trend', reason: `Parked voltage drop ${n(m.parkDropMvH)} mV/h ≥ ${r.parkWarnMvH} mV/h warning threshold` },
-      'İç direnç yükseliyor': { signal: 'Internal resistance increasing', action: 'Monitor: track power delivery and charge acceptance', reason: `Estimated internal resistance ${n(m.rMohm, 0)} mΩ ≥ ${r.rWarnMohm} mΩ warning threshold` },
-      'Kapasite eşiğine yakın': { signal: 'Near the capacity threshold', action: 'Candidate for lifecycle assessment: replacement or second life', reason: `Simulated SOH ${n(m.soh)}% < ${r.sohAttentionPct}%` },
+      'Sıcaklık sapması': { signal: 'Temperature drift', action: 'Technical review recommended for cooling and connections', reason: `Peak temperature ${n(m.tempMax)} °C ≥ ${r.tempCritC} °C critical threshold` },
+      'Hücre dengesizliği (ΔV)': { signal: 'Cell imbalance (ΔV)', action: 'Technical review recommended for cell and group balance', reason: `Peak ΔV ${n(m.dvMax, 0)} mV ≥ ${r.dvCritMv} mV critical threshold` },
+      'Park geriliminde düşüş': { signal: 'Parked voltage drop', action: 'Technical review recommended for suspected internal leakage', reason: `Parked voltage drop ${n(m.parkDropMvH)} mV/h ≥ ${r.parkCritMvH} mV/h critical threshold` },
+      'İç direnç artışı': { signal: 'Rising internal resistance', action: 'Technical review recommended for connections and cell resistance', reason: `Estimated internal resistance ${n(m.rMohm, 0)} mΩ ≥ ${r.rCritMohm} mΩ critical threshold` },
+      'Veri yeterliliği düşük': { signal: 'Low data coverage', action: 'Check the data pipeline and device connection. Missing data does not mean a healthy battery', reason: `Data coverage ${n(m.coverage)}% < ${r.coverageMinPct}% minimum` },
+      'Sıcaklık yükseliyor': { signal: 'Temperature increasing', action: 'Monitor and review usage and cooling', reason: `Peak temperature ${n(m.tempMax)} °C ≥ ${r.tempWarnC} °C warning threshold` },
+      'ΔV artıyor': { signal: 'Increasing ΔV', action: 'Monitor and consider a balancing charge', reason: `Peak ΔV ${n(m.dvMax, 0)} mV ≥ ${r.dvWarnMv} mV warning threshold` },
+      'Park gerilimi düşüyor': { signal: 'Parked voltage decreasing', action: 'Monitor the parked voltage trend', reason: `Parked voltage drop ${n(m.parkDropMvH)} mV/h ≥ ${r.parkWarnMvH} mV/h warning threshold` },
+      'İç direnç yükseliyor': { signal: 'Internal resistance increasing', action: 'Monitor power delivery and charge acceptance', reason: `Estimated internal resistance ${n(m.rMohm, 0)} mΩ ≥ ${r.rWarnMohm} mΩ warning threshold` },
+      'Kapasite eşiğine yakın': { signal: 'Near the capacity threshold', action: 'Candidate for replacement or second use assessment', reason: `Simulated SOH ${n(m.soh)}% < ${r.sohAttentionPct}%` },
     }
     const translate = (finding: Finding) => {
       const text = english[finding.signal]

@@ -196,8 +196,8 @@ export default function App() {
             <Info aria-hidden className="mt-0.5 size-4 shrink-0 text-warn" />
             <p className="flex-1">
               {l(
-                `Battery “${unknownBattery}” is not part of this synthetic demo fleet. Valid IDs: ${SHOWCASE_IDS[0]}…${SHOWCASE_IDS[SHOWCASE_IDS.length - 1]} and BT-10001…BT-${10000 + FLEET_SIZE - SHOWCASE_IDS.length}. Showing ${initial.view.batteryId} instead.`,
-                `“${unknownBattery}” kimlikli batarya bu sentetik demo filosunda yok. Geçerli kimlikler: ${SHOWCASE_IDS[0]}…${SHOWCASE_IDS[SHOWCASE_IDS.length - 1]} ve BT-10001…BT-${10000 + FLEET_SIZE - SHOWCASE_IDS.length}. Yerine ${initial.view.batteryId} gösteriliyor.`,
+                `Battery “${unknownBattery}” is not part of this synthetic demo fleet. Valid IDs are ${SHOWCASE_IDS[0]}…${SHOWCASE_IDS[SHOWCASE_IDS.length - 1]} and BT-10001…BT-${10000 + FLEET_SIZE - SHOWCASE_IDS.length}. Showing ${initial.view.batteryId} instead.`,
+                `“${unknownBattery}” kimlikli batarya bu sentetik demo filosunda yok. Geçerli kimlikler ${SHOWCASE_IDS[0]}…${SHOWCASE_IDS[SHOWCASE_IDS.length - 1]} ve BT-10001…BT-${10000 + FLEET_SIZE - SHOWCASE_IDS.length}. Yerine ${initial.view.batteryId} gösteriliyor.`,
               )}
             </p>
             <button type="button" onClick={() => setUnknownBattery(null)} aria-label={l('Dismiss notice', 'Bildirimi kapat')} className="-m-1 rounded-md p-2 text-mute hover:text-ink"><X aria-hidden className="size-4" /></button>

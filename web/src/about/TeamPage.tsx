@@ -1,10 +1,39 @@
-import { ChevronDown } from 'lucide-react'
+import { ArrowUpRight, ChevronDown } from 'lucide-react'
 import { useEffect } from 'react'
-import { COORDINATOR_PROFILE, PROJECT_TEAM } from '../site.ts'
+import { COORDINATOR_PROFILE, PROJECT_TEAM, type SiteLanguage, type TeamMember } from '../site.ts'
 import { useI18n } from '../lib/i18n.tsx'
 import { CONTENT } from './content/index.ts'
 import { PageTemplate } from './components/PageTemplate.tsx'
-import { ProfileDetails } from './ProfileDetails.tsx'
+
+const FIELDS = ['role', 'workPackage', 'contribution', 'bio'] as const
+
+function details(member: TeamMember, language: SiteLanguage) {
+  const fields = FIELDS.map((key) => [key, member[key]?.[language]?.trim()] as const).filter(([, value]) => value)
+  const links = (member.links ?? []).filter((link) => /^https?:\/\//i.test(link.url))
+  return { fields, links, any: fields.length > 0 || links.length > 0 || Boolean(member.photo) }
+}
+
+/** Bilgisi olan kişi kendi satırında açılır. Bilgisi olmayan kişi yalnız adıyla listelenir. */
+function Person({ member, language, showRole = true }: { member: TeamMember; language: SiteLanguage; showRole?: boolean }) {
+  const { team: t, common } = CONTENT[language]
+  const info = details(member, language)
+  const role = showRole ? member.role?.[language]?.trim() : undefined
+  if (!info.any) return <div className="person"><strong>{member.name}</strong></div>
+  return (
+    <details className="person" name="team-profiles" id={`profile-${member.id}`}>
+      <summary><strong>{member.name}</strong>{role && <span>{role}</span>}<ChevronDown size={20} aria-hidden="true" /></summary>
+      <div className="person-body">
+        {member.photo && <img className="person-photo" src={member.photo} alt={member.name} />}
+        <dl>
+          {info.fields.map(([key, value]) => <div key={key}><dt>{t.fields[key]}</dt><dd>{value}</dd></div>)}
+          {info.links.length > 0 && <div><dt>{t.fields.links}</dt><dd className="person-links">{info.links.map((link) => (
+            <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer">{typeof link.label === 'string' ? link.label : link.label[language] || link.url}<ArrowUpRight size={14} aria-hidden="true" /><span className="sr-only"> ({common.newTab})</span></a>
+          ))}</dd></div>}
+        </dl>
+      </div>
+    </details>
+  )
+}
 
 export function TeamPage() {
   const { language } = useI18n()
@@ -13,7 +42,7 @@ export function TeamPage() {
   useEffect(() => {
     const openLinkedProfile = () => {
       const target = document.getElementById(window.location.hash.slice(1))
-      if (target instanceof HTMLDetailsElement && target.name === 'team-profiles') {
+      if (target instanceof HTMLDetailsElement) {
         target.open = true
         target.scrollIntoView({ block: 'start' })
       }
@@ -24,31 +53,14 @@ export function TeamPage() {
   }, [])
   return (
     <PageTemplate title={page.title} description={page.description}>
-      <div className="team-roster">
-        <h2 className="eyebrow section-label">{t.members}</h2>
-        <ul>{PROJECT_TEAM.map((member, i) => (
-          <li key={member.id}>
-            <details className="member-profile" name="team-profiles" id={`profile-${member.id}`}>
-              <summary className="profile-row">
-                <span className="member-index" aria-hidden="true">0{i + 1}</span>
-                <span className="member-copy"><strong>{member.name}</strong><span><span className="when-closed">{t.openProfile}</span><span className="when-open">{t.closeProfile}</span></span></span>
-                <ChevronDown size={21} aria-hidden="true" />
-              </summary>
-              <ProfileDetails member={member} language={language} />
-            </details>
-          </li>
-        ))}</ul>
-        <section className="coordinator" aria-labelledby="coordinator-title">
-          <h2 className="eyebrow section-label" id="coordinator-title">{t.coordinator}</h2>
-          <details className="member-profile" name="team-profiles" id="profile-coordinator">
-            <summary className="profile-row coordinator-profile">
-              <span className="member-copy"><strong>{COORDINATOR_PROFILE.name}</strong><span><span className="when-closed">{t.openProfile}</span><span className="when-open">{t.closeProfile}</span></span></span>
-              <ChevronDown size={21} aria-hidden="true" />
-            </summary>
-            <ProfileDetails member={COORDINATOR_PROFILE} language={language} />
-          </details>
-        </section>
-      </div>
+      <section className="section" aria-labelledby="members-title">
+        <h2 id="members-title">{t.members}</h2>
+        <ul className="people">{PROJECT_TEAM.map((member) => <li key={member.id}><Person member={member} language={language} /></li>)}</ul>
+      </section>
+      <section className="section" aria-labelledby="coordinator-title">
+        <h2 id="coordinator-title">{t.coordinator}</h2>
+        <ul className="people"><li><Person member={COORDINATOR_PROFILE} language={language} showRole={false} /></li></ul>
+      </section>
     </PageTemplate>
   )
 }

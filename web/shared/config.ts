@@ -1,6 +1,6 @@
 // Demo yapılandırması. Eşikler üretici sınırı değil, gösterim için başlangıç değerleridir.
 
-export const DATA_VERSION = '2.0.0'
+export const DATA_VERSION = '2.1.0'
 export const SEED = 20261023
 export const SIM_START = '2026-09-01'
 export const FLEET_SIZE = 500

@@ -1,4 +1,5 @@
 import type { LocalizedText } from '../site.ts'
+import universityLogo from './assets/logo-ostim-teknik.png'
 
 export type OrganizationId = 'foundation' | 'university' | 'binbin' | 'sustainBridge'
 
@@ -9,9 +10,16 @@ export interface OrganizationAsset {
   approved?: boolean
 }
 
-/** Add a supplied logo only with its publication approval and source credit. */
+/**
+ * Logolar yalnız src doluysa gösterilir; boş kayıt için yer tutucu çizilmez.
+ * Üniversite logosu COP31 broşüründeki OSTİM Teknik Üniversitesi ve COP31 görselinden kırpıldı.
+ * Diğer kurumların logo dosyası henüz yok.
+ */
 export const ORGANIZATION_ASSETS: Record<OrganizationId, OrganizationAsset> = {
-  foundation: {}, university: {}, binbin: {}, sustainBridge: {},
+  foundation: {},
+  university: { src: universityLogo, approved: true },
+  binbin: {},
+  sustainBridge: {},
 }
 
 export interface Manager {
@@ -29,7 +37,6 @@ export const MANAGERS: readonly Manager[] = [
   { id: 'murat-yulek', name: 'Murat Yülek' },
   { id: 'hasan-erbay', name: 'Hasan Erbay' },
   { id: 'serdar-muldur', name: 'Serdar Müldür' },
-  { id: 'research-projects' },
 ]
 
 export interface Collaboration {
@@ -50,8 +57,8 @@ export const COLLABORATIONS: readonly Collaboration[] = [
     legalName: 'Bin Ulaşım ve Akıllı Şehir Teknolojileri A.Ş.',
     status: 'proposed',
     proposal: {
-      tr: 'BinBin’e sunulan teklif; mevcut Batarya Yönetim Sistemi (BMS), Nesnelerin İnterneti (IoT), bakım ve veri altyapısının incelenmesini, pilot saha çalışmasının planlanmasını ve her aşamanın birlikte değerlendirilmesini önerir.',
-      en: 'The proposal submitted to BinBin suggests reviewing its existing Battery Management System (BMS), Internet of Things (IoT), maintenance and data infrastructure, planning a field pilot, and evaluating each stage together.',
+      tr: 'Teklif, BinBin’in mevcut BMS, IoT, bakım ve veri altyapısının incelenmesini ve bir saha pilotunun birlikte planlanmasını önerir. Her aşamanın sonucu iki taraf birlikte değerlendirir.',
+      en: 'The proposal suggests reviewing BinBin’s existing BMS, IoT, maintenance and data infrastructure and planning a field pilot together. Both sides review the outcome of each stage.',
     },
   },
   { id: 'sustainBridge', name: 'Sustain Bridge', status: 'pending' },

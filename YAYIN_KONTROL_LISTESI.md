@@ -2,28 +2,29 @@
 
 Son güncelleme: 4 Kasım 2026. Faz 7'nin “izin durum listesi, teslim bağlantıları ve nihai kontrol listesi” maddesi için tek referans. Durumlar depodaki kayıtlardan alınmıştır; bir alanın arayüzde hazır olması içeriğin veya iznin tamamlandığı anlamına gelmez. Bilgi uydurulmaz; gelen içerik ilgili dosyaya girilir ve bu tablo güncellenir.
 
-Durum anahtarı: **Hazır** = içerik ve gerekiyorsa izin var · **Bekliyor** = alan hazır, içerik/izin gelmedi · **Kısmi** = bir bölümü var.
+Durum anahtarı: **Hazır** içerik ve gerekiyorsa izin var. **Bekliyor** içerik veya izin gelmedi. **Kısmi** bir bölümü var.
 
 ## 1. İçerik ve izin durumu
 
+Sade tasarım turundan (4 Kasım 2026) beri boş alanlar sitede gösterilmez. Bilgi geldiğinde ilgili dosyaya girilir ve sayfada kendiliğinden görünür. Projenin ortak e-posta adresi olmayacaktır; iletişim yalnız formla yapılır.
+
 | # | Konu | Dosya / alan | Durum | Gereken |
-|---|---|---|---|---|
-| 1 | Kurumsal proje e-postası | `web/src/site.ts` → `TEAM_EMAIL`, `CONTACTS` | Bekliyor | Kurumun onayladığı ortak adres. Boşken e-posta bağlantısı gösterilmez. |
-| 2 | Ekip üyeleri (Gizem, Gamze, Erhan, Yusuf, Ahmed) | `web/src/site.ts` → `PROJECT_TEAM` | Bekliyor | Her kişi için TR/EN rol, çalışma paketi, katkı, kısa tanıtım; isteğe bağlı bağlantı. |
-| 3 | Ekip fotoğrafları | `PROJECT_TEAM[].photo`, `photoCredit` | Bekliyor | Kişinin yayın izni ve fotoğraf kaynağı. |
-| 4 | Akademik koordinatör | `COORDINATOR_PROFILE` | Kısmi | Rol/çalışma paketi/katkı var; kısa tanıtım ve bağlantılar bekliyor. |
-| 5 | Kurum yöneticileri (4 isim + Ar-Ge/projeler sorumlusu) | `web/src/about/organizations.ts` → `MANAGERS` | Bekliyor | Kurumdan teyitli unvan, kurum ve resmî e-posta; ardından `confirmed: true`. |
-| 6 | BinBin iş birliği | `COLLABORATIONS` → `binbin` (`proposed`) | Kısmi | Teklif yaklaşımı yayında; onaylı kapsam, katkı ve resmî web adresi için yazılı teyit. |
-| 7 | Sustain Bridge iş birliği | `COLLABORATIONS` → `sustainBridge` (`pending`) | Bekliyor | Kapsam, katkı, resmî web adresi ve teyit. |
-| 8 | Kurum logoları (OSTİM Vakfı, OSTİM Teknik Üniversitesi, BinBin, Sustain Bridge) | `ORGANIZATION_ASSETS` | Bekliyor | Logo dosyası, TR/EN alt metin, kaynak ve yayın izni (`approved: true`). Tanıtım ve demo üst bilgisi şu an metin tabanlıdır; broşürden alınmış `web/src/about/assets/ostim-cop31.png` dosyası depoda durur ama hiçbir sayfada kullanılmaz. |
-| 9 | Pilot bilgileri (başlangıç, grup büyüklüğü, veri kapsamı, doğrulama) | `web/src/about/projectData.ts` → `PILOT_INFORMATION` | Bekliyor | Gerçek pilot verisi. Takvim yalnız teklifin göreli Faz 0–5 planıdır. |
-| 10 | Karbon ölçümleri (10 alan) | `projectData.ts` → `CARBON_INFORMATION` | Bekliyor | Ölçüm noktası/dönemi, enerji, faktör değeri/yılı/kaynağı, emisyon, tedarikçi belgeleri. Demo faktörü (0,45 kg/kWh) buraya taşınmaz. |
-| 11 | Sunum PDF'i (TR/EN) | `web/src/about/demoMedia.ts` → `DEMO_MEDIA` | Bekliyor | Koordinatörden dosya; `web/public/media/` altına eklenir. |
-| 12 | Tanıtım videosu (TR/EN) | `DEMO_MEDIA[*].video` | Bekliyor | Video + aynı dilde WebVTT altyazı; isteğe bağlı poster. |
-| 13 | İletişim formu (Faz 6) | `web/src/site.ts` → `CONTACT_FORM`; `web/api/contact.ts`; Vercel ortam değişkenleri | Kısmi | Form, doğrulama, spam koruması ve gönderim fonksiyonu hazır, kapalı. Açmak için: alıcı adres (`CONTACT_TO_EMAIL`), Resend gönderen adresi ve anahtarı, kurum onaylı TR/EN aydınlatma metni adresi, `enabled: true`, canlı test gönderimi. Adımlar: [Faz 6 kaydı](incelemeler/faz-6/INCELEME.md). |
-| 14 | Demo ekran görüntüleri | `web/src/about/assets/demo/` | Hazır | Gerçek sentetik demodan TR/EN; demo arayüzü değişirse yeniden alınmalı. |
-| 15 | Resmî kaynak bağlantıları | `web/src/about/sources.ts` | Hazır | Yayından önce bağlantıların hâlâ açıldığı kontrol edilmeli. |
-| 16 | Son içerik güncelleme tarihi | `web/src/site.ts` → `SITE_CONTENT_UPDATED` | Hazır | Gerçek içerik eklendiğinde tarih elle güncellenir. |
+| --- | --- | --- | --- | --- |
+| 1 | Ekip üyeleri (Gizem, Gamze, Erhan, Yusuf, Ahmed) | `web/src/site.ts` → `PROJECT_TEAM` | Bekliyor | TR/EN rol, çalışma paketi, katkı, kısa tanıtım ve isteğe bağlı bağlantı. Bilgi girilen kişinin satırı açılır hâle gelir. |
+| 2 | Ekip fotoğrafları | `PROJECT_TEAM[].photo` | Bekliyor | Kişinin yayın izni. |
+| 3 | Akademik koordinatör | `COORDINATOR_PROFILE` | Kısmi | Rol, çalışma paketi ve katkı var. Kısa tanıtım ve bağlantılar bekleniyor. |
+| 4 | Kurum yöneticileri | `web/src/about/organizations.ts` → `MANAGERS` | Kısmi | Dört isim gösteriliyor. Kurumdan teyitli unvan ve kurum, ardından `confirmed: true`. |
+| 5 | BinBin iş birliği | `COLLABORATIONS` → `binbin` (`proposed`) | Kısmi | Teklif yaklaşımı gösteriliyor. Onaylı kapsam, katkı ve resmî web adresi için yazılı teyit. |
+| 6 | Sustain Bridge iş birliği | `COLLABORATIONS` → `sustainBridge` (`pending`) | Bekliyor | Kapsam, katkı ve resmî web adresi. |
+| 7 | Logolar | `web/src/about/assets/`, `ORGANIZATION_ASSETS` | Kısmi | OSTİM Teknik Üniversitesi ve COP31 logoları COP31 broşür görselinden kırpılarak eklendi (üst bilgi, kurumlar, ana sayfa, alt bilgi). OSTİM Vakfı, BinBin ve Sustain Bridge logoları bu oturumdan indirilemedi (kurum siteleri ağ ayarlarında izinli değildi). Dosya gelince `ORGANIZATION_ASSETS` içine eklenir. Daha net bir kaynak için kurumların resmî vektör logoları tercih edilmeli. |
+| 8 | Pilot bilgileri | `web/src/about/content/technical.*.ts` → `project.pilot` | Bekliyor | Gerçek başlangıç tarihi, grup büyüklüğü, veri kapsamı ve doğrulama sonuçları. Takvim şu an teklifin göreli planıdır. |
+| 9 | Karbon ölçümleri | `content/technical.*.ts` → `carbon` | Bekliyor | Ölçüm noktası ve dönemi, enerji, faktör değeri, yılı ve kaynağı, hesaplanan emisyon, tedarikçi belgeleri. Demo faktörü kullanılmaz. |
+| 10 | Sunum (TR/EN) | `web/src/about/demoMedia.ts` → `DEMO_MEDIA` | Bekliyor | Dosya gelince `web/public/media/` altına eklenir. Bölüm dosya olmadan görünmez. |
+| 11 | Tanıtım videosu (TR/EN) | `DEMO_MEDIA[*].video` | Bekliyor | Video ve aynı dilde WebVTT altyazı. |
+| 12 | İletişim formu | `web/src/site.ts` → `CONTACT_FORM`, `web/api/contact.ts`, Vercel ortam değişkenleri | Kısmi | Form hazır ve kapalı. Açmak için alıcı adres (`CONTACT_TO_EMAIL`), Resend gönderen adresi ve anahtarı, kurum onaylı TR/EN aydınlatma metni, `enabled: true` ve canlı test gönderimi. [Faz 6 kaydı](incelemeler/faz-6/INCELEME.md). |
+| 13 | Demo ekran görüntüleri | `web/src/about/assets/demo/` | Hazır | Demo arayüzü değişirse yeniden alınmalı. Öneri metinleri bu turda sadeleşti, görüntülerdeki eski öneri cümlesi yenilenebilir. |
+| 14 | Resmî kaynak bağlantıları | `web/src/about/sources.ts` | Hazır | Yayından önce açıldıkları kontrol edilmeli. |
+| 15 | Son içerik güncelleme tarihi | `web/src/site.ts` → `SITE_CONTENT_UPDATED` | Hazır | İçerik eklendiğinde elle güncellenir. |
 
 ## 2. Teslim bağlantıları
 
@@ -51,6 +52,7 @@ Teknik kontroller (bu depoda tekrar çalıştırılabilir):
 - [x] 500 batarya kimliği için pasaport adresi (`?battery=…&tab=passport`) ve QR; bilinmeyen kimlikte açıklayıcı bildirim.
 - [x] Bilinmeyen adresler için iki dilli 404 sayfası (`web/public/404.html`).
 - [x] 390/1440 px'te yatay taşma yok; tarayıcı konsolunda error/warn yok (yerel üretim önizlemesi).
+- [x] Sade tasarım turunda 48 yerleşim, 22 iç bağlantı, pasaport/404 ve form akışları yeniden geçti ([kayıt](incelemeler/sade-tasarim/INCELEME.md)).
 - [ ] Bu dalın `main`'e birleştirilip Vercel'e yayımlanması; ardından canlıda pasaport bağlantısı, 404, QR okutma ve kapalı form kontrolü.
 - [ ] Sekiz dış kaynak bağlantısının yayın günü açıldığının kontrolü (bu ortamdan dış ağ yoktu).
 - [ ] Gerçek telefon/tablette dokunma, OS “hareketi azalt” (UX-05) ve VoiceOver/TalkBack/NVDA (UX-10) kabulü.

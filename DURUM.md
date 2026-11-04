@@ -1,6 +1,6 @@
 # Güncel Durum
 
-Son güncelleme: 4 Kasım 2026 (Faz 6 formu ve Faz 7 kontrolleri tamamlandı; `main` birleştirmesi ve yayın bekliyor)
+Son güncelleme: 4 Kasım 2026 (sade tasarım, logolar, metin düzeltmesi; `main` birleştirmesi ve yayın bekliyor)
 
 ## GitHub ve Vercel yayını
 
@@ -8,6 +8,15 @@ Son güncelleme: 4 Kasım 2026 (Faz 6 formu ve Faz 7 kontrolleri tamamlandı; `m
 - Vercel dağıtımı başarıyla tamamlandı. [Tanıtım](https://binbin-battery-intelligence.vercel.app/hakkimizda/) ve [demo](https://binbin-battery-intelligence.vercel.app/) üretim alan adında çalışıyor.
 - Canlıda 390/1440px × TR/EN × sekiz adres olmak üzere 32 yerleşim; sentetik veri yükleme, sıcaklık senaryosu/telemetri, profil durumunun korunması ve EN yeni sekme demo açılışı doğrulandı. Yakalanan error/warn yok. [Kanıt](incelemeler/yayin/INCELEME.md).
 - [Faz dosyası](WEB_SITESI_FAZ_PLANI.md) yayın ve açık işleri açıklayan güncel metni içerir. Faz 6 bekliyor. Faz 7'nin yayın kısmı yapıldı; gerçek cihaz/ekran okuyucu, içerik/izin ve dosya/form kabul işleri hâlâ açık.
+
+## Sade tasarım, logolar ve metin düzeltmesi (4 Kasım 2026)
+
+- Kullanıcı sitenin sade görünmesini, logoların eklenmesini, bütün metinlerin yüklediği üslup kılavuzuna göre yazılmasını ve proje e-postasının kaldırılmasını istedi.
+- Boş alanlar, “—” işaretleri, hazırlık kartları, bölüm içi gezinmeler, tekrar eden notlar ve bağlantı ızgaraları kaldırıldı. Altı sayfa stil dosyası tek dosyada toplandı. Masaüstü sayfa boyu ana sayfada 3679→2137, demoda 4467→1713, kurumlarda 2265→1173 px.
+- OSTİM Teknik Üniversitesi ve COP31 logoları depodaki broşür görselinden kırpıldı. OSTİM Vakfı, BinBin ve Sustain Bridge logoları bu oturumda indirilemedi. Kurum siteleri oturumun ağ ayarlarında izinli değildi.
+- Proje e-postası alanları koddan ve sayfalardan kaldırıldı. İletişim formla yapılır.
+- Tanıtım, form, 404 sayfası ve demo içindeki rehber, uyarı ve bakım önerisi metinleri kılavuza göre yeniden yazıldı. Öneri metinleri veri dosyalarında olduğu için veri sürümü 2.1.0 oldu. Demo ekran görüntüleri yeniden çekildi.
+- `npm test` 18/18, build ve lint temiz. 48 yerleşim, 22 iç bağlantı, pasaport/404 ve form akışları yeniden geçti. [Kayıt](incelemeler/sade-tasarim/INCELEME.md).
 
 ## Faz 6–7 tamamlandı (4 Kasım 2026)
 

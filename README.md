@@ -36,11 +36,23 @@ npm run lint          # eslint
 
 **Stant / QR:** Üst çubuktaki **Project & team / Proje ve ekip** bağlantısı doğrudan tanıtım sayfasını açar. Büyük QR, alt kısımdaki ayrı **Share project QR / Proje QR’ını paylaş** düğmesindedir; küçük QR da sayfanın altında durur. QR, ayrı derlenen `/hakkimizda/` tanıtım sayfasını açar. Broşürle aynı petrol yeşili/bordo/lime kimliğini kullanan sayfa İngilizce açılır; üstteki EN/TR seçimiyle Türkçeye geçilir. Akış: broşür/poster → QR → proje ve ekip tanıtımı → demo. Adres korunduğu için basılı QR değişmez. Uygulama localhost'tan açılsa bile QR yayındaki adrese gider.
 
-Ekip isimleri (`PROJECT_TEAM`), akademik koordinatör (`ACADEMIC_COORDINATOR`), iletişim adresleri (`CONTACTS`, isteğe bağlı ortak `TEAM_EMAIL`) ve yayın adresi (`SITE_URL`) **`web/src/site.ts`** içindedir. Gerçek e-posta verilene kadar iletişim bağlantısı gösterilmez. Tanıtımın İngilizce/Türkçe metinleri `web/src/about/content/en.ts` ve `tr.ts` dosyalarındadır. Ortak stiller `web/src/about/site.css`, ana sayfa stilleri `web/src/about/about.css` içindedir; demo panelinin teması ayrı tutulur.
+Ekip isimleri (`PROJECT_TEAM`), akademik koordinatör (`ACADEMIC_COORDINATOR`), form ayarı (`CONTACT_FORM`) ve yayın adresi (`SITE_URL`) **`web/src/site.ts`** içindedir. Projenin ortak e-posta adresi yoktur. Tanıtımın metinleri `web/src/about/content/` altındadır. Tanıtım stilleri `web/src/about/site.css` ve `contact-form.css` dosyalarındadır. Demo panelinin teması ayrı tutulur.
 
-Ana sayfada kısa ekip özeti bulunur; tam profiller `/hakkimizda/ekip/` sayfasındadır. Sıra Gizem, Gamze, Erhan, Yusuf, Ahmed ve ardından akademik koordinatördür. Her isim kendi satırında genişleyen bir profil açar; pencere veya yeni sayfa açılmaz. `PROJECT_TEAM` ve `COORDINATOR_PROFILE` kayıtlarındaki `role`, `workPackage`, `contribution` ve `bio` alanları `en` / `tr` olarak doldurulabilir; `photo`, `photoCredit` ve `links` isteğe bağlıdır. Bilinmeyen alanlar etiketleriyle ve “—” değeriyle gösterilir. Demo bağlantısı ilk ekrandadır; altı adımlı önerilen sistem akışı ana sayfada görünürdür.
+Ana sayfada kısa ekip özeti bulunur; tam profiller `/hakkimizda/ekip/` sayfasındadır. Sıra Gizem, Gamze, Erhan, Yusuf, Ahmed ve ardından akademik koordinatördür. Her isim kendi satırında genişleyen bir profil açar; pencere veya yeni sayfa açılmaz. `PROJECT_TEAM` ve `COORDINATOR_PROFILE` kayıtlarındaki `role`, `workPackage`, `contribution` ve `bio` alanları `en` / `tr` olarak doldurulabilir; `photo`, `photoCredit` ve `links` isteğe bağlıdır. Boş alanlar gösterilmez. Bilgisi olmayan kişi yalnız adıyla listelenir. Demo bağlantısı ilk ekrandadır; altı adımlı önerilen sistem akışı ana sayfada görünürdür.
 
 Veri tamamen sentetiktir (sabit seed `20261023`); aynı seed aynı içeriği üretir (`manifest.json` içindeki `contentHash`). Eşikler `web/shared/config.ts` içinde tek yerde durur ve üretici sınırı değildir. Üretilen `web/public/data/` git'e alınmaz.
+
+## Sade tasarım ve metin kuralları (4 Kasım 2026)
+
+Bu bölüm güncel düzenleme noktalarıdır. Aşağıdaki faz bölümleri geliştirme geçmişidir. Orada adı geçen `about.css`, `technical.css`, `projectData.ts`, `EmptyValue`, `TEAM_EMAIL` gibi dosya ve alanlar artık yoktur.
+
+- **Görünüm:** Tek stil dosyası `web/src/about/site.css`. Bütün iç sayfalar başlık, açıklama ve iki sütunlu bölümlerden oluşur. Boş alan, “—”, “Hazırlanıyor” kartı ve tekrar eden sentetik veri notu kaldırıldı. Sentetik veri notu yalnız demo düğmesinin yanında durur.
+- **Logolar:** `web/src/about/assets/logo-ostim-teknik.png` ve `logo-cop31.png`, COP31 broşür görselinden kırpıldı. Üniversite logosu üst bilgide ve Kurumlar sayfasında, COP31 logosu ana sayfada ve alt bilgide. Diğer kurum logoları `web/src/about/organizations.ts` → `ORGANIZATION_ASSETS` içine eklenir. Logo dosyası yoksa yer tutucu çizilmez.
+- **İletişim:** Proje e-postası olmayacak. İletişim `/hakkimizda/iletisim/` formuyla yapılır.
+- **Metinler:** Kullanıcıya görünen metinler kullanıcının üslup kılavuzuna göre yazıldı. Noktalı virgül ve iki nokta kullanılmaz. Cümleler tire ile bağlanmaz. Açıklama parantez içine sıkıştırılmaz. Türkçe yönergelerde “-iniz” emir kipi kullanılır. Kısa ve teknik yazılır. Aynı kurallar demo içindeki rehber, uyarı ve bakım önerisi metinlerine de uygulandı.
+- **Metin dosyaları:** `content/tr.ts` ve `en.ts` (ortak, ana sayfa, ekip, kurumlar, iş birliği, form), `content/technical.tr.ts` ve `technical.en.ts` (proje, karbon), `content/demo.tr.ts` ve `demo.en.ts`.
+- **Bakım önerileri:** Demo içindeki öneri cümleleri `web/shared/rules.ts` içindedir ve veri dosyalarına yazılır. Bu metinler değişince `DATA_VERSION` artırılır ve `npm run data` çalıştırılır. Şu anki sürüm 2.1.0.
+- **Ekran görüntüleri:** `web/src/about/assets/demo/` altındaki sekiz görüntü kayıt betiğiyle demodan yeniden çekildi ([kayıt](incelemeler/sade-tasarim/INCELEME.md)).
 
 ## Web sitesi — Faz 1 (4 Kasım 2026)
 
