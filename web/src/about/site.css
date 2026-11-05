@@ -143,7 +143,13 @@ svg { flex-shrink: 0; }
 .source-list { list-style: none; padding: 0; margin: 10px 0 0; }
 .source-list a { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; font-size: 15px; text-decoration: underline; text-underline-offset: 4px; }
 .name-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
-.name-list li { display: flex; flex-direction: column; padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 16px; }
+.name-list li { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 16px; }
+.name-list li > div { display: flex; flex-direction: column; }
+.person-avatar { width: 64px; height: 64px; flex-shrink: 0; border-radius: 50%; object-fit: cover; object-position: center top; background: var(--surface); }
+/* Kurumun koyu tema logosu varsa o gösterilir ve açık zemin gerekmez. */
+.logo-for-dark { display: none; }
+:root[data-theme='dark'] .logo-for-light { display: none; }
+:root[data-theme='dark'] .logo-for-dark { display: block; background: none; padding: 0; }
 .name-list span { font-size: 14px; color: var(--text-secondary); }
 .status { color: var(--burgundy); font-size: 14px; font-weight: 600; }
 
@@ -157,6 +163,7 @@ svg { flex-shrink: 0; }
 .cards:not(.two) .card { padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
 .cards:not(.two) .card:last-child { border-bottom: 0; padding-bottom: 0; }
 .org-logo { height: 56px; width: auto; margin-bottom: 6px; }
+.cards:not(.two) .org-logo { height: 36px; }
 
 /* Ekip */
 .people { list-style: none; padding: 0; margin: 0; max-width: 680px; }

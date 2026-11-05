@@ -106,7 +106,7 @@ export const organizations: OrganizationsCopy = {
     relationshipText: 'OSTİM Vakfı, eğitim ve araştırma çalışmalarını kurumsal bir yapıda sürdürmek için OSTİM Teknik Üniversitesi’ni kurmuştur. Proje, üniversitenin öğrenci ekibi tarafından akademik koordinatörle birlikte hazırlanır.',
     relationshipSource: 'OSTİM Vakfı hakkında',
     managersTitle: 'Yöneticiler',
-    managersNote: 'Görev ve unvanlar kurum teyidinden sonra eklenecektir.',
+    managersNote: 'Unvanı resmî kaynakta bulunamayan kişinin bilgisi kurum teyidinden sonra eklenecektir.',
   },
   collaborations: {
     heading: 'İş birlikleri',

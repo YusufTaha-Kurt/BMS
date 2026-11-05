@@ -106,7 +106,7 @@ export const organizations: OrganizationsCopy = {
     relationshipText: 'The OSTİM Foundation established OSTİM Technical University to carry out its education and research work in an institutional structure. The university’s student team prepares the project together with the academic coordinator.',
     relationshipSource: 'About the OSTİM Foundation',
     managersTitle: 'Management',
-    managersNote: 'Roles and titles will be added after confirmation by the institution.',
+    managersNote: 'Details for the person whose title could not be found in an official source will be added after confirmation.',
   },
   collaborations: {
     heading: 'Collaborations',

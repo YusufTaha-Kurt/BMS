@@ -3,6 +3,7 @@ import { useI18n } from '../lib/i18n.tsx'
 import { CONTENT } from './content/index.ts'
 import { COLLABORATIONS } from './organizations.ts'
 import { ContactForm } from './components/ContactForm.tsx'
+import { OrganizationMark } from './components/OrganizationMark.tsx'
 import { PageTemplate } from './components/PageTemplate.tsx'
 
 function websiteUrl(value: string | undefined): string | undefined {
@@ -29,6 +30,7 @@ export function CollaborationsPage() {
           const contribution = confirmed ? collaboration.contribution?.[language]?.trim() : undefined
           return (
             <article className="card" key={collaboration.id} data-collaboration={collaboration.id}>
+              <OrganizationMark id={collaboration.id} name={collaboration.name} />
               <h3>{collaboration.name}</h3>
               {collaboration.legalName && <p className="muted">{collaboration.legalName}</p>}
               <p className="status">{copy.statuses[collaboration.status]}</p>

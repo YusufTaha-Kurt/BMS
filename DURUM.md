@@ -9,6 +9,13 @@ Son güncelleme: 4 Kasım 2026 (sade tasarım, logolar, metin düzeltmesi; `main
 - Canlıda 390/1440px × TR/EN × sekiz adres olmak üzere 32 yerleşim; sentetik veri yükleme, sıcaklık senaryosu/telemetri, profil durumunun korunması ve EN yeni sekme demo açılışı doğrulandı. Yakalanan error/warn yok. [Kanıt](incelemeler/yayin/INCELEME.md).
 - [Faz dosyası](WEB_SITESI_FAZ_PLANI.md) yayın ve açık işleri açıklayan güncel metni içerir. Faz 6 bekliyor. Faz 7'nin yayın kısmı yapıldı; gerçek cihaz/ekran okuyucu, içerik/izin ve dosya/form kabul işleri hâlâ açık.
 
+## Kurum logoları ve yönetici bilgileri (5 Kasım 2026)
+
+- Kullanıcının onayıyla bu proje için ayrı bir kişisel bulut ortamı (BMS) açıldı. Kurum siteleri ve canlı site bu ortamda erişilebilir.
+- OSTİM Vakfı ve BinBin logoları kendi sitelerinden alındı. Her ikisinin açık ve koyu tema sürümü var. BinBin logosu iş birliği kartında görünür.
+- Yöneticiler listesine resmî sayfalardaki unvanlar eklendi. Orhan Aydın'ın fotoğrafı OSTİM Vakfı'nın Başkandan Mesaj sayfasından alındı. Murat Yülek ve Hasan Erbay'ın fotoğrafları yalnız ostimteknik.edu.tr'de. Site bu oturumdan gelen bağlantıları her denemede kesti. Serdar Müldür için resmî kaynak bulunamadı. Kimliği doğrulanmayan fotoğraf kullanılmadı.
+- Sustain Bridge için web'de resmî bir site bulunamadı.
+
 ## Supabase bağlantısı (5 Kasım 2026)
 
 - Kullanıcı BMS-Web projesinin adresini ve yayımlanabilir anahtarını verdi. Vercel'e `SUPABASE_URL` ve `SUPABASE_KEY` canlı ve önizleme ortamları için girildi, canlı sürüm yeniden derlendi ve ana alan adına bağlandı. Form artık açık.

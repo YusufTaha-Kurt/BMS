@@ -1,10 +1,17 @@
 import type { LocalizedText } from '../site.ts'
 import universityLogo from './assets/logo-ostim-teknik.png'
+import foundationLogo from './assets/logo-ostim-vakfi.png'
+import foundationLogoDark from './assets/logo-ostim-vakfi-koyu.png'
+import binbinLogo from './assets/logo-binbin.svg'
+import binbinLogoDark from './assets/logo-binbin-koyu.svg'
+import orhanAydinPhoto from './assets/people/orhan-aydin.jpg'
 
 export type OrganizationId = 'foundation' | 'university' | 'binbin' | 'sustainBridge'
 
 export interface OrganizationAsset {
   src?: string
+  /** Koyu tema için ayrı logo. Yoksa açık logo açık bir zemin üzerinde gösterilir. */
+  srcDark?: string
   alt?: LocalizedText
   credit?: LocalizedText
   approved?: boolean
@@ -12,13 +19,14 @@ export interface OrganizationAsset {
 
 /**
  * Logolar yalnız src doluysa gösterilir; boş kayıt için yer tutucu çizilmez.
- * Üniversite logosu COP31 broşüründeki OSTİM Teknik Üniversitesi ve COP31 görselinden kırpıldı.
- * Diğer kurumların logo dosyası henüz yok.
+ * Kaynaklar (5 Kasım 2026). Üniversite logosu COP31 broşür görselinden kırpıldı.
+ * OSTİM Vakfı logoları ostimvakfi.com sitesinin kendi açık ve koyu logolarıdır.
+ * BinBin logoları binbin.tech sitesinin kendi SVG dosyalarıdır. Sustain Bridge için resmî site bulunamadı.
  */
 export const ORGANIZATION_ASSETS: Record<OrganizationId, OrganizationAsset> = {
-  foundation: {},
+  foundation: { src: foundationLogo, srcDark: foundationLogoDark, approved: true },
   university: { src: universityLogo, approved: true },
-  binbin: {},
+  binbin: { src: binbinLogo, srcDark: binbinLogoDark, approved: true },
   sustainBridge: {},
 }
 
@@ -29,13 +37,32 @@ export interface Manager {
   institution?: LocalizedText
   officialEmail?: string
   confirmed?: boolean
+  photo?: string
 }
 
-/** Brief p. 5: draft names only. No titles or contact details have been confirmed. */
+/**
+ * Brief s. 5'teki isimler. Unvanlar kurumların kendi sayfalarından alındı (5 Kasım 2026).
+ * Orhan Aydın, unvan ve fotoğraf ostimvakfi.com Başkandan Mesaj sayfası.
+ * Murat Yülek, ostimteknik.edu.tr 2024-2025 akademik açılış sayfası.
+ * Hasan Erbay, mfsoftware.ostimteknik.edu.tr akademik kadro sayfası.
+ * Serdar Müldür için resmî kaynak bulunamadı. Fotoğraflar yalnız kimliği doğrulanmış resmî kaynaktan eklenir.
+ */
 export const MANAGERS: readonly Manager[] = [
-  { id: 'orhan-aydin', name: 'Orhan Aydın' },
-  { id: 'murat-yulek', name: 'Murat Yülek' },
-  { id: 'hasan-erbay', name: 'Hasan Erbay' },
+  {
+    id: 'orhan-aydin', name: 'Orhan Aydın', confirmed: true, photo: orhanAydinPhoto,
+    role: { tr: 'Mütevelli Heyeti Başkanı', en: 'Chairman of the Board of Trustees' },
+    institution: { tr: 'OSTİM Vakfı', en: 'OSTİM Foundation' },
+  },
+  {
+    id: 'murat-yulek', name: 'Prof. Dr. Murat Yülek', confirmed: true,
+    role: { tr: 'Rektör', en: 'Rector' },
+    institution: { tr: 'OSTİM Teknik Üniversitesi', en: 'OSTİM Technical University' },
+  },
+  {
+    id: 'hasan-erbay', name: 'Prof. Dr. Hasan Erbay', confirmed: true,
+    role: { tr: 'Yazılım Mühendisliği Bölüm Başkanı', en: 'Head of Software Engineering' },
+    institution: { tr: 'OSTİM Teknik Üniversitesi', en: 'OSTİM Technical University' },
+  },
   { id: 'serdar-muldur', name: 'Serdar Müldür' },
 ]
 
