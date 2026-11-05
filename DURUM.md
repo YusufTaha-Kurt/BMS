@@ -9,6 +9,11 @@ Son güncelleme: 4 Kasım 2026 (sade tasarım, logolar, metin düzeltmesi; `main
 - Canlıda 390/1440px × TR/EN × sekiz adres olmak üzere 32 yerleşim; sentetik veri yükleme, sıcaklık senaryosu/telemetri, profil durumunun korunması ve EN yeni sekme demo açılışı doğrulandı. Yakalanan error/warn yok. [Kanıt](incelemeler/yayin/INCELEME.md).
 - [Faz dosyası](WEB_SITESI_FAZ_PLANI.md) yayın ve açık işleri açıklayan güncel metni içerir. Faz 6 bekliyor. Faz 7'nin yayın kısmı yapıldı; gerçek cihaz/ekran okuyucu, içerik/izin ve dosya/form kabul işleri hâlâ açık.
 
+## Supabase bağlantısı (5 Kasım 2026)
+
+- Kullanıcı BMS-Web projesinin adresini ve yayımlanabilir anahtarını verdi. Vercel'e `SUPABASE_URL` ve `SUPABASE_KEY` canlı ve önizleme ortamları için girildi, canlı sürüm yeniden derlendi ve ana alan adına bağlandı. Form artık açık.
+- Supabase bağlantısı bu projeye erişemediği için tablo oluşturulamadı. Kullanıcının `supabase/migrations/20261104_collaboration_proposals.sql` dosyasını SQL Editor'de çalıştırması ve deneme gönderimi yapması bekleniyor. Tablo yokken gönderim "Öneri iletilemedi" hatası verir.
+
 ## Tema, aydınlatma metni ve Supabase hazırlığı (4 Kasım 2026)
 
 - Açık/koyu tema eklendi. Tanıtım, demo ve 404 sayfası cihaz ayarını izler, tercih düğmeyle değişir ve saklanır.
