@@ -11,6 +11,8 @@ Son güncelleme: 4 Kasım 2026 (sade tasarım, logolar, metin düzeltmesi; `main
 
 ## Kurum logoları ve yönetici bilgileri (5 Kasım 2026)
 
+- Kullanıcı Murat Yülek, Hasan Erbay ve Serdar Müldür'ün fotoğraflarını gönderdi ve hangisinin kime ait olduğunu belirtti. Fotoğraflar 240 px kare olarak `web/src/about/assets/people/` altına eklendi. Yöneticiler listesinin dördü de fotoğraflı.
+
 - Kullanıcının verdiği resmî sayfalara göre güncellendi. Murat Yülek Rektör, Hasan Erbay Rektör Yardımcısı, Serdar Müldür Mühendislik Fakültesi Dekanı. ostimteknik.edu.tr ve alt alan adları bulut ortamından ne doğrudan ne WebFetch ile açılabildi, bu yüzden üç kişinin fotoğrafı eklenemedi.
 
 - Kullanıcının onayıyla bu proje için ayrı bir kişisel bulut ortamı (BMS) açıldı. Kurum siteleri ve canlı site bu ortamda erişilebilir.

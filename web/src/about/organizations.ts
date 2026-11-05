@@ -5,6 +5,9 @@ import foundationLogoDark from './assets/logo-ostim-vakfi-koyu.png'
 import binbinLogo from './assets/logo-binbin.svg'
 import binbinLogoDark from './assets/logo-binbin-koyu.svg'
 import orhanAydinPhoto from './assets/people/orhan-aydin.jpg'
+import muratYulekPhoto from './assets/people/murat-yulek.jpg'
+import hasanErbayPhoto from './assets/people/hasan-erbay.jpg'
+import serdarMuldurPhoto from './assets/people/serdar-muldur.jpg'
 
 export type OrganizationId = 'foundation' | 'university' | 'binbin' | 'sustainBridge'
 
@@ -45,7 +48,8 @@ export interface Manager {
  * Orhan Aydın, unvan ve fotoğraf ostimvakfi.com Başkandan Mesaj sayfası.
  * Murat Yülek ostimteknik.edu.tr/rektorluk, Hasan Erbay ostimteknik.edu.tr/rektor-yardmclar,
  * Serdar Müldür mf.ostimteknik.edu.tr/dekanin-mesaji sayfası (kullanıcının bildirdiği resmî adresler).
- * Fotoğraflar yalnız kimliği doğrulanmış resmî kaynaktan eklenir.
+ * Murat Yülek, Hasan Erbay ve Serdar Müldür'ün fotoğrafları kullanıcı tarafından eşleştirilerek verildi.
+ * Fotoğraflar yalnız kimliği doğrulanmış kaynaktan eklenir.
  */
 export const MANAGERS: readonly Manager[] = [
   {
@@ -54,17 +58,17 @@ export const MANAGERS: readonly Manager[] = [
     institution: { tr: 'OSTİM Vakfı', en: 'OSTİM Foundation' },
   },
   {
-    id: 'murat-yulek', name: 'Prof. Dr. Murat Yülek', confirmed: true,
+    id: 'murat-yulek', name: 'Prof. Dr. Murat Yülek', confirmed: true, photo: muratYulekPhoto,
     role: { tr: 'Rektör', en: 'Rector' },
     institution: { tr: 'OSTİM Teknik Üniversitesi', en: 'OSTİM Technical University' },
   },
   {
-    id: 'hasan-erbay', name: 'Prof. Dr. Hasan Erbay', confirmed: true,
+    id: 'hasan-erbay', name: 'Prof. Dr. Hasan Erbay', confirmed: true, photo: hasanErbayPhoto,
     role: { tr: 'Rektör Yardımcısı', en: 'Vice Rector' },
     institution: { tr: 'OSTİM Teknik Üniversitesi', en: 'OSTİM Technical University' },
   },
   {
-    id: 'serdar-muldur', name: 'Prof. Dr. Serdar Müldür', confirmed: true,
+    id: 'serdar-muldur', name: 'Prof. Dr. Serdar Müldür', confirmed: true, photo: serdarMuldurPhoto,
     role: { tr: 'Mühendislik Fakültesi Dekanı', en: 'Dean of the Faculty of Engineering' },
     institution: { tr: 'OSTİM Teknik Üniversitesi', en: 'OSTİM Technical University' },
   },
