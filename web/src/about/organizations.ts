@@ -43,9 +43,9 @@ export interface Manager {
 /**
  * Brief s. 5'teki isimler. Unvanlar kurumların kendi sayfalarından alındı (5 Kasım 2026).
  * Orhan Aydın, unvan ve fotoğraf ostimvakfi.com Başkandan Mesaj sayfası.
- * Murat Yülek, ostimteknik.edu.tr 2024-2025 akademik açılış sayfası.
- * Hasan Erbay, mfsoftware.ostimteknik.edu.tr akademik kadro sayfası.
- * Serdar Müldür için resmî kaynak bulunamadı. Fotoğraflar yalnız kimliği doğrulanmış resmî kaynaktan eklenir.
+ * Murat Yülek ostimteknik.edu.tr/rektorluk, Hasan Erbay ostimteknik.edu.tr/rektor-yardmclar,
+ * Serdar Müldür mf.ostimteknik.edu.tr/dekanin-mesaji sayfası (kullanıcının bildirdiği resmî adresler).
+ * Fotoğraflar yalnız kimliği doğrulanmış resmî kaynaktan eklenir.
  */
 export const MANAGERS: readonly Manager[] = [
   {
@@ -60,10 +60,14 @@ export const MANAGERS: readonly Manager[] = [
   },
   {
     id: 'hasan-erbay', name: 'Prof. Dr. Hasan Erbay', confirmed: true,
-    role: { tr: 'Yazılım Mühendisliği Bölüm Başkanı', en: 'Head of Software Engineering' },
+    role: { tr: 'Rektör Yardımcısı', en: 'Vice Rector' },
     institution: { tr: 'OSTİM Teknik Üniversitesi', en: 'OSTİM Technical University' },
   },
-  { id: 'serdar-muldur', name: 'Serdar Müldür' },
+  {
+    id: 'serdar-muldur', name: 'Prof. Dr. Serdar Müldür', confirmed: true,
+    role: { tr: 'Mühendislik Fakültesi Dekanı', en: 'Dean of the Faculty of Engineering' },
+    institution: { tr: 'OSTİM Teknik Üniversitesi', en: 'OSTİM Technical University' },
+  },
 ]
 
 export interface Collaboration {

@@ -11,6 +11,8 @@ Son güncelleme: 4 Kasım 2026 (sade tasarım, logolar, metin düzeltmesi; `main
 
 ## Kurum logoları ve yönetici bilgileri (5 Kasım 2026)
 
+- Kullanıcının verdiği resmî sayfalara göre güncellendi. Murat Yülek Rektör, Hasan Erbay Rektör Yardımcısı, Serdar Müldür Mühendislik Fakültesi Dekanı. ostimteknik.edu.tr ve alt alan adları bulut ortamından ne doğrudan ne WebFetch ile açılabildi, bu yüzden üç kişinin fotoğrafı eklenemedi.
+
 - Kullanıcının onayıyla bu proje için ayrı bir kişisel bulut ortamı (BMS) açıldı. Kurum siteleri ve canlı site bu ortamda erişilebilir.
 - OSTİM Vakfı ve BinBin logoları kendi sitelerinden alındı. Her ikisinin açık ve koyu tema sürümü var. BinBin logosu iş birliği kartında görünür.
 - Yöneticiler listesine resmî sayfalardaki unvanlar eklendi. Orhan Aydın'ın fotoğrafı OSTİM Vakfı'nın Başkandan Mesaj sayfasından alındı. Murat Yülek ve Hasan Erbay'ın fotoğrafları yalnız ostimteknik.edu.tr'de. Site bu oturumdan gelen bağlantıları her denemede kesti. Serdar Müldür için resmî kaynak bulunamadı. Kimliği doğrulanmayan fotoğraf kullanılmadı.
