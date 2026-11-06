@@ -36,7 +36,7 @@ export function TopBar({ scenario, onScenario, day, onDay, date, compare, onComp
         </div>
       </div>
       <div className="mx-auto max-w-[1600px] px-4 py-3 lg:px-6">
-        <p className="mb-3 max-w-4xl text-xs leading-relaxed text-mute"><strong className="font-semibold text-ink">{l('Synthetic demo.', 'Sentetik demo.')}</strong> {l('The data is not real. It is not BinBin fleet data or the final interface.', 'Veriler gerçek değildir. BinBin filosunun verisi ve nihai arayüz değildir.')}</p>
+        <p className="mb-3 max-w-4xl text-xs leading-relaxed text-mute"><strong className="font-semibold text-ink">{l('Synthetic demo.', 'Sentetik demo.')}</strong> {l('The data is not real. It is not fleet data or the final interface.', 'Veriler gerçek değildir. Gerçek filo verisi ve nihai arayüz değildir.')}</p>
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
           <div className="col-span-2 rounded-lg border border-line bg-card px-3 py-2 sm:col-span-1"><div className="text-xs font-semibold text-mute">{l('Fleet', 'Filo')}</div><div className="text-xl font-bold tabular">{counts ? counts.total : '—'}</div>{reviewed > 0 && <div className="text-[11px] text-mute tabular">{l('Demo feedback', 'Demo geri bildirimi')} {tally.confirmed} {l('confirmed', 'doğru')} · {tally.falseAlarm} {l('false alarms', 'yanlış')}</div>}</div>
           {ORDER.map((p) => { const st = PRIORITY_STYLE[p]; const Icon = PRIORITY_ICON[p]; return <div key={p} className={`rounded-lg border px-3 py-2 ${st.bg} ${st.line}`}><div className={`flex items-center gap-1.5 text-xs font-semibold ${st.text}`}><Icon aria-hidden className="size-3.5" />{priorityLabel(p)}</div><div className="text-xl font-bold tabular">{counts ? counts[p] : '—'}</div></div> })}

@@ -1,5 +1,9 @@
 // Stant/QR ve tanıtım sayfası ayarları. Projenin ortak e-posta adresi yoktur; iletişim formla yapılır.
 import type { SiteLanguage } from '../shared/types.ts'
+import barisPhoto from './about/assets/people/baris-taha-uludag.jpg'
+import erhanPhoto from './about/assets/people/erhan-bulbul.jpg'
+import yusufPhoto from './about/assets/people/yusuf-taha-kurt.jpg'
+import ahmedPhoto from './about/assets/people/ahmed-emre-demirel.jpg'
 export type { SiteLanguage } from '../shared/types.ts'
 
 /** Yayındaki adres. Yerel çalıştırmada (localhost) QR yine bu adrese gider. */
@@ -29,9 +33,9 @@ export interface TeamMember {
 export const PROJECT_TEAM: readonly TeamMember[] = [
   { id: 'gizem', name: 'Gizem Geniş' },
   { id: 'gamze', name: 'Gamze Geniş' },
-  { id: 'erhan', name: 'Erhan Bülbül' },
-  { id: 'yusuf', name: 'Yusuf Taha Kurt' },
-  { id: 'ahmed', name: 'Ahmed Emre Demirel' },
+  { id: 'erhan', name: 'Erhan Bülbül', photo: erhanPhoto },
+  { id: 'yusuf', name: 'Yusuf Taha Kurt', photo: yusufPhoto },
+  { id: 'ahmed', name: 'Ahmed Emre Demirel', photo: ahmedPhoto },
 ]
 
 export const ACADEMIC_COORDINATOR = 'Barış Taha Uludağ'
@@ -39,14 +43,15 @@ export const ACADEMIC_COORDINATOR = 'Barış Taha Uludağ'
 export const COORDINATOR_PROFILE: TeamMember = {
   id: 'coordinator',
   name: ACADEMIC_COORDINATOR,
+  photo: barisPhoto,
   role: { en: 'Academic coordinator', tr: 'Akademik koordinatör' },
   workPackage: {
-    en: 'Project coordination and BinBin communication',
-    tr: 'Proje koordinasyonu ve BinBin iletişimi',
+    en: 'Project coordination',
+    tr: 'Proje koordinasyonu',
   },
   contribution: {
-    en: 'Coordination of the project, communication with BinBin and phase transition decisions.',
-    tr: 'Proje koordinasyonu, BinBin ile iletişim ve faz geçiş kararlarının koordinasyonu.',
+    en: 'Coordination of the project and its phase transition decisions.',
+    tr: 'Projenin ve faz geçiş kararlarının koordinasyonu.',
   },
 }
 

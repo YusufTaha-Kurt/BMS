@@ -23,24 +23,19 @@ export function CollaborationsPage() {
     <PageTemplate title={page.title} description={page.description}>
       <section className="section" aria-labelledby="collaborations-title">
         <h2 id="collaborations-title">{copy.heading}</h2>
-        <div className="cards">{COLLABORATIONS.map((collaboration) => {
+        <ul className="supporters">{COLLABORATIONS.map((collaboration) => {
           const website = websiteUrl(collaboration.officialWebsite)
-          const confirmed = collaboration.status === 'confirmed'
-          const scope = confirmed ? collaboration.approvedScope?.[language]?.trim() : undefined
-          const contribution = confirmed ? collaboration.contribution?.[language]?.trim() : undefined
           return (
-            <article className="card" key={collaboration.id} data-collaboration={collaboration.id}>
-              <OrganizationMark id={collaboration.id} name={collaboration.name} />
-              <h3>{collaboration.name}</h3>
-              {collaboration.legalName && <p className="muted">{collaboration.legalName}</p>}
-              <p className="status">{copy.statuses[collaboration.status]}</p>
-              {collaboration.proposal?.[language] && <p>{collaboration.proposal[language]}</p>}
-              {scope && <p><strong>{copy.approvedScope}.</strong> {scope}</p>}
-              {contribution && <p><strong>{copy.contribution}.</strong> {contribution}</p>}
-              {website && <a className="source-link" href={website} target="_blank" rel="noopener noreferrer">{t.officialWebsite}<ArrowUpRight size={14} aria-hidden="true" /><span className="sr-only"> ({common.newTab})</span></a>}
-            </article>
+            <li key={collaboration.id} data-collaboration={collaboration.id}>
+              <OrganizationMark id={collaboration.id} name={collaboration.name} className="supporter-logo" />
+              <span className="person-text">
+                <strong>{collaboration.name}</strong>
+                <span>{copy.statuses[collaboration.status]}</span>
+                {website && <a className="source-link" href={website} target="_blank" rel="noopener noreferrer">{t.officialWebsite}<ArrowUpRight size={14} aria-hidden="true" /><span className="sr-only"> ({common.newTab})</span></a>}
+              </span>
+            </li>
           )
-        })}</div>
+        })}</ul>
       </section>
       <ContactForm />
     </PageTemplate>

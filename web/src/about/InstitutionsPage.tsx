@@ -41,12 +41,26 @@ export function InstitutionsPage() {
           <div className="prose">
             <ul className="name-list">{managers.map((manager) => (
               <li key={manager.id}>
-                {manager.photo && <img className="person-avatar" src={manager.photo} alt={manager.name} width="64" height="64" loading="lazy" />}
-                <div>
-                  <strong>{manager.name}</strong>
-                  {manager.confirmed && manager.role?.[language] && <span>{manager.role[language]}</span>}
-                  {manager.confirmed && manager.institution?.[language] && <span>{manager.institution[language]}</span>}
-                </div>
+                {manager.profileUrl ? (
+                  <a className="person-link" href={manager.profileUrl} target="_blank" rel="noopener noreferrer">
+                    {manager.photo && <img className="person-avatar" src={manager.photo} alt="" width="64" height="64" loading="lazy" />}
+                    <span className="person-text">
+                      <strong>{manager.name}<ArrowUpRight size={14} aria-hidden="true" /></strong>
+                      {manager.confirmed && manager.role?.[language] && <span>{manager.role[language]}</span>}
+                      {manager.confirmed && manager.institution?.[language] && <span>{manager.institution[language]}</span>}
+                      <span className="sr-only"> ({common.newTab})</span>
+                    </span>
+                  </a>
+                ) : (
+                  <>
+                    {manager.photo && <img className="person-avatar" src={manager.photo} alt="" width="64" height="64" loading="lazy" />}
+                    <span className="person-text">
+                      <strong>{manager.name}</strong>
+                      {manager.confirmed && manager.role?.[language] && <span>{manager.role[language]}</span>}
+                      {manager.confirmed && manager.institution?.[language] && <span>{manager.institution[language]}</span>}
+                    </span>
+                  </>
+                )}
               </li>
             ))}</ul>
             {managers.some((manager) => !manager.confirmed) && <p className="muted">{copy.managersNote}</p>}

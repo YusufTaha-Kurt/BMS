@@ -9,6 +9,14 @@ Son güncelleme: 4 Kasım 2026 (sade tasarım, logolar, metin düzeltmesi; `main
 - Canlıda 390/1440px × TR/EN × sekiz adres olmak üzere 32 yerleşim; sentetik veri yükleme, sıcaklık senaryosu/telemetri, profil durumunun korunması ve EN yeni sekme demo açılışı doğrulandı. Yakalanan error/warn yok. [Kanıt](incelemeler/yayin/INCELEME.md).
 - [Faz dosyası](WEB_SITESI_FAZ_PLANI.md) yayın ve açık işleri açıklayan güncel metni içerir. Faz 6 bekliyor. Faz 7'nin yayın kısmı yapıldı; gerçek cihaz/ekran okuyucu, içerik/izin ve dosya/form kabul işleri hâlâ açık.
 
+## Destekleyenler, ekip fotoğrafları ve yönetici bağlantıları (6 Kasım 2026)
+
+- Kullanıcı kararıyla BinBin yalnız İş birliği sayfasındaki "Destekleyenler" bölümünde, destekleyen kuruluş olarak geçer. Sustain Bridge aynı bölümdedir. Koordinatör profili, proje ve karbon metinleri, demo notları ve kaynak satırlarındaki BinBin ifadeleri kaldırıldı veya genel ifadeyle değiştirildi. Proje adı BinBin Battery Intelligence korunur.
+- Barış Taha Uludağ, Erhan Bülbül, Yusuf Taha Kurt ve Ahmed Emre Demirel'in fotoğrafları kullanıcı tarafından gönderildi ve eşleştirildi. Ekip sayfasında her ismin yanında fotoğraf var. Gizem ve Gamze Geniş için baş harfler gösterilir, fotoğraflar gelince eklenecek.
+- Yöneticilerin fotoğraf ve isimleri resmî tanıtım sayfalarını yeni sekmede açar.
+- Ekip CV'leri gelince profillere eklenecek.
+- Demo ekran görüntüleri yeni üst notla tekrar çekildi.
+
 ## Kurum logoları ve yönetici bilgileri (5 Kasım 2026)
 
 - Kullanıcı Murat Yülek, Hasan Erbay ve Serdar Müldür'ün fotoğraflarını gönderdi ve hangisinin kime ait olduğunu belirtti. Fotoğraflar 240 px kare olarak `web/src/about/assets/people/` altına eklendi. Yöneticiler listesinin dördü de fotoğraflı.

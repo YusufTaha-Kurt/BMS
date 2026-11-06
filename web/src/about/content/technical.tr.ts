@@ -6,7 +6,7 @@ export const project: ProjectCopy = {
       'Paylaşımlı araçlarda bir batarya farklı araçlarda kullanılabilir. Proje, her bataryanın kullanım, bakım ve sağlık geçmişini tek kayıtta toplar.',
       'Bakım ekibi hangi bataryanın önce incelenmesi gerektiğini bu geçmişe göre görür. Doğrulanmış kayıtlar ikinci kullanım ve geri dönüşüm değerlendirmesinde de kullanılır.',
     ],
-    stage: 'Proje teklif ve pilot planlama aşamasındadır. İlk veri incelemesi BinBin’in teknik bilgi formu ve veri paylaşımıyla başlar. Mevcut demo sentetik veriyle çalışır.',
+    stage: 'Proje teklif ve pilot planlama aşamasındadır. İlk veri incelemesi filo operatörünün teknik bilgi formu ve veri paylaşımıyla başlar. Mevcut demo sentetik veriyle çalışır.',
   },
   goals: {
     title: 'Amaç',
@@ -32,7 +32,7 @@ export const project: ProjectCopy = {
     intro: 'Seçenekler aşağıdaki sırayla değerlendirilir.',
     options: [
       { title: 'Mevcut bulut kayıtları', text: 'Telemetri, bakım ve geçmiş kayıtları yeterliyse bu kayıtlar yalnız okunur erişimle kullanılır.' },
-      { title: 'IoT üzerinden ek veri', text: 'Cihazda olup buluta aktarılmayan alanlar veya daha sık kayıt değerlendirilir. Cihaz kapasitesi ve iletişim yükü BinBin ile birlikte kontrol edilir.' },
+      { title: 'IoT üzerinden ek veri', text: 'Cihazda olup buluta aktarılmayan alanlar veya daha sık kayıt değerlendirilir. Cihaz kapasitesi ve iletişim yükü operatörle birlikte kontrol edilir.' },
       { title: 'Yalnız okunur ağ geçidi', text: 'Gereken sinyal araç içi haberleşme hattında varsa ve buluta taşınmıyorsa değerlendirilir. Protokol bilgisi ve teknik onay gerekir.' },
       { title: 'Ek ölçüm', text: 'Gereken büyüklük hiç ölçülmüyorsa sınırlı bir pilot grubunda ek sensör değerlendirilir.' },
     ],
@@ -80,7 +80,7 @@ export const project: ProjectCopy = {
   },
   sources: {
     title: 'Kaynaklar',
-    proposal: 'BinBin Proje Teklifi, Ekim 2026',
+    proposal: 'Proje teklifi, Ekim 2026',
     regulation: 'AB Batarya Tüzüğü 2023/1542',
     guidance: 'Avrupa Komisyonu pasaport kaynakları',
     faq: 'Avrupa Komisyonu sık sorulan sorular',
@@ -120,7 +120,7 @@ export const carbon: CarbonCopy = {
       'Enerjinin ölçüldüğü nokta pilotun ilk fazında belirlenir.',
       'Yıllık ulusal faktör şarj saatine göre iyileştirmeyi göstermez. Bunun için saatlik ve doğrulanmış ayrı bir veri seti gerekir.',
       'Gerçek tüketim ve pilot sonuçları olmadan tasarruf oranı veya emisyon azaltımı yazılmaz.',
-      'Demodaki enerji kayıtları ve faktör örnektir. Gerçek BinBin ölçümü değildir.',
+      'Demodaki enerji kayıtları ve faktör örnektir. Gerçek filo ölçümü değildir.',
     ],
   },
   secondLife: {
@@ -129,7 +129,7 @@ export const carbon: CarbonCopy = {
   },
   sources: {
     title: 'Kaynaklar',
-    proposal: 'BinBin Proje Teklifi, Bölüm X',
+    proposal: 'Proje teklifi, Bölüm X',
     regulation: 'AB Batarya Tüzüğü, 7. madde ve II. ek',
     guidance: 'Avrupa Komisyonu pasaport kaynakları',
     emissions: 'ETKB EVÇED emisyon faktörleri',

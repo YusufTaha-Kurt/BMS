@@ -6,7 +6,7 @@ export const project: ProjectCopy = {
       'In shared fleets, one battery can be used in several vehicles. The project keeps the usage, maintenance and health history of each battery in a single record.',
       'Based on this history, the maintenance team sees which battery to inspect first. Validated records are also used to assess second use and recycling.',
     ],
-    stage: 'The project is at the proposal and pilot planning stage. The first data review starts with BinBin’s technical information form and data sharing. The current demo runs on synthetic data.',
+    stage: 'The project is at the proposal and pilot planning stage. The first data review starts with the fleet operator’s technical information form and data sharing. The current demo runs on synthetic data.',
   },
   goals: {
     title: 'Goals',
@@ -32,7 +32,7 @@ export const project: ProjectCopy = {
     intro: 'The options are assessed in the order below.',
     options: [
       { title: 'Existing cloud records', text: 'If telemetry, maintenance and history records are sufficient, they are used with read-only access.' },
-      { title: 'Extra data through IoT', text: 'Fields that exist on the device but are not sent to the cloud, or a higher recording rate, are assessed. Device capacity and communication load are checked with BinBin.' },
+      { title: 'Extra data through IoT', text: 'Fields that exist on the device but are not sent to the cloud, or a higher recording rate, are assessed. Device capacity and communication load are checked with the operator.' },
       { title: 'Read-only gateway', text: 'Considered if a required signal exists on the vehicle bus but does not reach the cloud. Protocol details and technical approval are needed.' },
       { title: 'Additional measurement', text: 'If a required quantity is not measured at all, an extra sensor is assessed in a small pilot group.' },
     ],
@@ -80,7 +80,7 @@ export const project: ProjectCopy = {
   },
   sources: {
     title: 'Sources',
-    proposal: 'BinBin project proposal, October 2026',
+    proposal: 'Project proposal, October 2026',
     regulation: 'EU Battery Regulation 2023/1542',
     guidance: 'European Commission passport resources',
     faq: 'European Commission FAQ',
@@ -120,7 +120,7 @@ export const carbon: CarbonCopy = {
       'The point where energy is measured is set in the first pilot phase.',
       'An annual national factor does not show gains from charging at different hours. That needs a separate, validated hourly data set.',
       'No savings rate or emission reduction is stated without real consumption and pilot results.',
-      'Energy records and the factor in the demo are examples. They are not BinBin measurements.',
+      'Energy records and the factor in the demo are examples. They are not real fleet measurements.',
     ],
   },
   secondLife: {
@@ -129,7 +129,7 @@ export const carbon: CarbonCopy = {
   },
   sources: {
     title: 'Sources',
-    proposal: 'BinBin project proposal, Section X',
+    proposal: 'Project proposal, Section X',
     regulation: 'EU Battery Regulation, Article 7 and Annex II',
     guidance: 'European Commission passport resources',
     emissions: 'ETKB EVÇED emission factors',

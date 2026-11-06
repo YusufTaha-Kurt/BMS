@@ -9,7 +9,7 @@ export const common: SiteCopy = {
   skip: 'Skip to content',
   openDemo: 'Open the demo',
   newTab: 'opens in a new tab',
-  demoNote: 'The demo runs on synthetic data. It is not BinBin fleet data or the final interface.',
+  demoNote: 'The demo runs on synthetic data. It is not real fleet data or the final interface.',
   universityLogo: 'OSTİM Technical University',
   cop31Logo: 'COP31 Türkiye, Antalya',
   backHome: 'Back to the home page',
@@ -42,7 +42,7 @@ export const common: SiteCopy = {
     },
     contact: {
       label: 'Collaboration', title: 'Collaboration',
-      description: 'The proposed pilot collaboration and the proposal form.',
+      description: 'Organisations supporting the project and the collaboration proposal form.',
     },
     privacy: {
       label: 'Privacy notice', title: 'Personal data privacy notice',
@@ -109,8 +109,8 @@ export const organizations: OrganizationsCopy = {
     managersNote: 'Details for the person whose title could not be found in an official source will be added after confirmation.',
   },
   collaborations: {
-    heading: 'Collaborations',
-    statuses: { proposed: 'Proposed pilot collaboration', pending: 'Scope being defined', confirmed: 'Confirmed collaboration' },
+    heading: 'Supporters',
+    statuses: { proposed: 'Supporting organisation', pending: 'Scope being defined', confirmed: 'Supporting organisation' },
     approvedScope: 'Approved scope',
     contribution: 'Contribution to the project',
     formTitle: 'Collaboration proposal',

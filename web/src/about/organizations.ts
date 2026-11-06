@@ -41,6 +41,8 @@ export interface Manager {
   officialEmail?: string
   confirmed?: boolean
   photo?: string
+  /** Fotoğrafa ve isme tıklanınca açılan resmî tanıtım sayfası. */
+  profileUrl?: string
 }
 
 /**
@@ -54,21 +56,25 @@ export interface Manager {
 export const MANAGERS: readonly Manager[] = [
   {
     id: 'orhan-aydin', name: 'Orhan Aydın', confirmed: true, photo: orhanAydinPhoto,
+    profileUrl: 'https://www.ostimvakfi.com/tr/detay/sayfalar/baskandan-mesaj/205154',
     role: { tr: 'Mütevelli Heyeti Başkanı', en: 'Chairman of the Board of Trustees' },
     institution: { tr: 'OSTİM Vakfı', en: 'OSTİM Foundation' },
   },
   {
     id: 'murat-yulek', name: 'Prof. Dr. Murat Yülek', confirmed: true, photo: muratYulekPhoto,
+    profileUrl: 'https://ostimteknik.edu.tr/rektorluk',
     role: { tr: 'Rektör', en: 'Rector' },
     institution: { tr: 'OSTİM Teknik Üniversitesi', en: 'OSTİM Technical University' },
   },
   {
     id: 'hasan-erbay', name: 'Prof. Dr. Hasan Erbay', confirmed: true, photo: hasanErbayPhoto,
+    profileUrl: 'https://ostimteknik.edu.tr/rektor-yardmclar',
     role: { tr: 'Rektör Yardımcısı', en: 'Vice Rector' },
     institution: { tr: 'OSTİM Teknik Üniversitesi', en: 'OSTİM Technical University' },
   },
   {
     id: 'serdar-muldur', name: 'Prof. Dr. Serdar Müldür', confirmed: true, photo: serdarMuldurPhoto,
+    profileUrl: 'https://mf.ostimteknik.edu.tr/dekanin-mesaji',
     role: { tr: 'Mühendislik Fakültesi Dekanı', en: 'Dean of the Faculty of Engineering' },
     institution: { tr: 'OSTİM Teknik Üniversitesi', en: 'OSTİM Technical University' },
   },
@@ -85,16 +91,11 @@ export interface Collaboration {
   officialWebsite?: string
 }
 
-/** Brief p. 10 and proposal XI. Proposed access is not an existing agreement. */
+/** Projeyi destekleyen kuruluşlar. Kullanıcı kararıyla BinBin yalnız bu bölümde, destekleyen kuruluş olarak geçer. */
 export const COLLABORATIONS: readonly Collaboration[] = [
   {
     id: 'binbin', name: 'BinBin',
-    legalName: 'Bin Ulaşım ve Akıllı Şehir Teknolojileri A.Ş.',
     status: 'proposed',
-    proposal: {
-      tr: 'Teklif, BinBin’in mevcut BMS, IoT, bakım ve veri altyapısının incelenmesini ve bir saha pilotunun birlikte planlanmasını önerir. Her aşamanın sonucu iki taraf birlikte değerlendirir.',
-      en: 'The proposal suggests reviewing BinBin’s existing BMS, IoT, maintenance and data infrastructure and planning a field pilot together. Both sides review the outcome of each stage.',
-    },
   },
   { id: 'sustainBridge', name: 'Sustain Bridge', status: 'pending' },
 ]

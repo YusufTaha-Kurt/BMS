@@ -144,7 +144,17 @@ svg { flex-shrink: 0; }
 .source-list a { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; font-size: 15px; text-decoration: underline; text-underline-offset: 4px; }
 .name-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
 .name-list li { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 16px; }
-.name-list li > div { display: flex; flex-direction: column; }
+.person-text { display: flex; flex-direction: column; }
+.person-text strong { display: inline-flex; align-items: center; gap: 6px; }
+.person-link { display: flex; align-items: center; gap: 14px; width: 100%; }
+.person-link:hover strong { color: var(--burgundy); text-decoration: underline; text-underline-offset: 4px; }
+.person-avatar-empty { display: grid; place-items: center; color: var(--text-secondary); font-size: 15px; font-weight: 600; border: 1px solid var(--rule); }
+.people .person-avatar { width: 56px; height: 56px; }
+div.person, .person summary { gap: 14px; min-height: 72px; padding-block: 8px; }
+.supporters { display: flex; flex-wrap: wrap; gap: 20px 48px; list-style: none; padding: 0; margin: 0; }
+.supporters li { display: flex; align-items: center; gap: 16px; }
+.supporter-logo { height: 32px; width: auto; }
+.supporters .person-text span { font-size: 14px; color: var(--text-secondary); }
 .person-avatar { width: 64px; height: 64px; flex-shrink: 0; border-radius: 50%; object-fit: cover; object-position: center top; background: var(--surface); }
 /* Kurumun koyu tema logosu varsa o gösterilir ve açık zemin gerekmez. */
 .logo-for-dark { display: none; }

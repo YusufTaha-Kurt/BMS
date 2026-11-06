@@ -9,7 +9,7 @@ export const common: SiteCopy = {
   skip: 'İçeriğe geç',
   openDemo: 'Demoyu aç',
   newTab: 'yeni sekmede açılır',
-  demoNote: 'Demo sentetik veriyle çalışır. BinBin filosunun gerçek verisi ve nihai arayüz değildir.',
+  demoNote: 'Demo sentetik veriyle çalışır. Gerçek filo verisi ve nihai arayüz değildir.',
   universityLogo: 'OSTİM Teknik Üniversitesi',
   cop31Logo: 'COP31 Türkiye, Antalya',
   backHome: 'Ana sayfaya dön',
@@ -42,7 +42,7 @@ export const common: SiteCopy = {
     },
     contact: {
       label: 'İş birliği', title: 'İş birliği',
-      description: 'Önerilen pilot iş birliği ve öneri formu.',
+      description: 'Projeyi destekleyen kuruluşlar ve iş birliği öneri formu.',
     },
     privacy: {
       label: 'Aydınlatma metni', title: 'Kişisel verilerin korunması aydınlatma metni',
@@ -109,8 +109,8 @@ export const organizations: OrganizationsCopy = {
     managersNote: 'Unvanı resmî kaynakta bulunamayan kişinin bilgisi kurum teyidinden sonra eklenecektir.',
   },
   collaborations: {
-    heading: 'İş birlikleri',
-    statuses: { proposed: 'Önerilen pilot iş birliği', pending: 'Kapsam belirleniyor', confirmed: 'Onaylanmış iş birliği' },
+    heading: 'Destekleyenler',
+    statuses: { proposed: 'Destekleyen kuruluş', pending: 'Kapsam belirleniyor', confirmed: 'Destekleyen kuruluş' },
     approvedScope: 'Onaylı kapsam',
     contribution: 'Projeye katkı',
     formTitle: 'İş birliği önerisi',

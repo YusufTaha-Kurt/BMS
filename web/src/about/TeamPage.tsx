@@ -10,7 +10,7 @@ const FIELDS = ['role', 'workPackage', 'contribution', 'bio'] as const
 function details(member: TeamMember, language: SiteLanguage) {
   const fields = FIELDS.map((key) => [key, member[key]?.[language]?.trim()] as const).filter(([, value]) => value)
   const links = (member.links ?? []).filter((link) => /^https?:\/\//i.test(link.url))
-  return { fields, links, any: fields.length > 0 || links.length > 0 || Boolean(member.photo) }
+  return { fields, links }
 }
 
 /** Bilgisi olan kişi kendi satırında açılır. Bilgisi olmayan kişi yalnız adıyla listelenir. */
@@ -18,12 +18,15 @@ function Person({ member, language, showRole = true }: { member: TeamMember; lan
   const { team: t, common } = CONTENT[language]
   const info = details(member, language)
   const role = showRole ? member.role?.[language]?.trim() : undefined
-  if (!info.any) return <div className="person"><strong>{member.name}</strong></div>
+  const avatar = member.photo
+    ? <img className="person-avatar" src={member.photo} alt="" width="56" height="56" loading="lazy" />
+    : <span className="person-avatar person-avatar-empty" aria-hidden="true">{member.name.split(' ').map((part) => part[0]).slice(0, 2).join('')}</span>
+  const fields = info.fields.length > 0 || info.links.length > 0
+  if (!fields) return <div className="person">{avatar}<strong>{member.name}</strong>{role && <span>{role}</span>}</div>
   return (
     <details className="person" name="team-profiles" id={`profile-${member.id}`}>
-      <summary><strong>{member.name}</strong>{role && <span>{role}</span>}<ChevronDown size={20} aria-hidden="true" /></summary>
+      <summary>{avatar}<strong>{member.name}</strong>{role && <span>{role}</span>}<ChevronDown size={20} aria-hidden="true" /></summary>
       <div className="person-body">
-        {member.photo && <img className="person-photo" src={member.photo} alt={member.name} />}
         <dl>
           {info.fields.map(([key, value]) => <div key={key}><dt>{t.fields[key]}</dt><dd>{value}</dd></div>)}
           {info.links.length > 0 && <div><dt>{t.fields.links}</dt><dd className="person-links">{info.links.map((link) => (
