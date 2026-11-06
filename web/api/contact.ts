@@ -175,8 +175,14 @@ export async function handleContact(request: Request, now = Date.now()): Promise
       },
       body: JSON.stringify(record),
     })
-    if (!response.ok) return json(502, { ok: false, error: 'delivery_failed' })
-  } catch {
+    if (!response.ok) {
+      // Nedeni Vercel günlüğünde görünsün. Kişisel veri yazılmaz, yalnız Supabase'in hata kodu ve mesajı.
+      const detail = await response.json().catch(() => null) as { code?: string; message?: string } | null
+      console.error('contact: Supabase kaydı başarısız', response.status, detail?.code ?? '', detail?.message ?? '')
+      return json(502, { ok: false, error: 'delivery_failed' })
+    }
+  } catch (error) {
+    console.error('contact: Supabase bağlantısı kurulamadı', error instanceof Error ? error.message : '')
     return json(502, { ok: false, error: 'delivery_failed' })
   }
 

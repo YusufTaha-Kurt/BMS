@@ -27,3 +27,6 @@ create policy "Form gönderimi eklenebilir"
   for insert
   to anon
   with check (true);
+
+-- Supabase API'nin yeni tabloyu hemen tanıması için şema önbelleğini yenile.
+notify pgrst, 'reload schema';

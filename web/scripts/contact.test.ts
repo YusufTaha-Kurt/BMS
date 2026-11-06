@@ -121,7 +121,10 @@ test('server: optional email notification goes to the configured recipient', asy
 test('server: delivery failure and rate limit are reported', async () => {
   configure()
   capture(500)
+  const original = console.error
+  console.error = () => {}
   assert.equal((await handleContact(post(submission()), NOW)).status, 502)
+  console.error = original
   capture()
   const statuses: number[] = []
   for (let i = 0; i < 6; i++) statuses.push((await handleContact(post(submission(), { 'x-forwarded-for': '203.0.113.9' }), NOW + i)).status)
