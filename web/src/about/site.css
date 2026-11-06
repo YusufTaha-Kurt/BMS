@@ -191,6 +191,17 @@ div.person { display: flex; align-items: center; min-height: 54px; }
 .person-body dt { font-size: 13px; color: var(--text-secondary); }
 .person-body dd { margin-top: 2px; font-size: 15px; line-height: 1.7; }
 .person-links { display: flex; flex-wrap: wrap; gap: 0 20px; }
+.person-body { flex-direction: column; gap: 0; padding-left: 70px; }
+.cv-section { margin-top: 22px; }
+.cv-section h3 { margin: 0 0 6px; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: none; color: var(--burgundy); }
+.cv-section > ul { list-style: none; padding: 0; margin: 0; }
+.cv-section > ul > li { padding: 8px 0; border-top: 1px solid var(--rule); }
+.cv-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; font-size: 15px; line-height: 1.5; }
+.cv-date { font-size: 13px; color: var(--text-secondary); }
+.cv-head strong { font-size: 15px; }
+.cv-detail { margin-top: 2px; font-size: 14px !important; color: var(--text-secondary); }
+.cv-points { margin: 6px 0 0; padding-left: 18px; font-size: 14px; line-height: 1.65; color: var(--text-secondary); }
+.cv-points li + li { margin-top: 4px; }
 .person-links a { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: underline; text-underline-offset: 4px; }
 
 /* Demo */
@@ -239,7 +250,7 @@ video { width: 100%; max-width: 680px; }
   .demo-start { padding: 20px; }
   .climate { flex-direction: column; gap: 16px; }
   .climate img { width: 56px; }
-  .person-body { flex-direction: column; }
+  .person-body { flex-direction: column; padding-left: 0; }
   .site-footer-inner { flex-wrap: wrap; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }

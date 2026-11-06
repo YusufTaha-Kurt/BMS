@@ -10,7 +10,7 @@ Sade tasarım turundan (4 Kasım 2026) beri boş alanlar sitede gösterilmez. Bi
 
 | # | Konu | Dosya / alan | Durum | Gereken |
 | --- | --- | --- | --- | --- |
-| 1 | Ekip üyeleri (Gizem, Gamze, Erhan, Yusuf, Ahmed) | `web/src/site.ts` → `PROJECT_TEAM` | Kısmi | Erhan, Yusuf ve Ahmed'in fotoğrafları eklendi. Gizem ve Gamze'nin fotoğrafları, herkesin CV'si, rol ve katkı bilgileri bekleniyor. |
+| 1 | Ekip üyeleri (Gizem, Gamze, Erhan, Yusuf, Ahmed) | `web/src/site.ts`, `web/src/about/teamCv.ts` | Kısmi | Erhan, Yusuf ve Ahmed'in fotoğrafları ve CV'leri eklendi. Gizem ve Gamze'nin fotoğraf ve CV'leri bekleniyor. Projedeki rol ve katkı bilgileri henüz yok. |
 | 3 | Akademik koordinatör | `COORDINATOR_PROFILE` | Kısmi | Fotoğraf, rol, çalışma paketi ve katkı var. CV ve bağlantılar bekleniyor. |
 | 4 | Kurum yöneticileri | `web/src/about/organizations.ts` → `MANAGERS` | Hazır | Dört kişinin unvanı resmî sayfalardan eklendi. Orhan Aydın'ın fotoğrafı OSTİM Vakfı sitesinden, diğer üç fotoğraf kullanıcıdan alındı. Yayın izni kurumdan teyit edilmeli. |
 | 5 | Destekleyenler | `COLLABORATIONS` | Kısmi | BinBin destekleyen kuruluş olarak yalnız bu bölümde, logosuyla. Sustain Bridge için bilgi ve logo bekleniyor. |

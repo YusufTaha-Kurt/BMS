@@ -34,8 +34,28 @@ export const PROJECT_TEAM: readonly TeamMember[] = [
   { id: 'gizem', name: 'Gizem Geniş' },
   { id: 'gamze', name: 'Gamze Geniş' },
   { id: 'erhan', name: 'Erhan Bülbül', photo: erhanPhoto },
-  { id: 'yusuf', name: 'Yusuf Taha Kurt', photo: yusufPhoto },
-  { id: 'ahmed', name: 'Ahmed Emre Demirel', photo: ahmedPhoto },
+  {
+    id: 'yusuf', name: 'Yusuf Taha Kurt', photo: yusufPhoto,
+    bio: {
+      tr: 'Bulut teknolojileri ve siber güvenlik alanına odaklanan bir bilgisayar mühendisliği öğrencisi. AWS üzerinde uygulamalı güvenlik eğitimleri, öğrenci topluluğu ve Ar-Ge staj deneyimleriyle proje yönetimi ve ekip çalışması pratiği kazandı. Hedefi yapay zekâ güvenliği alanında uzmanlaşmak.',
+      en: 'A computer engineering student focused on cloud technologies and cyber security. Gained project management and teamwork experience through hands-on AWS security training, a student society and R&D internships. Aims to specialise in AI security.',
+    },
+    links: [
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/yusuf-taha-kurt-050372327' },
+      { label: 'GitHub', url: 'https://github.com/YusufTaha-Kurt' },
+    ],
+  },
+  {
+    id: 'ahmed', name: 'Ahmed Emre Demirel', photo: ahmedPhoto,
+    bio: {
+      tr: 'Büyük dil modeli tabanlı sistemler, RAG mimarileri ve istem mühendisliği üzerine çalışan dördüncü sınıf bilgisayar mühendisliği öğrencisi. Fikirleri uçtan uca çalışan ürünlere dönüştürmeye ve model çıktılarını sistematik değerlendirmeyle iyileştirmeye odaklanır.',
+      en: 'A fourth-year computer engineering student working on LLM-based systems, RAG architectures and prompt engineering. Focused on turning ideas into working end-to-end products and improving model outputs through systematic evaluation.',
+    },
+    links: [
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/ahmededemirel' },
+      { label: 'GitHub', url: 'https://github.com/DEMIRELINT' },
+    ],
+  },
 ]
 
 export const ACADEMIC_COORDINATOR = 'Barış Taha Uludağ'

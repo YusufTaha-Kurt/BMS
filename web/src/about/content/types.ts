@@ -1,5 +1,6 @@
 import type { PageId } from '../routes.ts'
 import type { ScreenshotId } from '../demoMedia.ts'
+import type { CvSectionId } from '../teamCv.ts'
 
 export interface TextBlock { title: string; text: string }
 
@@ -37,6 +38,7 @@ export interface TeamCopy {
   members: string
   coordinator: string
   fields: { role: string; workPackage: string; contribution: string; bio: string; links: string }
+  sections: Record<CvSectionId, string>
 }
 
 export interface OrganizationsCopy {

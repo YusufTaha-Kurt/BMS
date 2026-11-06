@@ -93,6 +93,7 @@ export const home: HomeCopy = {
 export const team: TeamCopy = {
   members: 'Student team', coordinator: 'Academic coordinator',
   fields: { role: 'Role', workPackage: 'Work package', contribution: 'Contribution', bio: 'About', links: 'Links' },
+  sections: { education: 'Education', experience: 'Experience', projects: 'Projects', certificates: 'Certificates and training', skills: 'Skills', languages: 'Languages', seminars: 'Seminars' },
 }
 
 export const organizations: OrganizationsCopy = {
