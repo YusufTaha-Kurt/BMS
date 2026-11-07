@@ -1,8 +1,22 @@
 # COP31 — Yazılım Çalışma Alanı
 
-Başlangıç: 22 Ekim 2026. Durum: ilk çalışan sentetik demo `web/` altında kodlandı (bkz. `DURUM.md`); tam pipeline planı sürüyor.
+## Güncel durum (7 Kasım 2026)
 
-**Yayın ve faz durumu — 4 Kasım 2026:** Güncel tanıtım [Vercel'de yayında](https://binbin-battery-intelligence.vercel.app/hakkimizda/); [mavi temalı demo](https://binbin-battery-intelligence.vercel.app/) aynı alan adının kökündedir. Kaynaklar GitHub `main` dalındadır. [Faz dosyası](WEB_SITESI_FAZ_PLANI.md), yedi fazın kod/arayüz kapsamında tamamlandığını açıklar; Faz 6 formu alıcı adres ve onaylı aydınlatma metni gelene kadar kapalıdır. Açık dış teslimler ve kabul işleri [yayın kontrol listesindedir](YAYIN_KONTROL_LISTESI.md). Son form ve kontrol değişiklikleri `claude/laughing-hawking-xsk5nj` dalındadır; `main`'e birleştirilince Vercel'de yayımlanır. [Yayın doğrulaması](incelemeler/yayin/INCELEME.md).
+**İklimTekOst** (eski adıyla BinBin Battery Intelligence), OSTİM Teknik Üniversitesi öğrenci ekibinin COP31 projesidir. Paylaşımlı mikromobilite bataryaları için sağlık takibi, bakım önceliği ve Dijital Batarya Pasaportu önerir. Ad yakında yeniden değişebilir, bkz. aşağıdaki "Proje adı" bölümü.
+
+| | |
+|---|---|
+| Tanıtım sitesi (basılı QR hedefi) | https://binbin-battery-intelligence.vercel.app/hakkimizda/ |
+| Sentetik verili demo | https://binbin-battery-intelligence.vercel.app/ |
+| Kaynak | `web/` altında React, TypeScript, Vite. `main` dalı Vercel'e otomatik yayımlanır |
+| İletişim formu | `web/api/contact.ts` Vercel fonksiyonu, kayıtlar Supabase BMS-Web projesindeki `collaboration_proposals` tablosunda |
+| Açık işler | [YAYIN_KONTROL_LISTESI.md](YAYIN_KONTROL_LISTESI.md) |
+| Ayrıntılı geçmiş | [DURUM.md](DURUM.md), [WEB_SITESI_FAZ_PLANI.md](WEB_SITESI_FAZ_PLANI.md), `incelemeler/` |
+| Yeni oturum için kurallar | [CLAUDE.md](CLAUDE.md) |
+
+Sitede yedi tanıtım sayfası (ana sayfa, kurumlar, ekip, proje, demo, karbon, iş birliği), menüde yer almayan KVKK aydınlatma metni (`/hakkimizda/aydinlatma/`) ve iki dilli 404 sayfası var. Site TR ve EN, açık ve koyu temada çalışır. Ekip sayfasında beş öğrencinin ve akademik koordinatörün fotoğrafı ve açılan CV'si, kurumlar sayfasında yöneticilerin fotoğrafı ve resmî sayfa bağlantısı, iş birliği sayfasında destekleyenler (BinBin logosu) ve öneri formu bulunur.
+
+Bu README'nin aşağıdaki bölümleri geliştirme sırasında yazıldı ve zaman sırasıyla ilerler. Bir dosya veya alan adı eski bir bölümde geçip kodda yoksa güncel olan kod ve CLAUDE.md'dir.
 
 **Tasarım incelemeleri:** [Sabit inceleme kaydı](TASARIM_INCELEME_KAYDI.md), [HIG/apple-design ilk raporu](incelemeler/hig-apple-design/INCELEME.md), [özgünlük raporu](incelemeler/hig-apple-design/OZGUNLUK_INCELEMESI.md) ve [görsel sistem raporu](incelemeler/hig-apple-design/GORSEL_SISTEM_INCELEMESI.md). [Bağımsız kontroldeki](incelemeler/tasarim-bagimsiz-kontrol/INCELEME.md) hash yan etkisi giderildi; özet/ayrıntı ve stil düzenlemeleri [son kontrol kaydında](incelemeler/son-duzeltmeler/INCELEME.md). Gerçek cihaz/ekran okuyucu kabulü ve dış teslimler açık.
 

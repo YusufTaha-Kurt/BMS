@@ -80,6 +80,10 @@ export const COORDINATOR_PROFILE: TeamMember = {
   id: 'coordinator',
   name: ACADEMIC_COORDINATOR,
   photo: barisPhoto,
+  bio: {
+    tr: 'Elektrik-Elektronik Mühendisliği lisans ve yüksek lisans derecelerine sahip, Gazi Üniversitesi’nde aynı alanda doktora yapıyor. OSTİM Teknik Üniversitesi Bilgisayar Mühendisliği Bölümü’nde araştırma görevlisi. Çalışmaları yapay zekâ, makine öğrenmesi, enerji sistemleri, batarya yönetimi, akıllı sistemler ve İHA uygulamaları üzerine yoğunlaşıyor. Lisans bitirme projelerine danışmanlık yapıyor ve disiplinler arası Ar-Ge projelerinde görev alıyor.',
+    en: 'Holds B.Sc. and M.Sc. degrees in Electrical-Electronics Engineering and is pursuing a PhD in the same field at Gazi University. Research assistant in the Department of Computer Engineering at OSTİM Technical University. His work focuses on AI, machine learning, energy systems, battery management, smart systems and UAV applications. He advises undergraduate capstone projects and takes part in interdisciplinary R&D projects.',
+  },
   role: { en: 'Academic coordinator', tr: 'Akademik koordinatör' },
   workPackage: {
     en: 'Project coordination',

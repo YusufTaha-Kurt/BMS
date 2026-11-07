@@ -19,7 +19,7 @@ function Person({ member, language, showRole = true }: { member: TeamMember; lan
   const { team: t, common } = CONTENT[language]
   const info = details(member, language)
   const cv: MemberCv | undefined = TEAM_CV[member.id]
-  const role = showRole ? (member.role?.[language]?.trim() || cv?.headline[language]) : undefined
+  const role = showRole ? (member.role?.[language]?.trim() || cv?.headline[language]) : cv?.headline[language]
   const avatar = member.photo
     ? <img className="person-avatar" src={member.photo} alt="" width="56" height="56" loading="lazy" />
     : <span className="person-avatar person-avatar-empty" aria-hidden="true">{member.name.split(' ').map((part) => part[0]).slice(0, 2).join('')}</span>

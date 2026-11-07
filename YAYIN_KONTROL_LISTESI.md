@@ -1,6 +1,6 @@
 # Yayın Kontrol Listesi — İçerik, İzin ve Teslim Durumu
 
-Son güncelleme: 4 Kasım 2026. Faz 7'nin “izin durum listesi, teslim bağlantıları ve nihai kontrol listesi” maddesi için tek referans. Durumlar depodaki kayıtlardan alınmıştır; bir alanın arayüzde hazır olması içeriğin veya iznin tamamlandığı anlamına gelmez. Bilgi uydurulmaz; gelen içerik ilgili dosyaya girilir ve bu tablo güncellenir.
+Son güncelleme: 7 Kasım 2026. Faz 7'nin “izin durum listesi, teslim bağlantıları ve nihai kontrol listesi” maddesi için tek referans. Durumlar depodaki kayıtlardan alınmıştır; bir alanın arayüzde hazır olması içeriğin veya iznin tamamlandığı anlamına gelmez. Bilgi uydurulmaz; gelen içerik ilgili dosyaya girilir ve bu tablo güncellenir.
 
 Durum anahtarı: **Hazır** içerik ve gerekiyorsa izin var. **Bekliyor** içerik veya izin gelmedi. **Kısmi** bir bölümü var.
 
@@ -11,7 +11,7 @@ Sade tasarım turundan (4 Kasım 2026) beri boş alanlar sitede gösterilmez. Bi
 | # | Konu | Dosya / alan | Durum | Gereken |
 | --- | --- | --- | --- | --- |
 | 1 | Ekip üyeleri | `web/src/site.ts`, `web/src/about/teamCv.ts` | Hazır | Beş öğrencinin fotoğrafı ve CV'si eklendi. Projedeki rolleri gelirse isim yanındaki unvan güncellenir. |
-| 3 | Akademik koordinatör | `COORDINATOR_PROFILE` | Kısmi | Fotoğraf, rol, çalışma paketi ve katkı var. CV ve bağlantılar bekleniyor. |
+| 3 | Akademik koordinatör | `COORDINATOR_PROFILE`, `teamCv.ts` | Hazır | Fotoğraf, rol, kısa tanıtım ve CV eklendi. |
 | 4 | Kurum yöneticileri | `web/src/about/organizations.ts` → `MANAGERS` | Hazır | Dört kişinin unvanı resmî sayfalardan eklendi. Orhan Aydın'ın fotoğrafı OSTİM Vakfı sitesinden, diğer üç fotoğraf kullanıcıdan alındı. Yayın izni kurumdan teyit edilmeli. |
 | 5 | Destekleyenler | `COLLABORATIONS` | Kısmi | BinBin logosuyla, binbin.tech bağlantılı. Sustain Bridge için bilgi ve logo bekleniyor. |
 | 7 | Logolar | `web/src/about/assets/`, `ORGANIZATION_ASSETS` | Kısmi | OSTİM Teknik Üniversitesi ve COP31 broşür görselinden, OSTİM Vakfı (açık ve koyu sürüm) ostimvakfi.com'dan, BinBin (açık ve koyu sürüm) binbin.tech'ten alındı. Sustain Bridge için resmî site bulunamadı. Daha net üniversite logosu için ostimteknik.edu.tr'deki resmî dosya tercih edilmeli. |
@@ -19,7 +19,7 @@ Sade tasarım turundan (4 Kasım 2026) beri boş alanlar sitede gösterilmez. Bi
 | 9 | Karbon ölçümleri | `content/technical.*.ts` → `carbon` | Bekliyor | Ölçüm noktası ve dönemi, enerji, faktör değeri, yılı ve kaynağı, hesaplanan emisyon, tedarikçi belgeleri. Demo faktörü kullanılmaz. |
 | 10 | Sunum (TR/EN) | `web/src/about/demoMedia.ts` → `DEMO_MEDIA` | Bekliyor | Dosya gelince `web/public/media/` altına eklenir. Bölüm dosya olmadan görünmez. |
 | 11 | Tanıtım videosu (TR/EN) | `DEMO_MEDIA[*].video` | Bekliyor | Video ve aynı dilde WebVTT altyazı. |
-| 12 | İletişim formu | `web/api/contact.ts`, `supabase/migrations/`, Vercel ortam değişkenleri | Kısmi | Form, aydınlatma metni ve Supabase kaydı hazır. Vercel'e BMS-Web projesinin `SUPABASE_URL` ve `SUPABASE_KEY` değerleri girildi ve canlı sürüm yeniden derlendi (5 Kasım 2026), form açık. Kalan iş migration SQL'inin BMS-Web'de çalıştırılması ve canlıda deneme gönderimi. Aydınlatma metninin üniversitenin KVKK birimince gözden geçirilmesi önerilir. |
+| 12 | İletişim formu | `web/api/contact.ts`, `supabase/migrations/`, Vercel ortam değişkenleri | Hazır | Form açık, Supabase tablosu 6 Kasım 2026'da oluşturuldu ve doğrulandı. Canlıda bir deneme gönderimi yapılıp kaydın tabloda göründüğü kontrol edilmeli. Aydınlatma metninin üniversitenin KVKK birimince gözden geçirilmesi önerilir. |
 | 13 | Demo ekran görüntüleri | `web/src/about/assets/demo/` | Hazır | Demo arayüzü değişirse yeniden alınmalı. Öneri metinleri bu turda sadeleşti, görüntülerdeki eski öneri cümlesi yenilenebilir. |
 | 14 | Resmî kaynak bağlantıları | `web/src/about/sources.ts` | Hazır | Yayından önce açıldıkları kontrol edilmeli. |
 | 15 | Son içerik güncelleme tarihi | `web/src/site.ts` → `SITE_CONTENT_UPDATED` | Hazır | İçerik eklendiğinde elle güncellenir. |

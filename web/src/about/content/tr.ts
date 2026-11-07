@@ -93,7 +93,7 @@ export const home: HomeCopy = {
 export const team: TeamCopy = {
   members: 'Öğrenci ekip', coordinator: 'Akademik koordinatör',
   fields: { role: 'Rol', workPackage: 'Çalışma paketi', contribution: 'Katkı', bio: 'Hakkında', links: 'Bağlantılar' },
-  sections: { education: 'Eğitim', experience: 'Deneyim', projects: 'Projeler', certificates: 'Sertifikalar ve eğitimler', skills: 'Yetenekler', languages: 'Diller', seminars: 'Etkinlikler ve seminerler' },
+  sections: { education: 'Eğitim', publications: 'Yayınlar', experience: 'Deneyim', projects: 'Projeler', certificates: 'Sertifikalar ve eğitimler', skills: 'Yetenekler', languages: 'Diller', seminars: 'Etkinlikler ve seminerler' },
 }
 
 export const organizations: OrganizationsCopy = {

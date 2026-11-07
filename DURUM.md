@@ -1,6 +1,6 @@
 # Güncel Durum
 
-Son güncelleme: 7 Kasım 2026 (proje adı İklimTekOst, ekip CV'leri tamam)
+Son güncelleme: 7 Kasım 2026 (İklimTekOst, ekip ve koordinatör CV'leri tamam, devir notları CLAUDE.md'de)
 
 ## GitHub ve Vercel yayını
 
@@ -8,6 +8,12 @@ Son güncelleme: 7 Kasım 2026 (proje adı İklimTekOst, ekip CV'leri tamam)
 - Vercel dağıtımı başarıyla tamamlandı. [Tanıtım](https://binbin-battery-intelligence.vercel.app/hakkimizda/) ve [demo](https://binbin-battery-intelligence.vercel.app/) üretim alan adında çalışıyor.
 - Canlıda 390/1440px × TR/EN × sekiz adres olmak üzere 32 yerleşim; sentetik veri yükleme, sıcaklık senaryosu/telemetri, profil durumunun korunması ve EN yeni sekme demo açılışı doğrulandı. Yakalanan error/warn yok. [Kanıt](incelemeler/yayin/INCELEME.md).
 - [Faz dosyası](WEB_SITESI_FAZ_PLANI.md) yayın ve açık işleri açıklayan güncel metni içerir. Faz 6 bekliyor. Faz 7'nin yayın kısmı yapıldı; gerçek cihaz/ekran okuyucu, içerik/izin ve dosya/form kabul işleri hâlâ açık.
+
+## Koordinatör CV'si ve devir notları (7 Kasım 2026)
+
+- Barış Taha Uludağ'ın CV'si ekip sayfasına eklendi: kısa tanıtım, eğitim, yayınlar, deneyim, projeler, etkinlikler, yetenekler, diller. İletişim bilgileri ve hobiler eklenmedi.
+- Ahmed Emre Demirel'in CV'sindeki proje adı kullanıcı isteğiyle İklimTekOst yapıldı.
+- Yeni oturum için `CLAUDE.md` eklendi ve README'nin başına güncel durum özeti yazıldı.
 
 ## Proje adı İklimTekOst, ekip tamamlandı (7 Kasım 2026)
 
