@@ -1,7 +1,6 @@
-import { ArrowUpRight } from 'lucide-react'
 import { useI18n } from '../lib/i18n.tsx'
 import { CONTENT } from './content/index.ts'
-import { COLLABORATIONS } from './organizations.ts'
+import { COLLABORATIONS, ORGANIZATION_ASSETS } from './organizations.ts'
 import { ContactForm } from './components/ContactForm.tsx'
 import { OrganizationMark } from './components/OrganizationMark.tsx'
 import { PageTemplate } from './components/PageTemplate.tsx'
@@ -25,14 +24,16 @@ export function CollaborationsPage() {
         <h2 id="collaborations-title">{copy.heading}</h2>
         <ul className="supporters">{COLLABORATIONS.map((collaboration) => {
           const website = websiteUrl(collaboration.officialWebsite)
+          const hasLogo = Boolean(ORGANIZATION_ASSETS[collaboration.id].src)
+          // Logosu olan kuruluş yalnız logosuyla gösterilir. Logo yoksa adı yazılır.
+          const mark = hasLogo
+            ? <OrganizationMark id={collaboration.id} name={collaboration.name} className="supporter-logo" />
+            : <strong>{collaboration.name}</strong>
           return (
             <li key={collaboration.id} data-collaboration={collaboration.id}>
-              <OrganizationMark id={collaboration.id} name={collaboration.name} className="supporter-logo" />
-              <span className="person-text">
-                <strong>{collaboration.name}</strong>
-                <span>{copy.statuses[collaboration.status]}</span>
-                {website && <a className="source-link" href={website} target="_blank" rel="noopener noreferrer">{t.officialWebsite}<ArrowUpRight size={14} aria-hidden="true" /><span className="sr-only"> ({common.newTab})</span></a>}
-              </span>
+              {website
+                ? <a className="supporter-link" href={website} target="_blank" rel="noopener noreferrer">{mark}<span className="sr-only"> {t.officialWebsite} ({common.newTab})</span></a>
+                : mark}
             </li>
           )
         })}</ul>

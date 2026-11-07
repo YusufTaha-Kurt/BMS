@@ -21,6 +21,160 @@ const t = (tr: string, en: string): LocalizedText => ({ tr, en })
 const COMPUTER_ENGINEERING = t('Bilgisayar Mühendisliği öğrencisi', 'Computer Engineering student')
 
 export const TEAM_CV: Record<string, MemberCv> = {
+  gizem: {
+    headline: t('Elektrik-Elektronik ve Bilgisayar Mühendisliği öğrencisi', 'Electrical-Electronics and Computer Engineering student'),
+    sections: [
+      {
+        id: 'education',
+        items: [
+          {
+            title: t('OSTİM Teknik Üniversitesi', 'OSTİM Technical University'),
+            detail: t('Elektrik-Elektronik Mühendisliği, 3. sınıf, ve Bilgisayar Mühendisliği çift anadal', 'Electrical-Electronics Engineering, third year, with a double major in Computer Engineering'),
+            date: t('2024 ile 2028', '2024 to 2028'),
+            points: [
+              t('Elektrik-Elektronik Mühendisliği not ortalaması 3,83 / 4,00', 'Electrical-Electronics Engineering GPA 3.83 / 4.00'),
+              t('Bilgisayar Mühendisliği not ortalaması 3,57 / 4,00', 'Computer Engineering GPA 3.57 / 4.00'),
+            ],
+          },
+          { title: t('Tekirdağ Anadolu Lisesi', 'Tekirdağ Anatolian High School'), date: t('2019 ile 2022', '2019 to 2022') },
+        ],
+      },
+      {
+        id: 'projects',
+        items: [
+          {
+            title: t('COP31 projesi, AI-Driven Circular Battery Management System for Sustainable Electric Micromobility', 'COP31 project, AI-Driven Circular Battery Management System for Sustainable Electric Micromobility'),
+            points: [t('Araştırma, raporlama, makine öğrenmesi ve batarya zekâsı alanlarında görev aldı. Proje YÖK tarafından kabul edildi.', 'Worked on research, reporting, machine learning and battery intelligence. The project was accepted by the Council of Higher Education (YÖK).')],
+          },
+        ],
+      },
+      {
+        id: 'experience',
+        items: [
+          {
+            title: t('Mavinci', 'Mavinci'), detail: t('Stajyer', 'Intern'), date: t('Ağustos ile Eylül 2026', 'August to September 2026'),
+            points: [
+              t('Makine öğrenmesi ve veri odaklı projeler için veri etiketleme ve düzenleme çalışmaları yaptı.', 'Labelled and organised data for machine learning and data-driven projects.'),
+              t('Veri setlerinin doğruluğunu ve tutarlılığını kontrol ederek veri kalitesi süreçlerine katkı verdi.', 'Contributed to data quality by checking the accuracy and consistency of datasets.'),
+            ],
+          },
+          {
+            title: t('Linkas Teknoloji', 'Linkas Teknoloji'), detail: t('Stajyer', 'Intern'), date: t('Haziran ile Temmuz 2026', 'June to July 2026'),
+            points: [
+              t('Gömülü sistemler ve elektronik kontrol sistemleri geliştirme süreçlerinde gözlem ve analiz çalışmaları yaptı, yazılım geliştirme ve Ar-Ge çalışmalarına destek verdi.', 'Observed and analysed embedded and electronic control system development and supported software development and R&D.'),
+              t('Ekip içinde teknik görevler üstlenerek problem çözme, sistem analizi ve proje yönetimi deneyimi kazandı.', 'Took on technical tasks in the team and gained problem solving, systems analysis and project management experience.'),
+            ],
+          },
+          {
+            title: t('Gayda Enerji', 'Gayda Enerji'), detail: t('Stajyer', 'Intern'), date: t('Haziran ile Temmuz 2026', 'June to July 2026'),
+            points: [t('Elektrik ekipmanlarının çalışma prensiplerini gözlemleyerek uygulamalı saha ve teknik deneyim kazandı.', 'Gained hands-on field and technical experience by observing how electrical equipment works.')],
+          },
+          {
+            title: t('Bozankaya', 'Bozankaya'), detail: t('Stajyer', 'Intern'), date: t('Haziran 2026', 'June 2026'),
+            points: [
+              t('Raylı sistem ve elektrikli araç projelerinde yüksek ve alçak gerilim sistemlerinin üretim ve test aşamalarını yerinde gözlemledi.', 'Observed the production and testing of high and low voltage systems in rail and electric vehicle projects on site.'),
+              t('Elektrik-elektronik bileşenlerin montajında ve temel testlerde teknik ekibe destek verdi, teknik şemaları ve devre mimarilerini inceledi.', 'Supported the technical team in assembling and testing electrical-electronic components and studied technical drawings and circuit architectures.'),
+            ],
+          },
+          {
+            title: t('Cisco Networking Academy', 'Cisco Networking Academy'), detail: t('Stajyer', 'Intern'), date: t('Ocak 2026', 'January 2026'),
+            points: [
+              t('C ile temel algoritmalar ve veri yapıları üzerinde uygulamalı çalıştı.', 'Worked hands-on with basic algorithms and data structures in C.'),
+              t('Hata ayıklama ve performans iyileştirme süreçlerinde yer aldı.', 'Took part in debugging and performance improvement.'),
+            ],
+          },
+        ],
+      },
+      {
+        id: 'skills',
+        items: [
+          { title: t('Yazılım dilleri', 'Programming languages'), detail: t('C, C#, SQL', 'C, C#, SQL') },
+          { title: t('Tasarım araçları', 'Design tools'), detail: t('AutoCAD, Proteus, KiCad, CircuitJS', 'AutoCAD, Proteus, KiCad, CircuitJS') },
+          { title: t('Yetkinlikler', 'Competencies'), detail: t('Analitik düşünme, disiplinli ve planlı çalışma, takım çalışması, problem çözme', 'Analytical thinking, disciplined and planned work, teamwork, problem solving') },
+        ],
+      },
+      {
+        id: 'languages',
+        items: [
+          { title: t('Türkçe', 'Turkish'), detail: t('Ana dil', 'Native') },
+          { title: t('İngilizce', 'English'), detail: t('Orta seviye', 'Intermediate') },
+        ],
+      },
+      {
+        id: 'certificates',
+        items: [
+          { title: t('Savunma Sanayiinde Proje Yönetimi', 'Project Management in the Defence Industry'), detail: t('BTK Akademi', 'BTK Academy') },
+          { title: t('Savunma Sanayii Başkanlığı ve Türk Savunma Sanayii Ekosistemi', 'Presidency of Defence Industries and the Turkish Defence Ecosystem'), detail: t('BTK Akademi', 'BTK Academy') },
+          { title: t('İletişim ve Network Yönetimi', 'Communication and Network Management'), detail: t('BTK Akademi', 'BTK Academy') },
+          { title: t('C# Object Oriented Programming for Beginners in C# and .NET', 'C# Object Oriented Programming for Beginners in C# and .NET'), detail: t('Coursera', 'Coursera') },
+          { title: t('AutoCAD Sertifikası, 716 dakika', 'AutoCAD Certificate, 716 minutes'), detail: t('İstanbul Üniversitesi', 'Istanbul University') },
+        ],
+      },
+      {
+        id: 'seminars',
+        items: [
+          { title: t('Millî Yetkinlik Hamlesi Kapsül Programı', 'National Competency Initiative Capsule Programme') },
+          { title: t('Genç Beyinler Yeni Fikirler 2025 Sergisi', 'Young Minds New Ideas 2025 Exhibition'), detail: t('Başkent Üniversitesi', 'Başkent University') },
+          { title: t('5G ile Endüstrinin Dönüşümü, Yeni Nesil Bağlantı Altyapıları ve Akıllı Fabrikalar', 'Transforming Industry with 5G, Next-Generation Connectivity and Smart Factories'), detail: t('ELES EXPO', 'ELES EXPO') },
+          { title: t('Dijital Çağın İnşasında Veri Merkezi Ekosistemi', 'The Data Centre Ecosystem in Building the Digital Age'), detail: t('ELES EXPO', 'ELES EXPO') },
+        ],
+      },
+    ],
+  },
+
+  gamze: {
+    headline: t('Elektrik-Elektronik ve Yapay Zekâ Mühendisliği öğrencisi', 'Electrical-Electronics and AI Engineering student'),
+    sections: [
+      {
+        id: 'education',
+        items: [
+          { title: t('OSTİM Teknik Üniversitesi', 'OSTİM Technical University'), detail: t('Elektrik-Elektronik Mühendisliği lisans, 3. sınıf, not ortalaması 3,83 / 4,00', 'B.Sc. in Electrical-Electronics Engineering, third year, GPA 3.83 / 4.00'), date: t('2024 ile 2028', '2024 to 2028') },
+          { title: t('OSTİM Teknik Üniversitesi', 'OSTİM Technical University'), detail: t('Yapay Zekâ Mühendisliği çift anadal, not ortalaması 3,61 / 4,00', 'Double major in Artificial Intelligence Engineering, GPA 3.61 / 4.00'), date: t('2024 ile 2028', '2024 to 2028') },
+          { title: t('Tekirdağ Anadolu Lisesi', 'Tekirdağ Anatolian High School'), date: t('2019 ile 2022', '2019 to 2022') },
+        ],
+      },
+      {
+        id: 'experience',
+        items: [
+          { title: t('Linkas Teknoloji', 'Linkas Teknoloji'), date: t('Haziran ile Temmuz 2026', 'June to July 2026'), points: [t('Gömülü sistem mimarileri, mikrodenetleyici tabanlı sensör okuma ve telemetri protokolleri üzerinde çalışarak donanım ile yazılım arasındaki veri akışını iyileştirdi.', 'Worked on embedded system architectures, microcontroller sensor reading and telemetry protocols, improving the data flow between hardware and software.')] },
+          { title: t('Bozankaya Raylı Sistemler', 'Bozankaya Rail Systems'), date: t('Haziran 2026', 'June 2026'), points: [t('Elektrikli toplu taşıma araçlarında enerji depolama sistemleri, yüksek güç elektroniği ve batarya yönetim mekanizmalarının güvenlik ve koruma analizlerini yürüttü.', 'Carried out safety and protection analyses of energy storage systems, high-power electronics and battery management mechanisms in electric public transport vehicles.')] },
+          { title: t('Cisco Networking Academy', 'Cisco Networking Academy'), date: t('Ocak 2026', 'January 2026'), points: [t('C ile sistem seviyesinde yazılım geliştirme, bellek optimizasyonu ve veri yapıları üzerinde çalıştı.', 'Worked on system-level software development, memory optimisation and data structures in C.')] },
+          { title: t('Mavinci, Ankara', 'Mavinci, Ankara'), points: [t('Yapay zekâ modelleri, veri ön işleme hatları ve yazılım algoritmalarının geliştirilmesi, testi ve iyileştirilmesinde görev aldı.', 'Worked on developing, testing and optimising AI models, data preprocessing pipelines and software algorithms.')] },
+          { title: t('Gayda Enerji, Ankara', 'Gayda Enerji, Ankara'), points: [t('Elektronik donanım ve kontrol sistemlerinde devre tasarımı, sinyal ölçüm doğrulamaları ve test süreçlerine katkı verdi.', 'Contributed to circuit design, signal measurement verification and testing in electronic hardware and control systems.')] },
+        ],
+      },
+      {
+        id: 'skills',
+        items: [
+          { title: t('Programlama dilleri', 'Programming languages'), detail: t('C, C#, Python, SQL', 'C, C#, Python, SQL') },
+          { title: t('Gömülü sistemler ve EDA', 'Embedded systems and EDA'), detail: t('STM32, mikrodenetleyiciler, Proteus, CircuitJS, devre tasarımı', 'STM32, microcontrollers, Proteus, CircuitJS, circuit design') },
+          { title: t('Mühendislik ve CAD', 'Engineering and CAD'), detail: t('AutoCAD, sistem modelleme, donanım ve yazılım arayüzleri', 'AutoCAD, system modelling, hardware and software interfaces') },
+          { title: t('Yazılım ve çerçeveler', 'Software and frameworks'), detail: t('Yapay zekâ ve makine öğrenmesi algoritmaları, .NET, nesne yönelimli programlama', 'AI and machine learning algorithms, .NET, object-oriented programming') },
+        ],
+      },
+      {
+        id: 'certificates',
+        items: [
+          { title: t('Savunma Sanayiinde Proje Yönetimi', 'Project Management in the Defence Industry'), detail: t('BTK Akademi', 'BTK Academy') },
+          { title: t('Savunma Sanayii Başkanlığı ve Türk Savunma Sanayii Ekosistemi', 'Presidency of Defence Industries and the Turkish Defence Ecosystem'), detail: t('BTK Akademi', 'BTK Academy') },
+          { title: t('İletişim ve Network Yönetimi', 'Communication and Network Management'), detail: t('BTK Akademi', 'BTK Academy') },
+          { title: t('STM32 ile Gömülü Yazılım Geliştirme', 'Embedded Software Development with STM32'), detail: t('BTK Akademi', 'BTK Academy') },
+          { title: t('C# Object Oriented Programming, .NET', 'C# Object Oriented Programming, .NET'), detail: t('Coursera', 'Coursera') },
+          { title: t('AutoCAD Uzmanlık Sertifikası, 716 dakika', 'AutoCAD Expert Certificate, 716 minutes'), detail: t('İstanbul Üniversitesi', 'Istanbul University') },
+        ],
+      },
+      {
+        id: 'seminars',
+        items: [
+          { title: t('Kapsül Programı', 'Capsule Programme'), detail: t('Millî Yetkinlik Hamlesi', 'National Competency Initiative') },
+          { title: t('Genç Beyinler Yeni Fikirler 2025', 'Young Minds New Ideas 2025'), detail: t('Başkent Üniversitesi', 'Başkent University') },
+          { title: t('Dijital Çağın İnşasında Veri Merkezi Ekosistemi', 'The Data Centre Ecosystem in Building the Digital Age'), detail: t('ELES EXPO', 'ELES EXPO') },
+          { title: t('5G ile Endüstrinin Dönüşümü ve Akıllı Fabrikalar', 'Transforming Industry with 5G and Smart Factories'), detail: t('ELES EXPO', 'ELES EXPO') },
+        ],
+      },
+    ],
+  },
+
   erhan: {
     headline: COMPUTER_ENGINEERING,
     sections: [

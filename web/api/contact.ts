@@ -192,7 +192,7 @@ export async function handleContact(request: Request, now = Date.now()): Promise
   const key = e.RESEND_API_KEY?.trim()
   if (to && from && key) {
     const text = [
-      'BinBin Battery Intelligence iş birliği önerisi',
+      'İklimTekOst iş birliği önerisi',
       '',
       `Ad soyad ${record.name}`,
       `Kurum ${record.organization}`,

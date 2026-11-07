@@ -1,6 +1,6 @@
 # Güncel Durum
 
-Son güncelleme: 4 Kasım 2026 (sade tasarım, logolar, metin düzeltmesi; `main` birleştirmesi ve yayın bekliyor)
+Son güncelleme: 7 Kasım 2026 (proje adı İklimTekOst, ekip CV'leri tamam)
 
 ## GitHub ve Vercel yayını
 
@@ -8,6 +8,13 @@ Son güncelleme: 4 Kasım 2026 (sade tasarım, logolar, metin düzeltmesi; `main
 - Vercel dağıtımı başarıyla tamamlandı. [Tanıtım](https://binbin-battery-intelligence.vercel.app/hakkimizda/) ve [demo](https://binbin-battery-intelligence.vercel.app/) üretim alan adında çalışıyor.
 - Canlıda 390/1440px × TR/EN × sekiz adres olmak üzere 32 yerleşim; sentetik veri yükleme, sıcaklık senaryosu/telemetri, profil durumunun korunması ve EN yeni sekme demo açılışı doğrulandı. Yakalanan error/warn yok. [Kanıt](incelemeler/yayin/INCELEME.md).
 - [Faz dosyası](WEB_SITESI_FAZ_PLANI.md) yayın ve açık işleri açıklayan güncel metni içerir. Faz 6 bekliyor. Faz 7'nin yayın kısmı yapıldı; gerçek cihaz/ekran okuyucu, içerik/izin ve dosya/form kabul işleri hâlâ açık.
+
+## Proje adı İklimTekOst, ekip tamamlandı (7 Kasım 2026)
+
+- Kullanıcı kararıyla projenin adı İklimTekOst oldu. Ad kısa süre içinde yeniden değişebilir. Ad `web/src/site.ts` → `PROJECT_NAME` içinde tek yerde durur. Ayrıca HTML başlıkları, 404 sayfası, aydınlatma metni, ana sayfa başlığı ve form e-posta konusu güncellendi. Vercel alan adı ve basılı QR adresi değişmedi (binbin-battery-intelligence.vercel.app).
+- Gizem ve Gamze Geniş'in fotoğrafları ve CV'leri eklendi. Ekipteki beş kişinin ve koordinatörün fotoğrafı var, beş öğrencinin CV'si açılan profil olarak duruyor.
+- Destekleyenler bölümünde BinBin yalnız logosuyla görünür, logo binbin.tech'i yeni sekmede açar. Sustain Bridge için bilgi bekleniyor.
+- Ahmed Emre Demirel'in CV'sindeki proje adı CV'de yazdığı gibi Battery Intelligence olarak bırakıldı.
 
 ## Ekip CV'leri (6 Kasım 2026)
 

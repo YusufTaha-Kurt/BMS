@@ -96,6 +96,7 @@ export const COLLABORATIONS: readonly Collaboration[] = [
   {
     id: 'binbin', name: 'BinBin',
     status: 'proposed',
+    officialWebsite: 'https://www.binbin.tech/',
   },
   { id: 'sustainBridge', name: 'Sustain Bridge', status: 'pending' },
 ]

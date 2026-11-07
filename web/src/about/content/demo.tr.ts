@@ -39,7 +39,7 @@ export const demo: DemoCopy = {
   },
   materials: {
     title: 'Sunum ve video', presentation: 'Sunum', video: 'Tanıtım videosu',
-    view: 'Sunumu aç', download: 'Sunumu indir', videoLabel: 'BinBin Battery Intelligence tanıtım videosu',
+    view: 'Sunumu aç', download: 'Sunumu indir', videoLabel: 'İklimTekOst tanıtım videosu',
     captions: 'Türkçe altyazı', videoFallback: 'Videoyu dosya olarak aç',
   },
 }

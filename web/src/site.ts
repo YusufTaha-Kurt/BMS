@@ -4,13 +4,16 @@ import barisPhoto from './about/assets/people/baris-taha-uludag.jpg'
 import erhanPhoto from './about/assets/people/erhan-bulbul.jpg'
 import yusufPhoto from './about/assets/people/yusuf-taha-kurt.jpg'
 import ahmedPhoto from './about/assets/people/ahmed-emre-demirel.jpg'
+import gizemPhoto from './about/assets/people/gizem-genis.jpg'
+import gamzePhoto from './about/assets/people/gamze-genis.jpg'
 export type { SiteLanguage } from '../shared/types.ts'
 
 /** Yayındaki adres. Yerel çalıştırmada (localhost) QR yine bu adrese gider. */
 export const SITE_URL = 'https://binbin-battery-intelligence.vercel.app'
 
 export const ABOUT_PATH = 'hakkimizda/'
-export const PROJECT_NAME = 'BinBin Battery Intelligence'
+/** Proje adı. Kullanıcı kararıyla 7 Kasım 2026'dan itibaren İklimTekOst. Değişirse yalnız burası ve HTML başlıkları güncellenir. */
+export const PROJECT_NAME = 'İklimTekOst'
 
 /** Actual editorial update, not the visitor's clock or the build date. */
 export const SITE_CONTENT_UPDATED = '2026-11-04'
@@ -31,8 +34,21 @@ export interface TeamMember {
 
 /** Unknown fields stay empty. Add only supplied EN/TR content; preserve this order. */
 export const PROJECT_TEAM: readonly TeamMember[] = [
-  { id: 'gizem', name: 'Gizem Geniş' },
-  { id: 'gamze', name: 'Gamze Geniş' },
+  {
+    id: 'gizem', name: 'Gizem Geniş', photo: gizemPhoto,
+    bio: {
+      tr: 'Mühendislikteki teknik ve problem çözme becerilerini yenilikçi projelerde sürdürülebilir katkıya dönüştürmeyi hedefleyen Elektrik-Elektronik Mühendisliği öğrencisi ve Bilgisayar Mühendisliği çift anadal öğrencisi.',
+      en: 'An Electrical-Electronics Engineering student with a double major in Computer Engineering, aiming to turn technical and problem-solving skills into lasting contributions to innovative projects.',
+    },
+  },
+  {
+    id: 'gamze', name: 'Gamze Geniş', photo: gamzePhoto,
+    bio: {
+      tr: 'Elektrik-Elektronik Mühendisliği lisansı ile Yapay Zekâ Mühendisliği çift anadalını yüksek başarıyla sürdüren, gömülü sistemler, donanım tasarımı ve makine öğrenmesi uygulamalarına odaklanan bir mühendis adayı. Otomotiv, savunma, enerji ve IoT alanlarındaki stajlarıyla teorik altyapısını pekiştirdi. C, C++, Python ve mikrodenetleyici mimarileriyle uygulamalı çözümler üretiyor.',
+      en: 'An engineering student pursuing Electrical-Electronics Engineering with a double major in AI Engineering with high grades, focused on embedded systems, hardware design and machine learning. Strengthened her theoretical background with internships in automotive, defence, energy and IoT, and builds practical solutions with C, C++, Python and microcontroller architectures.',
+    },
+    links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/gamze-geni%C5%9F-09b02437b' }],
+  },
   { id: 'erhan', name: 'Erhan Bülbül', photo: erhanPhoto },
   {
     id: 'yusuf', name: 'Yusuf Taha Kurt', photo: yusufPhoto,

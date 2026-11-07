@@ -1,7 +1,7 @@
 import type { HomeCopy, OrganizationsCopy, SiteCopy, TeamCopy } from './types.ts'
 
 export const common: SiteCopy = {
-  homeLink: 'BinBin Battery Intelligence home',
+  homeLink: 'İklimTekOst home',
   navigation: 'Main navigation',
   language: 'Language',
   openMenu: 'Open menu',
@@ -52,7 +52,7 @@ export const common: SiteCopy = {
 }
 
 export const home: HomeCopy = {
-  headline: ['BinBin Battery', 'Intelligence'],
+  headline: ['İklim', 'TekOst'],
   intro: 'Battery health tracking, maintenance priorities and a Digital Battery Passport for shared micromobility. The project is at the proposal and pilot planning stage.',
   projectLink: 'About the project',
   heroAlt: 'Synthetic battery DEMO-001. Temperature drift reason, technical review recommendation and indicators compared with the no-event baseline.',
@@ -93,7 +93,7 @@ export const home: HomeCopy = {
 export const team: TeamCopy = {
   members: 'Student team', coordinator: 'Academic coordinator',
   fields: { role: 'Role', workPackage: 'Work package', contribution: 'Contribution', bio: 'About', links: 'Links' },
-  sections: { education: 'Education', experience: 'Experience', projects: 'Projects', certificates: 'Certificates and training', skills: 'Skills', languages: 'Languages', seminars: 'Seminars' },
+  sections: { education: 'Education', experience: 'Experience', projects: 'Projects', certificates: 'Certificates and training', skills: 'Skills', languages: 'Languages', seminars: 'Events and seminars' },
 }
 
 export const organizations: OrganizationsCopy = {

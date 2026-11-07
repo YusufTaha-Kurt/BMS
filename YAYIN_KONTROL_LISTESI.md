@@ -10,10 +10,10 @@ Sade tasarım turundan (4 Kasım 2026) beri boş alanlar sitede gösterilmez. Bi
 
 | # | Konu | Dosya / alan | Durum | Gereken |
 | --- | --- | --- | --- | --- |
-| 1 | Ekip üyeleri (Gizem, Gamze, Erhan, Yusuf, Ahmed) | `web/src/site.ts`, `web/src/about/teamCv.ts` | Kısmi | Erhan, Yusuf ve Ahmed'in fotoğrafları ve CV'leri eklendi. Gizem ve Gamze'nin fotoğraf ve CV'leri bekleniyor. Projedeki rol ve katkı bilgileri henüz yok. |
+| 1 | Ekip üyeleri | `web/src/site.ts`, `web/src/about/teamCv.ts` | Hazır | Beş öğrencinin fotoğrafı ve CV'si eklendi. Projedeki rolleri gelirse isim yanındaki unvan güncellenir. |
 | 3 | Akademik koordinatör | `COORDINATOR_PROFILE` | Kısmi | Fotoğraf, rol, çalışma paketi ve katkı var. CV ve bağlantılar bekleniyor. |
 | 4 | Kurum yöneticileri | `web/src/about/organizations.ts` → `MANAGERS` | Hazır | Dört kişinin unvanı resmî sayfalardan eklendi. Orhan Aydın'ın fotoğrafı OSTİM Vakfı sitesinden, diğer üç fotoğraf kullanıcıdan alındı. Yayın izni kurumdan teyit edilmeli. |
-| 5 | Destekleyenler | `COLLABORATIONS` | Kısmi | BinBin destekleyen kuruluş olarak yalnız bu bölümde, logosuyla. Sustain Bridge için bilgi ve logo bekleniyor. |
+| 5 | Destekleyenler | `COLLABORATIONS` | Kısmi | BinBin logosuyla, binbin.tech bağlantılı. Sustain Bridge için bilgi ve logo bekleniyor. |
 | 7 | Logolar | `web/src/about/assets/`, `ORGANIZATION_ASSETS` | Kısmi | OSTİM Teknik Üniversitesi ve COP31 broşür görselinden, OSTİM Vakfı (açık ve koyu sürüm) ostimvakfi.com'dan, BinBin (açık ve koyu sürüm) binbin.tech'ten alındı. Sustain Bridge için resmî site bulunamadı. Daha net üniversite logosu için ostimteknik.edu.tr'deki resmî dosya tercih edilmeli. |
 | 8 | Pilot bilgileri | `web/src/about/content/technical.*.ts` → `project.pilot` | Bekliyor | Gerçek başlangıç tarihi, grup büyüklüğü, veri kapsamı ve doğrulama sonuçları. Takvim şu an teklifin göreli planıdır. |
 | 9 | Karbon ölçümleri | `content/technical.*.ts` → `carbon` | Bekliyor | Ölçüm noktası ve dönemi, enerji, faktör değeri, yılı ve kaynağı, hesaplanan emisyon, tedarikçi belgeleri. Demo faktörü kullanılmaz. |

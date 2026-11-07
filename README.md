@@ -42,6 +42,10 @@ Ana sayfada kısa ekip özeti bulunur; tam profiller `/hakkimizda/ekip/` sayfas�
 
 Veri tamamen sentetiktir (sabit seed `20261023`); aynı seed aynı içeriği üretir (`manifest.json` içindeki `contentHash`). Eşikler `web/shared/config.ts` içinde tek yerde durur ve üretici sınırı değildir. Üretilen `web/public/data/` git'e alınmaz.
 
+## Proje adı (7 Kasım 2026)
+
+Projenin güncel adı **İklimTekOst**. Ad `web/src/site.ts` → `PROJECT_NAME` içinde tanımlıdır; HTML dosyalarındaki başlangıç başlıkları, `web/public/404.html`, `content/*.ts` içindeki ana sayfa başlığı ve aydınlatma metni de aynı adı kullanır. Ad değişirse bu yerler birlikte güncellenir. Aşağıdaki geçmiş bölümlerde eski ad BinBin Battery Intelligence geçer.
+
 ## Tema, aydınlatma metni ve form veri tabanı (4 Kasım 2026)
 
 - **Açık/koyu tema:** Tanıtım sitesi, demo ve 404 sayfası iki temayı destekler. İlk açılışta cihazın ayarı izlenir, üst bilgideki güneş/ay düğmesi tercihi tarayıcıda saklar ve bütün sayfalarda geçerli olur. Kod `web/src/lib/theme.ts`, düğme `web/src/components/ThemeToggle.tsx`. Renkler `web/src/about/site.css` ve `web/src/index.css` içinde `data-theme` değerine göre tanımlıdır. Grafik renkleri `web/src/lib/chartColors.ts` içindedir.

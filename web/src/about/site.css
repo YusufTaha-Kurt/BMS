@@ -81,7 +81,8 @@ svg { flex-shrink: 0; }
 .hero { border-bottom: 1px solid var(--rule); }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 56px; padding-block: 56px; }
 .hero h1 { font-size: clamp(40px, 4.4vw, 58px); line-height: 1.08; }
-.hero h1 span:last-child { color: var(--burgundy); }
+.hero h1 span { display: inline; }
+.hero h1 span:nth-child(2) { color: var(--burgundy); }
 .hero-intro { max-width: 470px; margin-top: 22px; font-size: 18px; line-height: 1.7; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px 28px; margin-top: 28px; }
 .hero-figure a { display: block; overflow: hidden; border-radius: 3px; background: #101c34; }
@@ -154,6 +155,9 @@ div.person, .person summary { gap: 14px; min-height: 72px; padding-block: 8px; }
 .supporters { display: flex; flex-wrap: wrap; gap: 20px 48px; list-style: none; padding: 0; margin: 0; }
 .supporters li { display: flex; align-items: center; gap: 16px; }
 .supporter-logo { height: 32px; width: auto; }
+.supporter-link { display: inline-flex; align-items: center; min-height: 44px; border-radius: 3px; }
+.supporter-link:hover { opacity: .8; }
+.supporters strong { font-size: 17px; font-weight: 600; }
 .supporters .person-text span { font-size: 14px; color: var(--text-secondary); }
 .person-avatar { width: 64px; height: 64px; flex-shrink: 0; border-radius: 50%; object-fit: cover; object-position: center top; background: var(--surface); }
 /* Kurumun koyu tema logosu varsa o gösterilir ve açık zemin gerekmez. */

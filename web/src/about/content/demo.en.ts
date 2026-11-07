@@ -39,7 +39,7 @@ export const demo: DemoCopy = {
   },
   materials: {
     title: 'Presentation and video', presentation: 'Presentation', video: 'Introduction video',
-    view: 'Open the presentation', download: 'Download the presentation', videoLabel: 'BinBin Battery Intelligence introduction video',
+    view: 'Open the presentation', download: 'Download the presentation', videoLabel: 'İklimTekOst introduction video',
     captions: 'English captions', videoFallback: 'Open the video file',
   },
 }
