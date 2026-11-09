@@ -56,9 +56,9 @@
         <p><code data-path></code> adresi bu sitede yok. Adres yanlış yazılmış ya da sayfa taşınmış olabilir.</p>
       </div>
       <nav>
-        <a class="primary" href="/hakkimizda/" data-href="/hakkimizda/"><span data-lang="en">Project introduction</span><span data-lang="tr" hidden>Proje tanıtımı</span></a>
-        <a class="secondary" href="/" data-href="/"><span data-lang="en">Open the demo</span><span data-lang="tr" hidden>Demoyu aç</span></a>
-        <a class="secondary" href="/hakkimizda/iletisim/" data-href="/hakkimizda/iletisim/"><span data-lang="en">Collaboration</span><span data-lang="tr" hidden>İş birliği</span></a>
+        <a class="primary" href="/about/" data-href="/about/"><span data-lang="en">Project introduction</span><span data-lang="tr" hidden>Proje tanıtımı</span></a>
+        <a class="secondary" href="/demo/" data-href="/demo/"><span data-lang="en">Open the demo</span><span data-lang="tr" hidden>Demoyu aç</span></a>
+        <a class="secondary" href="/collaboration/" data-href="/collaboration/"><span data-lang="en">Collaboration</span><span data-lang="tr" hidden>İş birliği</span></a>
       </nav>
     </main>
     <script>
@@ -67,6 +67,7 @@
         function initial() {
           var query = new URLSearchParams(location.search).get('lang')
           if (query === 'en' || query === 'tr') return query
+          if (location.pathname.startsWith('/tr/')) return 'tr'
           try { var saved = localStorage.getItem(KEY); if (saved === 'en' || saved === 'tr') return saved } catch (e) { /* optional */ }
           return 'en'
         }
@@ -75,7 +76,7 @@
           document.title = lang === 'tr' ? 'Sayfa bulunamadı · Sixhandle' : 'Page not found · Sixhandle'
           document.querySelectorAll('[data-lang]').forEach(function (el) { el.hidden = el.getAttribute('data-lang') !== lang })
           document.querySelectorAll('[data-set]').forEach(function (el) { el.setAttribute('aria-pressed', String(el.getAttribute('data-set') === lang)) })
-          document.querySelectorAll('[data-href]').forEach(function (el) { el.setAttribute('href', el.getAttribute('data-href') + '?lang=' + lang) })
+          document.querySelectorAll('[data-href]').forEach(function (el) { el.setAttribute('href', (lang === 'tr' ? '/tr' : '') + el.getAttribute('data-href')) })
         }
         document.querySelectorAll('[data-path]').forEach(function (el) { el.textContent = location.pathname })
         document.querySelectorAll('[data-set]').forEach(function (el) {

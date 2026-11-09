@@ -1,6 +1,6 @@
 import { ArrowLeft } from 'lucide-react'
 import type { ComponentType } from 'react'
-import { useI18n, withLanguage } from '../lib/i18n.tsx'
+import { useI18n } from '../lib/i18n.tsx'
 import { About } from './About.tsx'
 import { TeamPage } from './TeamPage.tsx'
 import { InstitutionsPage } from './InstitutionsPage.tsx'
@@ -28,7 +28,7 @@ export function SiteApp() {
     <SiteLayout pageId={pageId}>
       {Page ? <Page /> : (
         <PageTemplate title={t.notFound.title} description={t.notFound.description}>
-          <a className="text-link" href={withLanguage(pagePath('home'), language)}><ArrowLeft size={16} aria-hidden="true" />{t.backHome}</a>
+          <a className="text-link" href={pagePath('home', language)}><ArrowLeft size={16} aria-hidden="true" />{t.backHome}</a>
         </PageTemplate>
       )}
     </SiteLayout>

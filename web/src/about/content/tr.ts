@@ -1,56 +1,5 @@
-import { TEAM_NAME } from '../../site.ts'
-import type { HomeCopy, OrganizationsCopy, SiteCopy, TeamCopy } from './types.ts'
-
-export const common: SiteCopy = {
-  homeLink: `${TEAM_NAME} ana sayfa`,
-  navigation: 'Ana gezinme',
-  language: 'Dil',
-  openMenu: 'Menüyü aç',
-  closeMenu: 'Menüyü kapat',
-  skip: 'İçeriğe geç',
-  openDemo: 'Demoyu aç',
-  newTab: 'yeni sekmede açılır',
-  demoNote: 'Demo sentetik veriyle çalışır. Gerçek filo verisi ve nihai arayüz değildir.',
-  universityLogo: 'OSTİM Teknik Üniversitesi',
-  cop31Logo: 'COP31 Türkiye, Antalya',
-  backHome: 'Ana sayfaya dön',
-  footer: { team: 'OSTİM Teknik Üniversitesi proje ekibi', updated: 'Son güncelleme', backTop: 'Başa dön' },
-  notFound: { title: 'Sayfa bulunamadı', description: 'Bu adres sitede yok.' },
-  pages: {
-    home: {
-      label: 'Ana sayfa', title: 'Proje tanıtımı',
-      description: 'Paylaşımlı mikromobilite bataryaları için sağlık takibi, bakım önceliği ve Dijital Batarya Pasaportu.',
-    },
-    institutions: {
-      label: 'Kurumlar', title: 'Kurumlar',
-      description: 'Proje OSTİM Teknik Üniversitesi bünyesinde yürütülür. Üniversite OSTİM Vakfı tarafından kurulmuştur.',
-    },
-    team: {
-      label: 'Ekip', title: 'Proje ekibi',
-      description: 'Bilgisayar ve elektrik-elektronik mühendisliği öğrencileri ile akademik koordinatör.',
-    },
-    project: {
-      label: 'Proje', title: 'Proje',
-      description: 'Sistemin çalışma biçimi, kullanılacak veriler ve pilot takvimi.',
-    },
-    demo: {
-      label: 'Demo', title: 'Demo ve sunum',
-      description: 'Sentetik veriyle çalışan demo ve kullanım adımları.',
-    },
-    carbon: {
-      label: 'Karbon', title: 'Karbon etkisi',
-      description: 'Beklenen etkiler ve hesaplama yöntemi. Ölçülmüş sonuç henüz yoktur.',
-    },
-    contact: {
-      label: 'İş birliği', title: 'İş birliği',
-      description: 'Projeyi destekleyen kuruluşlar ve iş birliği öneri formu.',
-    },
-    privacy: {
-      label: 'Aydınlatma metni', title: 'Kişisel verilerin korunması aydınlatma metni',
-      description: 'İş birliği önerisi formuyla gönderilen kişisel verilerin nasıl işlendiği.',
-    },
-  },
-}
+import type { HomeCopy, OrganizationsCopy, TeamCopy } from './types.ts'
+export { commonTr as common } from './common.ts'
 
 export const home: HomeCopy = {
   intro: 'Paylaşımlı mikromobilite bataryaları için sağlık takibi, bakım önceliği ve Dijital Batarya Pasaportu. Proje teklif ve pilot planlama aşamasındadır.',

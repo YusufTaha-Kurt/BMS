@@ -1,6 +1,6 @@
 import { Menu, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { useI18n, withLanguage } from '../../lib/i18n.tsx'
+import { useI18n } from '../../lib/i18n.tsx'
 import { CONTENT } from '../content/index.ts'
 import { pagePath, SITE_PAGES, type PageId } from '../routes.ts'
 import { DemoAccess } from './DemoAccess.tsx'
@@ -58,7 +58,7 @@ export function SiteHeader({ pageId }: { pageId: PageId | undefined }) {
     }}>
       <div className="page-width site-header-inner">
         <div className="site-header-top">
-          <a className="site-identity" href={withLanguage(pagePath('home'), language)} aria-label={t.homeLink}>
+          <a className="site-identity" href={pagePath('home', language)} aria-label={t.homeLink}>
             <img src={universityLogo} alt="" width="500" height="174" />
             <span className="site-brand" aria-hidden="true"><span className="site-brand-wordmark" /></span>
           </a>
@@ -72,7 +72,7 @@ export function SiteHeader({ pageId }: { pageId: PageId | undefined }) {
           <div id="site-menu-panel" className={`site-menu-panel${menuOpen ? ' is-open' : ''}`}>
             <nav id="site-navigation" className="site-navigation" aria-label={t.navigation}>
               {SITE_PAGES.filter((page) => !('hidden' in page)).map(({ id }) => (
-                <a key={id} href={withLanguage(pagePath(id), language)} aria-current={pageId === id ? 'page' : undefined} onClick={() => setMenuOpen(false)}>{t.pages[id].label}</a>
+                <a key={id} href={pagePath(id, language)} aria-current={pageId === id ? 'page' : undefined} onClick={() => setMenuOpen(false)}>{t.pages[id].label}</a>
               ))}
             </nav>
             <div className="site-menu-preferences" role="group" aria-labelledby="site-preferences-label">

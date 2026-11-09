@@ -4,19 +4,16 @@ import { CONTENT } from '../content/index.ts'
 import type { PageId } from '../routes.ts'
 import { SiteFooter } from './SiteFooter.tsx'
 import { SiteHeader } from './SiteHeader.tsx'
-import { PROJECT_NAME } from '../../site.ts'
+import { siteMetadata } from '../../lib/pageMetadata.ts'
+import { applyPageMetadata } from '../../lib/applyPageMetadata.ts'
 
 export function SiteLayout({ pageId, children }: { pageId: PageId | undefined; children: ReactNode }) {
   const { language } = useI18n()
   const t = CONTENT[language].common
-  const page = pageId ? t.pages[pageId] : t.notFound
 
   useEffect(() => {
-    document.title = `${page.title} · ${PROJECT_NAME}`
-    document.querySelector('meta[name="description"]')?.setAttribute('content', page.description)
-    document.querySelector('meta[property="og:title"]')?.setAttribute('content', document.title)
-    document.querySelector('meta[property="og:description"]')?.setAttribute('content', page.description)
-  }, [page])
+    applyPageMetadata(siteMetadata(pageId, language), language)
+  }, [pageId, language])
 
   useEffect(() => {
     const revealHash = () => {

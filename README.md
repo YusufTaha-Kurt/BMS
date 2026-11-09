@@ -6,15 +6,15 @@
 
 | | |
 |---|---|
-| Tanıtım sitesi (basılı QR hedefi) | https://binbin-battery-intelligence.vercel.app/hakkimizda/ |
-| Sentetik verili demo | https://binbin-battery-intelligence.vercel.app/ |
+| Tanıtım sitesi | https://binbin-battery-intelligence.vercel.app/about/ |
+| Sentetik verili demo | https://binbin-battery-intelligence.vercel.app/demo/ |
 | Kaynak | `web/` altında React, TypeScript, Vite. `main` dalı Vercel'e otomatik yayımlanır |
 | İletişim formu | `web/api/contact.ts` Vercel fonksiyonu, kayıtlar Supabase BMS-Web projesindeki `collaboration_proposals` tablosunda |
 | Açık işler | [YAYIN_KONTROL_LISTESI.md](YAYIN_KONTROL_LISTESI.md) |
 | Ayrıntılı geçmiş | [DURUM.md](DURUM.md), [WEB_SITESI_FAZ_PLANI.md](WEB_SITESI_FAZ_PLANI.md), `incelemeler/` |
 | Yeni oturum için kurallar | [CLAUDE.md](CLAUDE.md) |
 
-Sitede yedi tanıtım sayfası (ana sayfa, kurumlar, ekip, proje, demo, karbon, iş birliği), menüde yer almayan KVKK aydınlatma metni (`/hakkimizda/aydinlatma/`) ve iki dilli 404 sayfası var. Site TR ve EN, açık ve koyu temada çalışır. Ekip sayfasında beş öğrencinin ve akademik koordinatörün fotoğrafı ve açılan CV'si, kurumlar sayfasında yöneticilerin fotoğrafı ve resmî sayfa bağlantısı, iş birliği sayfasında destekleyenler (BinBin logosu) ve öneri formu bulunur.
+Sitede yedi tanıtım sayfası (ana sayfa, kurumlar, ekip, proje, demo, karbon, iş birliği), menüde yer almayan KVKK aydınlatma metni (`/privacy/`) ve iki dilli 404 sayfası var. Site TR ve EN, açık ve koyu temada çalışır. Ekip sayfasında beş öğrencinin ve akademik koordinatörün fotoğrafı ve açılan CV'si, kurumlar sayfasında yöneticilerin fotoğrafı ve resmî sayfa bağlantısı, iş birliği sayfasında destekleyenler (BinBin logosu) ve öneri formu bulunur.
 
 Bu README'nin aşağıdaki bölümleri geliştirme sırasında yazıldı ve zaman sırasıyla ilerler. Bir dosya veya alan adı eski bir bölümde geçip kodda yoksa güncel olan kod ve CLAUDE.md'dir.
 
@@ -48,11 +48,11 @@ npm run lint          # eslint
 
 Üst çubuktaki **Guided demo / Demo rehberi** düğmesi ziyaretçiye yönelik 8 adımlık deneyimi açar. Her adım ilgili senaryo, gün ve bataryayı kurar; neye bakılacağını ve neyin denenebileceğini açıklar (← → ile ilerler, Esc kapatır). SOH, SOC ve ΔV gibi kavramlar ayrıca açılır gösterge rehberinde açıklanır.
 
-Broşür ve posterdeki proje QR’ı `/hakkimizda/` tanıtım sayfasını açar. Ziyaretçi oradan **Demoyu aç** bağlantısıyla demoya geçer. Demo üst çubuğundaki Sixhandle logosu ve sayfa sonundaki **Proje ve ekip** bağlantısı tanıtıma döner. Pasaport sekmesindeki QR seçili bataryanın pasaport görünümünü açar.
+Broşür ve posterdeki proje QR’ı `/hakkimizda/` adresinden `/about/` tanıtım sayfasına yönlenir. Ziyaretçi oradan **Demoyu aç** bağlantısıyla demoya geçer. Demo üst çubuğundaki Sixhandle logosu ve sayfa sonundaki **Proje ve ekip** bağlantısı tanıtıma döner. Pasaport sekmesindeki QR seçili bataryanın pasaport görünümünü açar.
 
 Ekip isimleri (`PROJECT_TEAM`), akademik koordinatör (`ACADEMIC_COORDINATOR`), form ayarı (`CONTACT_FORM`) ve yayın adresi (`SITE_URL`) **`web/src/site.ts`** içindedir. Projenin ortak e-posta adresi yoktur. Tanıtımın metinleri `web/src/about/content/` altındadır. Tanıtım stilleri `web/src/about/site.css` ve `contact-form.css` dosyalarındadır. Demo panelinin teması ayrı tutulur.
 
-Ana sayfada kısa ekip özeti bulunur; tam profiller `/hakkimizda/ekip/` sayfasındadır. Sıra Gizem, Gamze, Erhan, Yusuf, Ahmed ve ardından akademik koordinatördür. Her isim kendi satırında genişleyen bir profil açar; pencere veya yeni sayfa açılmaz. `PROJECT_TEAM` ve `COORDINATOR_PROFILE` kayıtlarındaki `role`, `workPackage`, `contribution` ve `bio` alanları `en` / `tr` olarak doldurulabilir; `photo`, `photoCredit` ve `links` isteğe bağlıdır. Boş alanlar gösterilmez. Bilgisi olmayan kişi yalnız adıyla listelenir. Demo bağlantısı ilk ekrandadır; altı adımlı önerilen sistem akışı ana sayfada görünürdür.
+Ana sayfada kısa ekip özeti bulunur; tam profiller `/team/` sayfasındadır. Sıra Gizem, Gamze, Erhan, Yusuf, Ahmed ve ardından akademik koordinatördür. Her isim kendi satırında genişleyen bir profil açar; pencere veya yeni sayfa açılmaz. `PROJECT_TEAM` ve `COORDINATOR_PROFILE` kayıtlarındaki `role`, `workPackage`, `contribution` ve `bio` alanları `en` / `tr` olarak doldurulabilir; `photo`, `photoCredit` ve `links` isteğe bağlıdır. Boş alanlar gösterilmez. Bilgisi olmayan kişi yalnız adıyla listelenir. Demo bağlantısı ilk ekrandadır; altı adımlı önerilen sistem akışı ana sayfada görünürdür.
 
 Veri tamamen sentetiktir (sabit seed `20261023`); aynı seed aynı içeriği üretir (`manifest.json` içindeki `contentHash`). Eşikler `web/shared/config.ts` içinde tek yerde durur ve üretici sınırı değildir. Üretilen `web/public/data/` git'e alınmaz.
 
@@ -63,7 +63,7 @@ Projenin güncel adı **İklimTekOst**. Ad `web/src/site.ts` → `PROJECT_NAME` 
 ## Tema, aydınlatma metni ve form veri tabanı (4 Kasım 2026)
 
 - **Açık/koyu tema:** Tanıtım sitesi, demo ve 404 sayfası iki temayı destekler. İlk açılışta cihazın ayarı izlenir, üst bilgideki güneş/ay düğmesi tercihi tarayıcıda saklar ve bütün sayfalarda geçerli olur. Kod `web/src/lib/theme.ts`, düğme `web/src/components/ThemeToggle.tsx`. Renkler `web/src/about/site.css` ve `web/src/index.css` içinde `data-theme` değerine göre tanımlıdır. Grafik renkleri `web/src/lib/chartColors.ts` içindedir.
-- **Aydınlatma metni:** `/hakkimizda/aydinlatma/` (menüde yok, formdan bağlantılı). Metin `web/src/about/content/privacy.tr.ts` ve `privacy.en.ts`. KVKK 10. madde ve Aydınlatma Tebliği yapısına göre OSTİM Teknik Üniversitesi veri sorumlusu olarak yazıldı. Metin değişirse `web/api/contact.ts` → `PRIVACY_VERSION` güncellenir.
+- **Aydınlatma metni:** `/privacy/` (menüde yok, formdan bağlantılı). Metin `web/src/about/content/privacy.tr.ts` ve `privacy.en.ts`. KVKK 10. madde ve Aydınlatma Tebliği yapısına göre OSTİM Teknik Üniversitesi veri sorumlusu olarak yazıldı. Metin değişirse `web/api/contact.ts` → `PRIVACY_VERSION` güncellenir.
 - **Form veri tabanı:** Gönderimler Supabase'teki `collaboration_proposals` tablosuna yazılır. Tablo `supabase/migrations/20261104_collaboration_proposals.sql` ile oluşturulur. Anonim rol yalnız ekleme yapabilir. Vercel ortam değişkenleri `SUPABASE_URL` ve `SUPABASE_KEY` (yayımlanabilir anahtar). Bu iki değer girilip yeniden yayın yapılınca form kendiliğinden açılır. E-posta bildirimi isteğe bağlıdır (`CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `RESEND_API_KEY`).
 - Form iki onay ister. Aydınlatma metninin okunduğu ve yurt dışındaki sunucularda işleme için açık rıza. İkisinin zamanı ve metin sürümü kayıtla birlikte saklanır.
 
@@ -73,7 +73,7 @@ Bu bölüm güncel düzenleme noktalarıdır. Aşağıdaki faz bölümleri geli�
 
 - **Görünüm:** Tek stil dosyası `web/src/about/site.css`. Bütün iç sayfalar başlık, açıklama ve iki sütunlu bölümlerden oluşur. Boş alan, “—”, “Hazırlanıyor” kartı ve tekrar eden sentetik veri notu kaldırıldı. Sentetik veri notu yalnız demo düğmesinin yanında durur.
 - **Logolar:** `web/src/about/assets/logo-ostim-teknik.png` ve `logo-cop31.png`, COP31 broşür görselinden kırpıldı. Üniversite logosu üst bilgide ve Kurumlar sayfasında, COP31 logosu ana sayfada ve alt bilgide. Diğer kurum logoları `web/src/about/organizations.ts` → `ORGANIZATION_ASSETS` içine eklenir. Logo dosyası yoksa yer tutucu çizilmez.
-- **İletişim:** Proje e-postası olmayacak. İletişim `/hakkimizda/iletisim/` formuyla yapılır.
+- **İletişim:** Proje e-postası olmayacak. İletişim `/collaboration/` formuyla yapılır.
 - **Metinler:** Kullanıcıya görünen metinler kullanıcının üslup kılavuzuna göre yazıldı. Noktalı virgül ve iki nokta kullanılmaz. Cümleler tire ile bağlanmaz. Açıklama parantez içine sıkıştırılmaz. Türkçe yönergelerde “-iniz” emir kipi kullanılır. Kısa ve teknik yazılır. Aynı kurallar demo içindeki rehber, uyarı ve bakım önerisi metinlerine de uygulandı.
 - **Metin dosyaları:** `content/tr.ts` ve `en.ts` (ortak, ana sayfa, ekip, kurumlar, iş birliği, form), `content/technical.tr.ts` ve `technical.en.ts` (proje, karbon), `content/demo.tr.ts` ve `demo.en.ts`.
 - **Bakım önerileri:** Demo içindeki öneri cümleleri `web/shared/rules.ts` içindedir ve veri dosyalarına yazılır. Bu metinler değişince `DATA_VERSION` artırılır ve `npm run data` çalıştırılır. Şu anki sürüm 2.1.0.
@@ -81,23 +81,23 @@ Bu bölüm güncel düzenleme noktalarıdır. Aşağıdaki faz bölümleri geli�
 
 ## Web sitesi — Faz 1 (4 Kasım 2026)
 
-Tanıtım sitesi yedi doğrudan açılabilir HTML adresine sahiptir. Çalışan demo `/` adresindedir; basılı QR hedefi `/hakkimizda/` olarak kalır.
+Tanıtım sayfalarının İngilizce adresleri aşağıdadır. Türkçe karşılıkları `/tr/` önekiyle açılır. Çalışan demo `/demo/` adresindedir. Eski demo ve tanıtım adresleri dil ve görünüm parametrelerini koruyarak yönlenir.
 
 | Sayfa | Adres |
 |---|---|
-| Tanıtım ana sayfası | `/hakkimizda/` |
-| Kurumsal yapı ve yöneticiler | `/hakkimizda/kurumlar/` |
-| Proje ekibi | `/hakkimizda/ekip/` |
-| Proje detayları | `/hakkimizda/proje/` |
-| Demo ve sunum | `/hakkimizda/demo/` |
-| Karbon etkisi | `/hakkimizda/karbon/` |
-| İş birlikleri ve iletişim | `/hakkimizda/iletisim/` |
+| Tanıtım ana sayfası | `/about/` |
+| Kurumsal yapı ve yöneticiler | `/institutions/` |
+| Proje ekibi | `/team/` |
+| Proje detayları | `/project/` |
+| Demo ve sunum | `/demo-guide/` |
+| Karbon etkisi | `/carbon-impact/` |
+| İş birlikleri ve iletişim | `/collaboration/` |
 
 Faz 1 sonunda altı yeni sayfa iki dilli **Hazırlanıyor / In preparation** içeriği taşıyordu. Faz 2 ile ana sayfa ve ekip, Faz 3 ile kurumlar ve iş birlikleri/iletişim, Faz 4 ile proje ve karbon, Faz 5 ile demo/sunum taslakları hazırlandı. Sunum ve video dosyaları beklenir; gerçek form Faz 6 kapsamındadır. Tüm demo açılışları yeni sekmede, seçilen dille ve sentetik veri açıklamasıyla sunulur.
 
 ### Düzenleme noktaları
 
-- `web/src/about/routes.ts`: sayfa kimliği ve adresleri; Vite aynı listeyi HTML girişleri için kullanır. Yeni adres eklenirse `web/hakkimizda/<adres>/index.html` dosyası da eklenmelidir.
+- `web/src/about/routes.ts`: sayfa kimliği ve adresleri. `web/scripts/site-pages.ts` bu listeyi kullanarak iki dilde HTML girişlerini ve site haritasını üretir. Eski adreslerin Vercel yönlendirmeleri `web/vercel.json` içindedir.
 - `web/src/about/content/en.ts` ve `tr.ts`: `common` ortak menü, sayfa başlık/açıklamaları, altbilgi ve durum metinleri; `home` mevcut ana sayfa metinleri. Ortak metinler `SiteCopy` tipiyle iki dilde denetlenir. HTML dosyalarındaki İngilizce başlangıç metaverileri de içerikle uyumlu tutulmalıdır.
 - `web/src/about/components/SiteLayout.tsx`, `SiteHeader.tsx`, `SiteFooter.tsx`: ortak üstbilgi, menü, dil seçimi, metaveriler, içeriğe atlama ve altbilgi.
 - `web/src/about/components/PageTemplate.tsx`: sonraki fazların başlık, açıklama ve içerik bölümleri için ortak şablonu. `SiteApp.tsx` içindeki ilgili sayfanın hazırlık alanı, gerçek sayfa bileşeniyle değiştirilir; mevcut dil altyapısı ve şablon korunur.
@@ -139,7 +139,7 @@ Kontrol kaydı: [Faz 2 incelemesi](incelemeler/faz-2/INCELEME.md). GitHub'a gön
 
 ## Web sitesi — Faz 3: kurumlar ve iş birlikleri taslağı
 
-`/hakkimizda/kurumlar/` ve `/hakkimizda/iletisim/` artık hazırlık kartları yerine iki dilli taslak sayfalardır. Bilinen brief bilgileri kullanılır; teyit bekleyen alanlar “—” olarak kalır.
+`/institutions/` ve `/collaboration/` artık hazırlık kartları yerine iki dilli taslak sayfalardır. Bilinen brief bilgileri kullanılır; teyit bekleyen alanlar “—” olarak kalır.
 
 - `web/src/about/InstitutionsPage.tsx`: kurum tanıtımları, kurumsal ilişki ve yönetici kartları. Tanıtım metinleri ana sayfayla aynı içerik kaydından alınır; farklı sayfalarda çelişen özetler tutulmaz.
 - `web/src/about/CollaborationsPage.tsx`: BinBin ve Sustain Bridge bölümleri, kurumsal proje e-postası, `#collaboration-form` bölümü. Form hazır değildir; bu fazda herhangi bir başvuru veya veri toplanmaz.
@@ -189,7 +189,7 @@ Kontrol kaydı: [Faz 5 incelemesi](incelemeler/faz-5/INCELEME.md). GitHub'a gön
 
 ## Web sitesi — Faz 6: iletişim formu
 
-- `web/src/about/components/ContactForm.tsx`: `/hakkimizda/iletisim/#collaboration-form` formu; metinler `content/tr.ts` / `en.ts` → `collaborations.form`, stiller `contact-form.css`.
+- `web/src/about/components/ContactForm.tsx`: `/collaboration/#collaboration-form` formu; metinler `content/tr.ts` / `en.ts` → `collaborations.form`, stiller `contact-form.css`.
 - `web/api/contact.ts`: Vercel fonksiyonu (`/api/contact`) ve tarayıcıyla ortak `validateContact` kuralları. Resend HTTP API'siyle e-posta gönderir; ek paket yoktur.
 - Ortam değişkenleri (Vercel → Settings → Environment Variables): `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `RESEND_API_KEY`. Eksikse fonksiyon 503 döner.
 - `web/src/site.ts` → `CONTACT_FORM`: `enabled` ve dil bazında `privacyNoticeUrl`. İkisi de hazır olmadan form görünür ama kapalıdır. Açma adımları ve test gönderimi: [Faz 6 kaydı](incelemeler/faz-6/INCELEME.md).

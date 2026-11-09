@@ -1,56 +1,5 @@
-import { TEAM_NAME } from '../../site.ts'
-import type { HomeCopy, OrganizationsCopy, SiteCopy, TeamCopy } from './types.ts'
-
-export const common: SiteCopy = {
-  homeLink: `${TEAM_NAME} home`,
-  navigation: 'Main navigation',
-  language: 'Language',
-  openMenu: 'Open menu',
-  closeMenu: 'Close menu',
-  skip: 'Skip to content',
-  openDemo: 'Open the demo',
-  newTab: 'opens in a new tab',
-  demoNote: 'The demo runs on synthetic data. It is not real fleet data or the final interface.',
-  universityLogo: 'OSTİM Technical University',
-  cop31Logo: 'COP31 Türkiye, Antalya',
-  backHome: 'Back to the home page',
-  footer: { team: 'OSTİM Technical University project team', updated: 'Last updated', backTop: 'Back to top' },
-  notFound: { title: 'Page not found', description: 'This address does not exist on the site.' },
-  pages: {
-    home: {
-      label: 'Home', title: 'Project introduction',
-      description: 'Battery health tracking, maintenance priorities and a Digital Battery Passport for shared micromobility.',
-    },
-    institutions: {
-      label: 'Institutions', title: 'Institutions',
-      description: 'The project runs at OSTİM Technical University, which was founded by the OSTİM Foundation.',
-    },
-    team: {
-      label: 'Team', title: 'Project team',
-      description: 'Computer and electrical-electronics engineering students and the academic coordinator.',
-    },
-    project: {
-      label: 'Project', title: 'Project',
-      description: 'How the system works, which data it uses and the pilot timeline.',
-    },
-    demo: {
-      label: 'Demo', title: 'Demo and presentation',
-      description: 'A demo that runs on synthetic data, with steps for using it.',
-    },
-    carbon: {
-      label: 'Carbon', title: 'Carbon impact',
-      description: 'Expected effects and the calculation method. There are no measured results yet.',
-    },
-    contact: {
-      label: 'Collaboration', title: 'Collaboration',
-      description: 'Organisations supporting the project and the collaboration proposal form.',
-    },
-    privacy: {
-      label: 'Privacy notice', title: 'Personal data privacy notice',
-      description: 'How personal data sent through the collaboration proposal form is processed.',
-    },
-  },
-}
+import type { HomeCopy, OrganizationsCopy, TeamCopy } from './types.ts'
+export { commonEn as common } from './common.ts'
 
 export const home: HomeCopy = {
   intro: 'Battery health tracking, maintenance priorities and a Digital Battery Passport for shared micromobility. The project is at the proposal and pilot planning stage.',

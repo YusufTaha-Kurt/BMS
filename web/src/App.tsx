@@ -1,5 +1,5 @@
 import { ArrowLeft, Info, X } from 'lucide-react'
-import { useI18n, withLanguage } from './lib/i18n.tsx'
+import { useI18n } from './lib/i18n.tsx'
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import { DAYS, DEFAULT_VIEW, FLEET_SIZE, FOCUS_DAY, SCENARIOS, SHOWCASE_IDS, type ScenarioId } from '../shared/config.ts'
 import type { DetailFile, FleetDayFile, FleetRow, HistoryFile, Manifest } from '../shared/types.ts'
@@ -10,7 +10,9 @@ import { ErrorBox, Loading } from './components/StateBox.tsx'
 import { TopBar } from './components/TopBar.tsx'
 import { feedbackKey, useFeedback } from './lib/feedback.ts'
 import { dataUrl, pad2, useJson, type JsonState } from './lib/loadJson.ts'
-import { ABOUT_PATH, PROJECT_NAME } from './site.ts'
+import { pagePath } from './about/routes.ts'
+import { demoMetadata } from './lib/pageMetadata.ts'
+import { applyPageMetadata } from './lib/applyPageMetadata.ts'
 import { DEFAULT_DEMO_VIEW, readView, writeView } from './lib/viewUrl.ts'
 
 type St<T> = JsonState<T> & { reload: () => void }
@@ -152,9 +154,13 @@ export default function App() {
   }, [scenario, day, batteryId, tab])
 
   useEffect(() => {
-    document.title = `${batteryId} · ${PROJECT_NAME}`
-    document.querySelector('meta[name="description"]')?.setAttribute('content', l('Interactive battery health, maintenance priorities and Digital Battery Passport demo using synthetic data · OSTİM Technical University', 'Sentetik veriyle batarya sağlığı, bakım öncelikleri ve Dijital Batarya Pasaportu demosu · OSTİM Teknik Üniversitesi'))
-  }, [batteryId, l])
+    const metadata = demoMetadata(language)
+    const detail = mobileView === 'detail' || (isDesktop && tab === 'passport')
+    applyPageMetadata({
+      ...metadata,
+      title: detail ? `${batteryId} · ${metadata.title}` : metadata.title,
+    }, language)
+  }, [batteryId, isDesktop, language, mobileView, tab])
 
   if (manifest.status === 'error') {
     return (
@@ -234,7 +240,7 @@ export default function App() {
           {l('Synthetic data and illustrative thresholds. No live fleet performance claims. An OSTİM Technical University project.', 'Sentetik veri ve örnek eşikler kullanılır. Gerçek filo performansı gösterilmez. OSTİM Teknik Üniversitesi proje ekibi.')}
         </p>
         <a
-          href={withLanguage(`${import.meta.env.BASE_URL}${ABOUT_PATH}`, language)}
+          href={pagePath('home', language)}
           className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-accent underline-offset-4 hover:underline"
         >
           <ArrowLeft size={16} aria-hidden="true" />

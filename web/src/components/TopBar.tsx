@@ -1,8 +1,9 @@
 import { ChevronLeft, ChevronRight, Presentation, RotateCcw } from 'lucide-react'
 import { DAYS, SCENARIOS, type ScenarioId } from '../../shared/config.ts'
 import type { Priority, PriorityCounts } from '../../shared/types.ts'
-import { useI18n, withLanguage } from '../lib/i18n.tsx'
-import { ABOUT_PATH, PROJECT_NAME, TEAM_NAME } from '../site.ts'
+import { useI18n } from '../lib/i18n.tsx'
+import { PROJECT_NAME, TEAM_NAME } from '../site.ts'
+import { pagePath } from '../about/routes.ts'
 import { PRIORITY_STYLE } from '../lib/status.ts'
 import { PRIORITY_ICON } from './Badges.tsx'
 import { ThemeToggle } from './ThemeToggle.tsx'
@@ -24,7 +25,7 @@ export function TopBar({ scenario, onScenario, day, onDay, date, compare, onComp
       <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-3 px-4 pt-3 lg:px-6">
         <a
           className="inline-flex shrink-0 items-center"
-          href={withLanguage(`${import.meta.env.BASE_URL}${ABOUT_PATH}`, language)}
+          href={pagePath('home', language)}
           aria-label={`${TEAM_NAME} · ${l('Project and team', 'Proje ve ekip')}`}
         >
           <span className="demo-wordmark w-28 sm:w-[148px]" aria-hidden="true" />

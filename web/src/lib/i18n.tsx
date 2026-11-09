@@ -3,17 +3,14 @@ import { EVENT_DAY, SCENARIOS, type ScenarioId } from '../../shared/config.ts'
 import { PRIORITY_LABEL } from '../../shared/rules.ts'
 import type { Priority } from '../../shared/types.ts'
 import type { SiteLanguage } from '../site.ts'
+import { localizedPath, pathLanguage } from '../about/routes.ts'
 import { formatters } from './format.ts'
 import type { Level } from './status.ts'
 
 const LANGUAGE_KEY = 'battery-intelligence-language'
 export function initialLanguage(): SiteLanguage {
-  const query = new URLSearchParams(window.location.search).get('lang')
-  if (query === 'en' || query === 'tr') return query
-  try { const saved = localStorage.getItem(LANGUAGE_KEY); if (saved === 'en' || saved === 'tr') return saved } catch { /* Preference is optional. */ }
-  return 'en'
+  return pathLanguage(window.location.pathname)
 }
-export const withLanguage = (path: string, language: SiteLanguage) => `${path}${path.includes('?') ? '&' : '?'}lang=${language}`
 const EN_PRIORITIES: Record<Priority, string> = { critical: 'Technical review', data_review: 'Data review', attention: 'Monitor', normal: 'Normal' }
 const EN_LEVELS: Record<Level, string> = { critical: 'Critical threshold', warning: 'Warning', normal: 'Normal', nodata: 'No data' }
 const TR_LEVELS: Record<Level, string> = { critical: 'Kritik eşik', warning: 'Uyarı', normal: 'Normal', nodata: 'Veri yok' }
@@ -26,7 +23,8 @@ function useLanguageValue() {
   const setLanguage = useCallback((next: SiteLanguage) => {
     updateLanguage(next)
     const url = new URL(window.location.href)
-    url.searchParams.set('lang', next)
+    url.pathname = localizedPath(url.pathname, next)
+    url.searchParams.delete('lang')
     window.history.replaceState(window.history.state, '', url)
     try { localStorage.setItem(LANGUAGE_KEY, next) } catch { /* Works without storage. */ }
   }, [])

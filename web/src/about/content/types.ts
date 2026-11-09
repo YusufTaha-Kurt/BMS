@@ -1,26 +1,7 @@
-import type { PageId } from '../routes.ts'
 import type { ScreenshotId } from '../demoMedia.ts'
 import type { CvSectionId } from '../teamCv.ts'
 
 export interface TextBlock { title: string; text: string }
-
-export interface SiteCopy {
-  homeLink: string
-  navigation: string
-  language: string
-  openMenu: string
-  closeMenu: string
-  skip: string
-  openDemo: string
-  newTab: string
-  demoNote: string
-  universityLogo: string
-  cop31Logo: string
-  backHome: string
-  footer: { team: string; updated: string; backTop: string }
-  notFound: { title: string; description: string }
-  pages: Record<PageId, { label: string; title: string; description: string }>
-}
 
 export interface HomeCopy {
   intro: string

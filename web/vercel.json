@@ -1,0 +1,175 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/demo/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "destination": "/demo/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/demo/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/demo/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/:file(index\\.html)?",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/about/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/:file(index\\.html)?",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/kurumlar/:file(index\\.html)?",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/institutions/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/kurumlar/:file(index\\.html)?",
+      "destination": "/institutions/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/ekip/:file(index\\.html)?",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/team/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/ekip/:file(index\\.html)?",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/proje/:file(index\\.html)?",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/project/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/proje/:file(index\\.html)?",
+      "destination": "/project/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/demo/:file(index\\.html)?",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/demo-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/demo/:file(index\\.html)?",
+      "destination": "/demo-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/karbon/:file(index\\.html)?",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/carbon-impact/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/karbon/:file(index\\.html)?",
+      "destination": "/carbon-impact/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/iletisim/:file(index\\.html)?",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/collaboration/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/iletisim/:file(index\\.html)?",
+      "destination": "/collaboration/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/aydinlatma/:file(index\\.html)?",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/aydinlatma/:file(index\\.html)?",
+      "destination": "/privacy/",
+      "permanent": true
+    }
+  ]
+}

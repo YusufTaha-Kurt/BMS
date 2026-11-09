@@ -8,12 +8,7 @@ import gizemPhoto from './about/assets/people/gizem-genis.jpg'
 import gamzePhoto from './about/assets/people/gamze-genis.jpg'
 export type { SiteLanguage } from '../shared/types.ts'
 
-/** Yayındaki adres. Yerel çalıştırmada (localhost) QR yine bu adrese gider. */
-export const SITE_URL = 'https://binbin-battery-intelligence.vercel.app'
-
-export const ABOUT_PATH = 'hakkimizda/'
-export const TEAM_NAME = 'Sixhandle'
-export const PROJECT_NAME = 'AI-Driven Circular Battery Management System'
+export { PROJECT_NAME, SITE_URL, TEAM_NAME } from './siteIdentity.ts'
 
 /** Actual editorial update, not the visitor's clock or the build date. */
 export const SITE_CONTENT_UPDATED = '2026-11-09'
@@ -103,5 +98,5 @@ export const COORDINATOR_PROFILE: TeamMember = {
 export const CONTACT_FORM: { enabled: boolean; endpoint: string; privacyNoticeUrl: LocalizedText } = {
   enabled: true,
   endpoint: '/api/contact',
-  privacyNoticeUrl: { tr: '/hakkimizda/aydinlatma/?lang=tr', en: '/hakkimizda/aydinlatma/?lang=en' },
+  privacyNoticeUrl: { tr: '/tr/privacy/', en: '/privacy/' },
 }

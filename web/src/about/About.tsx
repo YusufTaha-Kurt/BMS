@@ -1,5 +1,5 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
-import { useI18n, withLanguage } from '../lib/i18n.tsx'
+import { useI18n } from '../lib/i18n.tsx'
 import { PROJECT_NAME } from '../site.ts'
 import { CONTENT } from './content/index.ts'
 import { Cop31Mark } from './components/Cop31Mark.tsx'
@@ -11,7 +11,7 @@ import { PASSPORT_SOURCE } from './sources.ts'
 export function About() {
   const { language } = useI18n()
   const { home: t, common, demo } = CONTENT[language]
-  const href = (id: Parameters<typeof pagePath>[0]) => withLanguage(pagePath(id), language)
+  const href = (id: Parameters<typeof pagePath>[0]) => pagePath(id, language)
 
   return (
     <>

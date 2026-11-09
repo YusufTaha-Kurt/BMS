@@ -1,5 +1,5 @@
 // Demo görünümünün adres çubuğundaki karşılığı: ?battery=…&scenario=…&day=…&tab=…
-// Varsayılan değerler adrese yazılmaz; böylece demo kökü (/) ve basılı QR adresi değişmez.
+// Varsayılan değerler adrese yazılmaz.
 import { DAYS, DEFAULT_VIEW, FOCUS_DAY, normalizeBatteryId, SCENARIOS, type ScenarioId } from './config.ts'
 
 export type PanelTab = 'history' | 'telemetry' | 'passport'
@@ -44,7 +44,7 @@ export function readView(search: string): ParsedView {
   }
 }
 
-/** Mevcut sorgu parametrelerini (ör. lang) koruyarak görünümü yazar; varsayılanları kaldırır. */
+/** Mevcut sorgu parametrelerini koruyarak görünümü yazar; varsayılanları kaldırır. */
 export function writeView(params: URLSearchParams, view: DemoView): URLSearchParams {
   const next = new URLSearchParams(params)
   for (const key of KEYS) next.delete(key)
