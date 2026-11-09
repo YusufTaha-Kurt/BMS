@@ -4,7 +4,7 @@ import { useI18n } from '../../lib/i18n.tsx'
 import { CONTENT } from '../content/index.ts'
 import { pagePath, SITE_PAGES, type PageId } from '../routes.ts'
 import { DemoAccess } from './DemoAccess.tsx'
-import universityLogo from '../assets/logo-ostim-teknik.png'
+import { OrganizationMark } from './OrganizationMark.tsx'
 import { ThemeToggle } from '../../components/ThemeToggle.tsx'
 
 export function SiteHeader({ pageId }: { pageId: PageId | undefined }) {
@@ -59,7 +59,7 @@ export function SiteHeader({ pageId }: { pageId: PageId | undefined }) {
       <div className="page-width site-header-inner">
         <div className="site-header-top">
           <a className="site-identity" href={pagePath('home', language)} aria-label={t.homeLink}>
-            <img className="university-logo" src={universityLogo} alt="" width="500" height="174" />
+            <OrganizationMark id="university" name="" className="" />
             <span className="site-brand" aria-hidden="true"><span className="site-brand-wordmark" /></span>
           </a>
           <div className="site-header-controls">
