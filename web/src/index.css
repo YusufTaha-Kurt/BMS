@@ -87,6 +87,13 @@ header label:has(input[type="checkbox"]) { min-height: 44px; }
 }
 .demo-segmented button { color: var(--color-mute); font-weight: 500; }
 .demo-segmented button[aria-pressed='true'] { background: var(--color-panel); color: var(--color-ink); font-weight: 600; }
+.demo-wordmark {
+  display: block;
+  aspect-ratio: 1387 / 317;
+  background-color: #f1f5ff;
+  mask: url('./about/assets/sixhandle-wordmark.svg') center / contain no-repeat;
+}
+:root[data-theme='light'] .demo-wordmark { background-color: #032a52; }
 .text-\[11px\] { font-size: 12px; }
 .chart-summary { line-height: 1.6; margin-bottom: 8px; }
 .demo-skip { position: fixed; top: 8px; left: 8px; z-index: 100; background: var(--color-accent); color: var(--color-bg); padding: 12px 18px; transform: translateY(-160%); }

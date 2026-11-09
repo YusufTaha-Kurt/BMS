@@ -131,10 +131,10 @@ function PassportLink({ url, batteryId }: { url: string; batteryId: string }) {
     <div className="mt-2.5 flex flex-wrap items-center gap-3 rounded-lg border border-line bg-card p-3 text-xs">
       <QrCode value={url} size={104} label={l(`QR code for the ${batteryId} passport view`, `${batteryId} pasaport görünümü QR kodu`)} className="shrink-0 p-1" />
       <div className="min-w-0 flex-1 basis-56">
-        <h4 className="mb-1 flex items-center gap-1.5 font-semibold"><Link2 aria-hidden className="size-3.5" />{l('Passport link', 'Pasaport bağlantısı')}</h4>
+        <h4 className="mb-1 flex items-center gap-1.5 font-semibold"><Link2 aria-hidden className="size-3.5" />{l('Open this battery’s passport', 'Bu bataryanın pasaportunu açın')}</h4>
         <p className="text-mute">{l(
-          'Opens this synthetic record with the same scenario and day. It is not a registered EU battery passport.',
-          'Bu sentetik kaydı aynı senaryo ve günle açar. Kayıtlı bir AB batarya pasaportu değildir.',
+          'Scan the QR code to open this synthetic record with the same scenario and day. It is not a registered EU battery passport.',
+          'Bu sentetik kaydı aynı senaryo ve günle açmak için QR kodunu okutunuz. Kayıtlı bir AB batarya pasaportu değildir.',
         )}</p>
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <a href={url} className="min-w-0 break-all font-medium text-accent underline-offset-2 hover:underline">{url.replace(/^https?:\/\//, '')}</a>

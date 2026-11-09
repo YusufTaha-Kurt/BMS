@@ -105,14 +105,3 @@ export const CONTACT_FORM: { enabled: boolean; endpoint: string; privacyNoticeUr
   endpoint: '/api/contact',
   privacyNoticeUrl: { tr: '/hakkimizda/aydinlatma/?lang=tr', en: '/hakkimizda/aydinlatma/?lang=en' },
 }
-
-/**
- * QR'ın göstereceği Hakkımızda adresi. Uygulama yayındaki bir alan adında açıldıysa o adres,
- * localhost / dosya üzerinden açıldıysa SITE_URL kullanılır; böylece stanttaki yerel kopya da doğru adresi verir.
- */
-export function aboutUrl(): string {
-  const { protocol, hostname, origin } = window.location
-  const local = protocol === 'file:' || hostname === 'localhost' || hostname === '127.0.0.1' || hostname.startsWith('192.168.')
-  const base = local ? SITE_URL : origin
-  return `${base.replace(/\/$/, '')}/${ABOUT_PATH}`
-}

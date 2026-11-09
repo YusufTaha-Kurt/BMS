@@ -1,4 +1,4 @@
-import { ArrowLeft, Info, QrCode as QrIcon, X } from 'lucide-react'
+import { ArrowLeft, Info, X } from 'lucide-react'
 import { useI18n, withLanguage } from './lib/i18n.tsx'
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import { DAYS, DEFAULT_VIEW, FLEET_SIZE, FOCUS_DAY, SCENARIOS, SHOWCASE_IDS, type ScenarioId } from '../shared/config.ts'
@@ -7,12 +7,10 @@ import { DetailPanel, type PanelTab } from './components/DetailPanel.tsx'
 import { FleetList, type Filter } from './components/FleetList.tsx'
 import { Guide, GUIDE_STEPS } from './components/Guide.tsx'
 import { ErrorBox, Loading } from './components/StateBox.tsx'
-import { QrCode } from './components/QrCode.tsx'
-import { QrDialog } from './components/QrDialog.tsx'
 import { TopBar } from './components/TopBar.tsx'
 import { feedbackKey, useFeedback } from './lib/feedback.ts'
 import { dataUrl, pad2, useJson, type JsonState } from './lib/loadJson.ts'
-import { aboutUrl, PROJECT_NAME } from './site.ts'
+import { ABOUT_PATH, PROJECT_NAME } from './site.ts'
 import { DEFAULT_DEMO_VIEW, readView, writeView } from './lib/viewUrl.ts'
 
 type St<T> = JsonState<T> & { reload: () => void }
@@ -42,7 +40,6 @@ export default function App() {
   const [compareOn, setCompareOn] = useState(() => SCENARIOS.find((s) => s.id === initial.view.scenario)?.targetId != null)
   const [guideStep, setGuideStep] = useState<number | null>(null)
   const [tab, setTab] = useState<PanelTab>(initial.view.tab)
-  const [qrOpen, setQrOpen] = useState(false)
   const feedback = useFeedback()
   const viewFrame = useRef<number | null>(null)
   useEffect(() => () => { if (viewFrame.current !== null) cancelAnimationFrame(viewFrame.current) }, [])
@@ -237,18 +234,13 @@ export default function App() {
           {l('Synthetic data and illustrative thresholds. No live fleet performance claims. An OSTİM Technical University project.', 'Sentetik veri ve örnek eşikler kullanılır. Gerçek filo performansı gösterilmez. OSTİM Teknik Üniversitesi proje ekibi.')}
         </p>
         <a
-          href={withLanguage(`${import.meta.env.BASE_URL}hakkimizda/`, language)}
-          className="flex items-center gap-3 rounded-xl border border-line bg-panel p-2.5 pr-4 hover:border-accent"
+          href={withLanguage(`${import.meta.env.BASE_URL}${ABOUT_PATH}`, language)}
+          className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-accent underline-offset-4 hover:underline"
         >
-          <QrCode value={aboutUrl()} size={72} label={l('Project page QR code', 'Proje sayfası QR kodu')} />
-          <span>
-            <span className="block text-sm font-bold">{l('Project and team', 'Proje ve ekip')}</span>
-            <span className="block text-xs text-mute">{l('Meet the people behind the project', 'Projenin arkasındaki ekiple tanışın')}</span>
-          </span>
+          <ArrowLeft size={16} aria-hidden="true" />
+          {l('Project and team', 'Proje ve ekip')}
         </a>
-        <button type="button" onClick={() => setQrOpen(true)} className="inline-flex items-center gap-2 rounded-md border border-line px-3 py-2 text-xs font-semibold hover:border-accent"><QrIcon size={16} aria-hidden />{l('Share project QR', 'Proje QR’ını paylaş')}</button>
       </footer>
-      {qrOpen && <QrDialog onClose={() => setQrOpen(false)} />}
     </div>
   )
 }

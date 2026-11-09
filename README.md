@@ -48,7 +48,7 @@ npm run lint          # eslint
 
 Üst çubuktaki **Guided demo / Demo rehberi** düğmesi ziyaretçiye yönelik 8 adımlık deneyimi açar. Her adım ilgili senaryo, gün ve bataryayı kurar; neye bakılacağını ve neyin denenebileceğini açıklar (← → ile ilerler, Esc kapatır). SOH, SOC ve ΔV gibi kavramlar ayrıca açılır gösterge rehberinde açıklanır.
 
-**Stant / QR:** Üst çubuktaki **Project & team / Proje ve ekip** bağlantısı doğrudan tanıtım sayfasını açar. Büyük QR, alt kısımdaki ayrı **Share project QR / Proje QR’ını paylaş** düğmesindedir; küçük QR da sayfanın altında durur. QR, ayrı derlenen `/hakkimizda/` tanıtım sayfasını açar. Broşürle aynı petrol yeşili/bordo/lime kimliğini kullanan sayfa İngilizce açılır; üstteki EN/TR seçimiyle Türkçeye geçilir. Akış: broşür/poster → QR → proje ve ekip tanıtımı → demo. Adres korunduğu için basılı QR değişmez. Uygulama localhost'tan açılsa bile QR yayındaki adrese gider.
+Broşür ve posterdeki proje QR’ı `/hakkimizda/` tanıtım sayfasını açar. Ziyaretçi oradan **Demoyu aç** bağlantısıyla demoya geçer. Demo üst çubuğundaki Sixhandle logosu ve sayfa sonundaki **Proje ve ekip** bağlantısı tanıtıma döner. Pasaport sekmesindeki QR seçili bataryanın pasaport görünümünü açar.
 
 Ekip isimleri (`PROJECT_TEAM`), akademik koordinatör (`ACADEMIC_COORDINATOR`), form ayarı (`CONTACT_FORM`) ve yayın adresi (`SITE_URL`) **`web/src/site.ts`** içindedir. Projenin ortak e-posta adresi yoktur. Tanıtımın metinleri `web/src/about/content/` altındadır. Tanıtım stilleri `web/src/about/site.css` ve `contact-form.css` dosyalarındadır. Demo panelinin teması ayrı tutulur.
 
