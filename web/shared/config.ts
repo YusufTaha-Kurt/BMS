@@ -71,7 +71,7 @@ const FLEET_DAY_EXTRA: ScenarioEvent[] = [
 ]
 
 export const SCENARIOS: readonly ScenarioDef[] = [
-  { id: 'baseline', label: 'Normal filo', description: 'Olay eklenmemiş filo; doğal sapmalar kurallardan gelir', targetId: null, events: [] },
+  { id: 'baseline', label: 'Referans filo', description: 'Bu senaryoya ek olay tanımlanmaz. Demo eşikleri, ölçümlerdeki doğal sapmalara uygulanır.', targetId: null, events: [] },
   ...SINGLE.map((s) => ({
     id: s.kind,
     label: s.label,

@@ -7,7 +7,7 @@ export const privacy: PrivacyCopy = {
     {
       title: 'Veri sorumlusu',
       paragraphs: [
-        'Veri sorumlusu OSTİM Teknik Üniversitesi’dir. Veriler, üniversite bünyesinde yürütülen AI-Driven Circular Battery Management System projesinin ekibi tarafından işlenir. Üniversitenin adres ve iletişim bilgileri resmî internet sitesinde yer alır.',
+        'Veri sorumlusu OSTİM Teknik Üniversitesidir. Veriler, üniversite bünyesinde yürütülen AI-Driven Circular Battery Management System projesinin ekibi tarafından işlenir. Üniversitenin adres ve iletişim bilgileri resmî internet sitesinde yer alır.',
       ],
     },
     {
@@ -42,7 +42,7 @@ export const privacy: PrivacyCopy = {
       title: 'Aktarım',
       paragraphs: [
         'Kişisel veriler satılmaz ve pazarlama amacıyla paylaşılmaz.',
-        'Form gönderimi, sitenin barındırma hizmetini veren Vercel Inc. altyapısında Amerika Birleşik Devletleri’ndeki sunucularda işlenir. Gönderilen bilgiler, veri tabanı hizmetini veren Supabase Inc. altyapısında Almanya’nın Frankfurt bölgesindeki sunucularda saklanır. Bu nedenle veriler yurt dışına aktarılır. Aktarım, Kanun’un 9. maddesi kapsamında formdaki açık rıza onayınıza dayanır.',
+        'Form gönderimi, sitenin barındırma hizmetini veren Vercel Inc. altyapısında Amerika Birleşik Devletleri’ndeki sunucularda işlenir. Gönderilen bilgiler, veri tabanı hizmetini veren Supabase Inc. altyapısında Almanya’nın Frankfurt bölgesindeki sunucularda saklanır. Bu nedenle veriler yurt dışına aktarılır. Aktarım, Kanun’un 9. maddesi kapsamında formda verdiğiniz açık rızaya dayanır.',
         'Kanunen yetkili kamu kurum ve kuruluşlarına yalnız yasal zorunluluk hâlinde aktarım yapılır.',
       ],
     },
@@ -70,8 +70,8 @@ export const privacy: PrivacyCopy = {
     {
       title: 'Başvuru',
       paragraphs: [
-        'Başvurular, Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ’e uygun olarak yazılı şekilde OSTİM Teknik Üniversitesi’ne iletilir. Başvuruda ad soyad, imza, T.C. kimlik numarası, yabancılar için uyruk ve kimlik numarası, tebligata esas adres, varsa e-posta ve telefon ile talep konusu yer alır.',
-        'Başvurular en geç otuz gün içinde ücretsiz olarak sonuçlandırılır. İşlem ayrıca bir maliyet gerektirirse Kurul’un belirlediği tarifedeki ücret alınabilir.',
+        'Başvurular, Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ’e uygun olarak yazılı şekilde OSTİM Teknik Üniversitesine iletilir. Başvuruda ad ve soyad, imza, tebligata esas adres, varsa e-posta adresi ve telefon numarası ile talep konusu yer alır. Türkiye Cumhuriyeti vatandaşları T.C. kimlik numarasını belirtir. Yabancı başvuru sahipleri uyruklarını ve pasaport numaralarını veya varsa kimlik numaralarını belirtir.',
+        'Üniversite başvurulara en geç 30 gün içinde ücretsiz yanıt verir. İşlem ek maliyet gerektirirse Kurulun belirlediği tarifedeki ücret alınabilir.',
       ],
     },
   ],

@@ -28,10 +28,10 @@ export const TEAM_CV: Record<string, MemberCv> = {
       {
         id: 'education',
         items: [
-          { title: t('Gazi Üniversitesi', 'Gazi University'), detail: t('Elektrik-Elektronik Mühendisliği doktora programı', 'PhD in Electrical-Electronics Engineering'), date: t('2026’dan bu yana', 'Since 2026') },
-          { title: t('Ankara Yıldırım Beyazıt Üniversitesi', 'Ankara Yıldırım Beyazıt University'), detail: t('Elektrik-Elektronik Mühendisliği yüksek lisans', 'M.Sc. in Electrical-Electronics Engineering'), date: t('2023 ile 2026', '2023 to 2026') },
-          { title: t('TED Üniversitesi', 'TED University'), detail: t('Elektrik-Elektronik Mühendisliği lisans', 'B.Sc. in Electrical-Electronics Engineering'), date: t('2017 ile 2022', '2017 to 2022') },
-          { title: t('TED Üniversitesi', 'TED University'), detail: t('İşletme ek anadal', 'Minor in Business Administration'), date: t('2018 ile 2021', '2018 to 2021') },
+          { title: t('Gazi Üniversitesi', 'Gazi University'), detail: t('Elektrik-Elektronik Mühendisliği doktora programı', 'PhD in Electrical and Electronics Engineering'), date: t('2026’dan bu yana', 'Since 2026') },
+          { title: t('Ankara Yıldırım Beyazıt Üniversitesi', 'Ankara Yıldırım Beyazıt University'), detail: t('Elektrik-Elektronik Mühendisliği yüksek lisansı', 'M.Sc. in Electrical and Electronics Engineering'), date: t('2023 ile 2026', '2023 to 2026') },
+          { title: t('TED Üniversitesi', 'TED University'), detail: t('Elektrik-Elektronik Mühendisliği lisansı', 'B.Sc. in Electrical and Electronics Engineering'), date: t('2017 ile 2022', '2017 to 2022') },
+          { title: t('TED Üniversitesi', 'TED University'), detail: t('İşletme eğitimi', 'Business Administration studies'), date: t('2018 ile 2021', '2018 to 2021') },
         ],
       },
       {
@@ -56,7 +56,7 @@ export const TEAM_CV: Record<string, MemberCv> = {
             title: t('OSTİM Teknik Üniversitesi, Bilgisayar Mühendisliği Bölümü', 'OSTİM Technical University, Department of Computer Engineering'),
             detail: t('Araştırma görevlisi, tam zamanlı', 'Research assistant, full time'), date: t('Kasım 2023’ten bu yana', 'Since November 2023'),
             points: [
-              t('Bilgisayar, Elektrik-Elektronik ve Yazılım Mühendisliği öğrencilerine C, C++ ve C# programlama derslerini teorik ve laboratuvar olarak veriyor.', 'Teaches C, C++ and C# programming, both lectures and labs, to computer, electrical-electronics and software engineering students.'),
+              t('Bilgisayar, Elektrik-Elektronik ve Yazılım Mühendisliği öğrencilerine C, C++ ve C# programlama dersleri ve laboratuvar uygulamaları veriyor.', 'Teaches C, C++ and C# through lectures and labs for students in computer engineering, electrical and electronics engineering, and software engineering.'),
               t('Mühendislik öğrencilerinin mekanik ve elektrik ağırlıklı fizik laboratuvarlarını yürütüyor.', 'Runs mechanics and electricity physics labs for engineering students.'),
               t('Bölümün müfredat tasarımı ve akreditasyon süreçlerini planlıyor ve yürütüyor.', 'Plans and runs curriculum design and accreditation for the department.'),
               t('Yan dal, çift anadal, yatay ve dikey geçiş başvurularını ve Erasmus ders eşleştirme ile muafiyet işlemlerini yürütüyor.', 'Handles minor, double major and transfer applications and Erasmus course matching and exemptions.'),
@@ -93,8 +93,8 @@ export const TEAM_CV: Record<string, MemberCv> = {
         id: 'projects',
         items: [
           {
-            title: t('COP31 Türkiye üniversite proje bildirimi, AI-Driven Circular Battery Management System for Sustainable Electric Micromobility', 'COP31 Türkiye university project, AI-Driven Circular Battery Management System for Sustainable Electric Micromobility'),
-            detail: t('Proje sorumlusu. OSTİM Teknik Üniversitesi tarafından YÖK’e bildirilen araştırma, teknoloji geliştirme ve girişimcilik projesi.', 'Project lead. A research, technology development and entrepreneurship project reported to the Council of Higher Education by OSTİM Technical University.'),
+            title: t('AI-Driven Circular Battery Management System for Sustainable Electric Micromobility', 'AI-Driven Circular Battery Management System for Sustainable Electric Micromobility'),
+            detail: t('Proje sorumlusu. OSTİM Teknik Üniversitesinin duyurusuna göre Yükseköğretim Kurulu projeyi COP31 Türkiye kapsamında kabul etti.', 'Project lead. OSTİM Technical University announced that the Council of Higher Education accepted the project as part of COP31 Türkiye.'),
             date: t('2026', '2026'),
             points: [
               t('Yapay zekâ tabanlı SOH, kalan ömür, batarya bozunması ve arıza tahmini yaklaşımları üzerinde çalışıyor.', 'Works on AI-based SOH, remaining useful life, degradation and fault prediction approaches.'),
@@ -156,17 +156,17 @@ export const TEAM_CV: Record<string, MemberCv> = {
   },
 
   gizem: {
-    headline: t('Elektrik-Elektronik ve Bilgisayar Mühendisliği öğrencisi', 'Electrical-Electronics and Computer Engineering student'),
+    headline: t('Elektrik-Elektronik Mühendisliği ve Bilgisayar Mühendisliği öğrencisi', 'Student in Electrical and Electronics Engineering and Computer Engineering'),
     sections: [
       {
         id: 'education',
         items: [
           {
             title: t('OSTİM Teknik Üniversitesi', 'OSTİM Technical University'),
-            detail: t('Elektrik-Elektronik Mühendisliği, 3. sınıf, ve Bilgisayar Mühendisliği çift anadal', 'Electrical-Electronics Engineering, third year, with a double major in Computer Engineering'),
+            detail: t('Elektrik-Elektronik Mühendisliği 3. sınıf öğrencisi. Bilgisayar Mühendisliğinde çift ana dal yapıyor.', 'Third-year student in Electrical and Electronics Engineering with a double major in Computer Engineering'),
             date: t('2024 ile 2028', '2024 to 2028'),
             points: [
-              t('Elektrik-Elektronik Mühendisliği not ortalaması 3,83 / 4,00', 'Electrical-Electronics Engineering GPA 3.83 / 4.00'),
+              t('Elektrik-Elektronik Mühendisliği not ortalaması 3,83 / 4,00', 'Electrical and Electronics Engineering GPA 3.83 / 4.00'),
               t('Bilgisayar Mühendisliği not ortalaması 3,57 / 4,00', 'Computer Engineering GPA 3.57 / 4.00'),
             ],
           },
@@ -178,7 +178,7 @@ export const TEAM_CV: Record<string, MemberCv> = {
         items: [
           {
             title: t('COP31 projesi, AI-Driven Circular Battery Management System for Sustainable Electric Micromobility', 'COP31 project, AI-Driven Circular Battery Management System for Sustainable Electric Micromobility'),
-            points: [t('Araştırma, raporlama, makine öğrenmesi ve batarya zekâsı alanlarında görev aldı. Proje YÖK tarafından kabul edildi.', 'Worked on research, reporting, machine learning and battery intelligence. The project was accepted by the Council of Higher Education (YÖK).')],
+            points: [t('Batarya yönetimi projesinde araştırma, raporlama ve makine öğrenmesi çalışmalarına katkı verdi.', 'Contributed to research, reporting and machine learning for the battery management project.')],
           },
         ],
       },
@@ -257,13 +257,13 @@ export const TEAM_CV: Record<string, MemberCv> = {
   },
 
   gamze: {
-    headline: t('Elektrik-Elektronik ve Yapay Zekâ Mühendisliği öğrencisi', 'Electrical-Electronics and AI Engineering student'),
+    headline: t('Elektrik-Elektronik Mühendisliği ve Yapay Zekâ Mühendisliği öğrencisi', 'Student in Electrical and Electronics Engineering and Artificial Intelligence Engineering'),
     sections: [
       {
         id: 'education',
         items: [
-          { title: t('OSTİM Teknik Üniversitesi', 'OSTİM Technical University'), detail: t('Elektrik-Elektronik Mühendisliği lisans, 3. sınıf, not ortalaması 3,83 / 4,00', 'B.Sc. in Electrical-Electronics Engineering, third year, GPA 3.83 / 4.00'), date: t('2024 ile 2028', '2024 to 2028') },
-          { title: t('OSTİM Teknik Üniversitesi', 'OSTİM Technical University'), detail: t('Yapay Zekâ Mühendisliği çift anadal, not ortalaması 3,61 / 4,00', 'Double major in Artificial Intelligence Engineering, GPA 3.61 / 4.00'), date: t('2024 ile 2028', '2024 to 2028') },
+          { title: t('OSTİM Teknik Üniversitesi', 'OSTİM Technical University'), detail: t('Elektrik-Elektronik Mühendisliği lisans, 3. sınıf, not ortalaması 3,83 / 4,00', 'B.Sc. in Electrical and Electronics Engineering, third year, GPA 3.83 / 4.00'), date: t('2024 ile 2028', '2024 to 2028') },
+          { title: t('OSTİM Teknik Üniversitesi', 'OSTİM Technical University'), detail: t('Yapay Zekâ Mühendisliğinde çift ana dal, not ortalaması 3,61 / 4,00', 'Double major in Artificial Intelligence Engineering, GPA 3.61 / 4.00'), date: t('2024 ile 2028', '2024 to 2028') },
           { title: t('Tekirdağ Anadolu Lisesi', 'Tekirdağ Anatolian High School'), date: t('2019 ile 2022', '2019 to 2022') },
         ],
       },

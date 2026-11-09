@@ -2,14 +2,14 @@ import type { HomeCopy, OrganizationsCopy, TeamCopy } from './types.ts'
 export { commonTr as common } from './common.ts'
 
 export const home: HomeCopy = {
-  intro: 'Paylaşımlı mikromobilite bataryaları için sağlık takibi, bakım önceliği ve Dijital Batarya Pasaportu. Proje teklif ve pilot planlama aşamasındadır.',
+  intro: 'Proje, paylaşımlı mikromobilite filolarında batarya sağlığını izlemeyi, bakım önceliği belirlemeyi ve Dijital Batarya Pasaportu için kayıt oluşturmayı amaçlıyor. Proje teklif aşamasında. Pilot çalışma planlanıyor.',
   projectLink: 'Projeyi incele',
   heroAlt: 'Sentetik DEMO-001 bataryası. Sıcaklık sapması gerekçesi, teknik inceleme önerisi ve olaysız durumla karşılaştırılan göstergeler.',
   heroCaption: 'Demo ekranı, DEMO-001, 14. gün. Veriler sentetiktir.',
   need: {
     title: 'Neden gerekli',
     paragraphs: [
-      'Paylaşımlı araçlarda bataryalar araçlar arasında yer değiştirir. Bakım ekibinin doğru karar verebilmesi için sağlık, onarım ve değişim kayıtlarının bataryanın kendi kimliğinde tutulması gerekir.',
+      'Paylaşımlı filolarda bataryalar farklı araçlarda kullanılabilir. Bakım ekibinin doğru karar verebilmesi için sağlık, onarım ve değişim kayıtlarının batarya kimliğiyle ilişkilendirilmesi gerekir.',
       'AB’de hafif ulaşım aracı bataryaları için Batarya Pasaportu yükümlülüğü 18 Şubat 2027’de başlar. Bu kayıtlar söz konusu yükümlülüğe hazırlığı da destekler.',
     ],
     source: 'Avrupa Komisyonu duyurusu',
@@ -24,7 +24,7 @@ export const home: HomeCopy = {
       { title: 'Bakım önceliği', text: 'Teknik inceleme sırası ve gerekçesi.' },
       { title: 'Dijital Batarya Pasaportu', text: 'Doğrulanmış sağlık ve yaşam döngüsü kayıtları.' },
     ],
-    principle: 'Veriler yalnız okunur. BMS koruma işlevlerine müdahale edilmez. Bakım kararını teknik personel verir.',
+    principle: 'Sistemin batarya verilerine yalnızca okuma erişimi vardır. BMS koruma işlevlerine müdahale edilmez. Bakım kararını teknik personel verir.',
     link: 'Proje ayrıntıları',
   },
   people: {
@@ -40,7 +40,7 @@ export const home: HomeCopy = {
 }
 
 export const team: TeamCopy = {
-  members: 'Öğrenci ekip', coordinator: 'Akademik koordinatör',
+  members: 'Öğrenci ekibi', coordinator: 'Akademik koordinatör',
   fields: { role: 'Rol', workPackage: 'Çalışma paketi', contribution: 'Katkı', bio: 'Hakkında', links: 'Bağlantılar' },
   sections: { education: 'Eğitim', publications: 'Yayınlar', experience: 'Deneyim', projects: 'Projeler', certificates: 'Sertifikalar ve eğitimler', skills: 'Yetenekler', languages: 'Diller', seminars: 'Etkinlikler ve seminerler' },
 }
@@ -49,11 +49,11 @@ export const organizations: OrganizationsCopy = {
   officialWebsite: 'Resmî site',
   institutions: {
     items: [
-      { id: 'university', name: 'OSTİM Teknik Üniversitesi', text: 'OSTİM Vakfı tarafından kurulmuştur. Eğitim ve araştırmayı sanayi ekosistemiyle birlikte yürütür.' },
+      { id: 'university', name: 'OSTİM Teknik Üniversitesi', text: 'OSTİM Vakfı tarafından kurulan üniversite, eğitim ve araştırma çalışmalarını sanayi kuruluşlarıyla iş birliği içinde yürütür.' },
       { id: 'foundation', name: 'OSTİM Vakfı', text: 'Sanayinin gelişimi için eğitim, araştırma, teknoloji ve girişimcilik çalışmalarını bir araya getirir.' },
     ],
-    relationshipTitle: 'Kurumların ilişkisi',
-    relationshipText: 'OSTİM Vakfı, eğitim ve araştırma çalışmalarını kurumsal bir yapıda sürdürmek için OSTİM Teknik Üniversitesi’ni kurmuştur. Proje, üniversitenin öğrenci ekibi tarafından akademik koordinatörle birlikte hazırlanır.',
+    relationshipTitle: 'Vakıf ve üniversite',
+    relationshipText: 'OSTİM Vakfı, eğitim ve araştırmayı desteklemek için OSTİM Teknik Üniversitesini kurmuştur. Üniversitenin öğrenci ekibi projeyi akademik koordinatörle birlikte geliştirir.',
     relationshipSource: 'OSTİM Vakfı hakkında',
     managersTitle: 'Yöneticiler',
     managersNote: 'Unvanı resmî kaynakta bulunamayan kişinin bilgisi kurum teyidinden sonra eklenecektir.',
@@ -64,7 +64,7 @@ export const organizations: OrganizationsCopy = {
     approvedScope: 'Onaylı kapsam',
     contribution: 'Projeye katkı',
     formTitle: 'İş birliği önerisi',
-    formText: 'Öneriler proje ekibine iletilir. Yanıt formda yazılan e-posta adresine gönderilir.',
+    formText: 'Proje ekibi önerileri inceler ve belirttiğiniz e-posta adresine yanıt verir.',
     form: {
       intro: 'İsteğe bağlı alanlar belirtilmiştir. Diğer alanlar zorunludur.',
       closed: 'Form şu anda başvuru almıyor.',
@@ -73,7 +73,7 @@ export const organizations: OrganizationsCopy = {
       hints: {
         email: 'Yanıt bu adrese gönderilir.',
         phone: 'Ülke koduyla yazılabilir, ör. +90 312 000 00 00',
-        message: 'İş birliği fikri, kurumunuzun olası katkısı ve beklentiniz. En az 20 karakter.',
+        message: 'İş birliği fikrinizi, kurumunuzun nasıl katkı sağlayabileceğini ve beklentinizi yazınız. En az 20 karakter yazınız.',
       },
       consentBefore: '',
       consentLink: 'Aydınlatma metnini',
@@ -101,7 +101,7 @@ export const organizations: OrganizationsCopy = {
         title: 'Öneri gönderilemedi',
         not_configured: 'Form şu anda başvuru almıyor.',
         rate_limited: 'Kısa sürede çok fazla gönderim yapıldı. Bir süre sonra tekrar deneyiniz.',
-        delivery_failed: 'Öneri iletilemedi. Yazılanlar korunur, tekrar deneyiniz.',
+        delivery_failed: 'Öneri metniniz formda duruyor. Yeniden deneyiniz.',
         network: 'Sunucuya bağlanılamadı. Bağlantıyı kontrol edip tekrar deneyiniz.',
         generic: 'Beklenmeyen bir hata oluştu. Tekrar deneyiniz.',
       },

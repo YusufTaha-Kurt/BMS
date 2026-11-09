@@ -6,7 +6,7 @@ export const project: ProjectCopy = {
       'Paylaşımlı araçlarda bir batarya farklı araçlarda kullanılabilir. Proje, her bataryanın kullanım, bakım ve sağlık geçmişini tek kayıtta toplar.',
       'Bakım ekibi hangi bataryanın önce incelenmesi gerektiğini bu geçmişe göre görür. Doğrulanmış kayıtlar ikinci kullanım ve geri dönüşüm değerlendirmesinde de kullanılır.',
     ],
-    stage: 'Proje teklif ve pilot planlama aşamasındadır. İlk veri incelemesi filo operatörünün teknik bilgi formu ve veri paylaşımıyla başlar. Mevcut demo sentetik veriyle çalışır.',
+    stage: 'Proje teklif aşamasında. Pilot çalışma planlanıyor. İlk inceleme, filo operatörü teknik bilgi formunu doldurup verileri paylaştığında başlar. Demo sentetik veriyle çalışır.',
   },
   goals: {
     title: 'Amaç',
@@ -21,7 +21,7 @@ export const project: ProjectCopy = {
   flow: {
     title: 'Sistem akışı',
     principles: [
-      'Veriler yalnız okunur.',
+      'Sistemin batarya verilerine yalnızca okuma erişimi vardır.',
       'BMS koruma işlevlerine müdahale edilmez.',
       'Bakım kararını yetkili teknik personel verir.',
       'Önce mevcut altyapı kullanılır. Ek donanım yalnız doğrulanmış bir veri eksikliğinde değerlendirilir.',
@@ -41,10 +41,10 @@ export const project: ProjectCopy = {
     title: 'Planlanan analiz yöntemleri',
     intro: 'Önce basit ve açıklanabilir karşılaştırmalar kurulur. Model seçimi pilot verisiyle yapılır. Demo yalnız kural tabanlı uyarılar kullanır.',
     items: [
-      { title: 'Anomali', text: 'İstatistiksel kurallar ve Isolation Forest. Servis kayıtları ve uzman incelemesiyle doğrulanır.' },
-      { title: 'Erken arıza', text: 'Lojistik regresyon ve gradient boosting, mevcut alarm kurallarıyla karşılaştırılır. Doğrulanmış arıza kayıtları gerekir.' },
+      { title: 'Anomali tespiti', text: 'İstatistiksel kurallar ve Isolation Forest. Servis kayıtları ve uzman incelemesiyle doğrulanır.' },
+      { title: 'Erken arıza tahmini', text: 'Lojistik regresyon ve gradient boosting, mevcut alarm kurallarıyla karşılaştırılır. Doğrulanmış arıza kayıtları gerekir.' },
       { title: 'SOH tahmini', text: 'Şarj oturumu özelliklerinden regresyon. Ölçüm yöntemi bilinen kapasite referansları gerekir.' },
-      { title: 'Bozunma', text: 'Aynı bataryanın tekrarlı ölçümlerinden sağlık eğimi ve kayıp tahmini.' },
+      { title: 'Bozunma', text: 'Aynı bataryada tekrarlanan ölçümlerle sağlık göstergesinin zaman içindeki değişim hızı ve kayıp tahmin edilir.' },
       { title: 'Kalan faydalı ömür', text: 'Yeterli uzun dönem takip varsa sağkalım yöntemleri. Veri yetersizse gereken veri koşulları raporlanır.' },
     ],
   },
@@ -67,7 +67,7 @@ export const project: ProjectCopy = {
   },
   pilot: {
     title: 'Pilot takvimi',
-    intro: 'Süreler teklifteki göreli plandır. Her aşamanın sonunda sonraki adıma veri yeterliliğine göre birlikte karar verilir.',
+    intro: 'Takvim, her aşama için öngörülen süreyi gösterir. Her aşamanın sonunda proje ekibi ve filo operatörü, mevcut verilere göre bir sonraki adıma karar verir.',
     phase: 'Faz',
     stages: [
       { phase: 0, title: 'Veri inceleme', period: '1. ay', text: 'Veri envanteri, batarya kimliği eşleşmesi ve kullanılabilir veri kapsamı.' },
@@ -88,12 +88,12 @@ export const project: ProjectCopy = {
 }
 
 export const carbon: CarbonCopy = {
-  notice: 'Bu sayfadaki etkiler beklenen etkilerdir. Ölçülmüş sonuçlar pilot çalışmadan sonra eklenecektir.',
+  notice: 'Beklenen etkiler pilot çalışmada değerlendirilecektir. Ölçüm sonuçları pilot çalışmadan sonra yayımlanacaktır.',
   expected: {
     title: 'Beklenen katkılar',
     items: [
       { title: 'Bakım ve kullanım ömrü', text: 'Erken değişimlerin azaltılmasına ve ömrünü tamamlamamış bataryaların kullanımda kalmasına veri sağlar.' },
-      { title: 'İzlenebilir yaşam döngüsü', text: 'Filodan çıkan bataryaların onarım, yeniden kullanım, ikinci kullanım veya geri dönüşüm değerlendirmesine kayıt sağlar.' },
+      { title: 'İzlenebilir yaşam döngüsü', text: 'Filodan çıkarılan bataryaların onarım, yeniden kullanım, ikinci kullanım veya geri dönüşüm seçeneklerini değerlendirmek için kayıt sunar.' },
       { title: 'Operasyonel izleme', text: 'Şarj kaynaklı enerji tüketiminin ve emisyonların kayıt altına alınmasını sağlar.' },
     ],
   },
@@ -129,7 +129,7 @@ export const carbon: CarbonCopy = {
   },
   sources: {
     title: 'Kaynaklar',
-    proposal: 'Proje teklifi, Bölüm X',
+    proposal: 'Proje teklifi, Bölüm X, Döngüsellik, Karbon ve COP31 Bağlamı',
     regulation: 'AB Batarya Tüzüğü, 7. madde ve II. ek',
     guidance: 'Avrupa Komisyonu pasaport kaynakları',
     emissions: 'ETKB EVÇED emisyon faktörleri',

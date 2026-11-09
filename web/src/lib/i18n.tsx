@@ -15,7 +15,7 @@ const EN_PRIORITIES: Record<Priority, string> = { critical: 'Technical review', 
 const EN_LEVELS: Record<Level, string> = { critical: 'Critical threshold', warning: 'Warning', normal: 'Normal', nodata: 'No data' }
 const TR_LEVELS: Record<Level, string> = { critical: 'Kritik eşik', warning: 'Uyarı', normal: 'Normal', nodata: 'Veri yok' }
 const EN_SCENARIOS: Record<ScenarioId, string> = {
-  baseline: 'Normal fleet', 'temp-drift': 'Temperature drift', 'cell-imbalance': 'Cell imbalance', 'data-loss': 'Data loss',
+  baseline: 'Baseline fleet', 'temp-drift': 'Temperature drift', 'cell-imbalance': 'Cell imbalance', 'data-loss': 'Data loss',
   'self-discharge': 'Parked voltage drop', 'resistance-rise': 'Rising internal resistance', 'fleet-day': 'Mixed fleet day',
 }
 function useLanguageValue() {
@@ -39,7 +39,7 @@ function useLanguageValue() {
     scenarioDescription: (id: ScenarioId) => {
       const def = SCENARIOS.find((s) => s.id === id)!
       if (language === 'tr') return def.description
-      if (id === 'baseline') return 'No injected events; natural variation is evaluated using the demo thresholds.'
+      if (id === 'baseline') return 'The demo applies its thresholds to natural variation without adding simulated events.'
       return id === 'fleet-day' ? `Five event types across ${def.events.length} batteries from day ${EVENT_DAY}.` : `${EN_SCENARIOS[id]} for ${def.targetId} from day ${EVENT_DAY}.`
     },
   }), [language, setLanguage])

@@ -38,7 +38,7 @@ export const GUIDE_STEPS: GuideStep[] = [
     view: { scenario: 'data-loss', day: FOCUS_DAY, batteryId: 'DEMO-003', compare: true, filter: 'all', focus: 'panel', tab: 'telemetry' },
     text: {
       en: { title: 'Missing data', body: 'This battery has gaps in its telemetry. It receives a separate Data review status rather than being assumed healthy.', task: 'Check Data coverage and the gaps in the charts. Missing readings are not filled with zero.' },
-      tr: { title: 'Eksik veri', body: 'Bu bataryanın telemetrisinde kesintiler var. Batarya sağlıklı sayılmaz, Veri incelemesi durumuna alınır.', task: 'Veri yeterliliğini ve grafiklerdeki boşlukları inceleyiniz. Eksik ölçümler sıfırla doldurulmaz.' },
+      tr: { title: 'Eksik veri', body: 'Bu bataryanın telemetrisinde kesintiler var. Demo, eksik ölçümler nedeniyle bataryayı Veri incelemesi durumuna alır.', task: 'Veri kapsama oranını ve grafiklerdeki boşlukları inceleyiniz. Eksik ölçümler sıfırla doldurulmaz.' },
     },
   },
   {
@@ -59,7 +59,7 @@ export const GUIDE_STEPS: GuideStep[] = [
     view: { scenario: 'fleet-day', day: FOCUS_DAY, batteryId: 'DEMO-007', compare: false, filter: 'critical', focus: 'feedback' },
     text: {
       en: { title: 'Field feedback', body: 'In a real pilot, technical staff record whether an inspection confirmed the finding. The demo simulates this record.', task: 'Try Finding confirmed or False alarm. Feedback stays in this browser only. Reset clears it.' },
-      tr: { title: 'Saha geri bildirimi', body: 'Gerçek pilotta teknik ekip incelemenin bulguyu doğrulayıp doğrulamadığını kaydeder. Demoda bu kayıt simüle edilir.', task: 'Bulgu doğrulandı veya Yanlış alarm düğmesini deneyiniz. Kayıt yalnız bu tarayıcıda tutulur. Sıfırla ile temizlenir.' },
+      tr: { title: 'Demo geri bildirimi', body: 'Gerçek pilotta teknik ekip incelemenin bulguyu doğrulayıp doğrulamadığını kaydeder. Demoda bu kayıt simüle edilir.', task: 'Bulgu doğrulandı veya Yanlış alarm düğmesini deneyiniz. Kayıt yalnız bu tarayıcıda tutulur. Sıfırla ile temizlenir.' },
     },
   },
   {

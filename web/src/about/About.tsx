@@ -1,6 +1,6 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { useI18n } from '../lib/i18n.tsx'
-import { PROJECT_NAME } from '../site.ts'
+import { PROJECT_NAME, PROJECT_NAME_TR } from '../siteIdentity.ts'
 import { CONTENT } from './content/index.ts'
 import { Cop31Mark } from './components/Cop31Mark.tsx'
 import { DemoAccess } from './components/DemoAccess.tsx'
@@ -18,7 +18,7 @@ export function About() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="page-width hero-grid">
           <div>
-            <h1 id="hero-title">{PROJECT_NAME}</h1>
+            <h1 id="hero-title">{language === 'tr' ? PROJECT_NAME_TR : PROJECT_NAME}</h1>
             <p className="hero-intro">{t.intro}</p>
             <div className="hero-actions">
               <DemoAccess />

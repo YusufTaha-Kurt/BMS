@@ -2,7 +2,7 @@ import type { HomeCopy, OrganizationsCopy, TeamCopy } from './types.ts'
 export { commonEn as common } from './common.ts'
 
 export const home: HomeCopy = {
-  intro: 'Battery health tracking, maintenance priorities and a Digital Battery Passport for shared micromobility. The project is at the proposal and pilot planning stage.',
+  intro: 'The project aims to track battery health, prioritise maintenance and support a Digital Battery Passport for shared micromobility fleets. It is at the proposal stage, with a pilot in planning.',
   projectLink: 'About the project',
   heroAlt: 'Synthetic battery DEMO-001. Temperature drift reason, technical review recommendation and indicators compared with the no-event baseline.',
   heroCaption: 'Demo screen, DEMO-001, day 14. The data is synthetic.',
@@ -24,12 +24,12 @@ export const home: HomeCopy = {
       { title: 'Maintenance priority', text: 'Technical review order and the reason for it.' },
       { title: 'Digital Battery Passport', text: 'Validated health and life cycle records.' },
     ],
-    principle: 'Data is read only. BMS protection functions are not changed. Technical staff make the maintenance decision.',
+    principle: 'The system has read-only access to battery data. BMS protection functions are not changed. Technical staff make the maintenance decision.',
     link: 'Project details',
   },
   people: {
     title: 'Team and institutions',
-    text: 'Computer and electrical-electronics engineering students at OSTİM Technical University run the project with academic coordinator Barış Taha Uludağ. The university was founded by the OSTİM Foundation.',
+    text: 'Students in computer engineering and in electrical and electronics engineering at OSTİM Technical University run the project with academic coordinator Barış Taha Uludağ. The OSTİM Foundation established the university.',
     team: 'Team', institutions: 'Institutions',
   },
   climate: {
@@ -49,11 +49,11 @@ export const organizations: OrganizationsCopy = {
   officialWebsite: 'Official website',
   institutions: {
     items: [
-      { id: 'university', name: 'OSTİM Technical University', text: 'Founded by the OSTİM Foundation. It runs education and research together with the industrial ecosystem.' },
+      { id: 'university', name: 'OSTİM Technical University', text: 'Founded by the OSTİM Foundation, the university works with industry partners on education and research.' },
       { id: 'foundation', name: 'OSTİM Foundation', text: 'Brings together education, research, technology and entrepreneurship to support industrial development.' },
     ],
-    relationshipTitle: 'How the institutions relate',
-    relationshipText: 'The OSTİM Foundation established OSTİM Technical University to carry out its education and research work in an institutional structure. The university’s student team prepares the project together with the academic coordinator.',
+    relationshipTitle: 'The foundation and the university',
+    relationshipText: 'The OSTİM Foundation established OSTİM Technical University to support education and research. The university’s student team develops the project with its academic coordinator.',
     relationshipSource: 'About the OSTİM Foundation',
     managersTitle: 'Management',
     managersNote: 'Details for the person whose title could not be found in an official source will be added after confirmation.',
@@ -64,14 +64,14 @@ export const organizations: OrganizationsCopy = {
     approvedScope: 'Approved scope',
     contribution: 'Contribution to the project',
     formTitle: 'Collaboration proposal',
-    formText: 'Proposals go to the project team. The reply is sent to the email address given in the form.',
+    formText: 'The project team reviews proposals. We’ll reply to the email address you provide.',
     form: {
       intro: 'Optional fields are marked. All other fields are required.',
       closed: 'The form is not accepting submissions at the moment.',
       labels: { name: 'Full name', organization: 'Organisation', email: 'Email', phone: 'Phone', message: 'Proposal' },
       optional: 'optional',
       hints: {
-        email: 'The reply is sent to this address.',
+        email: 'We’ll use this address to reply.',
         phone: 'Country code can be included, e.g. +90 312 000 00 00',
         message: 'Your collaboration idea, what your organisation could contribute and what you expect. At least 20 characters.',
       },
@@ -101,7 +101,7 @@ export const organizations: OrganizationsCopy = {
         title: 'The proposal could not be sent',
         not_configured: 'The form is not accepting submissions at the moment.',
         rate_limited: 'Too many submissions in a short time. Please try again later.',
-        delivery_failed: 'The proposal could not be delivered. Your text is kept, please try again.',
+        delivery_failed: 'Your proposal text is still in the form. Please try again.',
         network: 'Could not reach the server. Check the connection and try again.',
         generic: 'An unexpected error occurred. Please try again.',
       },

@@ -144,7 +144,7 @@ export function DetailPanel(p: Props) {
 
           <div className="grid grid-cols-2 gap-2.5 2xl:grid-cols-4">
             <Metric
-              icon={<Gauge aria-hidden className="size-3.5" />} label={l('SOH (simulated)', 'SOH (simüle)')}
+              icon={<Gauge aria-hidden className="size-3.5" />} label={l('SOH (simulated)', 'Simüle edilen batarya sağlığı (SOH)')}
               value={pct(row.soh)} level={levelSoh(row.soh)}
               base={baseMetric('soh', 2, l('pp', 'puan'), (n) => pct(n))}
             />
@@ -164,7 +164,7 @@ export function DetailPanel(p: Props) {
               base={baseMetric('dvMax', 0, 'mV', (n) => withUnit(n, 'mV', 0))}
             />
             <Metric
-              icon={<ParkingMeter aria-hidden className="size-3.5" />} label={l('Parked drop', 'Park düşüşü')}
+              icon={<ParkingMeter aria-hidden className="size-3.5" />} label={l('Voltage drop while parked', 'Park hâlinde gerilim düşüşü')}
               value={withUnit(row.parkDropMvH, l('mV/h', 'mV/sa'))} level={levelPark(row.parkDropMvH)}
               base={baseMetric('parkDropMvH', 1, l('mV/h', 'mV/sa'), (n) => withUnit(n, l('mV/h', 'mV/sa')))}
             />
@@ -174,7 +174,7 @@ export function DetailPanel(p: Props) {
               base={baseMetric('rMohm', 0, 'mΩ', (n) => withUnit(n, 'mΩ', 0))}
             />
             <Metric
-              icon={<Database aria-hidden className="size-3.5" />} label={l('Data coverage', 'Veri yeterliliği')}
+              icon={<Database aria-hidden className="size-3.5" />} label={l('Data coverage', 'Veri kapsama oranı')}
               value={pct(row.coverage)} level={levelCoverage(row.coverage)}
               base={baseMetric('coverage', 1, l('pp', 'puan'), (n) => pct(n))}
             />
@@ -254,7 +254,7 @@ function FeedbackButtons({ verdict, onVerdict }: { verdict: Verdict | null; onVe
   )
   return (
     <div id="feedback" tabIndex={-1} className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-line/60 pt-2.5">
-      <span className="mr-1 text-xs font-semibold text-mute">{l('Demo feedback', 'Saha geri bildirimi')}</span>
+      <span className="mr-1 text-xs font-semibold text-mute">{l('Demo feedback', 'Demo geri bildirimi')}</span>
       <div className="flex flex-wrap gap-1.5">
         {btn('confirmed', l('Finding confirmed', 'Bulgu doğrulandı'), <CircleCheck aria-hidden className="size-3.5" />, 'border-ok-line bg-ok-bg text-ok')}
         {btn('false_alarm', l('False alarm', 'Yanlış alarm'), <CircleX aria-hidden className="size-3.5" />, 'border-crit-line bg-crit-bg text-crit')}
@@ -298,11 +298,11 @@ function HistorySection({ history, baseHistory, day, scenario }: Props) {
             refs={[{ y: R.tempWarnC, label: `${R.tempWarnC} °C`, color: C.warn }, { y: R.tempCritC, label: `${R.tempCritC} °C`, color: C.crit }]} {...common} />
           <MiniChart title="ΔV" unit="mV" data={data} series={mk('dvMax')} yDomain={[0, 'auto']}
             refs={[{ y: R.dvWarnMv, label: `${R.dvWarnMv} mV`, color: C.warn }, { y: R.dvCritMv, label: `${R.dvCritMv} mV`, color: C.crit }]} decimals={0} {...common} />
-          <MiniChart title={l('Parked voltage drop', 'Park gerilim düşüşü')} unit={l('mV/h', 'mV/sa')} data={data} series={mk('parkDropMvH')} yDomain={[0, 'auto']}
+          <MiniChart title={l('Voltage drop while parked', 'Park hâlinde gerilim düşüşü')} unit={l('mV/h', 'mV/sa')} data={data} series={mk('parkDropMvH')} yDomain={[0, 'auto']}
             refs={[{ y: R.parkWarnMvH, label: `${R.parkWarnMvH}`, color: C.warn }, { y: R.parkCritMvH, label: `${R.parkCritMvH}`, color: C.crit }]} {...common} />
           <MiniChart title={l('Internal resistance', 'İç direnç')} unit="mΩ" data={data} series={mk('rMohm')} yDomain={[0, 'auto']} decimals={0}
             refs={[{ y: R.rWarnMohm, label: `${R.rWarnMohm}`, color: C.warn }, { y: R.rCritMohm, label: `${R.rCritMohm}`, color: C.crit }]} {...common} />
-          <MiniChart title={l('Data coverage', 'Veri yeterliliği')} unit="%" data={data} series={mk('coverage')} yDomain={[0, 100]}
+          <MiniChart title={l('Data coverage', 'Veri kapsama oranı')} unit="%" data={data} series={mk('coverage')} yDomain={[0, 100]}
             refs={[{ y: R.coverageMinPct, label: pct(R.coverageMinPct, 0), color: C.warn }]} {...common} />
         </div>
       )}

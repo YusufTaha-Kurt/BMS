@@ -79,7 +79,7 @@ export function Passport({ history, day, scenario }: Props) {
 
         <Box icon={<BadgeCheck aria-hidden className="size-3.5" />} title={l('Health', 'Sağlık')}>
           <dl>
-            <Row k={l('SOH (model, simulated)', 'SOH (model, simüle)')} v={pct(cur.soh)} />
+            <Row k={l('SOH (model, simulated)', 'Simüle edilen batarya sağlığı (SOH)')} v={pct(cur.soh)} />
             <Row k={l('Internal resistance', 'İç direnç')} v={cur.rMohm === null ? l('No measurement', 'Ölçüm yok') : `${num(cur.rMohm, 0)} mΩ`} />
             <Row k="BMS SOH" v={l('Pilot stage', 'Pilotta')} />
             <Row k={l('Status', 'Durum')} v={lifecycle} />
@@ -100,12 +100,12 @@ export function Passport({ history, day, scenario }: Props) {
           </ol>
         </Box>
 
-        <Box icon={<Leaf aria-hidden className="size-3.5 text-ok" />} title={l('Operational carbon', 'Operasyonel karbon')}>
+        <Box icon={<Leaf aria-hidden className="size-3.5 text-ok" />} title={l('Charging energy and emissions', 'Şarj enerjisi ve emisyonları')}>
           <dl>
             <Row k={l(`Energy (days 1–${day})`, `Enerji (1–${day}. gün)`)} v={`${num(kwh, 1)} kWh`} />
             <Row k={l('Emissions', 'Emisyon')} v={`${num(co2, 1)} kg CO₂e`} />
           </dl>
-          <p className="mt-1.5 text-mute">{l('Demo factor', 'Demo faktörü')} {num(CARBON.gridFactorKgPerKwh, 2)} kg/kWh.</p>
+          <p className="mt-1.5 text-mute">{l('Demo emission factor', 'Demo emisyon faktörü')} {num(CARBON.gridFactorKgPerKwh, 2)} kg CO₂e/kWh.</p>
         </Box>
       </div>
       <PassportLink url={passportUrl({ scenario, day, batteryId }, language)} batteryId={batteryId} />

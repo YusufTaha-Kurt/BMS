@@ -28,7 +28,7 @@ export const commonEn: SiteCopy = {
   skip: 'Skip to content',
   openDemo: 'Open the demo',
   newTab: 'opens in a new tab',
-  demoNote: 'The demo runs on synthetic data. It is not real fleet data or the final interface.',
+  demoNote: 'The demo uses synthetic data and shows a prototype interface.',
   universityLogo: 'OSTİM Technical University',
   cop31Logo: 'COP31 Türkiye, Antalya',
   backHome: 'Back to the home page',
@@ -45,15 +45,15 @@ export const commonEn: SiteCopy = {
     },
     team: {
       label: 'Team', title: 'Project team',
-      description: 'Computer and electrical-electronics engineering students and the academic coordinator.',
+      description: 'Students in computer engineering and in electrical and electronics engineering, with their academic coordinator.',
     },
     project: {
       label: 'Project', title: 'Project',
       description: 'How the system works, which data it uses and the pilot timeline.',
     },
     demo: {
-      label: 'Demo', title: 'Demo and presentation',
-      description: 'A demo that runs on synthetic data, with steps for using it.',
+      label: 'Demo', title: 'Demo guide',
+      description: 'Learn how to explore maintenance priorities and a sample battery passport in the demo.',
     },
     carbon: {
       label: 'Carbon', title: 'Carbon impact',
@@ -64,7 +64,7 @@ export const commonEn: SiteCopy = {
       description: 'Organisations supporting the project and the collaboration proposal form.',
     },
     privacy: {
-      label: 'Privacy notice', title: 'Personal data privacy notice',
+      label: 'Privacy notice', title: 'Privacy notice',
       description: 'How personal data sent through the collaboration proposal form is processed.',
     },
   },
@@ -79,7 +79,7 @@ export const commonTr: SiteCopy = {
   skip: 'İçeriğe geç',
   openDemo: 'Demoyu aç',
   newTab: 'yeni sekmede açılır',
-  demoNote: 'Demo sentetik veriyle çalışır. Gerçek filo verisi ve nihai arayüz değildir.',
+  demoNote: 'Demo, sentetik verilerle çalışan bir arayüz prototipidir.',
   universityLogo: 'OSTİM Teknik Üniversitesi',
   cop31Logo: 'COP31 Türkiye, Antalya',
   backHome: 'Ana sayfaya dön',
@@ -103,8 +103,8 @@ export const commonTr: SiteCopy = {
       description: 'Sistemin çalışma biçimi, kullanılacak veriler ve pilot takvimi.',
     },
     demo: {
-      label: 'Demo', title: 'Demo ve sunum',
-      description: 'Sentetik veriyle çalışan demo ve kullanım adımları.',
+      label: 'Demo', title: 'Demo rehberi',
+      description: 'Demoda bakım önceliklerini ve örnek bir batarya pasaportunu inceleme adımları.',
     },
     carbon: {
       label: 'Karbon', title: 'Karbon etkisi',

@@ -1,6 +1,6 @@
 import { commonEn, commonTr } from '../about/content/common.ts'
 import { DEMO_PATH, localizedPath, pagePath, type PageId } from '../about/routes.ts'
-import { PROJECT_NAME, SITE_URL, TEAM_NAME } from '../siteIdentity.ts'
+import { PROJECT_NAME, PROJECT_NAME_TR, SITE_URL, TEAM_NAME } from '../siteIdentity.ts'
 import type { SiteLanguage } from '../../shared/types.ts'
 
 export function siteMetadata(page: PageId | undefined, language: SiteLanguage) {
@@ -10,7 +10,7 @@ export function siteMetadata(page: PageId | undefined, language: SiteLanguage) {
   const title = page === 'demo' ? (language === 'tr' ? 'Demo rehberi' : 'Demo guide') : shortTitle
   return {
     title: `${title} · ${TEAM_NAME}`,
-    shareTitle: page === 'home' ? `${PROJECT_NAME} · ${TEAM_NAME}` : `${info.title} · ${TEAM_NAME}`,
+    shareTitle: `${page === 'home' ? (language === 'tr' ? PROJECT_NAME_TR : PROJECT_NAME) : info.title} · ${TEAM_NAME}`,
     description: info.description,
     image: `/social/project-${language}.jpg?v=2`,
     imageAlt: language === 'tr' ? `${TEAM_NAME} batarya yönetimi projesi` : `${TEAM_NAME} battery management project`,

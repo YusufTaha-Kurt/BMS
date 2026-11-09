@@ -70,8 +70,8 @@ export const privacy: PrivacyCopy = {
     {
       title: 'Applications',
       paragraphs: [
-        'Applications are sent in writing to OSTİM Technical University in line with the Communiqué on the Procedures and Principles of Application to the Data Controller. An application includes full name, signature, Turkish ID number or, for foreign nationals, nationality and passport or ID number, a postal address for notifications, email and phone if available, and the subject of the request.',
-        'Applications are concluded free of charge within thirty days at the latest. If the process requires an additional cost, the fee set by the Board may be charged.',
+        'Applications are sent in writing to OSTİM Technical University in line with the Communiqué on the Procedures and Principles of Application to the Data Controller. Include your full name, signature, postal address for notifications, email address and phone number if available, and the subject of your request. Turkish citizens should include their Turkish ID number. Foreign nationals should include their nationality and passport number or, if available, their ID number.',
+        'The university responds to requests free of charge within 30 days. If handling a request incurs an additional cost, the fee set by the Board may apply.',
       ],
     },
   ],

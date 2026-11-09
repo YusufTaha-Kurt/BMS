@@ -32,15 +32,15 @@ export const PROJECT_TEAM: readonly TeamMember[] = [
   {
     id: 'gizem', name: 'Gizem Geniş', photo: gizemPhoto,
     bio: {
-      tr: 'Mühendislikteki teknik ve problem çözme becerilerini yenilikçi projelerde sürdürülebilir katkıya dönüştürmeyi hedefleyen Elektrik-Elektronik Mühendisliği öğrencisi ve Bilgisayar Mühendisliği çift anadal öğrencisi.',
-      en: 'An Electrical-Electronics Engineering student with a double major in Computer Engineering, aiming to turn technical and problem-solving skills into lasting contributions to innovative projects.',
+      tr: 'Elektrik-Elektronik Mühendisliği okuyor ve Bilgisayar Mühendisliğinde çift ana dal yapıyor. Stajlarında veri etiketleme, veri kalitesi kontrolü ve gömülü sistemler üzerinde çalıştı.',
+      en: 'Gizem studies Electrical and Electronics Engineering and is pursuing a double major in Computer Engineering. Her internships included data labelling, data quality checks and embedded systems work.',
     },
   },
   {
     id: 'gamze', name: 'Gamze Geniş', photo: gamzePhoto,
     bio: {
-      tr: 'Elektrik-Elektronik Mühendisliği lisansı ile Yapay Zekâ Mühendisliği çift anadalını yüksek başarıyla sürdüren, gömülü sistemler, donanım tasarımı ve makine öğrenmesi uygulamalarına odaklanan bir mühendis adayı. Otomotiv, savunma, enerji ve IoT alanlarındaki stajlarıyla teorik altyapısını pekiştirdi. C, C++, Python ve mikrodenetleyici mimarileriyle uygulamalı çözümler üretiyor.',
-      en: 'An engineering student pursuing Electrical-Electronics Engineering with a double major in AI Engineering with high grades, focused on embedded systems, hardware design and machine learning. Strengthened her theoretical background with internships in automotive, defence, energy and IoT, and builds practical solutions with C, C++, Python and microcontroller architectures.',
+      tr: 'Elektrik-Elektronik Mühendisliği okuyor ve Yapay Zekâ Mühendisliğinde çift ana dal yapıyor. Gömülü sistemler, donanım tasarımı ve makine öğrenmesi üzerine çalışıyor. Stajlarında mikrodenetleyiciyle sensör verisi okuma ve telemetri protokolleri üzerinde çalıştı.',
+      en: 'Gamze studies Electrical and Electronics Engineering and is pursuing a double major in Artificial Intelligence Engineering. Her interests include embedded systems, hardware design and machine learning. During her internships, she worked on reading sensor data with microcontrollers and on telemetry protocols.',
     },
     links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/gamze-geni%C5%9F-09b02437b' }],
   },
@@ -59,8 +59,8 @@ export const PROJECT_TEAM: readonly TeamMember[] = [
   {
     id: 'ahmed', name: 'Ahmed Emre Demirel', photo: ahmedPhoto,
     bio: {
-      tr: 'Büyük dil modeli tabanlı sistemler, RAG mimarileri ve istem mühendisliği üzerine çalışan dördüncü sınıf bilgisayar mühendisliği öğrencisi. Fikirleri uçtan uca çalışan ürünlere dönüştürmeye ve model çıktılarını sistematik değerlendirmeyle iyileştirmeye odaklanır.',
-      en: 'A fourth-year computer engineering student working on LLM-based systems, RAG architectures and prompt engineering. Focused on turning ideas into working end-to-end products and improving model outputs through systematic evaluation.',
+      tr: 'Büyük dil modeli tabanlı sistemler, RAG mimarileri ve istem mühendisliği üzerine çalışan dördüncü sınıf bilgisayar mühendisliği öğrencisi. Belge analizi araçları geliştirdi ve model çıktılarını etiketli verilerle değerlendirdi.',
+      en: 'A fourth-year computer engineering student working on large language models, retrieval-augmented generation and prompt engineering. He has developed document analysis tools and evaluated model outputs against labelled data.',
     },
     links: [
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/ahmededemirel' },
@@ -76,8 +76,8 @@ export const COORDINATOR_PROFILE: TeamMember = {
   name: ACADEMIC_COORDINATOR,
   photo: barisPhoto,
   bio: {
-    tr: 'Elektrik-Elektronik Mühendisliği lisans ve yüksek lisans derecelerine sahip, Gazi Üniversitesi’nde aynı alanda doktora yapıyor. OSTİM Teknik Üniversitesi Bilgisayar Mühendisliği Bölümü’nde araştırma görevlisi. Çalışmaları yapay zekâ, makine öğrenmesi, enerji sistemleri, batarya yönetimi, akıllı sistemler ve İHA uygulamaları üzerine yoğunlaşıyor. Lisans bitirme projelerine danışmanlık yapıyor ve disiplinler arası Ar-Ge projelerinde görev alıyor.',
-    en: 'Holds B.Sc. and M.Sc. degrees in Electrical-Electronics Engineering and is pursuing a PhD in the same field at Gazi University. Research assistant in the Department of Computer Engineering at OSTİM Technical University. His work focuses on AI, machine learning, energy systems, battery management, smart systems and UAV applications. He advises undergraduate capstone projects and takes part in interdisciplinary R&D projects.',
+    tr: 'Elektrik-Elektronik Mühendisliği alanında lisans ve yüksek lisans derecelerine sahip. Gazi Üniversitesinde aynı alanda doktora yapıyor. OSTİM Teknik Üniversitesi Bilgisayar Mühendisliği Bölümünde araştırma görevlisi. Çalışmaları yapay zekâ, makine öğrenmesi, enerji sistemleri, batarya yönetimi, akıllı sistemler ve İHA uygulamalarına odaklanıyor. Lisans bitirme projelerine danışmanlık yapıyor ve disiplinler arası Ar-Ge projelerinde görev alıyor.',
+    en: 'He holds B.Sc. and M.Sc. degrees in Electrical and Electronics Engineering and is pursuing a PhD in the same field at Gazi University. He is a research assistant in the Department of Computer Engineering at OSTİM Technical University. His work focuses on AI, machine learning, energy systems, battery management, smart systems and UAV applications. He advises undergraduate capstone projects and takes part in interdisciplinary R&D projects.',
   },
   role: { en: 'Academic coordinator', tr: 'Akademik koordinatör' },
   workPackage: {

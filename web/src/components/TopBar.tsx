@@ -2,7 +2,7 @@ import { ChevronLeft, ChevronRight, Presentation, RotateCcw } from 'lucide-react
 import { DAYS, SCENARIOS, type ScenarioId } from '../../shared/config.ts'
 import type { Priority, PriorityCounts } from '../../shared/types.ts'
 import { useI18n } from '../lib/i18n.tsx'
-import { PROJECT_NAME, TEAM_NAME } from '../site.ts'
+import { PROJECT_NAME, PROJECT_NAME_TR, TEAM_NAME } from '../siteIdentity.ts'
 import { pagePath } from '../about/routes.ts'
 import { PRIORITY_STYLE } from '../lib/status.ts'
 import { PRIORITY_ICON } from './Badges.tsx'
@@ -39,9 +39,9 @@ export function TopBar({ scenario, onScenario, day, onDay, date, compare, onComp
         </div>
       </div>
       <div className="mx-auto max-w-[1600px] px-4 py-3 lg:px-6">
-        <h1 className="text-lg font-bold leading-tight sm:text-xl">{PROJECT_NAME}</h1>
+        <h1 className="text-lg font-bold leading-tight sm:text-xl">{l(PROJECT_NAME, PROJECT_NAME_TR)}</h1>
         <p className="mb-3 mt-1 text-xs font-semibold text-mute">{l('OSTİM Technical University', 'OSTİM Teknik Üniversitesi')} · COP31</p>
-        <p className="mb-3 max-w-4xl text-xs leading-relaxed text-mute"><strong className="font-semibold text-ink">{l('Synthetic demo.', 'Sentetik demo.')}</strong> {l('The data is not real. It is not fleet data or the final interface.', 'Veriler gerçek değildir. Gerçek filo verisi ve nihai arayüz değildir.')}</p>
+        <p className="mb-3 max-w-4xl text-xs leading-relaxed text-mute">{l('The demo uses synthetic data and shows a prototype interface.', 'Demo, sentetik verilerle çalışan bir arayüz prototipidir.')}</p>
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
           <div className="col-span-2 rounded-lg border border-line bg-card px-3 py-2 sm:col-span-1"><div className="text-xs font-semibold text-mute">{l('Fleet', 'Filo')}</div><div className="text-xl font-bold tabular">{counts ? counts.total : '—'}</div>{reviewed > 0 && <div className="text-[11px] text-mute tabular">{l('Demo feedback', 'Demo geri bildirimi')} {tally.confirmed} {l('confirmed', 'doğru')} · {tally.falseAlarm} {l('false alarms', 'yanlış')}</div>}</div>
           {ORDER.map((p) => { const st = PRIORITY_STYLE[p]; const Icon = PRIORITY_ICON[p]; return <div key={p} className={`rounded-lg border px-3 py-2 ${st.bg} ${st.line}`}><div className={`flex items-center gap-1.5 text-xs font-semibold ${st.text}`}><Icon aria-hidden className="size-3.5" />{priorityLabel(p)}</div><div className="text-xl font-bold tabular">{counts ? counts[p] : '—'}</div></div> })}
@@ -65,7 +65,7 @@ export function TopBar({ scenario, onScenario, day, onDay, date, compare, onComp
               ['SOH', l('Estimated remaining capacity relative to a new battery. Simulated in this demo.', 'Yeni bataryaya göre tahmini kalan kapasite. Bu demoda simüle edilir.')],
               ['SOC', l('The battery’s current state of charge.', 'Bataryanın mevcut doluluk oranı.')],
               ['ΔV', l('Voltage difference between cell groups. Larger differences can indicate imbalance.', 'Hücre grupları arasındaki gerilim farkı. Büyüyen fark dengesizliğe işaret edebilir.')],
-              [l('Data coverage', 'Veri yeterliliği'), l('The share of expected measurements that are available. Missing data is reviewed separately.', 'Beklenen ölçümlerin mevcut olan kısmı. Eksik veri ayrıca incelemeye alınır.')],
+              [l('Data coverage', 'Veri kapsama oranı'), l('The share of expected measurements that are available. Missing data is reviewed separately.', 'Alınan ölçümlerin beklenen ölçümlere oranı. Eksik veri ayrıca incelenir.')],
             ].map(([term, description]) => <div key={term}><dt className="font-bold text-ink">{term}</dt><dd className="mt-1 leading-relaxed">{description}</dd></div>)}
           </dl>
         </details>

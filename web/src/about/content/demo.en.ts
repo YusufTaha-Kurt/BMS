@@ -10,10 +10,10 @@ export const demo: DemoCopy = {
     title: 'How to use it',
     steps: [
       { title: 'Review the fleet', text: 'The maintenance priority list shows the Technical review, Data review and Monitor states. Selecting a battery opens its details.' },
-      { title: 'Choose a scenario', text: 'Choose, for example, Temperature drift from the scenario menu. The affected battery opens on day 14. Earlier days can be checked with the day control.' },
-      { title: 'Read the reason', text: 'The Reason and Recommendation fields show what the decision is based on. The no-event comparison shows the same battery without the injected event.' },
+      { title: 'Choose a scenario', text: 'Select Temperature drift from the scenario menu. The demo opens the affected battery’s record for day 14. Use the day selector to view earlier records.' },
+      { title: 'Read the reason', text: 'The Why and Recommendation fields explain why the battery was flagged and what to check. The comparison shows the same battery without the simulated event.' },
       { title: 'Open history and telemetry', text: 'The History tab shows daily change and the Telemetry tab shows the measurements for the selected day. Missing readings stay as gaps in the chart.' },
-      { title: 'Go to the passport', text: 'The Passport tab shows the synthetic identity, health summary, event log and a sample charging emission. The Guided demo button opens an eight-step walkthrough.' },
+      { title: 'Go to the passport', text: 'The Passport tab shows a sample battery identity, health summary, event log and charging emissions. Select Guided demo for an eight-step walkthrough.' },
     ],
   },
   gallery: {
@@ -23,7 +23,7 @@ export const demo: DemoCopy = {
     items: {
       fleet: {
         title: 'Fleet and maintenance priorities',
-        text: 'Normal fleet, day 14. The list shows the battery identity, health status and the reason for review.',
+        text: 'Baseline fleet on day 14. The list shows the battery ID, health status and reason for review.',
         alt: 'English demo screen. Fleet counters, maintenance priority list and indicators for the selected battery BT-10087.',
       },
       telemetry: {

@@ -6,7 +6,7 @@ export const project: ProjectCopy = {
       'In shared fleets, one battery can be used in several vehicles. The project keeps the usage, maintenance and health history of each battery in a single record.',
       'Based on this history, the maintenance team sees which battery to inspect first. Validated records are also used to assess second use and recycling.',
     ],
-    stage: 'The project is at the proposal and pilot planning stage. The first data review starts with the fleet operator’s technical information form and data sharing. The current demo runs on synthetic data.',
+    stage: 'The project is at the proposal stage and a pilot is being planned. The initial review begins once the fleet operator completes the technical information form and shares the data. The demo uses synthetic data.',
   },
   goals: {
     title: 'Goals',
@@ -14,14 +14,14 @@ export const project: ProjectCopy = {
       'Track health and usage history for each battery',
       'Assess unusual behaviour and fault indicators',
       'Give the maintenance team review priorities with reasons',
-      'Prepare a verifiable record base for the Digital Battery Passport',
+      'Build a set of verifiable records for the Digital Battery Passport',
     ],
     audience: 'The main users are micromobility fleet operators and maintenance teams. Data sharing with manufacturers, service partners and recyclers is defined separately according to access rights.',
   },
   flow: {
     title: 'System flow',
     principles: [
-      'Data is read only.',
+      'The system has read-only access to battery data.',
       'BMS protection functions are not changed.',
       'Authorised technical staff make the maintenance decision.',
       'Existing infrastructure is used first. Extra hardware is considered only for a confirmed data gap.',
@@ -41,8 +41,8 @@ export const project: ProjectCopy = {
     title: 'Planned analysis methods',
     intro: 'Simple, explainable comparisons come first. Models are chosen with pilot data. The demo uses rule-based alerts only.',
     items: [
-      { title: 'Anomaly', text: 'Statistical rules and Isolation Forest. Validated with service records and expert review.' },
-      { title: 'Early fault', text: 'Logistic regression and gradient boosting, compared with the existing alarm rules. Requires validated fault records.' },
+      { title: 'Anomaly detection', text: 'Statistical rules and Isolation Forest. Validated with service records and expert review.' },
+      { title: 'Early fault prediction', text: 'Logistic regression and gradient boosting, compared with the existing alarm rules. Requires validated fault records.' },
       { title: 'SOH estimation', text: 'Regression on charging session features. Requires capacity references with a known measurement method.' },
       { title: 'Degradation', text: 'Health trend and loss estimate from repeated measurements of the same battery.' },
       { title: 'Remaining useful life', text: 'Survival methods if long-term tracking is sufficient. If data is insufficient, the required data conditions are reported.' },
@@ -67,7 +67,7 @@ export const project: ProjectCopy = {
   },
   pilot: {
     title: 'Pilot timeline',
-    intro: 'Durations are the relative plan from the proposal. At the end of each stage, the next step is decided together based on data sufficiency.',
+    intro: 'The timeline shows estimated durations for each phase. At the end of each phase, the project team and the operator decide how to proceed based on the available data.',
     phase: 'Phase',
     stages: [
       { phase: 0, title: 'Data review', period: 'Month 1', text: 'Data inventory, battery identity matching and usable data coverage.' },
@@ -88,7 +88,7 @@ export const project: ProjectCopy = {
 }
 
 export const carbon: CarbonCopy = {
-  notice: 'The effects on this page are expected effects. Measured results will be added after the pilot.',
+  notice: 'The pilot will test the expected benefits described below. Measured results will be reported after the pilot.',
   expected: {
     title: 'Expected contributions',
     items: [
@@ -129,7 +129,7 @@ export const carbon: CarbonCopy = {
   },
   sources: {
     title: 'Sources',
-    proposal: 'Project proposal, Section X',
+    proposal: 'Project proposal, Section X, Circularity, Carbon and the COP31 Context',
     regulation: 'EU Battery Regulation, Article 7 and Annex II',
     guidance: 'European Commission passport resources',
     emissions: 'ETKB EVÇED emission factors',
