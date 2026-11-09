@@ -13,7 +13,7 @@ export type OrganizationId = 'foundation' | 'university' | 'binbin' | 'sustainBr
 
 export interface OrganizationAsset {
   src?: string
-  /** Koyu tema için ayrı logo. Yoksa açık logo açık bir zemin üzerinde gösterilir. */
+  /** Koyu tema için ayrı logo. Tanımlı değilse aynı logo iki temada da kullanılır. */
   srcDark?: string
   alt?: LocalizedText
   credit?: LocalizedText
@@ -22,7 +22,7 @@ export interface OrganizationAsset {
 
 /**
  * Logolar yalnız src doluysa gösterilir; boş kayıt için yer tutucu çizilmez.
- * Kaynaklar (5 Kasım 2026). Üniversite logosu COP31 broşür görselinden kırpıldı.
+ * Üniversite logosu kullanıcının sağladığı şeffaf PNG dosyasıdır.
  * OSTİM Vakfı logoları ostimvakfi.com sitesinin kendi açık ve koyu logolarıdır.
  * BinBin logoları binbin.tech sitesinin kendi SVG dosyalarıdır. Sustain Bridge için resmî site bulunamadı.
  */

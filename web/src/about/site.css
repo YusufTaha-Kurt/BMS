@@ -4,7 +4,7 @@
   font-synthesis: none; -webkit-font-smoothing: antialiased;
   --petrol: #263637; --burgundy: #801d3a; --paper: #faf9f6; --surface: #f0f1ed;
   --text-secondary: #536260; --rule: #d9ddd8; --button-radius: 3px;
-  --button-bg: #801d3a; --button-hover: #61152c; --logo-plate: transparent;
+  --button-bg: #801d3a; --button-hover: #61152c;
   --field-bg: #ffffff; --field-border: #8c9794; --error: #a3123a; --error-bg: #f8eaee; --success: #2f6b4f; --success-bg: #ebf3ee;
   --heading-font: Georgia, 'Times New Roman', serif;
   color: var(--petrol); background: var(--paper);
@@ -13,7 +13,7 @@
 :root[data-theme='dark'] {
   --petrol: #f1f5ff; --burgundy: #7dafff; --paper: #0a1224; --surface: #14213d;
   --text-secondary: #acbbd4; --rule: #2a3b5c;
-  --button-bg: #2857b5; --button-hover: #3064c8; --logo-plate: #f2f5fc;
+  --button-bg: #2857b5; --button-hover: #3064c8;
   --field-bg: #101b30; --field-border: #657da4; --error: #ff9bb0; --error-bg: #3a1c25; --success: #8fd8b2; --success-bg: #17302a;
 }
 * { box-sizing: border-box; }
@@ -59,13 +59,9 @@ svg { flex-shrink: 0; }
 .site-language { display: flex; }
 .theme-toggle { display: grid; place-items: center; min-width: 44px; min-height: 44px; border: 0; border-radius: 3px; background: transparent; color: var(--text-secondary); }
 .theme-toggle:hover { color: var(--petrol); background: var(--surface); }
-/* Logolar koyu temada açık bir zemin üzerinde durur; kurum renkleri bozulmaz. */
-.site-identity img, .org-logo, .cop31-mark { background: var(--logo-plate); border-radius: 3px; }
-:root[data-theme='dark'] .site-identity img, :root[data-theme='dark'] .org-logo { padding: 4px 6px; box-sizing: content-box; }
 /* Keep the central 44% × 61% of the square PNG, including a small margin around the mark. */
 .cop31-mark { position: relative; display: block; flex-shrink: 0; aspect-ratio: 44 / 61; overflow: hidden; }
 .cop31-mark img { position: absolute; top: 0; left: 0; width: calc(100% / .44); height: auto; transform: translate(-28%, -19%); }
-:root[data-theme='dark'] .cop31-mark { box-sizing: content-box; border: 4px solid var(--logo-plate); }
 .site-language button { min-width: 44px; min-height: 44px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--text-secondary); font-size: 13px; font-weight: 600; }
 .site-language button[aria-pressed='true'] { color: var(--burgundy); border-bottom-color: var(--burgundy); }
 .site-menu-toggle { display: none; }
@@ -161,10 +157,10 @@ div.person, .person summary { gap: 14px; min-height: 72px; padding-block: 8px; }
 .supporters strong { font-size: 17px; font-weight: 600; }
 .supporters .person-text span { font-size: 14px; color: var(--text-secondary); }
 .person-avatar { width: 64px; height: 64px; flex-shrink: 0; border-radius: 50%; object-fit: cover; object-position: center top; background: var(--surface); }
-/* Kurumun koyu tema logosu varsa o gösterilir ve açık zemin gerekmez. */
+/* Kurumun koyu tema logosu varsa o gösterilir. */
 .logo-for-dark { display: none; }
 :root[data-theme='dark'] .logo-for-light { display: none; }
-:root[data-theme='dark'] .logo-for-dark { display: block; background: none; padding: 0; }
+:root[data-theme='dark'] .logo-for-dark { display: block; }
 .name-list span { font-size: 14px; color: var(--text-secondary); }
 .status { color: var(--burgundy); font-size: 14px; font-weight: 600; }
 
