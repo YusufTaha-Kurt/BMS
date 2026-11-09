@@ -11,7 +11,7 @@ const paths = SITE_LANGUAGES.flatMap((language) => [
   localizedPath(DEMO_PATH, language),
 ])
 const legacy = new Map([
-  ['/', DEMO_PATH],
+  ['/', pagePath('home')],
   ...SITE_PAGES.map(({ id, legacy }): [string, string] => [
     `/hakkimizda/${legacy ? `${legacy}/` : ''}`, pagePath(id),
   ]),
