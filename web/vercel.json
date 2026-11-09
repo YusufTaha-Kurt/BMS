@@ -36,6 +36,142 @@
       "permanent": true
     },
     {
+      "source": "/hakkimizda/",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/about/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/kurumlar/",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/institutions/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/kurumlar/",
+      "destination": "/institutions/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/ekip/",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/team/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/ekip/",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/proje/",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/project/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/proje/",
+      "destination": "/project/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/demo/",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/demo-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/demo/",
+      "destination": "/demo-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/karbon/",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/carbon-impact/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/karbon/",
+      "destination": "/carbon-impact/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/iletisim/",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/collaboration/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/iletisim/",
+      "destination": "/collaboration/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/aydinlatma/",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "tr"
+        }
+      ],
+      "destination": "/tr/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda/aydinlatma/",
+      "destination": "/privacy/",
+      "permanent": true
+    },
+    {
       "source": "/hakkimizda/:file(index\\.html)?",
       "has": [
         {
