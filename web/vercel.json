@@ -10,12 +10,12 @@
           "value": "tr"
         }
       ],
-      "destination": "/tr/demo/",
+      "destination": "/tr/about/",
       "permanent": true
     },
     {
       "source": "/",
-      "destination": "/demo/",
+      "destination": "/about/",
       "permanent": true
     },
     {
@@ -27,12 +27,12 @@
           "value": "tr"
         }
       ],
-      "destination": "/tr/demo/",
+      "destination": "/tr/about/",
       "permanent": true
     },
     {
       "source": "/index.html",
-      "destination": "/demo/",
+      "destination": "/about/",
       "permanent": true
     },
     {
