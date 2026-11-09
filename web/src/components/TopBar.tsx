@@ -28,7 +28,7 @@ export function TopBar({ scenario, onScenario, day, onDay, date, compare, onComp
           href={pagePath('home', language)}
           aria-label={`${TEAM_NAME} · ${l('Project and team', 'Proje ve ekip')}`}
         >
-          <span className="demo-wordmark w-28 sm:w-[148px]" aria-hidden="true" />
+          <span className="demo-wordmark w-[120px] sm:w-[158px]" aria-hidden="true" />
         </a>
         <div className="flex shrink-0 items-center gap-2">
           <div className="demo-segmented" role="group" aria-label={l('Language', 'Dil')}>

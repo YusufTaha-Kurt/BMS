@@ -12,8 +12,8 @@ export function siteMetadata(page: PageId | undefined, language: SiteLanguage) {
     title: `${title} · ${TEAM_NAME}`,
     shareTitle: page === 'home' ? `${PROJECT_NAME} · ${TEAM_NAME}` : `${info.title} · ${TEAM_NAME}`,
     description: info.description,
-    image: `/social/project-${language}.jpg`,
-    imageAlt: language === 'tr' ? 'Sixhandle batarya yönetimi projesi' : 'Sixhandle battery management project',
+    image: `/social/project-${language}.jpg?v=2`,
+    imageAlt: language === 'tr' ? `${TEAM_NAME} batarya yönetimi projesi` : `${TEAM_NAME} battery management project`,
     canonical: page ? SITE_URL + pagePath(page, language) : undefined,
     alternate: page ? SITE_URL + pagePath(page, language === 'tr' ? 'en' : 'tr') : undefined,
     noindex: !page,
@@ -28,8 +28,8 @@ export function demoMetadata(language: SiteLanguage) {
     description: language === 'tr'
       ? 'Batarya sağlığını, bakım önceliğini ve Dijital Batarya Pasaportunu sentetik filo verileriyle inceleyin.'
       : 'Explore battery health, maintenance priorities and the Digital Battery Passport with synthetic fleet data.',
-    image: `/social/demo-${language}.jpg`,
-    imageAlt: language === 'tr' ? 'Sixhandle sentetik batarya verileri demo ekranı' : 'Sixhandle demo screen with synthetic battery data',
+    image: `/social/demo-${language}.jpg?v=2`,
+    imageAlt: language === 'tr' ? `${TEAM_NAME} sentetik batarya verileri demo ekranı` : `${TEAM_NAME} demo screen with synthetic battery data`,
     canonical: SITE_URL + localizedPath(DEMO_PATH, language),
     alternate: SITE_URL + localizedPath(DEMO_PATH, language === 'tr' ? 'en' : 'tr'),
     noindex: true,

@@ -5,7 +5,7 @@
   --petrol: #263637; --burgundy: #801d3a; --paper: #faf9f6; --surface: #f0f1ed;
   --text-secondary: #536260; --rule: #d9ddd8; --button-radius: 10px;
   --button-bg: #801d3a; --button-hover: #61152c; --button-pressed: #511125;
-  --sixhandle-mark: #032a52;
+  --sixthandle-mark: #032a52;
   --field-bg: #ffffff; --field-border: #8c9794; --error: #a3123a; --error-bg: #f8eaee; --success: #2f6b4f; --success-bg: #ebf3ee;
   color: var(--petrol); background: var(--paper);
 }
@@ -14,7 +14,7 @@
   --petrol: #f1f5ff; --burgundy: #7dafff; --paper: #0a1224; --surface: #14213d;
   --text-secondary: #acbbd4; --rule: #2a3b5c;
   --button-bg: #2857b5; --button-hover: #3064c8; --button-pressed: #1c428e;
-  --sixhandle-mark: #f1f5ff;
+  --sixthandle-mark: #f1f5ff;
   --field-bg: #101b30; --field-border: #657da4; --error: #ff9bb0; --error-bg: #3a1c25; --success: #8fd8b2; --success-bg: #17302a;
 }
 * { box-sizing: border-box; }
@@ -57,7 +57,7 @@ svg { flex-shrink: 0; }
 .site-identity { display: flex; align-items: center; gap: 14px; min-width: 0; padding-block: 4px; }
 .site-identity img { width: auto; height: 40px; flex-shrink: 0; }
 .site-brand { flex-shrink: 0; padding-inline-start: 14px; border-inline-start: 1px solid var(--rule); }
-.site-brand-wordmark { display: block; width: 148px; aspect-ratio: 1387 / 317; background-color: var(--sixhandle-mark); mask: url('./assets/sixhandle-wordmark.svg') center / contain no-repeat; }
+.site-brand-wordmark { display: block; width: 158px; aspect-ratio: 1489 / 317; background-color: var(--sixthandle-mark); mask: url('./assets/sixthandle-wordmark.svg') center / contain no-repeat; }
 .site-header-demo { grid-column: 2; grid-row: 1; }
 .site-header-controls { grid-column: 3; grid-row: 1; display: flex; align-items: center; gap: 8px; }
 .site-language { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 2px; padding: 3px; border-radius: 12px; background: var(--surface); }
@@ -266,7 +266,7 @@ video { width: 100%; max-width: 680px; }
   .site-identity { gap: 8px; }
   .site-identity img { height: 26px; }
   .site-brand { padding-inline-start: 8px; }
-  .site-brand-wordmark { width: clamp(106px, 31vw, 128px); }
+  .site-brand-wordmark { width: clamp(112px, 33vw, 137px); }
   .site-navigation { grid-template-columns: 1fr; }
   .hero-grid { grid-template-columns: 1fr; gap: 28px; padding-block: 32px; }
   .hero-figure img { height: 220px; }

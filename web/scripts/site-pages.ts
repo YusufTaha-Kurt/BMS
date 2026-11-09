@@ -70,7 +70,7 @@ function sitemap() {
 
 export function sitePages(): Plugin {
   return {
-    name: 'sixhandle-site-pages',
+    name: 'sixthandle-site-pages',
     configureServer(server) {
       server.middlewares.use(legacyRedirect)
       server.middlewares.use((request, _response, next) => {

@@ -306,6 +306,11 @@
       "source": "/hakkimizda/aydinlatma/:file(index\\.html)?",
       "destination": "/privacy/",
       "permanent": true
+    },
+    {
+      "source": "/sixhandle-mark.svg",
+      "destination": "/sixthandle-mark.svg",
+      "permanent": true
     }
   ]
 }

@@ -89,9 +89,9 @@ header label:has(input[type="checkbox"]) { min-height: 44px; }
 .demo-segmented button[aria-pressed='true'] { background: var(--color-panel); color: var(--color-ink); font-weight: 600; }
 .demo-wordmark {
   display: block;
-  aspect-ratio: 1387 / 317;
+  aspect-ratio: 1489 / 317;
   background-color: #f1f5ff;
-  mask: url('./about/assets/sixhandle-wordmark.svg') center / contain no-repeat;
+  mask: url('./about/assets/sixthandle-wordmark.svg') center / contain no-repeat;
 }
 :root[data-theme='light'] .demo-wordmark { background-color: #032a52; }
 .text-\[11px\] { font-size: 12px; }
