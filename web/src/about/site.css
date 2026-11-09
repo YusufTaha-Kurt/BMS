@@ -5,6 +5,7 @@
   --petrol: #263637; --burgundy: #801d3a; --paper: #faf9f6; --surface: #f0f1ed;
   --text-secondary: #536260; --rule: #d9ddd8; --button-radius: 3px;
   --button-bg: #801d3a; --button-hover: #61152c;
+  --sixhandle-mark: #032a52;
   --field-bg: #ffffff; --field-border: #8c9794; --error: #a3123a; --error-bg: #f8eaee; --success: #2f6b4f; --success-bg: #ebf3ee;
   --heading-font: Georgia, 'Times New Roman', serif;
   color: var(--petrol); background: var(--paper);
@@ -14,6 +15,7 @@
   --petrol: #f1f5ff; --burgundy: #7dafff; --paper: #0a1224; --surface: #14213d;
   --text-secondary: #acbbd4; --rule: #2a3b5c;
   --button-bg: #2857b5; --button-hover: #3064c8;
+  --sixhandle-mark: #f1f5ff;
   --field-bg: #101b30; --field-border: #657da4; --error: #ff9bb0; --error-bg: #3a1c25; --success: #8fd8b2; --success-bg: #17302a;
 }
 * { box-sizing: border-box; }
@@ -53,7 +55,10 @@ svg { flex-shrink: 0; }
 .site-header-top { display: contents; }
 .site-identity { display: flex; align-items: center; gap: 14px; min-width: 0; padding-block: 4px; }
 .site-identity img { width: auto; height: 40px; flex-shrink: 0; }
-.site-identity strong { padding-left: 14px; border-left: 1px solid var(--rule); font-size: 17px; font-weight: 650; line-height: 1.3; letter-spacing: -.01em; }
+.site-brand { flex-shrink: 0; padding-inline-start: 14px; border-inline-start: 1px solid var(--rule); }
+.site-brand-wordmark, .site-brand-symbol { background-color: var(--sixhandle-mark); }
+.site-brand-wordmark { display: block; width: 148px; aspect-ratio: 1387 / 317; mask: url('./assets/sixhandle-wordmark.svg') center / contain no-repeat; }
+.site-brand-symbol { display: none; width: 23px; aspect-ratio: 483 / 558; mask: url('/sixhandle-mark.svg') center / contain no-repeat; }
 .site-header-demo { grid-column: 2; grid-row: 1; }
 .site-header-controls { grid-column: 3; grid-row: 1; display: flex; align-items: center; gap: 8px; }
 .site-language { display: flex; }
@@ -234,7 +239,9 @@ video { width: 100%; max-width: 680px; }
   .site-header-controls { gap: 4px; margin-inline-start: auto; }
   .site-identity { gap: 6px; }
   .site-identity img { height: 26px; }
-  .site-identity strong { padding-left: 6px; font-size: 14px; line-height: 1.25; }
+  .site-brand { padding-inline-start: 6px; }
+  .site-brand-wordmark { display: none; }
+  .site-brand-symbol { display: block; }
   .site-navigation.is-open { grid-template-columns: 1fr; }
   .hero-grid { grid-template-columns: 1fr; gap: 28px; padding-block: 32px; }
   .hero-intro { font-size: 17px; }
