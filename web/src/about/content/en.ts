@@ -4,8 +4,17 @@ export { commonEn as common } from './common.ts'
 export const home: HomeCopy = {
   intro: 'The project aims to track battery health, prioritise maintenance and support a Digital Battery Passport for shared micromobility fleets. It is at the proposal stage, with a pilot in planning.',
   projectLink: 'About the project',
-  heroAlt: 'Synthetic battery DEMO-001. Temperature drift reason, technical review recommendation and indicators compared with the no-event baseline.',
-  heroCaption: 'Demo screen, DEMO-001, day 14. The data is synthetic.',
+  fleetPreview: {
+    title: 'Fleet overview',
+    batteries: 'batteries',
+    snapshot: 'Day 14',
+    synthetic: 'Synthetic data',
+    priorities: 'Maintenance priorities',
+    batteryDetails: 'Battery details in the demo',
+    history: 'History',
+    telemetry: 'Telemetry',
+    passport: 'Battery Passport',
+  },
   need: {
     title: 'Why it is needed',
     paragraphs: [

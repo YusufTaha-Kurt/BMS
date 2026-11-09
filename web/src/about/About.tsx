@@ -1,17 +1,33 @@
-import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { Activity, ArrowRight, ArrowUpRight, Fingerprint, History } from 'lucide-react'
+import type { Priority } from '../../shared/types.ts'
+import { PRIORITY_ICON } from '../components/Badges.tsx'
 import { useI18n } from '../lib/i18n.tsx'
 import { PROJECT_NAME, PROJECT_NAME_TR } from '../siteIdentity.ts'
 import { CONTENT } from './content/index.ts'
 import { Cop31Mark } from './components/Cop31Mark.tsx'
 import { DemoAccess } from './components/DemoAccess.tsx'
 import { pagePath } from './routes.ts'
-import { DEMO_HERO_SCREENSHOTS, DEMO_SCREENSHOTS } from './demoMedia.ts'
 import { PASSPORT_SOURCE } from './sources.ts'
 
+// Sentetik referans filonun 14. gününden alınan sabit önizleme.
+const fleetCounts = [
+  { priority: 'critical', count: 3 },
+  { priority: 'data_review', count: 10 },
+  { priority: 'attention', count: 59 },
+  { priority: 'normal', count: 428 },
+] satisfies { priority: Priority; count: number }[]
+const fleetTotal = fleetCounts.reduce((total, { count }) => total + count, 0)
+const fleetExamples = [
+  { id: 'BT-10087', priority: 'critical', signal: { en: 'Cell imbalance', tr: 'Hücre dengesizliği' } },
+  { id: 'BT-10038', priority: 'data_review', signal: { en: 'Low data coverage', tr: 'Düşük veri kapsama oranı' } },
+  { id: 'BT-10002', priority: 'attention', signal: { en: 'Near the capacity threshold', tr: 'Kapasite eşiğine yakın' } },
+] satisfies { id: string; priority: Priority; signal: Record<'en' | 'tr', string> }[]
+
 export function About() {
-  const { language } = useI18n()
-  const { home: t, common, demo } = CONTENT[language]
+  const { language, f, priorityLabel } = useI18n()
+  const { home: t, common } = CONTENT[language]
   const href = (id: Parameters<typeof pagePath>[0]) => pagePath(id, language)
+  const preview = t.fleetPreview
 
   return (
     <>
@@ -25,12 +41,42 @@ export function About() {
               <a className="text-link" href={href('project')}>{t.projectLink}<ArrowRight size={16} aria-hidden="true" /></a>
             </div>
           </div>
-          <figure className="hero-figure">
-            <a href={DEMO_SCREENSHOTS[language].telemetry} target="_blank" rel="noopener noreferrer" aria-label={`${demo.gallery.enlarge} (${common.newTab})`}>
-              <img src={DEMO_HERO_SCREENSHOTS[language]} width="788" height="650" alt={t.heroAlt} />
-            </a>
-            <figcaption>{t.heroCaption}</figcaption>
-          </figure>
+          <section className="hero-fleet" aria-labelledby="hero-fleet-title">
+            <div className="hero-fleet-heading">
+              <div>
+                <h2 id="hero-fleet-title">{preview.title}</h2>
+                <p>{f.num(fleetTotal, 0)} {preview.batteries} · {preview.snapshot}</p>
+              </div>
+              <span className="hero-fleet-data">{preview.synthetic}</span>
+            </div>
+            <dl className="hero-fleet-counts">
+              {fleetCounts.map(({ priority, count }) => (
+                <div key={priority} data-priority={priority}>
+                  <dt>{priorityLabel(priority)}</dt>
+                  <dd>{f.num(count, 0)}</dd>
+                </div>
+              ))}
+            </dl>
+            <h3>{preview.priorities}</h3>
+            <ul className="hero-fleet-examples" role="list">
+              {fleetExamples.map(({ id, priority, signal }) => {
+                const Icon = PRIORITY_ICON[priority]
+                return (
+                  <li key={id}>
+                    <span className="hero-fleet-battery"><strong>{id}</strong><span>{signal[language]}</span></span>
+                    <span className="hero-fleet-status" data-priority={priority}>
+                      <Icon size={14} aria-hidden="true" />{priorityLabel(priority)}
+                    </span>
+                  </li>
+                )
+              })}
+            </ul>
+            <ul className="hero-fleet-features" role="list" aria-label={preview.batteryDetails}>
+              <li><History size={14} aria-hidden="true" />{preview.history}</li>
+              <li><Activity size={14} aria-hidden="true" />{preview.telemetry}</li>
+              <li><Fingerprint size={14} aria-hidden="true" />{preview.passport}</li>
+            </ul>
+          </section>
         </div>
       </section>
 

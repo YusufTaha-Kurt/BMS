@@ -1,14 +1,10 @@
 import type { SiteLanguage } from '../site.ts'
-import heroEn from './assets/demo/hero-telemetry-en.jpg'
-import heroTr from './assets/demo/hero-telemetry-tr.jpg'
 import fleetEn from './assets/demo/fleet-en.jpg'
 import fleetTr from './assets/demo/fleet-tr.jpg'
 import telemetryEn from './assets/demo/telemetry-en.jpg'
 import telemetryTr from './assets/demo/telemetry-tr.jpg'
 import passportEn from './assets/demo/passport-en.jpg'
 import passportTr from './assets/demo/passport-tr.jpg'
-
-export const DEMO_HERO_SCREENSHOTS = { en: heroEn, tr: heroTr }
 
 export type ScreenshotId = 'fleet' | 'telemetry' | 'passport'
 export const DEMO_SCREENSHOTS: Record<SiteLanguage, Record<ScreenshotId, string>> = {

@@ -6,8 +6,17 @@ export interface TextBlock { title: string; text: string }
 export interface HomeCopy {
   intro: string
   projectLink: string
-  heroAlt: string
-  heroCaption: string
+  fleetPreview: {
+    title: string
+    batteries: string
+    snapshot: string
+    synthetic: string
+    priorities: string
+    batteryDetails: string
+    history: string
+    telemetry: string
+    passport: string
+  }
   need: { title: string; paragraphs: string[]; source: string }
   flow: { title: string; steps: TextBlock[]; principle: string; link: string }
   people: { title: string; text: string; team: string; institutions: string }

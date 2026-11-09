@@ -100,13 +100,57 @@ svg { flex-shrink: 0; }
 
 /* Ana sayfa */
 .hero { border-bottom: 1px solid var(--rule); }
-.hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 56px; padding-block: 56px; }
+.hero-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 56px; padding-block: 56px; }
 .hero h1 { font-size: clamp(2rem, 1.375rem + 2.1vw, 3rem); line-height: 1.12; }
 .hero-intro { max-width: 470px; margin-top: 22px; font-size: clamp(1rem, .96rem + .15vw, 1.0625rem); line-height: 1.6; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px 28px; margin-top: 28px; }
-.hero-figure a { display: block; overflow: hidden; border-radius: 3px; background: #101c34; }
-.hero-figure img { display: block; width: 100%; height: 300px; object-fit: cover; object-position: right top; }
-.hero-figure figcaption { margin-top: 10px; font-size: .875rem; line-height: 1.5; color: var(--text-secondary); }
+.hero-fleet {
+  container-type: inline-size;
+  min-width: 0;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  background: var(--field-bg);
+}
+.hero-fleet-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+}
+.hero-fleet h2 { font-size: clamp(1.375rem, 1.15rem + .6vw, 1.625rem); line-height: 1.2; }
+.hero-fleet-heading p { margin-top: 4px; color: var(--text-secondary); font-size: .875rem; }
+.hero-fleet-data { padding: 3px 8px; border-radius: 5px; background: var(--surface); color: var(--text-secondary); font-size: .75rem; font-weight: 500; }
+.hero-fleet-counts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-block: 16px; }
+.hero-fleet-counts > div { display: flex; flex-direction: column; justify-content: space-between; gap: 4px; padding: 8px; border-radius: 6px; background: var(--surface); }
+.hero-fleet-counts dt { color: var(--text-secondary); font-size: .75rem; line-height: 1.25; }
+.hero-fleet-counts dd { color: var(--fleet-status); font-size: 1.25rem; font-weight: 600; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.hero-fleet [data-priority='critical'] { --fleet-status: var(--error); }
+.hero-fleet [data-priority='data_review'] { --fleet-status: var(--burgundy); }
+.hero-fleet [data-priority='attention'] { --fleet-status: #825318; }
+:root[data-theme='dark'] .hero-fleet [data-priority='attention'] { --fleet-status: #f0c281; }
+.hero-fleet [data-priority='normal'] { --fleet-status: var(--success); }
+.hero-fleet h3 { margin: 0 0 6px; font-size: .875rem; font-weight: 600; }
+.hero-fleet-examples, .hero-fleet-features { margin: 0; padding: 0; list-style: none; }
+.hero-fleet-examples li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 4px 12px;
+  padding-block: 7px;
+  border-top: 1px solid var(--rule);
+  font-size: .8125rem;
+}
+.hero-fleet-battery { display: flex; flex-wrap: wrap; align-items: baseline; gap: 1px 8px; }
+.hero-fleet-battery strong { font-variant-numeric: tabular-nums; }
+.hero-fleet-battery > span { color: var(--text-secondary); }
+.hero-fleet-status { display: inline-flex; align-items: center; gap: 5px; color: var(--fleet-status); font-weight: 500; }
+.hero-fleet-features { display: flex; flex-wrap: wrap; gap: 7px 15px; padding-top: 11px; border-top: 1px solid var(--rule); color: var(--text-secondary); font-size: .75rem; }
+.hero-fleet-features li { display: inline-flex; align-items: center; gap: 5px; }
+@container (max-width: 360px) {
+  .hero-fleet-counts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 .block { border-bottom: 1px solid var(--rule); padding-block: 48px; }
 .block:last-child { border-bottom: 0; }
 .climate { display: flex; gap: 24px; align-items: flex-start; }
@@ -281,7 +325,6 @@ video { width: 100%; max-width: 680px; }
   .site-brand-wordmark { width: clamp(112px, 33vw, 137px); }
   .site-navigation { grid-template-columns: 1fr; }
   .hero-grid { grid-template-columns: 1fr; gap: 28px; padding-block: 32px; }
-  .hero-figure img { height: 220px; }
   .block { padding-block: 32px; }
   .split, .section { grid-template-columns: 1fr; }
   .section { padding-block: 28px; }

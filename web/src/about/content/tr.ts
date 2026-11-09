@@ -4,8 +4,17 @@ export { commonTr as common } from './common.ts'
 export const home: HomeCopy = {
   intro: 'Proje, paylaşımlı mikromobilite filolarında batarya sağlığını izlemeyi, bakım önceliği belirlemeyi ve Dijital Batarya Pasaportu için kayıt oluşturmayı amaçlıyor. Proje teklif aşamasında. Pilot çalışma planlanıyor.',
   projectLink: 'Projeyi incele',
-  heroAlt: 'Sentetik DEMO-001 bataryası. Sıcaklık sapması gerekçesi, teknik inceleme önerisi ve olaysız durumla karşılaştırılan göstergeler.',
-  heroCaption: 'Demo ekranı, DEMO-001, 14. gün. Veriler sentetiktir.',
+  fleetPreview: {
+    title: 'Filo görünümü',
+    batteries: 'batarya',
+    snapshot: '14. gün',
+    synthetic: 'Sentetik veri',
+    priorities: 'Bakım öncelikleri',
+    batteryDetails: 'Demodaki batarya ayrıntıları',
+    history: 'Geçmiş',
+    telemetry: 'Telemetri',
+    passport: 'Batarya Pasaportu',
+  },
   need: {
     title: 'Neden gerekli',
     paragraphs: [
