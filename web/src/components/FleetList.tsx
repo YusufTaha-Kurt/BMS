@@ -61,7 +61,7 @@ export function FleetList({ rows, query, onQuery, filter, onFilter, page, onPage
               type="button"
               aria-pressed={filter === f}
               onClick={() => onFilter(f)}
-              className={`rounded-md border px-2.5 py-1 text-xs font-semibold ${
+              className={`demo-control border px-2.5 py-1 text-xs font-semibold ${
                 filter === f ? 'border-accent bg-accent/15 text-ink' : 'border-line text-mute hover:text-ink'
               }`}
             >
@@ -133,7 +133,7 @@ export function FleetList({ rows, query, onQuery, filter, onFilter, page, onPage
               <button
                 type="button"
                 onClick={() => { onQuery(''); onFilter('all') }}
-                className="rounded-md border border-line bg-card px-3 py-1.5 text-xs font-semibold text-ink hover:border-accent"
+                className="demo-control border border-line bg-card px-3 py-1.5 text-xs font-semibold text-ink hover:border-accent"
               >
                 {l('Clear filters', 'Filtreleri temizle')}
               </button>
@@ -147,11 +147,11 @@ export function FleetList({ rows, query, onQuery, filter, onFilter, page, onPage
           <span className="tabular">{l('Page', 'Sayfa')} {cur} / {pages}</span>
           <span className="flex gap-1.5">
             <button type="button" aria-label={l('Previous page', 'Önceki sayfa')} disabled={cur <= 1} onClick={() => onPage(cur - 1)}
-              className="rounded-md border border-line p-1.5 enabled:hover:border-accent disabled:opacity-40">
+              className="demo-control border border-line p-1.5 enabled:hover:border-accent disabled:opacity-40">
               <ChevronLeft aria-hidden className="size-4" />
             </button>
             <button type="button" aria-label={l('Next page', 'Sonraki sayfa')} disabled={cur >= pages} onClick={() => onPage(cur + 1)}
-              className="rounded-md border border-line p-1.5 enabled:hover:border-accent disabled:opacity-40">
+              className="demo-control border border-line p-1.5 enabled:hover:border-accent disabled:opacity-40">
               <ChevronRight aria-hidden className="size-4" />
             </button>
           </span>

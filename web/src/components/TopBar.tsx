@@ -27,12 +27,12 @@ export function TopBar({ scenario, onScenario, day, onDay, date, compare, onComp
           <h1 className="text-base font-bold sm:text-lg">{PROJECT_NAME}</h1>
         </a>
         <div className="flex shrink-0 items-center gap-2">
-          <div className="flex gap-0.5" role="group" aria-label={l('Language', 'Dil')}>
-            {(['en', 'tr'] as const).map((lang) => <button key={lang} type="button" lang={lang} aria-label={lang === 'en' ? 'English' : 'Türkçe'} aria-pressed={language === lang} onClick={() => setLanguage(lang)} className={`rounded px-2 py-2 text-xs font-bold ${language === lang ? 'bg-accent text-bg' : 'text-mute hover:text-ink'}`}>{lang.toUpperCase()}</button>)}
+          <div className="demo-segmented" role="group" aria-label={l('Language', 'Dil')}>
+            {(['en', 'tr'] as const).map((lang) => <button key={lang} type="button" lang={lang} aria-label={lang === 'en' ? 'English' : 'Türkçe'} aria-pressed={language === lang} onClick={() => setLanguage(lang)} className="demo-control px-2 py-2 text-xs">{lang.toUpperCase()}</button>)}
           </div>
-          <ThemeToggle className="inline-grid place-items-center rounded-md border border-line bg-card px-2.5 py-2 text-mute hover:text-ink" />
-          <a href={withLanguage(`${import.meta.env.BASE_URL}hakkimizda/`, language)} title={l('Project and team', 'Proje ve ekip')} className="inline-flex items-center gap-1.5 rounded-md border border-line bg-card px-2.5 py-2 text-xs font-semibold hover:border-accent"><ArrowLeft size={15} aria-hidden="true" /><span className="max-sm:sr-only">{l('Project & team', 'Proje ve ekip')}</span></a>
-          <button id="guide-trigger" type="button" onClick={onGuide} aria-pressed={guideOpen} title={l('Guided demo', 'Demo rehberi')} className={`inline-flex items-center gap-1.5 rounded-md border px-2.5 py-2 text-xs font-semibold ${guideOpen ? 'border-accent bg-accent/20' : 'border-accent/60 bg-accent/10 hover:bg-accent/20'}`}><Presentation size={16} aria-hidden="true" /><span className="max-sm:sr-only">{l('Guided demo', 'Demo rehberi')}</span></button>
+          <ThemeToggle className="demo-control inline-grid place-items-center border border-line bg-card px-2.5 py-2 text-mute hover:text-ink" />
+          <a href={withLanguage(`${import.meta.env.BASE_URL}hakkimizda/`, language)} title={l('Project and team', 'Proje ve ekip')} className="demo-control inline-flex min-w-11 items-center justify-center gap-1.5 border border-line bg-card px-2.5 py-2 text-xs font-semibold hover:border-accent"><ArrowLeft size={15} aria-hidden="true" /><span className="max-sm:sr-only">{l('Project & team', 'Proje ve ekip')}</span></a>
+          <button id="guide-trigger" type="button" onClick={onGuide} aria-pressed={guideOpen} title={l('Guided demo', 'Demo rehberi')} className={`demo-control inline-flex items-center gap-1.5 border px-2.5 py-2 text-xs font-semibold ${guideOpen ? 'border-accent bg-accent/20' : 'border-accent/60 bg-accent/10 hover:bg-accent/20'}`}><Presentation size={16} aria-hidden="true" /><span className="max-sm:sr-only">{l('Guided demo', 'Demo rehberi')}</span></button>
         </div>
       </div>
       <div className="mx-auto max-w-[1600px] px-4 py-3 lg:px-6">
@@ -42,16 +42,16 @@ export function TopBar({ scenario, onScenario, day, onDay, date, compare, onComp
           {ORDER.map((p) => { const st = PRIORITY_STYLE[p]; const Icon = PRIORITY_ICON[p]; return <div key={p} className={`rounded-lg border px-3 py-2 ${st.bg} ${st.line}`}><div className={`flex items-center gap-1.5 text-xs font-semibold ${st.text}`}><Icon aria-hidden className="size-3.5" />{priorityLabel(p)}</div><div className="text-xl font-bold tabular">{counts ? counts[p] : '—'}</div></div> })}
         </div>
         <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
-          <label className="flex min-w-0 items-center gap-2 text-xs font-semibold text-mute"><span className="sr-only">{l('Scenario', 'Senaryo')}</span><select id="scenario-select" value={scenario} title={scenarioDescription(scenario)} onChange={(e) => onScenario(e.target.value as ScenarioId)} className="max-w-full rounded-md border border-line bg-bg px-3 py-2 text-sm font-medium text-ink">{SCENARIOS.map((s) => <option key={s.id} value={s.id}>{scenarioLabel(s.id)}</option>)}</select></label>
+          <label className="flex min-w-0 items-center gap-2 text-xs font-semibold text-mute"><span className="sr-only">{l('Scenario', 'Senaryo')}</span><select id="scenario-select" value={scenario} title={scenarioDescription(scenario)} onChange={(e) => onScenario(e.target.value as ScenarioId)} className="demo-control max-w-full border border-line bg-bg px-3 py-2 text-sm font-medium text-ink">{SCENARIOS.map((s) => <option key={s.id} value={s.id}>{scenarioLabel(s.id)}</option>)}</select></label>
           <div className="flex min-w-0 flex-wrap items-center gap-2">
             <span id="day-label" className="sr-only">{l('Day', 'Gün')}</span>
-            <button type="button" aria-label={l('Previous day', 'Önceki gün')} disabled={day <= 1} onClick={() => onDay(day - 1)} className="rounded-md border border-line p-2 enabled:hover:border-accent disabled:opacity-40"><ChevronLeft className="size-4" aria-hidden /></button>
+            <button type="button" aria-label={l('Previous day', 'Önceki gün')} disabled={day <= 1} onClick={() => onDay(day - 1)} className="demo-control border border-line p-2 enabled:hover:border-accent disabled:opacity-40"><ChevronLeft className="size-4" aria-hidden /></button>
             <input type="range" min={1} max={DAYS} value={day} aria-labelledby="day-label" aria-valuetext={l(`Day ${day}`, `${day}. gün`)} onChange={(e) => onDay(Number(e.target.value))} className="w-24 accent-accent sm:w-48" />
-            <button type="button" aria-label={l('Next day', 'Sonraki gün')} disabled={day >= DAYS} onClick={() => onDay(day + 1)} className="rounded-md border border-line p-2 enabled:hover:border-accent disabled:opacity-40"><ChevronRight className="size-4" aria-hidden /></button>
+            <button type="button" aria-label={l('Next day', 'Sonraki gün')} disabled={day >= DAYS} onClick={() => onDay(day + 1)} className="demo-control border border-line p-2 enabled:hover:border-accent disabled:opacity-40"><ChevronRight className="size-4" aria-hidden /></button>
             <span className="whitespace-nowrap text-sm font-semibold tabular">{l(`Day ${day}`, `${day}. gün`)}{date && <span className="font-normal text-mute"> · {f.dateShort(date)}</span>}</span>
           </div>
           {scenario !== 'baseline' && <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={compare} onChange={(e) => onCompare(e.target.checked)} className="size-4 accent-accent" />{l('Compare with no-event baseline', 'Olaysız durumla karşılaştır')}</label>}
-          <button type="button" onClick={onReset} className="inline-flex items-center gap-1.5 rounded-md border border-line bg-card px-3 py-2 text-sm font-semibold hover:border-accent sm:ml-auto"><RotateCcw className="size-4" aria-hidden />{l('Reset', 'Sıfırla')}</button>
+          <button type="button" onClick={onReset} className="demo-control inline-flex items-center gap-1.5 border border-line bg-card px-3 py-2 text-sm font-semibold hover:border-accent sm:ml-auto"><RotateCcw className="size-4" aria-hidden />{l('Reset', 'Sıfırla')}</button>
         </div>
         <details className="mt-3 text-xs text-mute">
           <summary className="w-fit cursor-pointer py-1 font-semibold text-accent">{l('Understand the indicators', 'Göstergeleri tanıyın')}</summary>

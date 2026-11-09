@@ -186,9 +186,11 @@ export default function App() {
         tally={feedback.tally}
       />
       {guideStep !== null && <Guide step={guideStep} onStep={goStep} onClose={closeGuide} />}
-      <nav id="demo-workspace" aria-label={l('Demo views', 'Demo görünümleri')} className="mx-auto flex max-w-[1600px] gap-2 px-4 pt-4 xl:hidden">
-        <button type="button" aria-pressed={mobileView === 'fleet'} aria-controls="fleet-view" onClick={() => showMobileView('fleet')} className={`flex-1 rounded-md border px-3 py-2.5 text-sm font-semibold ${mobileView === 'fleet' ? 'border-accent bg-accent/15' : 'border-line text-mute'}`}>{l('Fleet', 'Filo')}</button>
-        <button type="button" aria-pressed={mobileView === 'detail'} aria-controls="detail-view" onClick={() => showMobileView('detail')} className={`flex-1 rounded-md border px-3 py-2.5 text-sm font-semibold ${mobileView === 'detail' ? 'border-accent bg-accent/15' : 'border-line text-mute'}`}>{l('Battery details', 'Batarya ayrıntısı')}</button>
+      <nav id="demo-workspace" aria-label={l('Demo views', 'Demo görünümleri')} className="mx-auto max-w-[1600px] px-4 pt-4 xl:hidden">
+        <div className="demo-segmented">
+          <button type="button" aria-pressed={mobileView === 'fleet'} aria-controls="fleet-view" onClick={() => setMobileView('fleet')} className="demo-control px-3 py-2.5 text-sm">{l('Fleet', 'Filo')}</button>
+          <button type="button" aria-pressed={mobileView === 'detail'} aria-controls="detail-view" onClick={() => setMobileView('detail')} className="demo-control px-3 py-2.5 text-sm">{l('Battery details', 'Batarya ayrıntısı')}</button>
+        </div>
       </nav>
       {unknownBattery !== null && (
         <div role="status" className="mx-auto mt-4 flex max-w-[1600px] items-start gap-2 px-4 lg:px-6">
@@ -215,7 +217,7 @@ export default function App() {
         />
         </div>
         <div id="detail-view" className={`${mobileView === 'detail' ? '' : 'hidden'} min-w-0 xl:block`}>
-        <button type="button" onClick={() => showMobileView('fleet')} className="mb-3 inline-flex items-center gap-2 rounded-md border border-line px-3 py-2 text-sm font-semibold xl:hidden"><ArrowLeft size={16} aria-hidden />{l('Back to fleet', 'Filoya dön')}</button>
+        <button type="button" onClick={() => showMobileView('fleet')} className="demo-control mb-3 inline-flex items-center gap-2 border border-line px-3 py-2 text-sm font-semibold xl:hidden"><ArrowLeft size={16} aria-hidden />{l('Back to fleet', 'Filoya dön')}</button>
         {(isDesktop || mobileView === 'detail') && <DetailPanel
           scenario={scenario} day={day} batteryId={batteryId} isShowcase={showcase}
           row={rowOf(fleet, scenario)}

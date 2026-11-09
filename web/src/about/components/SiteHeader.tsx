@@ -53,7 +53,9 @@ export function SiteHeader({ pageId }: { pageId: PageId | undefined }) {
   )
 
   return (
-    <header className="site-header" ref={header}>
+    <header className="site-header" ref={header} onBlur={(event) => {
+      if (event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget)) setMenuOpen(false)
+    }}>
       <div className="page-width site-header-inner">
         <div className="site-header-top">
           <a className="site-identity" href={withLanguage(pagePath('home'), language)} aria-label={t.homeLink}>
@@ -65,20 +67,20 @@ export function SiteHeader({ pageId }: { pageId: PageId | undefined }) {
             <ThemeToggle className="theme-toggle" />
           </div>
           <button className="site-menu-toggle" type="button" ref={trigger} aria-label={menuOpen ? t.closeMenu : t.openMenu} aria-expanded={menuOpen} aria-controls="site-menu-panel" onClick={() => setMenuOpen((open) => !open)}>
-            {menuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+            {menuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
           </button>
-        </div>
-        <div id="site-menu-panel" className={`site-menu-panel${menuOpen ? ' is-open' : ''}`}>
-          <nav id="site-navigation" className="site-navigation" aria-label={t.navigation}>
-            {SITE_PAGES.filter((page) => !('hidden' in page)).map(({ id }) => (
-              <a key={id} href={withLanguage(pagePath(id), language)} aria-current={pageId === id ? 'page' : undefined} onClick={() => setMenuOpen(false)}>{t.pages[id].label}</a>
-            ))}
-          </nav>
-          <div className="site-menu-preferences" role="group" aria-labelledby="site-preferences-label">
-            <p id="site-preferences-label">{l('Preferences', 'Tercihler')}</p>
-            <div className="site-menu-preference-controls">
-              {languageControl}
-              <ThemeToggle className="theme-toggle" showLabel />
+          <div id="site-menu-panel" className={`site-menu-panel${menuOpen ? ' is-open' : ''}`}>
+            <nav id="site-navigation" className="site-navigation" aria-label={t.navigation}>
+              {SITE_PAGES.filter((page) => !('hidden' in page)).map(({ id }) => (
+                <a key={id} href={withLanguage(pagePath(id), language)} aria-current={pageId === id ? 'page' : undefined} onClick={() => setMenuOpen(false)}>{t.pages[id].label}</a>
+              ))}
+            </nav>
+            <div className="site-menu-preferences" role="group" aria-labelledby="site-preferences-label">
+              <p id="site-preferences-label">{l('Preferences', 'Tercihler')}</p>
+              <div className="site-menu-preference-controls">
+                {languageControl}
+                <ThemeToggle className="theme-toggle" showLabel />
+              </div>
             </div>
           </div>
         </div>
