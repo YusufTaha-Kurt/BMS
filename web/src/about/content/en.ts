@@ -1,7 +1,8 @@
+import { TEAM_NAME } from '../../site.ts'
 import type { HomeCopy, OrganizationsCopy, SiteCopy, TeamCopy } from './types.ts'
 
 export const common: SiteCopy = {
-  homeLink: 'İklimTekOst home',
+  homeLink: `${TEAM_NAME} home`,
   navigation: 'Main navigation',
   language: 'Language',
   openMenu: 'Open menu',
@@ -52,7 +53,6 @@ export const common: SiteCopy = {
 }
 
 export const home: HomeCopy = {
-  headline: ['İklim', 'TekOst'],
   intro: 'Battery health tracking, maintenance priorities and a Digital Battery Passport for shared micromobility. The project is at the proposal and pilot planning stage.',
   projectLink: 'About the project',
   heroAlt: 'Synthetic battery DEMO-001. Temperature drift reason, technical review recommendation and indicators compared with the no-event baseline.',

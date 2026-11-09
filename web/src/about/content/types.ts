@@ -23,7 +23,6 @@ export interface SiteCopy {
 }
 
 export interface HomeCopy {
-  headline: string[]
   intro: string
   projectLink: string
   heroAlt: string

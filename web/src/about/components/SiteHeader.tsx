@@ -4,7 +4,7 @@ import { useI18n, withLanguage } from '../../lib/i18n.tsx'
 import { CONTENT } from '../content/index.ts'
 import { pagePath, SITE_PAGES, type PageId } from '../routes.ts'
 import { DemoAccess } from './DemoAccess.tsx'
-import { PROJECT_NAME } from '../../site.ts'
+import { TEAM_NAME } from '../../site.ts'
 import universityLogo from '../assets/logo-ostim-teknik.png'
 import { ThemeToggle } from '../../components/ThemeToggle.tsx'
 
@@ -45,7 +45,7 @@ export function SiteHeader({ pageId }: { pageId: PageId | undefined }) {
         <div className="site-header-top">
           <a className="site-identity" href={withLanguage(pagePath('home'), language)} aria-label={t.homeLink}>
             <img src={universityLogo} alt="" width="105" height="40" />
-            <strong>{PROJECT_NAME}</strong>
+            <strong>{TEAM_NAME}</strong>
           </a>
           <div className="site-header-controls">
             <div className="site-language" role="group" aria-label={t.language}>

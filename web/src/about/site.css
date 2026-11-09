@@ -80,9 +80,7 @@ svg { flex-shrink: 0; }
 /* Ana sayfa */
 .hero { border-bottom: 1px solid var(--rule); }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 56px; padding-block: 56px; }
-.hero h1 { font-size: clamp(40px, 4.4vw, 58px); line-height: 1.08; }
-.hero h1 span { display: inline; }
-.hero h1 span:nth-child(2) { color: var(--burgundy); }
+.hero h1 { font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; text-wrap: balance; }
 .hero-intro { max-width: 470px; margin-top: 22px; font-size: 18px; line-height: 1.7; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px 28px; margin-top: 28px; }
 .hero-figure a { display: block; overflow: hidden; border-radius: 3px; background: #101c34; }

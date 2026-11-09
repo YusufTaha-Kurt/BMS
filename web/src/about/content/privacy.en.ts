@@ -1,13 +1,13 @@
 import type { PrivacyCopy } from './types.ts'
 
 export const privacy: PrivacyCopy = {
-  version: 'Version 1, 4 November 2026',
-  intro: 'This notice explains how personal data collected through the collaboration proposal form on the İklimTekOst website is processed. It is prepared under Article 10 of the Turkish Personal Data Protection Law No. 6698 and the Communiqué on the Procedures and Principles for the Obligation to Inform. The Turkish version prevails.',
+  version: 'Version 2, 9 November 2026',
+  intro: 'This notice explains how personal data collected through the collaboration proposal form on the AI-Driven Circular Battery Management System project website is processed. It is prepared under Article 10 of the Turkish Personal Data Protection Law No. 6698 and the Communiqué on the Procedures and Principles for the Obligation to Inform. The Turkish version prevails.',
   sections: [
     {
       title: 'Data controller',
       paragraphs: [
-        'The data controller is OSTİM Technical University. The data is processed by the team of the İklimTekOst project, which runs at the university. The university’s address and contact details are on its official website.',
+        'The data controller is OSTİM Technical University. The data is processed by the team of the AI-Driven Circular Battery Management System project, which runs at the university. The university’s address and contact details are on its official website.',
       ],
     },
     {

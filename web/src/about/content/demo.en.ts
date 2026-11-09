@@ -1,3 +1,4 @@
+import { PROJECT_NAME } from '../../site.ts'
 import type { DemoCopy } from './types.ts'
 
 export const demo: DemoCopy = {
@@ -39,7 +40,7 @@ export const demo: DemoCopy = {
   },
   materials: {
     title: 'Presentation and video', presentation: 'Presentation', video: 'Introduction video',
-    view: 'Open the presentation', download: 'Download the presentation', videoLabel: 'İklimTekOst introduction video',
+    view: 'Open the presentation', download: 'Download the presentation', videoLabel: `${PROJECT_NAME} introduction video`,
     captions: 'English captions', videoFallback: 'Open the video file',
   },
 }

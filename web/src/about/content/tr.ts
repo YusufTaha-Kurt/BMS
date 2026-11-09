@@ -1,7 +1,8 @@
+import { TEAM_NAME } from '../../site.ts'
 import type { HomeCopy, OrganizationsCopy, SiteCopy, TeamCopy } from './types.ts'
 
 export const common: SiteCopy = {
-  homeLink: 'İklimTekOst ana sayfa',
+  homeLink: `${TEAM_NAME} ana sayfa`,
   navigation: 'Ana gezinme',
   language: 'Dil',
   openMenu: 'Menüyü aç',
@@ -52,7 +53,6 @@ export const common: SiteCopy = {
 }
 
 export const home: HomeCopy = {
-  headline: ['İklim', 'TekOst'],
   intro: 'Paylaşımlı mikromobilite bataryaları için sağlık takibi, bakım önceliği ve Dijital Batarya Pasaportu. Proje teklif ve pilot planlama aşamasındadır.',
   projectLink: 'Projeyi incele',
   heroAlt: 'Sentetik DEMO-001 bataryası. Sıcaklık sapması gerekçesi, teknik inceleme önerisi ve olaysız durumla karşılaştırılan göstergeler.',

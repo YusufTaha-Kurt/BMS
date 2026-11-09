@@ -12,11 +12,11 @@ export type { SiteLanguage } from '../shared/types.ts'
 export const SITE_URL = 'https://binbin-battery-intelligence.vercel.app'
 
 export const ABOUT_PATH = 'hakkimizda/'
-/** Proje adı. Kullanıcı kararıyla 7 Kasım 2026'dan itibaren İklimTekOst. Değişirse yalnız burası ve HTML başlıkları güncellenir. */
-export const PROJECT_NAME = 'İklimTekOst'
+export const TEAM_NAME = 'Sixhandle'
+export const PROJECT_NAME = 'AI-Driven Circular Battery Management System'
 
 /** Actual editorial update, not the visitor's clock or the build date. */
-export const SITE_CONTENT_UPDATED = '2026-11-04'
+export const SITE_CONTENT_UPDATED = '2026-11-09'
 
 export type LocalizedText = Partial<Record<SiteLanguage, string>>
 

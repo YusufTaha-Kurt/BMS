@@ -1,13 +1,13 @@
 import type { PrivacyCopy } from './types.ts'
 
 export const privacy: PrivacyCopy = {
-  version: 'Sürüm 1, 4 Kasım 2026',
-  intro: 'Bu metin, İklimTekOst web sitesindeki iş birliği önerisi formuyla toplanan kişisel verilerin işlenmesi hakkındadır. 6698 sayılı Kişisel Verilerin Korunması Kanunu’nun 10. maddesi ve Aydınlatma Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ kapsamında hazırlanmıştır.',
+  version: 'Sürüm 2, 9 Kasım 2026',
+  intro: 'Bu metin, AI-Driven Circular Battery Management System projesinin web sitesindeki iş birliği önerisi formuyla toplanan kişisel verilerin işlenmesi hakkındadır. 6698 sayılı Kişisel Verilerin Korunması Kanunu’nun 10. maddesi ve Aydınlatma Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ kapsamında hazırlanmıştır.',
   sections: [
     {
       title: 'Veri sorumlusu',
       paragraphs: [
-        'Veri sorumlusu OSTİM Teknik Üniversitesi’dir. Veriler, üniversite bünyesinde yürütülen İklimTekOst projesinin ekibi tarafından işlenir. Üniversitenin adres ve iletişim bilgileri resmî internet sitesinde yer alır.',
+        'Veri sorumlusu OSTİM Teknik Üniversitesi’dir. Veriler, üniversite bünyesinde yürütülen AI-Driven Circular Battery Management System projesinin ekibi tarafından işlenir. Üniversitenin adres ve iletişim bilgileri resmî internet sitesinde yer alır.',
       ],
     },
     {

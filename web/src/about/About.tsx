@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { useI18n, withLanguage } from '../lib/i18n.tsx'
+import { PROJECT_NAME } from '../site.ts'
 import { CONTENT } from './content/index.ts'
 import { DemoAccess } from './components/DemoAccess.tsx'
 import { pagePath } from './routes.ts'
@@ -17,7 +18,7 @@ export function About() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="page-width hero-grid">
           <div>
-            <h1 id="hero-title">{t.headline.map((line) => <span key={line}>{line}</span>)}</h1>
+            <h1 id="hero-title">{PROJECT_NAME}</h1>
             <p className="hero-intro">{t.intro}</p>
             <div className="hero-actions">
               <DemoAccess />

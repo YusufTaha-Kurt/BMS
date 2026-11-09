@@ -1,3 +1,4 @@
+import { PROJECT_NAME } from '../site.ts'
 // Ekip CV'leri. Kaynak, kişilerin kullanıcı tarafından paylaşılan CV dosyaları (6 Kasım 2026).
 // Telefon numarası ve kişisel e-posta bilerek eklenmez. Bağlantılar web/src/site.ts içindedir.
 import type { LocalizedText } from '../site.ts'
@@ -500,7 +501,7 @@ export const TEAM_CV: Record<string, MemberCv> = {
         id: 'projects',
         items: [
           {
-            title: t('İklimTekOst, yapay zekâ destekli batarya sağlığı ve yaşam döngüsü yönetimi', 'İklimTekOst, AI-powered battery health and life cycle management'),
+            title: t(PROJECT_NAME, PROJECT_NAME),
             points: [
               t('Elektrikli araç bataryaları için sağlık tahmini, anomali tespiti, erken arıza tahmini ve kalan ömür analizine odaklanan bir makine öğrenmesi çerçevesi üzerinde çalışıyor.', 'Working on a machine learning framework for electric vehicle batteries focused on health estimation, anomaly detection, early fault prediction and remaining useful life analysis.'),
               t('Batarya telemetri gereksinimlerini, veri toplama yöntemlerini ve Dijital Batarya Pasaportu entegrasyonunu inceliyor.', 'Investigating battery telemetry requirements, data collection methods and Digital Battery Passport integration.'),

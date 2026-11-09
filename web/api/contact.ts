@@ -7,7 +7,7 @@
 // SUPABASE_KEY yayımlanabilir (publishable/anon) anahtardır. Tablo yalnız ekleme izni verir, okuma vermez.
 
 /** Formun onay kayıtlarında saklanan aydınlatma metni sürümü. Metin değişince güncellenir. */
-export const PRIVACY_VERSION = '2026-11-04'
+export const PRIVACY_VERSION = '2026-11-09'
 
 export const CONTACT_LIMITS = {
   name: { min: 2, max: 100 },
@@ -191,8 +191,9 @@ export async function handleContact(request: Request, now = Date.now()): Promise
   const from = e.CONTACT_FROM_EMAIL?.trim()
   const key = e.RESEND_API_KEY?.trim()
   if (to && from && key) {
+    const heading = 'AI-Driven Circular Battery Management System iş birliği önerisi'
     const text = [
-      'İklimTekOst iş birliği önerisi',
+      heading,
       '',
       `Ad soyad ${record.name}`,
       `Kurum ${record.organization}`,
@@ -211,7 +212,7 @@ export async function handleContact(request: Request, now = Date.now()): Promise
           from,
           to: to.split(',').map((address) => address.trim()).filter(Boolean),
           reply_to: record.email,
-          subject: `İş birliği önerisi, ${record.organization.slice(0, 80)}`,
+          subject: `${heading}, ${record.organization.slice(0, 80)}`,
           text,
         }),
       })
