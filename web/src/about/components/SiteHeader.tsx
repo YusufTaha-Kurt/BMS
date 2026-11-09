@@ -44,7 +44,7 @@ export function SiteHeader({ pageId }: { pageId: PageId | undefined }) {
       <div className="page-width site-header-inner">
         <div className="site-header-top">
           <a className="site-identity" href={withLanguage(pagePath('home'), language)} aria-label={t.homeLink}>
-            <img src={universityLogo} alt="" width="105" height="40" />
+            <img src={universityLogo} alt="" width="500" height="174" />
             <strong>{TEAM_NAME}</strong>
           </a>
           <div className="site-header-controls">

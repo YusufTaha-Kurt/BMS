@@ -9,12 +9,12 @@
   --heading-font: Georgia, 'Times New Roman', serif;
   color: var(--petrol); background: var(--paper);
 }
-/* Koyu tema. Vurgu rengi okunabilirlik için açılır, düğme zemini koyu bordo kalır. */
+/* Koyu tema. Lacivert yüzeyler, buz beyazı metin ve mavi vurgu. */
 :root[data-theme='dark'] {
-  --petrol: #e3e9e6; --burgundy: #ee9db5; --paper: #121a1b; --surface: #1b2627;
-  --text-secondary: #a9b7b3; --rule: #2f3d3e;
-  --button-bg: #9e2a4d; --button-hover: #b8375e; --logo-plate: #f4f3ee;
-  --field-bg: #182223; --field-border: #5d6d6a; --error: #ff9bb0; --error-bg: #3a1c25; --success: #8fd8b2; --success-bg: #17302a;
+  --petrol: #f1f5ff; --burgundy: #7dafff; --paper: #0a1224; --surface: #14213d;
+  --text-secondary: #acbbd4; --rule: #2a3b5c;
+  --button-bg: #2857b5; --button-hover: #3064c8; --logo-plate: #f2f5fc;
+  --field-bg: #101b30; --field-border: #657da4; --error: #ff9bb0; --error-bg: #3a1c25; --success: #8fd8b2; --success-bg: #17302a;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 24px; }
@@ -52,7 +52,7 @@ svg { flex-shrink: 0; }
 .site-header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 0 20px; padding-top: 14px; }
 .site-header-top { display: contents; }
 .site-identity { display: flex; align-items: center; gap: 14px; min-width: 0; padding-block: 4px; }
-.site-identity img { width: auto; height: 40px; }
+.site-identity img { width: auto; height: 40px; flex-shrink: 0; }
 .site-identity strong { padding-left: 14px; border-left: 1px solid var(--rule); font-size: 17px; font-weight: 650; line-height: 1.3; letter-spacing: -.01em; }
 .site-header-demo { grid-column: 2; grid-row: 1; }
 .site-header-controls { grid-column: 3; grid-row: 1; display: flex; align-items: center; gap: 8px; }
@@ -60,9 +60,12 @@ svg { flex-shrink: 0; }
 .theme-toggle { display: grid; place-items: center; min-width: 44px; min-height: 44px; border: 0; border-radius: 3px; background: transparent; color: var(--text-secondary); }
 .theme-toggle:hover { color: var(--petrol); background: var(--surface); }
 /* Logolar koyu temada açık bir zemin üzerinde durur; kurum renkleri bozulmaz. */
-.site-identity img, .org-logo, .climate img, .site-footer-logo { background: var(--logo-plate); border-radius: 3px; }
+.site-identity img, .org-logo, .cop31-mark { background: var(--logo-plate); border-radius: 3px; }
 :root[data-theme='dark'] .site-identity img, :root[data-theme='dark'] .org-logo { padding: 4px 6px; box-sizing: content-box; }
-:root[data-theme='dark'] .climate img, :root[data-theme='dark'] .site-footer-logo { padding: 4px; }
+/* Keep the central 44% × 61% of the square PNG, including a small margin around the mark. */
+.cop31-mark { position: relative; display: block; flex-shrink: 0; aspect-ratio: 44 / 61; overflow: hidden; }
+.cop31-mark img { position: absolute; top: 0; left: 0; width: calc(100% / .44); height: auto; transform: translate(-28%, -19%); }
+:root[data-theme='dark'] .cop31-mark { box-sizing: content-box; border: 4px solid var(--logo-plate); }
 .site-language button { min-width: 44px; min-height: 44px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--text-secondary); font-size: 13px; font-weight: 600; }
 .site-language button[aria-pressed='true'] { color: var(--burgundy); border-bottom-color: var(--burgundy); }
 .site-menu-toggle { display: none; }
@@ -73,7 +76,7 @@ svg { flex-shrink: 0; }
 /* Alt bilgi */
 .site-footer { border-top: 1px solid var(--rule); }
 .site-footer-inner { display: flex; align-items: center; gap: 20px; padding-block: 24px; font-size: 13px; line-height: 1.7; color: var(--text-secondary); }
-.site-footer-logo { width: 44px; height: auto; }
+.site-footer-logo { width: 52px; }
 .site-footer-inner p { flex: 1; }
 .site-footer-inner a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; }
 
@@ -89,7 +92,7 @@ svg { flex-shrink: 0; }
 .block { border-bottom: 1px solid var(--rule); padding-block: 48px; }
 .block:last-child { border-bottom: 0; }
 .climate { display: flex; gap: 24px; align-items: flex-start; }
-.climate img { width: 72px; height: auto; flex-shrink: 0; }
+.climate-logo { width: 80px; }
 .climate p { font-size: 16px; line-height: 1.75; }
 .climate .text-link { margin-top: 8px; }
 
@@ -231,9 +234,11 @@ video { width: 100%; max-width: 680px; }
 }
 @media (max-width: 740px) {
   .page-width { width: calc(100% - 32px); }
-  .site-identity { gap: 10px; }
-  .site-identity img { height: 28px; }
-  .site-identity strong { max-width: 120px; padding-left: 10px; font-size: 14px; line-height: 1.25; }
+  .site-header-top { flex-wrap: wrap; gap: 4px 8px; }
+  .site-header-controls { gap: 4px; margin-inline-start: auto; }
+  .site-identity { gap: 6px; }
+  .site-identity img { height: 26px; }
+  .site-identity strong { padding-left: 6px; font-size: 14px; line-height: 1.25; }
   .site-navigation.is-open { grid-template-columns: 1fr; }
   .hero-grid { grid-template-columns: 1fr; gap: 28px; padding-block: 32px; }
   .hero-intro { font-size: 17px; }
@@ -251,7 +256,7 @@ video { width: 100%; max-width: 680px; }
   .cards.two, .name-list, .gallery, .demo-start { grid-template-columns: 1fr; }
   .demo-start { padding: 20px; }
   .climate { flex-direction: column; gap: 16px; }
-  .climate img { width: 56px; }
+  .climate-logo { width: 64px; }
   .person-body { flex-direction: column; padding-left: 0; }
   .site-footer-inner { flex-wrap: wrap; }
 }

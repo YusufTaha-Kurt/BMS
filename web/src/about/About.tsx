@@ -2,11 +2,11 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { useI18n, withLanguage } from '../lib/i18n.tsx'
 import { PROJECT_NAME } from '../site.ts'
 import { CONTENT } from './content/index.ts'
+import { Cop31Mark } from './components/Cop31Mark.tsx'
 import { DemoAccess } from './components/DemoAccess.tsx'
 import { pagePath } from './routes.ts'
 import { DEMO_HERO_SCREENSHOTS, DEMO_SCREENSHOTS } from './demoMedia.ts'
 import { PASSPORT_SOURCE } from './sources.ts'
-import cop31Logo from './assets/logo-cop31.png'
 
 export function About() {
   const { language } = useI18n()
@@ -72,7 +72,7 @@ export function About() {
         <div className="page-width split">
           <h2 id="climate-title">{t.climate.title}</h2>
           <div className="prose climate">
-            <img src={cop31Logo} alt={common.cop31Logo} width="72" height="99" />
+            <Cop31Mark alt={common.cop31Logo} className="climate-logo" />
             <div>
               <p>{t.climate.text}</p>
               <a className="text-link" href={href('carbon')}>{t.climate.link}<ArrowRight size={16} aria-hidden="true" /></a>
