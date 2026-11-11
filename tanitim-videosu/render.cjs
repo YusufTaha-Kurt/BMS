@@ -1,4 +1,4 @@
-// video.html dosyasını kare kare kaydedip MP4 üretir. Kullanım: node render.cjs [çıktı.mp4]
+// video.html dosyasını kare kare kaydedip assets/anlatim.m4a anlatımıyla birlikte MP4 üretir. Kullanım: node render.cjs [çıktı.mp4]
 // Yalnız belirli anları görmek için: node render.cjs --stills 3,10,20
 const { chromium } = require('playwright')
 const { spawn } = require('node:child_process')
@@ -31,8 +31,8 @@ async function main() {
 
   const output = process.argv[2] ?? path.join(__dirname, 'tanitim-videosu.mp4')
   const ffmpeg = spawn('ffmpeg', ['-loglevel', 'error', '-y', '-f', 'image2pipe', '-framerate', String(FPS), '-i', '-',
-    '-f', 'lavfi', '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100', '-shortest',
-    '-c:v', 'libx264', '-preset', 'slow', '-crf', '17', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '64k', '-movflags', '+faststart', output],
+    '-i', path.join(__dirname, 'assets/anlatim.m4a'),
+    '-c:v', 'libx264', '-preset', 'slow', '-crf', '17', '-pix_fmt', 'yuv420p', '-c:a', 'copy', '-movflags', '+faststart', output],
   { stdio: ['pipe', 'inherit', 'inherit'] })
   for (let frame = 0; frame < FPS * DURATION; frame++) {
     await seek(frame / FPS)
