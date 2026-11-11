@@ -2,6 +2,11 @@
 
 Son güncelleme: 7 Kasım 2026 (İklimTekOst, ekip ve koordinatör CV'leri tamam, devir notları CLAUDE.md'de)
 
+## Tanıtım videosu (11 Kasım 2026)
+
+- Sunumlar için 60 saniyelik Türkçe tanıtım videosu hazırlandı. Dosya `tanitim-videosu/tanitim-videosu.mp4`, 1920 × 1080, 30 kare, sessiz.
+- Kaynak `tanitim-videosu/video.html`. `node tanitim-videosu/render.cjs` videoyu yeniden üretir. Metinler sitedeki içerikten alındı. Demo görüntüleri açık temada sentetik veriyle çekildi.
+
 ## GitHub ve Vercel yayını
 
 - Kullanıcının açık onayıyla Faz 1–5 sayfaları, kullanılabilirlik/tasarım düzeltmeleri, mavi demo ve inceleme kayıtları `main` dalına gönderildi: arayüz commit'i `a31d0a5`.
