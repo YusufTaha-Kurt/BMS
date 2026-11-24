@@ -1,4 +1,4 @@
-BINBIN BATARYA BAKIM DEMOSU — KURULUM VE CALISTIRMA
+SIXTHANDLE BATARYA BAKIM DEMOSU — KURULUM VE CALISTIRMA
 Hazirlanma: 22 Ekim 2026
 
 Bu paket kaynak koddur. Kendi bilgisayarinizda bagimliliklari kurup
@@ -147,7 +147,7 @@ sizin bilgisayarinizin isletim sistemi/islemcisine gore kurulur.
 web/public/data verileri de pakette yok; npm run data ile uretilir.
 Bu nedenle buyuk veya baska bilgisayara ozel dosya tasimaniz gerekmez.
 
-Butun demo verisi sentetiktir. Gercek BinBin verisi, ML egitimi,
+Butun demo verisi sentetiktir. Gercek saha verisi, ML egitimi,
 veritabani, QR veya kullanici hesabi bu surumde yoktur.
 
 Bu kurulum Node 22.23.1 / npm 10.9.8 ile hedeflenmistir.

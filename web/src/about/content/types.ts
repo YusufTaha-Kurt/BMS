@@ -41,10 +41,6 @@ export interface OrganizationsCopy {
     managersNote: string
   }
   collaborations: {
-    heading: string
-    statuses: { proposed: string; pending: string; confirmed: string }
-    approvedScope: string
-    contribution: string
     formTitle: string
     formText: string
     form: ContactFormCopy

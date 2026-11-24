@@ -11,7 +11,7 @@ export type { SiteLanguage } from '../shared/types.ts'
 export { PROJECT_NAME, SITE_URL, TEAM_NAME } from './siteIdentity.ts'
 
 /** Actual editorial update, not the visitor's clock or the build date. */
-export const SITE_CONTENT_UPDATED = '2026-11-09'
+export const SITE_CONTENT_UPDATED = '2026-11-24'
 
 export type LocalizedText = Partial<Record<SiteLanguage, string>>
 

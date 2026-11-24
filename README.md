@@ -2,19 +2,19 @@
 
 ## Güncel durum (7 Kasım 2026)
 
-**İklimTekOst** (eski adıyla BinBin Battery Intelligence), OSTİM Teknik Üniversitesi öğrenci ekibinin COP31 projesidir. Paylaşımlı mikromobilite bataryaları için sağlık takibi, bakım önceliği ve Dijital Batarya Pasaportu önerir. Ad yakında yeniden değişebilir, bkz. aşağıdaki "Proje adı" bölümü.
+**Yapay Zekâ Destekli Döngüsel Batarya Yönetim Sistemi**, OSTİM Teknik Üniversitesi Sixthandle öğrenci ekibinin COP31 projesidir. Paylaşımlı mikromobilite bataryaları için sağlık takibi, bakım önceliği ve Dijital Batarya Pasaportu önerir.
 
 | | |
 |---|---|
-| Tanıtım sitesi | https://binbin-battery-intelligence.vercel.app/about/ |
-| Sentetik verili demo | https://binbin-battery-intelligence.vercel.app/demo/ |
+| Tanıtım sitesi | https://sixthandle.com/about/ |
+| Sentetik verili demo | https://sixthandle.com/demo/ |
 | Kaynak | `web/` altında React, TypeScript, Vite. `main` dalı Vercel'e otomatik yayımlanır |
 | İletişim formu | `web/api/contact.ts` Vercel fonksiyonu, kayıtlar Supabase BMS-Web projesindeki `collaboration_proposals` tablosunda |
 | Açık işler | [YAYIN_KONTROL_LISTESI.md](YAYIN_KONTROL_LISTESI.md) |
 | Ayrıntılı geçmiş | [DURUM.md](DURUM.md), [WEB_SITESI_FAZ_PLANI.md](WEB_SITESI_FAZ_PLANI.md), `incelemeler/` |
 | Yeni oturum için kurallar | [CLAUDE.md](CLAUDE.md) |
 
-Sitede yedi tanıtım sayfası (ana sayfa, kurumlar, ekip, proje, demo, karbon, iş birliği), menüde yer almayan KVKK aydınlatma metni (`/privacy/`) ve iki dilli 404 sayfası var. Site TR ve EN, açık ve koyu temada çalışır. Ekip sayfasında beş öğrencinin ve akademik koordinatörün fotoğrafı ve açılan CV'si, kurumlar sayfasında yöneticilerin fotoğrafı ve resmî sayfa bağlantısı, iş birliği sayfasında destekleyenler (BinBin logosu) ve öneri formu bulunur.
+Sitede yedi tanıtım sayfası (ana sayfa, kurumlar, ekip, proje, demo, karbon, iş birliği), menüde yer almayan KVKK aydınlatma metni (`/privacy/`) ve iki dilli 404 sayfası var. Site TR ve EN, açık ve koyu temada çalışır. Ekip sayfasında beş öğrencinin ve akademik koordinatörün fotoğrafı ve açılan CV'si, kurumlar sayfasında yöneticilerin fotoğrafı ve resmî sayfa bağlantısı, iş birliği sayfasında öneri formu bulunur.
 
 Bu README'nin aşağıdaki bölümleri geliştirme sırasında yazıldı ve zaman sırasıyla ilerler. Bir dosya veya alan adı eski bir bölümde geçip kodda yoksa güncel olan kod ve CLAUDE.md'dir.
 

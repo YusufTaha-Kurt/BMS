@@ -68,10 +68,6 @@ export const organizations: OrganizationsCopy = {
     managersNote: 'Details for the person whose title could not be found in an official source will be added after confirmation.',
   },
   collaborations: {
-    heading: 'Supporters',
-    statuses: { proposed: 'Supporting organisation', pending: 'Scope being defined', confirmed: 'Supporting organisation' },
-    approvedScope: 'Approved scope',
-    contribution: 'Contribution to the project',
     formTitle: 'Collaboration proposal',
     formText: 'The project team reviews proposals. We’ll reply to the email address you provide.',
     form: {

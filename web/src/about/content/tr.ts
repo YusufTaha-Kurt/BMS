@@ -68,10 +68,6 @@ export const organizations: OrganizationsCopy = {
     managersNote: 'Unvanı resmî kaynakta bulunamayan kişinin bilgisi kurum teyidinden sonra eklenecektir.',
   },
   collaborations: {
-    heading: 'Destekleyenler',
-    statuses: { proposed: 'Destekleyen kuruluş', pending: 'Kapsam belirleniyor', confirmed: 'Destekleyen kuruluş' },
-    approvedScope: 'Onaylı kapsam',
-    contribution: 'Projeye katkı',
     formTitle: 'İş birliği önerisi',
     formText: 'Proje ekibi önerileri inceler ve belirttiğiniz e-posta adresine yanıt verir.',
     form: {

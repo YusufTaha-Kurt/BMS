@@ -2,14 +2,12 @@ import type { LocalizedText } from '../site.ts'
 import universityLogo from './assets/logo-ostim-teknik.png'
 import foundationLogo from './assets/logo-ostim-vakfi.png'
 import foundationLogoDark from './assets/logo-ostim-vakfi-koyu.png'
-import binbinLogo from './assets/logo-binbin.svg'
-import binbinLogoDark from './assets/logo-binbin-koyu.svg'
 import orhanAydinPhoto from './assets/people/orhan-aydin.jpg'
 import muratYulekPhoto from './assets/people/murat-yulek.jpg'
 import hasanErbayPhoto from './assets/people/hasan-erbay.jpg'
 import serdarMuldurPhoto from './assets/people/serdar-muldur.jpg'
 
-export type OrganizationId = 'foundation' | 'university' | 'binbin' | 'sustainBridge'
+export type OrganizationId = 'foundation' | 'university'
 
 export interface OrganizationAsset {
   src?: string
@@ -24,13 +22,10 @@ export interface OrganizationAsset {
  * Logolar yalnız src doluysa gösterilir; boş kayıt için yer tutucu çizilmez.
  * Üniversite logosu kullanıcının sağladığı şeffaf PNG dosyasıdır.
  * OSTİM Vakfı logoları ostimvakfi.com sitesinin kendi açık ve koyu logolarıdır.
- * BinBin logoları binbin.tech sitesinin kendi SVG dosyalarıdır. Sustain Bridge için resmî site bulunamadı.
  */
 export const ORGANIZATION_ASSETS: Record<OrganizationId, OrganizationAsset> = {
   foundation: { src: foundationLogo, srcDark: foundationLogoDark, approved: true },
   university: { src: universityLogo, approved: true },
-  binbin: { src: binbinLogo, srcDark: binbinLogoDark, approved: true },
-  sustainBridge: {},
 }
 
 export interface Manager {
@@ -78,25 +73,4 @@ export const MANAGERS: readonly Manager[] = [
     role: { tr: 'Mühendislik Fakültesi Dekanı', en: 'Dean of the Faculty of Engineering' },
     institution: { tr: 'OSTİM Teknik Üniversitesi', en: 'OSTİM Technical University' },
   },
-]
-
-export interface Collaboration {
-  id: 'binbin' | 'sustainBridge'
-  name: string
-  legalName?: string
-  status: 'proposed' | 'pending' | 'confirmed'
-  proposal?: LocalizedText
-  approvedScope?: LocalizedText
-  contribution?: LocalizedText
-  officialWebsite?: string
-}
-
-/** Projeyi destekleyen kuruluşlar. Kullanıcı kararıyla BinBin yalnız bu bölümde, destekleyen kuruluş olarak geçer. */
-export const COLLABORATIONS: readonly Collaboration[] = [
-  {
-    id: 'binbin', name: 'BinBin',
-    status: 'proposed',
-    officialWebsite: 'https://www.binbin.tech/',
-  },
-  { id: 'sustainBridge', name: 'Sustain Bridge', status: 'pending' },
 ]

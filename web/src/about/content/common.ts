@@ -61,7 +61,7 @@ export const commonEn: SiteCopy = {
     },
     contact: {
       label: 'Collaboration', title: 'Collaboration',
-      description: 'Organisations supporting the project and the collaboration proposal form.',
+      description: 'Send a collaboration proposal to the project team.',
     },
     privacy: {
       label: 'Privacy notice', title: 'Privacy notice',
@@ -112,7 +112,7 @@ export const commonTr: SiteCopy = {
     },
     contact: {
       label: 'İş birliği', title: 'İş birliği',
-      description: 'Projeyi destekleyen kuruluşlar ve iş birliği öneri formu.',
+      description: 'Proje ekibine iş birliği önerisi gönderiniz.',
     },
     privacy: {
       label: 'Aydınlatma metni', title: 'Kişisel verilerin korunması aydınlatma metni',
